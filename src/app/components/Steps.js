@@ -1,7 +1,34 @@
+'use client';
+
 import Image from 'next/image';
 import CorneredLine from './CorneredLine.js';
+import { useRef, useEffect } from 'react';
 
 export default function Steps() {
+    const waitlistButtonRef = useRef(null);
+
+    // Handle keyboard shortcut for the waitlist button
+    useEffect(() => {
+        const handleKeyPress = (e) => {
+            if (e.key === 'j' && waitlistButtonRef.current) {
+                // Check if button is visible in viewport
+                const rect = waitlistButtonRef.current.getBoundingClientRect();
+                const isVisible = 
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+                
+                if (isVisible) {
+                    waitlistButtonRef.current.click();
+                }
+            }
+        };
+        
+        window.addEventListener('keydown', handleKeyPress);
+        return () => window.removeEventListener('keydown', handleKeyPress);
+    }, []);
+
     return (
         <div className="relative w-full max-w-[1512px] mx-auto p-16 ">
 
@@ -112,16 +139,16 @@ export default function Steps() {
                                 </p>
                             </div>
 
-                            <a href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className='w-fit rounded-xl'>
+                            <a ref={waitlistButtonRef} href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className='w-fit rounded-xl'>
                                 <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-gradient-to-b from-[#252525] to-[#17181A]">
                                     <div className="w-[152px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
                                     bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.02)] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
                                         <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
                                             Join Waitlist
                                         </span>
-                                        <span className="flex items-center justify-center py-[0.5px] px-[4.5px] rounded-[3px] bg-[rgba(255,255,255,0.10)]">
-                                            <span className="text-[rgba(255,255,255,0.75)] text-center text-[11px] font-normal leading-[16px] tracking-[0.11px]">
-                                            B
+                                        <span className="w-[17px] h-[17px] flex items-center justify-center py-[0.5px] px-[4.5px] rounded-[3px] bg-[rgba(255,255,255,0.10)]">
+                                            <span className=" text-[rgba(255,255,255,0.75)] text-center text-[11px] font-normal leading-[16px] tracking-[0.11px]">
+                                            J
                                             </span>
                                         </span>
                                     </div>

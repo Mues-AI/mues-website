@@ -1,22 +1,26 @@
 import SvgIconAi from '../utils/svgIconAi';
-import Image from 'next/image';
 
 export default function MainContent() {
   return (
-    <main className="relative flex-grow w-full h-[calc(100vh-68px)] overflow-hidden flex flex-col">
-
-      {/* Background Image */}
-      <Image
-      src="/images/mainFirstImage-1512.webp"
-      alt="Background"
-      fill
-      priority
-      quality={100}
-      sizes="100vw"
-      className="object-cover object-center"
-      />
-
-      <div className="w-full h-full p-6 pt-10 pb-6 sm:p-8 sm:pt-12 md:p-12 md:pt-16 lg:p-6 lg:pt-20 xl:pt-24 xl:pb-[72px] xl:px-20 flex flex-col justify-between relative z-10">
+    <main
+      className="flex-grow bg-cover bg-center bg-no-repeat w-full"
+      style={{
+        backgroundImage: `
+          -webkit-image-set(
+            url('/images/mainFirstImage-1512.webp') 1x,
+            url('/images/mainFirstImage-2560.webp') 2x,
+            url('/images/mainFirstImage-2560.webp') 3x
+          ),
+          image-set(
+            url('/images/mainFirstImage-1512.webp') 1x,
+            url('/images/mainFirstImage-2560.webp') 2x,
+            url('/images/mainFirstImage-2560.webp') 3x
+          )
+        `,
+        height: "calc(100vh - 68px)"
+      }}
+    >
+      <div className="w-full h-full p-6 pt-10 pb-6 sm:p-8 sm:pt-12 md:p-12 md:pt-16 lg:p-6 lg:pt-20 xl:pt-24 xl:pb-[72px] xl:px-20 flex flex-col justify-between">
         
         <div className="w-fit">
           <div className="mb-6 max-w-[520px]">
@@ -33,7 +37,8 @@ export default function MainContent() {
             Your users delegate any task to an AI agent using human language in your product.
           </p>
           
-          <a href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className="inline-flex px-[19px] py-[14px] justify-center items-center rounded-xl bg-white text-black text-center text-sm font-normal leading-4 mt-8 w-fit">
+
+          <a href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" className="inline-flex px-[19px] py-[14px] justify-center items-center rounded-xl bg-white text-black text-center text-sm font-normal leading-4 mt-8 w-fit">
             Join waitlist
           </a>
         </div>

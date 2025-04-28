@@ -26,7 +26,7 @@ export const ModulerPresentationVariants = {
     imageSrc: '/ModularParts/images/ModularPart1.webp',
     imageAlt: 'Modular Part 1',
     videoSrc: '/ModularParts/video/ModularPartVideo1.mp4',
-    videoImage: '/ModularParts/images/ModularPartsVideo1.webp',
+    videoImage: '/ModularParts/images/modularPartsVideo1.webp',
   },
 
   // 2. Product Adoption
@@ -56,7 +56,7 @@ export const ModulerPresentationVariants = {
     imageSrc: '/ModularParts/images/ModularPart2.webp',
     imageAlt: 'Modular Part 2',
     videoSrc: '/ModularParts/video/ModularPartVideo1.mp4',
-    videoImage: '/ModularParts/images/ModularPartsVideo2.webp',
+    videoImage: '/ModularParts/images/modularPartsVideo2.webp',
   },
   
   // 3. Insights
@@ -86,7 +86,7 @@ export const ModulerPresentationVariants = {
   imageSrc: '/ModularParts/images/ModularPart3.webp',
   imageAlt: 'Modular Part 3',
   videoSrc: '/ModularParts/video/ModularPartVideo1.mp4',
-  videoImage: '/ModularParts/images/ModularPartsVideo3.webp',
+  videoImage: '/ModularParts/images/modularPartsVideo3.webp',
 },
 
   // 4. Easy to integrate
@@ -116,7 +116,7 @@ export const ModulerPresentationVariants = {
     imageSrc: '/ModularParts/images/ModularPart4.webp',
     imageAlt: 'Modular Part 4',
     videoSrc: '/ModularParts/video/ModularPartVideo1.mp4',
-    videoImage: '/ModularParts/images/ModularPartsVideo4.webp',
+    videoImage: '/ModularParts/images/modularPartsVideo4.webp',
   },
     
 };
