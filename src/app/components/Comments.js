@@ -10,7 +10,7 @@ export default function Comments() {
         <div className="flex-1 h-auto inline-flex flex-col justify-between items-center">
           {/* 1.1: Text */}
           <p className="w-[434px] text-[#171717] text-center font-Fraunces text-[20px] font-normal leading-[30px] tracking-[-0.1px]">
-          Implementing Mues as our AI companion has reduced customer support tickets by 40% and improved user activation rates. It's like having an expert product guide available 24/7, allowing our team to focus on building new features rather than explaining existing ones.
+          Implementing Mues as our AI companion has reduced customer support tickets by 40% and improved user activation rates. It&apos;s like having an expert product guide available 24/7, allowing our team to focus on building new features rather than explaining existing ones.
           </p>
 
           {/* 2 */}
@@ -39,7 +39,7 @@ export default function Comments() {
         <div className="flex-1 h-auto inline-flex flex-col justify-between items-center">
           {/* 1.1: Text */}
           <p className="w-[434px] text-[#171717] text-center font-Fraunces text-[20px] font-normal leading-[28px] tracking-[-0.1px]">
-          Mues doesn't just answer user questions - it proactively guides them through complex workflows. Our product adoption metrics have improved across all segments while creating a more intuitive and unique experience.
+          Mues doesn&apos;t just answer user questions - it proactively guides them through complex workflows. Our product adoption metrics have improved across all segments while creating a more intuitive and unique experience.
           </p>
 
           {/* 2 */}

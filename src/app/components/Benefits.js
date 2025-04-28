@@ -86,7 +86,7 @@ export default function Benefits() {
                 <div className="h-full max-h-[140] rounded-b-3xl p-8 pt-3 flex flex-col gap-y-3">
                     <h3 className="text-[#222] text-[22px] font-normal leading-[24px]">Live onboarding</h3>
                     <p className="text-[#777] text-[18px] font-light leading-[30px]">
-                    Deliver real-time, personalized onboarding that adapts to each user's pace and needs.
+                    Deliver real-time, personalized onboarding that adapts to each user&apos;s pace and needs.
                     </p>
                 </div>
             </div>
