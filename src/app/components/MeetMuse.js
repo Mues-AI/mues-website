@@ -8,12 +8,12 @@ export default function MeetMuse() {
         </span>
       </div>
 
-      <h3 className="max-w-xl text-[#17181A] text-center font-rethinkSans text-[56px] font-semibold leading-[68px] tracking-[0.56px]">
+      <h2 className="max-w-xl text-[#17181A] text-center font-rethinkSans text-[56px] font-semibold leading-[68px] tracking-[0.56px]">
         A new kind of software interaction.
-      </h3>
+      </h2>
 
       <p className="max-w-xl text-[#474645] text-center text-[22px] font-light leading-[38px] tracking-[-0.3px]">
-        Mues onboard your users, help them use your product, and reduce churn with lower support effort.
+        Mues onboards your users, helps them use your product, and reduces churn with lower support effort.
       </p>
       
     </div>

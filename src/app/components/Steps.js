@@ -11,17 +11,7 @@ export default function Steps() {
     useEffect(() => {
         const handleKeyPress = (e) => {
             if (e.key === 'j' && waitlistButtonRef.current) {
-                // Check if button is visible in viewport
-                const rect = waitlistButtonRef.current.getBoundingClientRect();
-                const isVisible = 
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-                
-                if (isVisible) {
-                    waitlistButtonRef.current.click();
-                }
+                waitlistButtonRef.current.click();
             }
         };
         
@@ -42,9 +32,9 @@ export default function Steps() {
                             <p className="text-[#777] text-[14px] font-normal leading-[20px] tracking-[-0.09px]">
                             Step 1
                             </p>
-                            <p className="h-23 text-[#121212] font-sfPro text-[42px] font-[510] leading-[48px]">
+                            <h3 className="h-23 text-[#121212] font-sfPro text-[42px] font-[510] leading-[48px]">
                             Customize your<br />AI cursor agent
-                            </p>
+                            </h3>
                         </div>
 
                         <div>
@@ -61,9 +51,9 @@ export default function Steps() {
                             <p className="text-[#777] text-[14px] font-normal leading-[20px] tracking-[-0.09px]">
                             Step 2
                             </p>
-                            <p className="h-23 text-[#121212] font-sfPro text-[42px] font-[510] leading-[48px]">
+                            <h3 className="h-23 text-[#121212] font-sfPro text-[42px] font-[510] leading-[48px]">
                             Train your agent with your knowledge
-                            </p>
+                            </h3>
                         </div>
 
                         <div className='flex flex-row gap-x-3 h-[172px] '>
@@ -134,9 +124,9 @@ export default function Steps() {
                                 <p className="text-[#777] text-[14px] font-normal leading-[20px] tracking-[-0.09px]">
                                 Step 3
                                 </p>
-                                <p className="h-23 text-[#121212] font-sfPro text-[42px] font-[510] leading-[48px]">
+                                <h3 className="h-23 text-[#121212] font-sfPro text-[42px] font-[510] leading-[48px]">
                                 Get your script and deploy easily
-                                </p>
+                                </h3>
                             </div>
 
                             <a ref={waitlistButtonRef} href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className='w-fit rounded-xl'>

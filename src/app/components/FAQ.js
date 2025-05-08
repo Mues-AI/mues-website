@@ -61,7 +61,7 @@ export default function FAQ() {
                 <div
                   className={`w-full h-auto p-6 bg-[#FCFCFC] rounded-xl inline-flex justify-between items-center gap-x-12 cursor-pointer`}
                   onClick={() => handleToggle(idx)}>
-                    <div className="w-full text-[#211D1D] text-[18px] font-normal leading-[24px]">
+                    <h4 className="w-full text-[#211D1D] text-[18px] font-normal leading-[24px]">
                         <p className={`${openIndex === idx ? 'pt-1' : ''}`}>{item.question}</p>
                         
                             {openIndex === idx && (
@@ -72,7 +72,7 @@ export default function FAQ() {
                                 </div>
                             </div>
                             )}
-                    </div>
+                    </h4>
                     {openIndex === idx ? (
                         <Image className='self-start' src="/CommentsFAQ/svg/minus.svg" alt="minus icon" width={32} height={32}  />
                     ) : (

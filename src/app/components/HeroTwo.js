@@ -33,9 +33,9 @@ export default function HeroTwo() {
                         </p>            
                     </div>
                     {/* İçerik 2 */}
-                    <div className="text-white font-rethinkSans text-[56px] font-semibold leading-[68px] tracking-[0.56px]">
+                    <h3 className="text-white font-rethinkSans text-[56px] font-semibold leading-[68px] tracking-[0.56px]">
                     Blinded and compliant.
-                    </div>
+                    </h3>
 
                     {/* İçerik 3 */}
                     <p className="text-[#DDD] text-[22px] font-light leading-[38px] tracking-[-0.3px]">

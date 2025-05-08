@@ -31,7 +31,7 @@ export default function AnimatedText() {
 
   return (
     <div className="">
-      <h2
+      <p
         className="mx-auto mt-[148px] mb-8 max-w-[1168px] text-[rgba(23,24,26,0.10)] font-rethinkSans text-[80px] font-bold leading-[96px] tracking-[0.8px]"
         style={{ fontFeatureSettings: "'salt' on", whiteSpace: 'pre-wrap' }}
       >
@@ -51,7 +51,7 @@ export default function AnimatedText() {
             {'\u00A0'}
           </span>
         ))}
-      </h2>
+      </p>
 
       <div className="mx-auto max-w-[1168px]">
         <div className="h-auto w-fit flex flex-row items-center gap-2">

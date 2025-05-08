@@ -73,7 +73,7 @@ const ModularPresentationParts = ({ variant }) => {
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-4">
             <span className={`text-[14px] font-medium leading-[20px] tracking-[-0.09px]`} style={{ color: variantData.tagColor }}>{variantData.tag}</span>
-            <span className="max-w-[444px] h-23 text-[#121212] font-sfPro text-[42px] font-[510] leading-[48px]">{variantData.title}</span>
+            <h2 className="max-w-[444px] h-23 text-[#121212] font-sfPro text-[42px] font-[510] leading-[48px]">{variantData.title}</h2>
           </div>
 
           <p className="text-[#474645] text-[18px] font-light leading-[30px]">{variantData.description}</p>
@@ -96,7 +96,7 @@ const ModularPresentationParts = ({ variant }) => {
         > */}
         {/* BURADA şimdilik setShowVideoModal(false) yapıyoruz - gerçek video gelince true yap */}
         <div 
-          className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer" onClick={() => setShowVideoModal(false)} >
+          className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer hover:ring-1 hover:ring-offset hover:ring-[#f2f0ed] hover:ring-offset-12 hover:ring-offset-white" onClick={() => setShowVideoModal(false)} >
             <div className="flex w-[85px] h-12 justify-center items-center rounded bg-[#E0E0E0]">
               <Image quality={100} loading='lazy' unoptimized src={variantData.videoImage} alt={variantData.imageAlt} width={85} height={48} className="object-cover rounded cursor-pointer"/>
             </div>

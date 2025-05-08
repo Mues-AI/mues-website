@@ -26,10 +26,10 @@ export default function MainContent() {
           <div className="mb-6 max-w-[520px]">
             <h1 className="text-white font-rethinkSans font-bold leading-[72px] tracking-[0.56px] font-feature-settings-salt text-4xl xl:text-[56px] ">
               Software interaction
-            </h1>
-            {/* ! YAP BURADA text sizeları ayarı yarım kaldı. */}
-            <h1 className="text-white font-instrumentSerif italic font-normal leading-[72px] tracking-[0.56px] font-feature-settings-salt text-4xl xl:text-[56px] ">
-              has changed.
+              {/* ! YAP BURADA text sizeları ayarı yarım kaldı. */}
+              <span className="block text-white font-instrumentSerif italic font-normal leading-[72px] tracking-[0.56px] font-feature-settings-salt text-4xl xl:text-[56px] ">
+                has changed.
+              </span>
             </h1>
           </div>
           

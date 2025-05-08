@@ -83,17 +83,7 @@ export default function HowItWorks() {
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === 'b' && bookDemoButtonRef.current) {
-        // Check if button is visible in viewport
-        const rect = bookDemoButtonRef.current.getBoundingClientRect();
-        const isVisible = 
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-        
-        if (isVisible) {
-          bookDemoButtonRef.current.click();
-        }
+        bookDemoButtonRef.current.click();
       }
     };
     
@@ -126,9 +116,9 @@ export default function HowItWorks() {
           </span>
 
           {/* 1.2. Heading */}
-          <div className="text-[#17181A] font-rethinkSans text-[56px] font-semibold leading-[68px] tracking-[0.56px]">
+          <h3 className="text-[#17181A] font-rethinkSans text-[56px] font-semibold leading-[68px] tracking-[0.56px]">
             Details matter.
-          </div>
+          </h3>
 
           {/* 1.3. Description */}
           <div className="text-[#474645] text-[22px] font-light leading-[38px] tracking-[-0.4px]">

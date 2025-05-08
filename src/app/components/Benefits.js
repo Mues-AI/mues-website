@@ -33,7 +33,7 @@ export default function Benefits() {
                 </div>
 
                 <div className="h-full max-h-[150px] rounded-b-3xl p-8 pt-[22px] flex flex-col gap-y-3">
-                    <h3 className="text-[#222] text-[22px] font-normal leading-[24px]">Product adoption</h3>
+                    <h4 className="text-[#222] text-[22px] font-normal leading-[24px]">Product adoption</h4>
                     <p className="text-[#777] text-[18px] font-light leading-[30px]">
                     Help users master your product with AI guidance, they watch the agent, learn from it with every action.
                     </p>
@@ -44,7 +44,7 @@ export default function Benefits() {
             {/* 2 */}
             <div className="max-w-[568px] w-full h-[300px] bg-[#FBFBFB] rounded-3xl flex flex-col">
                 <div className="h-full max-h-[150px] rounded-t-3xl p-8 pb-[22px] flex flex-col gap-y-3">
-                    <h3 className="text-[#222] text-[22px] font-normal leading-[24px]">Churn prevention</h3>
+                    <h4 className="text-[#222] text-[22px] font-normal leading-[24px]">Churn prevention</h4>
                     <p className="text-[#777] text-[18px] font-light leading-[30px]">
                     Reduce churn by addressing user friction early with proactive, behavior-driven AI agent support.
                     </p>
@@ -84,7 +84,7 @@ export default function Benefits() {
                 </div>
 
                 <div className="h-full max-h-[140] rounded-b-3xl p-8 pt-3 flex flex-col gap-y-3">
-                    <h3 className="text-[#222] text-[22px] font-normal leading-[24px]">Live onboarding</h3>
+                    <h4 className="text-[#222] text-[22px] font-normal leading-[24px]">Live onboarding</h4>
                     <p className="text-[#777] text-[18px] font-light leading-[30px]">
                     Deliver real-time, personalized onboarding that adapts to each user&apos;s pace and needs.
                     </p>
@@ -99,7 +99,7 @@ export default function Benefits() {
                 </div>
 
                 <div className="h-full max-h-[150px] rounded-b-3xl p-8 pt-[22px] flex flex-col gap-y-3">
-                    <h3 className="text-[#222] text-[22px] font-normal leading-[24px]">Less support tickets</h3>
+                    <h4 className="text-[#222] text-[22px] font-normal leading-[24px]">Less support tickets</h4>
                     <p className="text-[#777] text-[18px] font-light leading-[30px]">
                     Reduce support tickets by empowering users to solve issues with 24/7 AI help, freeing team for high-value tasks.
                     </p>

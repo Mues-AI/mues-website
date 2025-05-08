@@ -38,8 +38,10 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata = {
-  title: "Mues AI",
+  title: "Mues AI | Agentic AI",
   description: "Mues is an agentic AI that lets your users delegate any task to an AI agent using human language in your product.",
+  robots: "index, follow",
+  canonical: "https://www.mues.ai/",
   openGraph: {
     title: "Mues AI",
     description: "Delegate any task to an AI agent using natural language.",
