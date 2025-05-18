@@ -19,40 +19,37 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
 
-      <div className="">
-        <Navbar /> 
+      <Navbar /> 
 
-        <MainContent />
+      <MainContent />
 
-        <div className='w-full px-18 '>
-          {/* AnimatedTextte animasyon değişikliği istenirse değiştiririz */}
-          <AnimatedText />
+      <div className='w-full px-6 sm:px-9 md:px-12 lg:px-18'>
 
-          <MeetMuse />
+        <AnimatedText />
 
-          <ModularPresentationMain />
+        <MeetMuse />
 
-          <div className="max-w-[1024px] h-[1px] bg-[#EBEBEB] mx-auto"></div>
+        <ModularPresentationMain />
 
-          <HowItWorks />
-
-          <UserCursor />
+        <div className="w-4/5 max-w-[1024px] h-[1px] bg-[#EBEBEB] mx-auto"></div>
         
-          <Benefits />
+        <HowItWorks />
 
-        </div>
+        <UserCursor />
+
+        <Benefits />
       </div>
 
       <HeroTwo/>
 
-      <div className='px-18 '>
-        <PlugAndPlay/>
-        
+      <div className='w-full px-6 sm:px-9 md:px-12 lg:px-18 '>
+        <PlugAndPlay/> 
+
         <Steps />
 
         <Comments />
         
-        <div className="max-w-[1024px] h-[1px] bg-[#EBEBEB] mx-auto"></div>
+        <div className="w-4/5 max-w-[1024px] h-[1px] bg-[#EBEBEB] mx-auto hidden lg:block"></div>
 
         <FAQ />
 

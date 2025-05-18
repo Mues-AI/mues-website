@@ -1,4 +1,4 @@
-import { Inter, Rethink_Sans,Geist, Fraunces,Urbanist,Instrument_Serif } from "next/font/google";
+import { Inter, Rethink_Sans,Geist, Fraunces,Urbanist,Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 
@@ -35,6 +35,13 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: ["400"],
   fontFamily: "Instrument Serif, serif",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400"],
+  fontFamily: "JetBrains Mono, monospace",
 });
 
 export const metadata = {
@@ -99,7 +106,7 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
       <body 
-        className={`${inter.variable} ${rethinkSans.variable} ${geist.variable} ${fraunces.variable} ${urbanist.variable} ${instrumentSerif.variable}`}
+        className={`${inter.variable} ${rethinkSans.variable} ${geist.variable} ${fraunces.variable} ${urbanist.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
       >
         {/* Google Tag Manager – Body */}
         <noscript>

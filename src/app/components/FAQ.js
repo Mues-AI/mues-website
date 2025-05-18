@@ -9,7 +9,6 @@ const faqData = [
     answer:
       'Mues is an AI-powered assistant that revolutionizes web user experience by automating complex tasks, streamlining user onboarding, and maximizing product adoption through natural language interaction. Our vision is to create a world where software adapts to humans, not humans to software, by making every user a power user through AI-driven assistance.',
   },
-  // ! YAP - bu alttaki normalde liste sanırım sonra liste yaparız belki
   {
     question: 'What problems does Mues solve?',
     answer:
@@ -30,7 +29,6 @@ const faqData = [
     answer:
       'Mues is designed with privacy in mind. While we need some user context for effective operation, we work with you to determine the right level of data sharing that maintains user privacy while providing valuable insights. Our enterprise-grade privacy and security features include departmental permissions, data masking, advanced encryption, and secure access controls.',
   },
-  // ! YAP - bu alttaki normalde liste sanırım sonra liste yaparız belki
   {
     question: 'What metrics and insights does Mues provide?',
     answer:
@@ -38,6 +36,51 @@ const faqData = [
   },
 ];
 
+// Modular Benefit Card Component
+function BenefitCard({ bgColor, title, description, imageSrc, imageWidth, imageHeight, imageAlt, textColor, subtextColor , className}) {
+  return (
+    <div className={`flex flex-col sm:flex-row lg:inline-flex w-full lg:w-1/2 h-auto lg:h-full p-6 md:p-4 md:pe-0 lg:p-0 ${bgColor} rounded-2xl justify-start sm:justify-between items-center lg:pl-10 gap-5 cursor-pointer transition-all group overflow-hidden`}>
+      <div className="inline-flex flex-col justify-center items-start gap-2 lg:gap-3 relative top-[-1px]">
+
+        <div className="inline-flex justify-center items-center gap-2">
+
+          <div className={`${textColor} font-rethinkSans font-semibold leading-[30px] 
+          text-[20px] tracking-[0.2px]
+          lg:text-[24px] lg:tracking-[0.24px]`}>
+            {title}
+          </div>
+
+          <ArrowRightIcon 
+            width={24} 
+            height={24} 
+            color={textColor === 'text-white' ? 'white' : '#17181A'} 
+            alt="arrow right icon" 
+            className="opacity-0 group-hover:opacity-100 transition-opacity duration-200" 
+          />
+        </div>
+
+        <div className={`${subtextColor} text-[16px] font-light leading-[20px]`}>
+          {description}
+        </div>
+
+      </div>       
+
+      <div className='w-[170px] flex justify-center lg:h-full lg:w-auto self-center md:self-end relative -bottom-6 sm:bottom-0 md:-bottom-4 lg:bottom-0 lg:self-end rounded-2xl '>
+        <Image 
+          quality={100} 
+          loading='lazy' 
+          unoptimized 
+          src={imageSrc} 
+          alt={imageAlt} 
+          width={imageWidth} 
+          height={imageHeight}
+          className={`rounded-2xl ${className}`}
+        />
+      </div>
+
+    </div>
+  );
+}
 
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState(null);
@@ -46,23 +89,26 @@ export default function FAQ() {
     return (
     <div>
 
-<div className="w-[1168px] my-[148px] mx-auto flex justify-between items-start">
+{/* faq and list container */}
+<div className="max-w-[1168px] mb-24 lg:my-[148px] mx-auto flex flex-col items-start gap-6 lg:flex-row lg:justify-between">
 
-    <div className="text-center text-[#17181A] text-[56px] font-semibold font-rethinkSans leading-[68px] tracking-[0.56px]">
+    <div className="text-center text-[#17181A] font-semibold font-rethinkSans  
+    text-[30px] leading-[40px] tracking-[0.3px]
+    lg:text-[56px] lg:leading-[68px] lg:tracking-[0.56px]">
     FAQ
     </div>
 
-    <div className="w-[800px] inline-flex flex-col justify-start items-start gap-8">
+    <div className="w-full lg:w-[800px] max-w-[800px] inline-flex flex-col justify-start items-start gap-8">
         <div className="self-stretch flex flex-col justify-start items-start gap-2">
             
             {/* list elements */}
             {faqData.map((item, idx) => (
               <div key={idx} className="w-full">
                 <div
-                  className={`w-full h-auto p-6 bg-[#FCFCFC] rounded-xl inline-flex justify-between items-center gap-x-12 cursor-pointer`}
+                  className={`w-full h-auto p-6 bg-[#FCFCFC] rounded-xl inline-flex justify-between items-center gap-x-3 lg:gap-x-12 cursor-pointer`}
                   onClick={() => handleToggle(idx)}>
                     <h4 className="w-full text-[#211D1D] text-[18px] font-normal leading-[24px]">
-                        <p className={`${openIndex === idx ? 'pt-1' : ''}`}>{item.question}</p>
+                        <p className={`${openIndex === idx ? 'pt-1 ' : ' '}`}>{item.question}</p>
                         
                             {openIndex === idx && (
                             <div className="flex w-full bg-[#FCFCFC] rounded-b-xl mt-3">
@@ -92,46 +138,37 @@ export default function FAQ() {
     </div>
 </div>
 
-<div className="w-[1168px] h-37 flex flex-row gap-6 mx-auto">
+{/* two bottom images container */}
+<div className="max-w-[1168px] lg:h-37 flex flex-col md:flex-row gap-4 md:gap-6 mx-auto">
 
-        <div className='inline-flex w-1/2 h-full bg-[#1A1A1A] rounded-2xl justify-start items-center pl-10 gap-5 cursor-pointer transition-all group'>
-            <div className="inline-flex flex-col justify-center items-start gap-3 relative top-[-1px]">
-                <div className="inline-flex justify-center items-center gap-2">
-                  <div className="text-white font-rethinkSans text-[24px] font-semibold leading-[30px] tracking-[0.24px] ">Benefits for your product</div>
-                  <ArrowRightIcon 
-                    width={24} 
-                    height={24} 
-                    color="white" 
-                    alt="arrow right icon" 
-                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-200" 
-                  />
-                </div>
-                <div className="text-[#DDD] text-[16px] font-light leading-[20px] ">Increased product adoption and onboarding</div>
-            </div>       
+  <BenefitCard 
+    bgColor="bg-[#1A1A1A]"
+    title="Benefits for your product"
+    description="Increased product adoption and onboarding"
+    imageSrc="/CommentsFAQ/images/faqBottomImage1.webp"
+    imageWidth={170}
+    imageHeight={140}
+    imageAlt="benefits-for-product"
+    textColor="text-white"
+    subtextColor="text-[#DDD]"  
+    className="object-cover"
+  />
 
-            <Image quality={100} loading='lazy' unoptimized src="/CommentsFAQ/images/faqBottomImage1.webp" alt="benefits-for-product"width={170} height={140}
-            className='self-end '/>
-        </div>
+  <BenefitCard 
+    bgColor="bg-[#F8F8F8]"
+    title="Benefits for your users"
+    description="Less support need with powerful experience"
+    imageSrc="/CommentsFAQ/images/faqBottomImage2.webp"
+    imageWidth={180}
+    imageHeight={160}
+    imageAlt="benefits-for-users"
+    textColor="text-[#17181A]"
+    subtextColor="text-[#777]"
+    className="object-contain lg:scale-110 -rotate-7"
+  />
 
-        <div className='inline-flex w-1/2 h-full bg-[#F8F8F8] rounded-2xl justify-start items-center pl-10 relative cursor-pointer transition-all group'>
-            <div className="inline-flex flex-col justify-center items-start gap-3 relative top-[-1px]">
-               <div className="inline-flex justify-center items-center gap-2">
-                    <div className="text-[#17181A] font-rethinkSans text-[24px] font-semibold leading-[30px] tracking-[0.24px] ">Benefits for your users</div>
-                    <ArrowRightIcon 
-                      width={24} 
-                      height={24} 
-                      color="#17181A" 
-                      alt="arrow right icon"
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200" 
-                    />
-               </div>
-                <div className="text-[#777] text-[16px] font-light leading-[20px] ">Less support need with powerful experience</div>
-            </div>       
 
-            <Image quality={100} loading='lazy' unoptimized src="/CommentsFAQ/images/faqBottomImage2.webp" alt="benefits-for-users"width={222} height={148} className='self-end absolute right-0'/>
-        </div>
-
-</div>
+</div> 
 
     </div>
     );

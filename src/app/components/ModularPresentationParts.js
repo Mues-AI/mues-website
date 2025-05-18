@@ -3,6 +3,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { ModulerPresentationVariants } from './ModulerPresentationVariants';
 import ModularCheckSvg from '../utils/svgGeneralUtils.js';
+import useStore from '../utils/store';
+
+  //!   xs:  320px --
+  //!   sm:  640px
+  //!   md:  768px
+  //!   lg:  1024px
+  //!   xl:  1280px --
+  //!   2xl: 1536px 
 
 const ModularPresentationParts = ({ variant }) => {
   const variantData = ModulerPresentationVariants[variant];
@@ -13,6 +21,9 @@ const ModularPresentationParts = ({ variant }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   
+  // Zustand store'dan isMobile değerini al
+  const isMobile = useStore((state) => state.isMobile);
+
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -67,16 +78,26 @@ const ModularPresentationParts = ({ variant }) => {
     }
   };
   return (
-    <div className="flex flex-row gap-[120px] h-[500px] items-center">
+    <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-18 xl:gap-[120px] items-center justify-between w-full h-auto xl:h-[500px]">
       {/* Left Section */}
-      <div className={`flex flex-col max-w-[448px] h-auto gap-8`} style={{ order: variantData.leftOrder }}>
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-4">
-            <span className={`text-[14px] font-medium leading-[20px] tracking-[-0.09px]`} style={{ color: variantData.tagColor }}>{variantData.tag}</span>
-            <h2 className="max-w-[444px] h-23 text-[#121212] font-sfPro text-[42px] font-[510] leading-[48px]">{variantData.title}</h2>
+      <div className={`
+        flex flex-col
+        w-full md:w-auto md:flex-1
+        md:min-w-[347px] md:max-w-[448px] 
+        h-auto gap-6 md:gap-8
+      `} 
+      style={{ 
+        order: isMobile ? 2 : variantData.leftOrder 
+      }}>
+        <div className="flex flex-col gap-4 md:gap-6">
+          <div className="flex flex-col gap-3 md:gap-4">
+            <p className={`text-[14px] font-medium leading-[20px] tracking-[-0.09px]`} style={{ color: variantData.tagColor }}>{variantData.tag}</p>
+            <h2 className="w-full md:max-w-[448px] h-auto text-[#121212] font-sfPro font-[510] text-[26px] leading-[32px] md:text-[42px] md:leading-[48px] whitespace-pre-line">
+              {variantData.title}
+            </h2>
           </div>
 
-          <p className="text-[#474645] text-[18px] font-light leading-[30px]">{variantData.description}</p>
+          <p className="w-full text-[#474645] font-light text-base leading-[26px] md:text-[18px] md:leading-[30px]">{variantData.description}</p>
 
           <div className="flex flex-col items-start gap-4">
             {variantData.features.map((feature, index) => (
@@ -88,12 +109,6 @@ const ModularPresentationParts = ({ variant }) => {
           </div>
         </div>
          
-        {/* YAP - ileri de hover ring offset ile veya border ile yapabiliriz 
-        <div 
-          className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] transition-all duration-200 cursor-pointer hover:ring-1 hover:ring-offset-4"
-          style={{ '--tw-ring-color': variantData.tagColor}}
-          onClick={() => setShowVideoModal(true)}
-        > */}
         {/* BURADA şimdilik setShowVideoModal(false) yapıyoruz - gerçek video gelince true yap */}
         <div 
           className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer hover:ring-1 hover:ring-offset hover:ring-[#f2f0ed] hover:ring-offset-12 hover:ring-offset-white" onClick={() => setShowVideoModal(false)} >
@@ -110,8 +125,32 @@ const ModularPresentationParts = ({ variant }) => {
       </div>
 
       {/* Right Section - Big Photo */}
-      <div className={`w-[600px] h-[500px] rounded-3xl bg-[#FBFBFB] p-12 flex items-center justify-center`} style={{ order: variantData.rightOrder }}>
-        <Image quality={100} loading='lazy' unoptimized src={variantData.imageSrc} alt={variantData.imageAlt} width={504} height={404} className="w-full h-full object-contain" />
+      <div 
+        className={`
+          w-full max-w-[400px] md:max-w-[600px] 
+          aspect-[345/286] lg:aspect-[600/500]
+          rounded-xl md:rounded-3xl
+          bg-[#FBFBFB]
+          p-6 md:p-8 xl:p-12 
+          overflow-hidden
+          flex items-center justify-center md:flex-1
+          flex-shrink-0
+        `} 
+        style={{ 
+          order: isMobile ? 1 : variantData.rightOrder,
+        }}
+      >
+        <div className="relative w-full h-full flex items-center justify-center">
+          <Image 
+            quality={100} 
+            loading='lazy' 
+            unoptimized 
+            src={variantData.imageSrc} 
+            alt={variantData.imageAlt} 
+            fill={true}
+            className="object-contain" 
+          />
+        </div>
       </div>
 
       {/* Video Modal */}

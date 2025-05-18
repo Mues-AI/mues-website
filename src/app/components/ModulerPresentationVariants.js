@@ -5,7 +5,7 @@ export const ModulerPresentationVariants = {
     rightOrder: 2,
     tag: 'Onboarding',
     tagColor: '#0089FF',
-    title: 'Transform your user onboarding experience',
+    title: 'Transform your user\nonboarding experience',
     description: 'Mues act like a power user and onboard your users. Users learn from the agent. So, support tickets and time-to-value reduce.',
     features: [
       {
@@ -35,7 +35,7 @@ export const ModulerPresentationVariants = {
     rightOrder: 1,
     tag: 'Product Adoption',
     tagColor: '#1FC16B',
-    title: 'Boost product adoption and reduce churn',
+    title: 'Boost product adoption\nand reduce churn',
     description: "Users face difficulties. They need support. These moments are very critical for a product. Product adoption may increase or churn may occur. Mues prevents churn by instantly solving the user's need.",
     features: [
       {
@@ -65,7 +65,7 @@ export const ModulerPresentationVariants = {
   rightOrder: 2,
   tag: 'Insights',
   tagColor: '#FF8447',
-  title: 'Discover insights from user journeys',
+  title: 'Discover insights\nfrom user journeys',
   description: "Users enter prompts. These are the voice of instant problems. Mues solves these issues. And your team discovered potential improvements from journeys.",
   features: [
     {
@@ -81,7 +81,7 @@ export const ModulerPresentationVariants = {
       featureColor: '#FF8447'
     }
   ],
-  videoTitle: 'Watching Wallets',
+  videoTitle: 'Insights from Journeys',
   videoSubtitle: 'Watch the video',
   imageSrc: '/ModularParts/images/ModularPart3.webp',
   imageAlt: 'Modular Part 3',
@@ -95,8 +95,8 @@ export const ModulerPresentationVariants = {
     rightOrder: 1,
     tag: 'Easy to integrate',
     tagColor: '#7D52F4',
-    title: 'Seamlessly integrate with your product',
-    description: "The fastest way to integrate an AI agent to your product. Built to be frictionless for developers. Take your script, add to your product and that’s it.",
+    title: 'Seamlessly integrate\nwith your product',
+    description: "The fastest way to integrate an AI agent to your product. Built to be frictionless for developers. Take your script, add to your product and that's it.",
     features: [
       {
         text: 'Plug and Play',

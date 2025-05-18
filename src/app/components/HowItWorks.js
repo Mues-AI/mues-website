@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Card from './HowItWorksCard';
+import useStore from '../utils/store';
 
 const card_data = [
   {
@@ -51,6 +52,7 @@ export default function HowItWorks() {
   const sectionRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const bookDemoButtonRef = useRef(null);
+  const { isMobile } = useStore();
   
   // Track scroll progress within the section
   const { scrollYProgress } = useScroll({
@@ -100,14 +102,19 @@ export default function HowItWorks() {
   );
 
   return (
-    <motion.div 
+    <motion.section 
       ref={sectionRef}
       style={{ y: sectionY }}
-      className="relative max-w-[1168px] mx-auto mt-[148px] mb-[220px] min-h-[100vh]"
+      className="relative max-w-[1168px] mx-auto mt-24 mb-[112px] md:mt-[148px] md:mb-[220px] min-h-[100vh]"
     >
-      <div className="sticky top-[calc(50vh-148px)] h-[344px] flex justify-between gap-x-24">
+      <div className={`sticky ${isMobile ? 'top-[-100px]' : 'top-[calc(50vh-148px)]'} 
+        flex flex-col md:flex-row md:justify-between
+        gap-y-8 md:gap-y-0
+        gap-x-0 md:gap-x-12 lg:gap-x-24
+        h-auto md:max-h-[344px]`}>
         {/* Left section */}
-        <div className="max-w-[600px] flex flex-col gap-y-6">
+        <div className="w-full flex-1 max-w-[600px] flex flex-col gap-y-4 md:gap-y-6 
+        items-center md:items-start text-center md:text-start">
           {/* 1.1. HOW IT WORKS badge */}
           <span className="text-[#0089FF] text-center text-[14px] font-normal leading-[17px] w-fit">
             <span className="flex px-3 py-2 justify-center items-center rounded-xl border border-[rgba(0,137,255,0.25)] bg-white">
@@ -116,7 +123,9 @@ export default function HowItWorks() {
           </span>
 
           {/* 1.2. Heading */}
-          <h3 className="text-[#17181A] font-rethinkSans text-[56px] font-semibold leading-[68px] tracking-[0.56px]">
+          <h3 className="text-[#17181A] font-rethinkSans font-semibold 
+          text-[30px] leading-[40px] tracking-[0.3px] 
+          md:text-[56px] md:leading-[68px] md:tracking-[0.56px]">
             Details matter.
           </h3>
 
@@ -125,8 +134,8 @@ export default function HowItWorks() {
             <p>We are changing the software interaction to create a world where software adapts to humans, not humans to software!</p>
           </div>
 
-          {/* 1.4. Button */}
-          <a ref={bookDemoButtonRef} href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className='w-fit rounded-xl'>
+          {/* 1.4. Button - Hidden on mobile (md below) */}
+          <a ref={bookDemoButtonRef} href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className='w-fit rounded-xl hidden md:inline-block'>
             <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-gradient-to-b from-[#252525] to-[#17181A]">
               <div className="w-[152px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
               bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.02)] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
@@ -144,7 +153,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Right section - cards container */}
-        <div className="relative w-[472px] h-[344px] overflow-hidden">
+        <div className="relative w-full min-w-0 max-w-[400px] md:flex-1 md:max-w-[472px] h-[362px] md:h-[344px] overflow-hidden mx-auto md:mx-0">
           {card_data.map((project, i) => (
             <Card 
               key={`p_${i}`} 
@@ -157,7 +166,7 @@ export default function HowItWorks() {
       </div>
       
       {/* Extra space to enable scrolling through all cards */}
-      <div className="h-[400vh] -z-10"></div>
-    </motion.div>
+      <div className="h-[350vh] -z-10"></div>
+    </motion.section>
   );
 }

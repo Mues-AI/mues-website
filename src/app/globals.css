@@ -11,7 +11,7 @@
   sm: md: lg: xl:
 */
 
-
+/* Font Family importları */
 @font-face {
   font-family: 'SF Pro';
   src: url('/fonts/sfPro/SFProDisplay-Regular.woff2') format('woff2');
@@ -75,6 +75,7 @@
     --font-fraunces: "Fraunces", serif;
     --font-urbanist:   "Urbanist", sans-serif;
     --font-instrument-serif: "Instrument Serif", serif;
+    --font-jetbrains-mono: "JetBrains Mono", monospace;
   }
   
   .text-package-sm {
@@ -93,7 +94,7 @@
                       linear-gradient(90deg, #47C2FF 0%, #F6B51E 8.3%, #1FC16B 16.6%, #335CFF 24.9%, #FF3200 33.2%, #7D52F4 41.5%, #47C2FF 49.8%, #F6B51E 58.1%, #1FC16B 66.4%, #335CFF 74.7%, #FF3200 83%, #7D52F4 91.3%, #47C2FF 100%);
   }
 
-
+  /* Font Family classları */
   .font-rethinkSans {
     font-family: var(--font-rethink-sans);
   }
@@ -121,6 +122,22 @@
   .font-instrumentSerif {
     font-family: var(--font-instrument-serif);
   }
+
+  .font-jetbrainMono {
+    font-family: var(--font-jetbrains-mono);
+  }
+
+  /* MainContent.js için logo carousel animasyonu */
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion) {
+    .animate-marquee {
+      animation-play-state: paused;
+    }
+  }
 }
 
 html, body {
@@ -138,4 +155,14 @@ html, body {
 /* scroll barı gizler */
 ::-webkit-scrollbar {
   /* display: none; */
+}
+
+/* MainContent.js logo carousel - Marquee animasyonu için keyframes */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

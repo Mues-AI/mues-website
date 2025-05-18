@@ -26,7 +26,7 @@ const Card = ({ title, description, src, alt, width, height, i, activeIndex }) =
 
   return (
     <motion.div
-      className="absolute w-[472px] h-auto flex flex-col gap-y-6"
+      className="absolute w-full h-auto flex flex-col gap-y-6"
       style={{ 
         top: 0, 
         left: 0,
@@ -37,7 +37,7 @@ const Card = ({ title, description, src, alt, width, height, i, activeIndex }) =
       variants={variants}
     >
       {/* Card image container */}
-      <div className="w-[472px] h-[224px] rounded-3xl bg-[#FBFBFB] flex justify-center items-center">
+      <div className="w-full min-w-0 max-w-[400px] md:max-w-[472px] h-[224px] rounded-3xl bg-[#FBFBFB] flex justify-center items-center">
         <Image 
           quality={100} 
           loading='lazy' 
@@ -46,14 +46,14 @@ const Card = ({ title, description, src, alt, width, height, i, activeIndex }) =
           height={height} 
           src={src} 
           alt={alt} 
-          className='object-cover'
+          className='object-contain'
           style={{ width: width ? `${width}px` : undefined, height: height ? `${height}px` : undefined }}
         />
       </div>
       {/* Card text content */}
-      <div className="max-w-[424px] h-24 flex flex-col gap-y-3 mx-auto">
+      <div className="max-w-[424px] h-auto flex flex-col gap-y-3 mx-auto">
         <p className="text-[#222] text-[18px] font-normal leading-[24px]">{title}</p>
-        <p className="h-auto text-[#777] text-[18px] font-light leading-[30px]">{description}</p>
+        <p className="h-auto text-[#777] font-light text-base leading-[26px] md:text-[18px] md:leading-[30px]">{description}</p>
       </div>
     </motion.div>
   )

@@ -1,67 +1,70 @@
 import Image from 'next/image';
 
-export default function Comments() {
-    return (
-      // !yükselik değiş ileride
-      // Main row - div
-      <div className="w-[1072px] h-[330px]  mt-[220px] mx-auto mb-[148px] flex flex-row justify-center gap-x-24 ">
+function CommentItem({ text, avatarSrc, name, title }) {
+  return (
+    <div className="flex-1 max-w-[434px] h-auto lg:h-full flex flex-col justify-between items-center gap-8 lg:gap-12 ">
+      {/* Testimonial Text */}
+      <p className="w-full text-[#171717] text-center font-Fraunces font-normal tracking-[-0.1px] text-[18px] leading-[30px] lg:text-[20px] lg:leading-[28px]">
+        {text}
+      </p>
 
-        {/* 1. Main element */}
-        <div className="flex-1 h-auto inline-flex flex-col justify-between items-center">
-          {/* 1.1: Text */}
-          <p className="w-[434px] text-[#171717] text-center font-Fraunces text-[20px] font-normal leading-[30px] tracking-[-0.1px]">
-          Implementing Mues as our AI companion has reduced customer support tickets by 40% and improved user activation rates. It&apos;s like having an expert product guide available 24/7, allowing our team to focus on building new features rather than explaining existing ones.
-          </p>
-
-          {/* 2 */}
-          <div className="inline-flex flex-col items-center gap-[16px]">
-
-            {/* 2.1.SVG */}
-            <Image quality={100} loading='lazy' unoptimized src="/CommentsFAQ/images/commentsAvatar1.webp" alt="Avatar 1" width={48} height={48}className="rounded-full"  />
+      {/* Avatar and Info */}
+      <div className="inline-flex flex-col items-center gap-4">
+        {/* Avatar */}
+        <Image quality={100} loading='lazy' unoptimized src={avatarSrc} alt={`${name} avatar`} width={48} height={48} className="rounded-full" />
  
-            {/* 2.2Text */}
-            <div className="flex flex-col items-center">
-              <p className="text-[#171717] text-center text-[14px] font-normal leading-[20px]">
-                Sarah Kendrick
-              </p>
-              <p className="text-[rgba(23,23,23,0.60)] text-center text-[13px] font-light leading-[20px]">
-                Principal PM, Plaid
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div className="w-[1px] h-[240px] bg-[#EBEBEB] mx-auto self-center"></div>
-
-        {/* 2. Main element */}
-        <div className="flex-1 h-auto inline-flex flex-col justify-between items-center">
-          {/* 1.1: Text */}
-          <p className="w-[434px] text-[#171717] text-center font-Fraunces text-[20px] font-normal leading-[28px] tracking-[-0.1px]">
-          Mues doesn&apos;t just answer user questions - it proactively guides them through complex workflows. Our product adoption metrics have improved across all segments while creating a more intuitive and unique experience.
+        {/* Name and Title */}
+        <div className="flex flex-col items-center">
+          <p className="text-[#171717] text-center text-[14px] font-normal leading-[20px]">
+            {name}
           </p>
-
-          {/* 2 */}
-          <div className="inline-flex flex-col items-center gap-[16px]">
-
-            {/* 2.1.SVG */} 
-            <Image quality={100} loading='lazy' unoptimized src="/CommentsFAQ/images/commentsAvatar2.webp" alt="Avatar 2" width={48} height={48}className="rounded-full"  />
-
-            {/* 2.2Text */}
-            <div className="flex flex-col items-center">
-              <p className="text-[#171717] text-center text-[14px] font-normal leading-[20px]">
-              Daniel Mehta
-              </p>
-              <p className="text-[rgba(23,23,23,0.60)] text-center text-[13px] font-light leading-[20px]">
-              Head of Product, Bright
-              </p>
-            </div>
-
-          </div>
-
+          <p className="text-[rgba(23,23,23,0.60)] text-center text-[13px] font-light leading-[20px]">
+            {title}
+          </p>
         </div>
+      </div>
+    </div>
+  );
+}
 
+export default function Comments() {
+    const commentsData = [
+      {
+        text: "Implementing Mues as our AI companion has reduced customer support tickets by 40% and improved user activation rates. It's  like having an expert product guide available 24/7, allowing our team to focus on building new features rather than explaining existing ones.",
+        avatarSrc: "/CommentsFAQ/images/commentsAvatar1.webp",
+        name: "Sarah Kendrick",
+        title: "Principal PM, Plaid"
+      },
+      {
+        text: "Mues doesn't just answer user questions - it proactively guides them through complex workflows. Our product adoption metrics have improved across all segments while creating a more intuitive and unique experience.",
+        avatarSrc: "/CommentsFAQ/images/commentsAvatar2.webp",
+        name: "Daniel Mehta",
+        // Main row - div
+        title: "Head of Product, Bright"
+      }
+    ];
+
+    return (
+      <div className="w-full max-w-[1120px] md:max-w-[1088px] lg:max-w-[1296px] h-auto lg:h-[330px] 
+      flex flex-col lg:flex-row justify-evenly items-center
+      gap-12 lg:gap-x-[clamp(48px,48px,96px)]
+      mt-[112px] md:mt-44 lg:mt-[220px] mx-auto mb-24 md:mb-32 lg:mb-[148px] px-6 md:px-10 lg:px-16">
+
+        <CommentItem 
+          text={commentsData[0].text}
+          avatarSrc={commentsData[0].avatarSrc}
+          name={commentsData[0].name}
+          title={commentsData[0].title}
+        />
+
+        <div className="w-4/5 h-[1px] lg:w-[1px] lg:h-[240px] bg-[#EBEBEB] self-center"></div>
+
+        <CommentItem 
+          text={commentsData[1].text}
+          avatarSrc={commentsData[1].avatarSrc}
+          name={commentsData[1].name}
+          title={commentsData[1].title}
+        />
 
       </div>
     );
