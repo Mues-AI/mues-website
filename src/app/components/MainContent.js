@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 
 import { useEffect, useRef } from 'react';
 import SvgIconAi from '../utils/svgIconAi';
@@ -50,25 +51,18 @@ export default function MainContent() {
   }, [isMobile]);
 
   return (
-    <main
-      className="flex-grow bg-cover bg-center bg-no-repeat w-full"
-      style={{
-        backgroundImage: `
-          -webkit-image-set(
-            url('/images/mainFirstImage-1512.webp') 1x,
-            url('/images/mainFirstImage-2560.webp') 2x,
-            url('/images/mainFirstImage-2560.webp') 3x
-          ),
-          image-set(
-            url('/images/mainFirstImage-1512.webp') 1x,
-            url('/images/mainFirstImage-2560.webp') 2x,
-            url('/images/mainFirstImage-2560.webp') 3x
-          )
-        `,
-        height: "calc(100vh - 68px)"
-      }}
-    >
-      <div className="w-full h-full p-6 pt-10 pb-6 md:px-12 md:py-16 lg:pb-[72px] lg:px-20 lg:pt-24 flex flex-col justify-between">
+    <main className="relative w-full" style={{ height: 'calc(100vh - 68px)' }}>
+      <Image
+        src="/images/mainFirstImage-1512.webp"
+        alt="Main Image"
+        fill
+        sizes="100vw"
+        priority
+        className="object-cover min-w-[200px]"
+        quality={80}
+        unoptimized
+      />
+      <div className="relative z-10 w-full h-full p-6 pt-10 pb-6 md:px-12 md:py-16 lg:pb-[72px] lg:px-20 lg:pt-24 flex flex-col justify-between">
         
         <div className="w-fit">
           <div className="mb-6 max-w-[520px]">
