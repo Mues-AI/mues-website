@@ -8,9 +8,8 @@ export default function HeroTwo() {
           alt="Hero Two"
           fill
           sizes="100vw"
-          priority
           className="object-cover w-full h-full -z-10"
-          quality={100}
+          quality={80}
           unoptimized
         />
         {/* Ana Flex Container */}

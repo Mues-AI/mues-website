@@ -60,6 +60,7 @@ export default function MainContent() {
         priority
         className="object-cover w-full h-full"
         quality={80}
+        unoptimized
       />
       <div className="relative z-10 w-full h-full p-6 pt-10 pb-6 md:px-12 md:py-16 lg:pb-[72px] lg:px-20 lg:pt-24 flex flex-col justify-between">
         
