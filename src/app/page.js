@@ -13,8 +13,6 @@ import Comments from './components/Comments'
 import FAQ from './components/FAQ.js';
 import Footer from './components/Footer.js';
 
-{/* quality={100} priority loading='lazy' unoptimized */}
-
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">

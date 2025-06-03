@@ -107,18 +107,16 @@ export default function FAQ() {
                 <div
                   className={`w-full h-auto p-6 bg-[#FCFCFC] rounded-xl inline-flex justify-between items-center gap-x-3 lg:gap-x-12 cursor-pointer`}
                   onClick={() => handleToggle(idx)}>
-                    <h4 className="w-full text-[#211D1D] text-[18px] font-normal leading-[24px]">
-                        <p className={`${openIndex === idx ? 'pt-1 ' : ' '}`}>{item.question}</p>
+                    <div className="w-full flex flex-col text-[#211D1D] text-[18px] font-normal leading-[24px] gap-y-3">
+                        <h4 className={`${openIndex === idx ? '' : ' '} min-h-8 w-full flex items-center`}>{item.question}</h4>
                         
                             {openIndex === idx && (
-                            <div className="flex w-full bg-[#FCFCFC] rounded-b-xl mt-3">
-                                <div
-                                className="text-[#8E8E8E] text-[14px] font-light leading-6 tracking-[0.14px]">
-                                {item.answer}
-                                </div>
-                            </div>
+                              <div
+                              className="flex w-full rounded-b-xl text-[#8E8E8E] text-[14px] font-light leading-6 tracking-[0.14px]">
+                              {item.answer}
+                              </div>
                             )}
-                    </h4>
+                    </div>
                     {openIndex === idx ? (
                         <Image className='self-start' src="/CommentsFAQ/svg/minus.svg" alt="minus icon" width={32} height={32}  />
                     ) : (

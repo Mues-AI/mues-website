@@ -5,13 +5,6 @@ import { ModulerPresentationVariants } from './ModulerPresentationVariants';
 import ModularCheckSvg from '../utils/svgGeneralUtils.js';
 import useStore from '../utils/store';
 
-  //!   xs:  320px --
-  //!   sm:  640px
-  //!   md:  768px
-  //!   lg:  1024px
-  //!   xl:  1280px --
-  //!   2xl: 1536px 
-
 const ModularPresentationParts = ({ variant }) => {
   const variantData = ModulerPresentationVariants[variant];
   const [showVideoModal, setShowVideoModal] = useState(false);

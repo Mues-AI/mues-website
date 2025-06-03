@@ -85,7 +85,6 @@ export default function RootLayout({ children }) {
         href="/images/mainFirstImage-1512.webp"
         imageSrcSet="
           /images/mainFirstImage-1512.webp 1512w,
-          /images/mainFirstImage-2560.webp 2560w
         "
         imageSizes="100vw"
       />

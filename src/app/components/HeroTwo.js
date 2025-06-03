@@ -2,28 +2,22 @@ import Image from 'next/image';
 
 export default function HeroTwo() {
     return (
-    <div
-      className="w-full h-[860px] lg:h-[750px] bg-center bg-cover"
-      style={{
-        backgroundImage: `
-          -webkit-image-set(
-            url('/images/bghero2-1512.webp') 1x,
-            url('/images/bghero2-2560.webp') 2x,
-            url('/images/bghero2-2560.webp') 3x
-          ),
-          image-set(
-            url('/images/bghero2-1512.webp') 1x,
-            url('/images/bghero2-2560.webp') 2x,
-            url('/images/bghero2-2560.webp') 3x
-          )
-        `
-      }}
-    >
+      <div className="relative w-full h-[860px] lg:h-[750px]">
+        <Image
+          src="/images/bghero2-1512.webp"
+          alt="Hero Two"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover w-full h-full -z-10"
+          quality={100}
+          unoptimized
+        />
         {/* Ana Flex Container */}
         <div className="w-full h-full flex flex-col justify-between pt-12 pb-6 lg:pt-0 lg:pb-0 lg:flex-row items-center">
 
             {/* Sol Div */}
-            <div className="w-full flex justify-center px-6 lg:px-0 lg:w-1/2 lg:pl-[124px]">
+            <div className="w-full flex justify-center lg:justify-start px-6 sm:px-9 md:px-12 lg:px-0 lg:w-1/2 lg:pl-[72px] xl:pl-[124px]">
                 
                 <div className='flex flex-col gap-4 lg:gap-6 w-full lg:w-[322px]'>
                     {/* İçerik 1 */}
