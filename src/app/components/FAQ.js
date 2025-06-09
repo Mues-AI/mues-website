@@ -112,7 +112,7 @@ export default function FAQ() {
                         
                             {openIndex === idx && (
                               <div
-                              className="flex w-full rounded-b-xl text-[#8E8E8E] text-[14px] font-light leading-6 tracking-[0.14px]">
+                              className="flex w-full rounded-b-xl text-8e8e8e text-[14px] font-light leading-6 tracking-[0.14px]">
                               {item.answer}
                               </div>
                             )}

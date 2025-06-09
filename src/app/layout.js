@@ -5,28 +5,35 @@ import Script from "next/script";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  fontFamily: "Inter, sans-serif",
 });
 
 const rethinkSans = Rethink_Sans({
   variable: "--font-rethink-sans",
   subsets: ["latin"],
+  style: ["normal"],
+  fontFamily: "Rethink Sans, sans-serif",
 });
 
 const geist = Geist({
   variable: "--font-geist",
   subsets: ["latin"],
+  style: ["normal"],
   fontFamily: "Geist, sans-serif",
 });
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
+  style: ["normal"],
   fontFamily: "Fraunces, serif",
 });
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
   subsets: ["latin"],
+  style: ["normal"],
   fontFamily: "Urbanist, sans-serif",
 });
 
@@ -34,6 +41,7 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
   subsets: ["latin"],
   weight: ["400"],
+  style: ["italic"],
   fontFamily: "Instrument Serif, serif",
 });
 
@@ -41,6 +49,7 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   weight: ["400"],
+  style: ["normal"],
   fontFamily: "JetBrains Mono, monospace",
 });
 

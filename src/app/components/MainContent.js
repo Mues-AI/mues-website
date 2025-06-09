@@ -65,11 +65,12 @@ export default function MainContent() {
       <div className="relative z-10 w-full h-full p-6 pt-10 pb-6 md:px-12 md:py-16 lg:pb-[72px] lg:px-20 lg:pt-24 flex flex-col justify-between">
         
         <div className="w-fit">
-          <div className="mb-6 max-w-[520px]">
+          <div className="mb-6 max-w-fit">
             <h1 className="text-white font-rethinkSans font-bold leading-12 md:leading-16 lg:leading-[72px] tracking-[0.36px] md:tracking-[0.48px] lg:tracking-[0.56px] font-feature-settings-salt text-3xl xs:text-4xl sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] ">
-              Software interaction
+            Make your product
+            {/* YAP - ai powered font family değişmiş */}
               <span className="block text-white font-instrumentSerif italic font-normal leading-12 lg:leading-[72px] tracking-[0.36px] lg:tracking-[0.56px] font-feature-settings-salt text-3xl xs:text-4xl sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] ">
-                has changed.
+              AI-powered in seconds.
               </span>
             </h1>
           </div>
