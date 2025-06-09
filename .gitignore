@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# kısa süreli gitignore dosyaları
+
+# Temporary files - do not push
+src/app/components/Footer.module.css
+src/app/components/FooterNextPageNotCompleted.js
+src/app/contact/
+src/app/contact/page.js
+src/app/usecase/
+src/app/globals copy.css
