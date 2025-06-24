@@ -102,8 +102,6 @@ const ModularPresentationParts = ({ variant }) => {
             ))}
           </div>
         </div>
-         
-         {/* ! YAP - videolarda toast mesajı koyacagız -- Coming soon! */}
         {/* BURADA şimdilik setShowVideoModal(false) yapıyoruz - gerçek video gelince true yap */}
         <div 
           className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer hover:ring-1 hover:ring-offset hover:ring-[#f2f0ed] hover:ring-offset-12 hover:ring-offset-white" onClick={() => { setShowVideoModal(false); toast("Coming soon!"); }}>

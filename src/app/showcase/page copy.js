@@ -297,10 +297,8 @@ export default function Showcase() {
 
         {/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */}
         {/* Central Dropbox AI Agent Card */}
-        <div className="absolute left-1/2 top-6 -translate-x-1/2 cursor-pointer scale-[1.75] origin-top">
-
-        <DropboxCard />
-
+        <div className="absolute left-1/2 top-6 -translate-x-1/2 cursor-pointer scale-[1.77] origin-top">
+          <DropboxCard />
         </div>
         {/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */}
 

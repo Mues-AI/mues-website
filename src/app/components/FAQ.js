@@ -39,7 +39,7 @@ const faqData = [
 // Modular Benefit Card Component
 function BenefitCard({ bgColor, title, description, imageSrc, imageWidth, imageHeight, imageAlt, textColor, subtextColor , className}) {
   return (
-    <div className={`flex flex-col sm:flex-row lg:inline-flex w-full lg:w-1/2 h-auto lg:h-full p-6 md:p-4 md:pe-0 lg:p-0 ${bgColor} rounded-2xl justify-start sm:justify-between items-center lg:pl-10 gap-5 cursor-pointer transition-all group overflow-hidden`}>
+    <div className={`flex flex-col sm:flex-row lg:inline-flex w-full lg:w-1/2 h-auto lg:h-full p-6 md:p-4 md:pe-0 lg:p-0 ${bgColor} rounded-2xl justify-start sm:justify-between items-center lg:pl-10 gap-5 transition-all group overflow-hidden`}>
       <div className="inline-flex flex-col justify-center items-start gap-2 lg:gap-3 relative top-[-1px]">
 
         <div className="inline-flex justify-center items-center gap-2">
@@ -50,13 +50,13 @@ function BenefitCard({ bgColor, title, description, imageSrc, imageWidth, imageH
             {title}
           </div>
 
-          <ArrowRightIcon 
+          {/* <ArrowRightIcon 
             width={24} 
             height={24} 
             color={textColor === 'text-white' ? 'white' : '#17181A'} 
             alt="arrow right icon" 
             className="opacity-0 group-hover:opacity-100 transition-opacity duration-200" 
-          />
+          /> */}
         </div>
 
         <div className={`${subtextColor} text-[16px] font-light leading-[20px]`}>
