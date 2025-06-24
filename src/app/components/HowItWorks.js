@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Card from './HowItWorksCard';
-import useStore from '../utils/store';
+import useStore from '../lib/store';
 
 const card_data = [
   {
@@ -116,14 +116,14 @@ export default function HowItWorks() {
         <div className="w-full flex-1 max-w-[600px] flex flex-col gap-y-4 md:gap-y-6 
         items-center md:items-start text-center md:text-start">
           {/* 1.1. HOW IT WORKS badge */}
-          <span className="text-[#0089FF] text-center text-[14px] font-normal leading-[17px] w-fit">
+          <span className="text-primary-blue text-center text-[14px] font-normal leading-[17px] w-fit">
             <span className="flex px-3 py-2 justify-center items-center rounded-xl border border-[rgba(0,137,255,0.25)] bg-white">
               HOW IT WORKS
             </span>
           </span>
 
           {/* 1.2. Heading */}
-          <h3 className="text-[#17181A] font-rethinkSans font-semibold 
+          <h3 className="text-primary-black font-rethinkSans font-semibold 
           text-[30px] leading-[40px] tracking-[0.3px] 
           md:text-[56px] md:leading-[68px] md:tracking-[0.56px]">
             Details matter.

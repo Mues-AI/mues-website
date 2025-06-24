@@ -66,7 +66,7 @@ export default function Steps() {
                                 <p className="text-[#777] text-[14px] font-normal leading-[20px] tracking-[-0.09px]">
                                 Step 1
                                 </p>
-                                <h3 className="h-auto text-[#121212] font-sfPro text-[32px] lg:text-[42px] font-[510] leading-8 lg:leading-[48px]">
+                                <h3 className="h-auto text-black-121212 font-sfPro text-[32px] lg:text-[42px] font-[510] leading-8 lg:leading-[48px]">
                                 Customize your<br />AI cursor agent
                                 </h3>
                             </div>
@@ -83,7 +83,7 @@ export default function Steps() {
                                 <p className="text-[#777] text-[14px] font-normal leading-[20px] tracking-[-0.09px]">
                                 Step 2
                                 </p>
-                                <h3 className="h-auto text-[#121212] font-sfPro text-[32px] lg:text-[42px] font-[510] leading-8 lg:leading-[48px]">
+                                <h3 className="h-auto text-black-121212 font-sfPro text-[32px] lg:text-[42px] font-[510] leading-8 lg:leading-[48px]">
                                 Train your agent <br className='block lg:hidden'/> with  <br className='hidden lg:block'/> your knowledge
                                 </h3>
                             </div>
@@ -115,7 +115,7 @@ export default function Steps() {
                                 <p className="text-[#777] text-[14px] font-normal leading-[20px] tracking-[-0.09px]">
                                 Step 3
                                 </p>
-                                <h3 className="h-auto text-[#121212] font-sfPro text-[32px] lg:text-[42px] font-[510] leading-8 lg:leading-[48px]">
+                                <h3 className="h-auto text-black-121212 font-sfPro text-[32px] lg:text-[42px] font-[510] leading-8 lg:leading-[48px]">
                                 Get your script and deploy easily
                                 </h3>
                             </div>

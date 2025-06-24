@@ -47,83 +47,22 @@
   --text-15: 15px;
   --text-17: 17px; 
 
-
-
   /* !=== COLOR SYSTEM - Component Color Palette === */
 
-  /* ! BACKGROUND COLORS */
-  --color-bg-white: #ffffff;
-  --color-bg-black: #010101;
-
   /* ! GENERAL  */
-  --color-primary-dark: #17181A;
-
+  --color-primary-black: #17181A;
+  --color-primary-blue: #0089FF;
+  --color-f8f8f8: #f8f8f8;
 
   /* ! TEXT */
   --color-8e8e8e: #8E8E8E;
 
+  /* ! BLACK COLORS */
+  --color-black-121212: #121212;
 
-  /* * ===========================================
-     COLOR SYSTEM - Component Color Palette
-    * =========================================== */
-  
-  --color-primary: #0089FF;
-  --color-primary-25: rgba(0, 137, 255, 0.25);
-  
-  /* ! TEXT COLORS */
-  --color-text-secondary: #474645;
-  --color-text-tertiary: #777;
-  --color-text-muted: #AAA;
-  --color-text-light: #B6B6B6;
-  --color-text-white: #ffffff;
-  --color-text-white-75: rgba(255, 255, 255, 0.75);
-  --color-text-white-40: rgba(255, 255, 255, 0.40);
-  
-  /* ! DARK COLORS */
-  --color-dark-800: #121212;
-  --color-dark-700: #171717;
-  --color-dark-600: #191919;
-  --color-dark-500: #201D1D;
-  --color-dark-400: #211D1D;
-  --color-dark-300: #222;
-  
-  /* ! GRAY COLORS */
-  --color-gray-600: #4E4E55;
-  --color-gray-500: #616161;
-  --color-gray-400: #636161;
-  --color-gray-300: #666;
-  --color-gray-200: #999;
-  
-  /* ! BACKGROUND COLORS */
-  --color-bg-secondary: #F8F8F8;
-  --color-bg-tertiary: #FBFBFB;
-  --color-bg-quaternary: #FCFCFC;
-  --color-bg-code: #FAFAFA;
-  
   /* ! BORDER COLORS */
-  --color-border-primary: #EBEBEB;
-  --color-border-secondary: #EEE;
-  
-  /* ! INTERACTIVE COLORS */
-  --color-hover-white-12: rgba(248, 248, 248, 0.12);
-  --color-hover-white-25: rgba(255, 255, 255, 0.25);
-  --color-hover-dark-08: rgba(23, 24, 26, 0.08);
-  --color-hover-gray-20: rgba(200, 200, 200, 0.2);
-  
-  /* ! TRANSPARENT COLORS */
-  --color-text-transparent-10: rgba(23, 24, 26, 0.1);
-  --color-text-transparent-60: rgba(23, 23, 23, 0.60);
-  --color-white-transparent-02: rgba(255, 255, 255, 0.02);
-  --color-white-transparent-10: rgba(255, 255, 255, 0.10);
-  --color-white-transparent-12: rgba(255, 255, 255, 0.12);
-  
-  /* ! SHADOW COLORS */
-  --color-shadow-light: rgba(119, 119, 119, 0.07);
-  --color-shadow-medium: rgba(0, 0, 0, 0.15);
-  --color-shadow-border: rgba(0, 0, 0, 0.08);
-  --color-shadow-soft: rgba(0, 0, 0, 0.04);
-  --color-shadow-focus: rgba(140, 151, 172, 0.20);
-
+  --color-ebebebe: #EBEBEB;
+  --color-eee: #EEE;
 }
 
 @layer utilities {

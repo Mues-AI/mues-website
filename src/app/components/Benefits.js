@@ -83,12 +83,12 @@ export default function Benefits() {
         {/* AGENTIC AI unlocked parts */}
         <div className="flex flex-col items-start gap-4 md:gap-6 w-full max-w-[1168px]">
             <div className="flex items-start gap-1.5 px-3 py-2 rounded-xl border border-[rgba(0,137,255,0.25)] bg-white w-fit">
-                <span className="text-[#0089FF] text-center text-[14px] font-normal leading-[17px]">
+                <span className="text-primary-blue text-center text-[14px] font-normal leading-[17px]">
                     BENEFITS
                 </span>
             </div>
     
-            <h3 className="max-w-[1168px] text-[#17181A] font-rethinkSans font-semibold text-[30px] leading-[40px] tracking-[0.3px] md:text-[56px] md:leading-[68px] md:tracking-[0.56px]">
+            <h3 className="max-w-[1168px] text-primary-black font-rethinkSans font-semibold text-[30px] leading-[40px] tracking-[0.3px] md:text-[56px] md:leading-[68px] md:tracking-[0.56px]">
                 Agentic AI unlocked.
             </h3>
     
@@ -131,11 +131,11 @@ export default function Benefits() {
             </div>
 
             {/* 3 */}
-            <div className="w-full lg:w-[calc(50%-16px)] sm:max-w-[568px] min-h-[274px] max-h-[300px] h-auto bg-[#FBFBFB] rounded-3xl flex flex-col border-3 border-[#0089FF] justify-between relative">
+            <div className="w-full lg:w-[calc(50%-16px)] sm:max-w-[568px] min-h-[274px] max-h-[300px] h-auto bg-[#FBFBFB] rounded-3xl flex flex-col border-3 border-primary-blue justify-between relative">
 
-                <div className="absolute top-0 w-[125px] left-[50%] -translate-x-1/2 h-8 max-h-8 rounded-b-xl bg-[#0089FF] flex justify-center items-center ">
+                <div className="absolute top-0 w-[125px] left-[50%] -translate-x-1/2 h-8 max-h-8 rounded-b-xl bg-primary-blue flex justify-center items-center ">
                     <span className="absolute -left-[4px] top-[0px] w-1 h-1 scale-[1.05]">
-                        <svg viewBox="0 0 100 100" className="w-full h-full fill-[#0089FF]" >
+                        <svg viewBox="0 0 100 100" className="w-full h-full fill-primary-blue" >
                         <path d="M0,0 L100,0 L100,100 A100,100 0 0,0 0,0 Z" />
                         </svg>
                     </span>
@@ -145,7 +145,7 @@ export default function Benefits() {
                     </p>
 
                     <span className="absolute -right-[4px] top-[0px] w-1 h-1 scale-[1.1]">
-                        <svg viewBox="0 0 100 100" className="w-full h-full fill-[#0089FF]" >
+                        <svg viewBox="0 0 100 100" className="w-full h-full fill-primary-blue" >
                         <path d="M0,0 L100,0 A100,100 0 0,0 0,100 Z" />
                         </svg>
                     </span>

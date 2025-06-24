@@ -40,12 +40,18 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# uzun süreli kullanılmayan dosyalar
+src/app/unUsed/
+
 # kısa süreli gitignore dosyaları
 
-# Temporary files - do not push
+# Temporary files - do not push - YAP sil sonra
 src/app/components/Footer.module.css
 src/app/components/FooterNextPageNotCompleted.js
 src/app/contact/
 src/app/contact/page.js
 src/app/usecase/
 src/app/globals copy.css
+
+/blog-module
+/sanity-cms

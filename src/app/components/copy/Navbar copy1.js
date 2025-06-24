@@ -4,13 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import { LogoSvg, HamburgerSvg } from '../utils/svgGeneralUtils';
-import useStore from '../lib/store';
-import { navItemsData } from '../data/NavbarDataItems';
+import { LogoSvg } from '../../utils/svgGeneralUtils';
+import useStore from '../../lib/store';
 
 
-// NavLink bileşeni - aktif durumu daha verimli kontrol eder - 4 buton için kullanılıyor
-function NavLink({ href, children, onClick, className = '', theme }) {
+// NavLink bileşeni - aktif durumu daha verimli kontrol eder
+function NavLink({ href, children, onClick, className = '' }) {
   const pathname = usePathname();
   const isActive = pathname === href;
   
@@ -18,8 +17,8 @@ function NavLink({ href, children, onClick, className = '', theme }) {
     <Link aria-label={`Go to ${href} page`}
       href={href}
       onClick={onClick}
-      className={`h-8 flex items-center px-4 py-2 rounded-full text-package-sm ${theme.navHover} w-auto min-w-max whitespace-nowrap text-nowrap ${
-        isActive ? ` ${theme.activeNavBg}` : ""
+      className={`h-8 flex items-center px-4 py-2 rounded-full text-package-sm hover:bg-[rgba(248,248,248,0.12)] w-auto min-w-max whitespace-nowrap text-nowrap ${
+        isActive ? " bg-[rgba(248,248,248,0.12)]" : ""
       } ${className}`}
     >
       {children}
@@ -27,12 +26,12 @@ function NavLink({ href, children, onClick, className = '', theme }) {
   );
 }
 
-// NavbarMenu - Hover olunca açılan menü
-function NavbarMenu({ items, isMobile = false, onItemClick = () => {}, theme }) {
+// NavbarMenu
+function NavbarMenu({ items, isMobile = false, onItemClick = () => {} }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className={`${isMobile ? "w-full" : `absolute w-[578px] ${theme?.dropdownBg || 'bg-white'} p-2 border ${theme?.dropdownBorder || 'border-[#EEE]'}`} h-fit ${isMobile ? "" : `top-11 left-1/2 -translate-x-1/2`} z-50 rounded-2xl flex ${isMobile ? "flex-col" : `gap-2 ${theme?.dropdownShadow || 'shadow-[0px_1px_7px_0px_rgba(119,119,119,0.07)]'}`}`}>
+    <div className={`${isMobile ? "w-full" : "absolute w-[578px] bg-white p-2 border border-[#EEE]"} h-fit ${isMobile ? "" : "top-11 left-1/2 -translate-x-1/2"} z-50 rounded-2xl flex ${isMobile ? "flex-col" : "gap-2 shadow-[0px_1px_7px_0px_rgba(119,119,119,0.07)]"}`}>
       {!isMobile && (
         <Image
           src="/NavbarMenu/svg/menuPointerTop.svg"
@@ -67,7 +66,7 @@ function NavbarMenu({ items, isMobile = false, onItemClick = () => {}, theme }) 
             </div>
 
             <div className="flex flex-col gap-1.5 w-full">
-              <div className={`${theme?.text} md:text-primary-black text-sm font-normal leading-4 tracking-[0.14px]`}>
+              <div className="text-[#fefefe] md:text-primary-black text-sm font-normal leading-4 tracking-[0.14px]">
                 {item.title}
               </div>
               <div className="text-[#999] md:text-[#616161] text-sm font-light leading-4 tracking-[0.14px]">
@@ -102,18 +101,18 @@ function NavbarMenu({ items, isMobile = false, onItemClick = () => {}, theme }) 
 }
 
 // MobileMenu component
-function MobileMenu({ navItemsData, isOpen, setIsOpen, theme }) {
+function MobileMenu({ navItems, isOpen, setIsOpen }) {
   const [expandedMenuIndex, setExpandedMenuIndex] = useState(null);
 
   if (!isOpen) return null;
 
   return (
-    <div className={`fixed inset-0 ${theme.mobileBg} z-30 overflow-y-auto pt-4 mt-16 pb-6 px-6`}>
+    <div className="fixed inset-0 bg-[#010101] z-30 overflow-y-auto pt-4 mt-16 pb-6 px-6">
       <div className="flex flex-col space-y-4">
-        {navItemsData.map((item, idx) => (
+        {navItems.map((item, idx) => (
           <div key={idx} className="flex flex-col">
             <button 
-              className={`flex justify-between items-center py-3 ${theme.mobileText} border-b border-gray-800`}
+              className="flex justify-between items-center py-3 text-white border-b border-gray-800"
               onClick={() => setExpandedMenuIndex(expandedMenuIndex === idx ? null : idx)}
             >
               <span className="text-lg font-medium">{item.label}</span>
@@ -124,7 +123,7 @@ function MobileMenu({ navItemsData, isOpen, setIsOpen, theme }) {
                 fill="none" 
                 className={`transition-transform ${expandedMenuIndex === idx ? 'rotate-180' : ''}`}
               >
-                <path d="M2 4L6 8L10 4" stroke={theme.hamburgerStroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 4L6 8L10 4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
             
@@ -134,7 +133,6 @@ function MobileMenu({ navItemsData, isOpen, setIsOpen, theme }) {
                   items={item.menu} 
                   isMobile={true} 
                   onItemClick={() => setIsOpen(false)}
-                  theme={theme}
                 />
               </div>
             )}
@@ -143,15 +141,10 @@ function MobileMenu({ navItemsData, isOpen, setIsOpen, theme }) {
         
         {/* Mobile Login / Book Demo */}
         <div className="mt-6 flex flex-col space-y-4">
-          {/* Login butonu */}
-          {/* Login butonu ŞİMDİLİK HİDDEN-gizli sonra gösterilecek*/}
-          {/* <Link 
+          {/* Login butonu şimdilik gizli - sonra gösterilecek 
+          <Link 
             href="/login" 
-            className={`w-full py-3 px-4 flex justify-center items-center rounded-xl text-package-sm ${
-              variant === 'dark' 
-                ? 'bg-[rgba(255,255,255,0.12)] text-white' 
-                : 'border border-[#F4F4F4] bg-white text-primary-black shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]'
-            }`}
+            className="w-full py-3 px-4 flex justify-center items-center rounded-xl text-package-sm bg-[rgba(255,255,255,0.12)] text-white"
             onClick={() => setIsOpen(false)}
           >
             Login
@@ -161,7 +154,7 @@ function MobileMenu({ navItemsData, isOpen, setIsOpen, theme }) {
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label="Book a demo" 
-            className={`w-full py-3 px-4 flex justify-center items-center rounded-xl text-package-sm ${theme.demoBg} ${theme.demoText}`}
+            className="w-full py-3 px-4 flex justify-center items-center rounded-xl text-package-sm bg-white text-black"
             onClick={() => setIsOpen(false)}
           >
             Book a demo
@@ -173,52 +166,12 @@ function MobileMenu({ navItemsData, isOpen, setIsOpen, theme }) {
 }
 
 // Navbar (Main)
-export default function Navbar({ variant = 'dark' }) {
+export default function Navbar() {
   const [hoveredNavIndex, setHoveredNavIndex] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
+  // Zustand store'undan isMobile state'ini al
   const isMobile = useStore((state) => state.isMobile);
-  
-  // Theme colors based on variant
-  const themeColors = {
-    dark: {
-      bg: 'bg-[#010101]',
-      text: 'text-white',
-      logoFill: 'white',
-      hamburgerStroke: 'white',
-      navHover: 'hover:bg-[rgba(248,248,248,0.12)]',
-      activeNavBg: 'bg-[rgba(248,248,248,0.12)]',
-      loginBg: 'bg-[rgba(255,255,255,0.12)]',
-      loginText: 'text-white',
-      demoBg: 'bg-white',
-      demoText: 'text-black',
-      mobileBg: 'bg-[#010101]',
-      mobileText: 'text-white',
-      dropdownBg: 'bg-white',
-      dropdownBorder: 'border-[#EEE]',
-      dropdownShadow: 'shadow-[0px_1px_7px_0px_rgba(119,119,119,0.07)]'
-    },
-    light: {
-      bg: 'bg-white',
-      text: 'text-primary-black',
-      logoFill: '#17181A',
-      hamburgerStroke: 'black',
-      navHover: 'hover:bg-[#F8F8F8]',
-      activeNavBg: 'bg-[#F8F8F8]',
-      loginBg: 'bg-white',
-      loginText: 'text-primary-black',
-      demoBg: 'bg-primary-black',
-      demoText: 'text-white',
-      mobileBg: 'bg-white',
-      mobileText: 'text-primary-black',
-      dropdownBg: 'bg-white',
-      dropdownBorder: 'border-[#EEE]',
-      dropdownShadow: 'shadow-[0px_1px_7px_0px_rgba(0,0,0,0.15)]'
-    }
-  };
-  
-  // Variant'a göre tema renklerini aldık
-  const theme = themeColors[variant];
   
   // Otomatik mobil menü kapatma kontrolü
   useEffect(() => {
@@ -258,9 +211,59 @@ export default function Navbar({ variant = 'dark' }) {
     };
   }, [isMobileMenuOpen]);
 
+  const navItems = [
+    {
+      label: "Product",
+      href: "/#",
+      menu: [
+        { title: "Features", desc: "Discover all features", icon: "/NavbarMenu/svg/angular1.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Enterprise", desc: "Explore enterprise solutions", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Pricing", desc: "View pricing options", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Docs", desc: "Read documentation", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://muesai.featurebase.app/en/help" },
+        { title: "Feedback", desc: "Share your thoughts", icon: "/NavbarMenu/svg/angular5.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://muesai.featurebase.app/en" },
+        { title: "Changelog", desc: "Track latest updates", icon: "/NavbarMenu/svg/angular6.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://muesai.featurebase.app/en/changelog" },
+      ],
+    },
+    {
+      label: "Use Cases", 
+      href: "/#",
+      menu: [
+        { title: "Product adoption", desc: "Boost engagement", icon: "/NavbarMenu/svg/angular1.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Churn prevention", desc: "Retain your customers", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Customer support", desc: "Deliver top-notch help", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "User experience", desc: "Enhance usability fast", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Agentic AI", desc: "Unlock AI's full potential", icon: "/NavbarMenu/svg/angular5.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+      ],
+    },
+    {
+      label: "Company",
+      href: "/#",
+      menu: [
+        { title: "About Mues AI", desc: "Learn about our story", icon: "/NavbarMenu/svg/angular1.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Manifesto", desc: "Read our vision", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Blog", desc: "Explore our insights", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Careers", desc: "See open positions", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://mues-ai.notion.site/?pvs=4" },
+        { title: "Speak w/ founder", desc: "Schedule a meeting", icon: "/NavbarMenu/svg/angular5.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Contact us", desc: "Get in touch now", icon: "/NavbarMenu/svg/angular6.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "mailto:hi@mues.ai" },
+      ],
+    },
+    {
+      label: "Resources",
+      href: "/#",
+      menu: [
+        { title: "The Muesum", desc: "Visit interaction museum", icon: "/NavbarMenu/svg/angular1.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Community", desc: "Join our community", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://discord.gg/GZGjemzU2H" },
+        { title: "Security", desc: "Review our measures", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Status", desc: "Check system status", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Privacy policy", desc: "Read our policies", icon: "/NavbarMenu/svg/angular5.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+        { title: "Terms of service", desc: "View legal terms", icon: "/NavbarMenu/svg/angular6.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+      ],
+    },
+  ];
+  
 
   return (
-    <nav className={`${isMobileMenuOpen ? "fixed top-0 left-0 right-0 z-40" : ""} h-auto w-full ${theme.bg} p-6 md:py-4 md:px-12 lg:px-[80px]`}>
+    <nav className={`${isMobileMenuOpen ? "fixed top-0 left-0 right-0 z-40" : ""} h-auto w-full bg-[#010101] p-6 md:py-4 md:px-12 lg:px-[80px]`}>
       <div className="w-full h-5 md:h-9 relative z-40 flex items-center justify-between">
 
         {/* Logo */}
@@ -269,7 +272,7 @@ export default function Navbar({ variant = 'dark' }) {
             <LogoSvg 
               width={isMobile ? 82 : 101} 
               height={isMobile ? 16 : 20} 
-              fill={theme.logoFill} 
+              fill="white" 
             />
           </Link>
         </div>
@@ -282,14 +285,14 @@ export default function Navbar({ variant = 'dark' }) {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              // x svg
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 5L5 15" stroke={theme.hamburgerStroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M5 5L15 15" stroke={theme.hamburgerStroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 5L5 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M5 5L15 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             ) : (
-              <HamburgerSvg 
-                stroke={theme.hamburgerStroke}
+              <Image 
+                src="/svg/hamburger.svg" 
+                alt="Menu" 
                 width={20} 
                 height={20} 
               />
@@ -299,16 +302,16 @@ export default function Navbar({ variant = 'dark' }) {
 
         {/* Nav Menu (Desktop) */}
         <div className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2">
-          <ul className={`flex gap-x-2 text-sm leading-4 tracking-[0.14px] ${theme.text}`}>
-            {navItemsData.map((item, idx) => (
+          <ul className="flex gap-x-2 text-sm leading-4 tracking-[0.14px] text-white">
+            {navItems.map((item, idx) => (
               <li
                 key={idx}
                 className="relative"
                 onMouseEnter={() => setHoveredNavIndex(idx)}
                 onMouseLeave={() => setHoveredNavIndex(null)}
               >
-                <NavLink href={item.href} theme={theme}>{item.label}</NavLink>
-                {hoveredNavIndex === idx && <NavbarMenu items={item.menu} theme={theme} />}
+                <NavLink href={item.href}>{item.label}</NavLink>
+                {hoveredNavIndex === idx && <NavbarMenu items={item.menu} />}
               </li>
             ))}
           </ul>
@@ -316,19 +319,11 @@ export default function Navbar({ variant = 'dark' }) {
 
         {/* Login / Book Demo (Desktop) */}
         <div className="hidden md:flex items-center space-x-2">
-          {/* Login butonu */}
-          {/* Login butonu ŞİMDİLİK HİDDEN-gizli sonra gösterilecek*/}
-          {/* <Link 
-            href="/login" 
-            className={`flex items-center justify-center rounded-xl text-package-sm ${
-              variant === 'dark' 
-                ? 'px-4 py-2 bg-[rgba(255,255,255,0.12)] text-white' 
-                : 'px-4 py-2.5 border border-[#F4F4F4] bg-white text-primary-black shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]'
-            }`}
-          >
+          {/* Login butonu şimdilik gizli - sonra gösterilecek */}
+          {/* <Link href="/login" className="h-9 px-4 py-2.5 flex items-center justify-center rounded-xl text-package-sm bg-[rgba(255,255,255,0.12)] text-white">
             Login
           </Link> */}
-          <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className={`h-9 px-4 py-2.5 flex items-center justify-center rounded-xl text-package-sm ${theme.demoBg} ${theme.demoText}`}>
+          <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className="h-9 px-4 py-2.5 flex items-center justify-center rounded-xl text-package-sm bg-white text-black">
             Book a demo
           </a>
         </div>
@@ -337,10 +332,9 @@ export default function Navbar({ variant = 'dark' }) {
 
       {/* Mobile Menu */}
       <MobileMenu 
-        navItemsData={navItemsData} 
+        navItems={navItems} 
         isOpen={isMobileMenuOpen} 
         setIsOpen={setIsMobileMenuOpen} 
-        theme={theme}
       />
     </nav>
   );

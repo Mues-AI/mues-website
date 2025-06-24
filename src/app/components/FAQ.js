@@ -92,7 +92,7 @@ export default function FAQ() {
 {/* faq and list container */}
 <div className="max-w-[1168px] mb-24 lg:my-[148px] mx-auto flex flex-col items-start gap-6 lg:flex-row lg:justify-between">
 
-    <div className="text-center text-[#17181A] font-semibold font-rethinkSans  
+    <div className="text-center text-primary-black font-semibold font-rethinkSans  
     text-[30px] leading-[40px] tracking-[0.3px]
     lg:text-[56px] lg:leading-[68px] lg:tracking-[0.56px]">
     FAQ
@@ -130,7 +130,7 @@ export default function FAQ() {
 
         <div className=" justify-between items-center gap-2 cursor-pointer hidden">
         {/* <div className="inline-flex justify-between items-center gap-2 cursor-pointer"> */}
-            <div className="text-[#0089FF] text-[16px] font-normal leading-[20px]">See more</div>
+            <div className="text-primary-blue text-[16px] font-normal leading-[20px]">See more</div>
             <ArrowRightIcon width={16} height={16} color="#0089FF" alt="arrow right icon"/>
         </div>
     </div>
@@ -160,7 +160,7 @@ export default function FAQ() {
     imageWidth={180}
     imageHeight={160}
     imageAlt="benefits-for-users"
-    textColor="text-[#17181A]"
+    textColor="text-primary-black"
     subtextColor="text-[#777]"
     className="object-contain lg:scale-110 -rotate-7"
   />

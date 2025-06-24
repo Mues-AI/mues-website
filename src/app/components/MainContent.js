@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { useEffect, useRef } from 'react';
 import SvgIconAi from '../utils/svgIconAi';
-import useStore from '../utils/store';
+import useStore from '../lib/store';
 
 export default function MainContent() {
   const isMobile = useStore((state) => state.isMobile);

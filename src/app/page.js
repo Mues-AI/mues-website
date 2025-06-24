@@ -13,7 +13,12 @@ import Comments from './components/Comments'
 import FAQ from './components/FAQ.js';
 import Footer from './components/Footer.js';
 
+//!  redirect to showcase page -- YAP sonra sil
+import { redirect } from 'next/navigation';
+
 export default function Home() {
+  //!  redirect to showcase page -- YAP sonra sil
+  // redirect('/showcase'); 
   return (
     <div className="min-h-screen flex flex-col">
 

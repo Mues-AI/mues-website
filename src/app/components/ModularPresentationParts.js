@@ -1,9 +1,10 @@
 "use client"
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { toast } from 'sonner';
 import { ModulerPresentationVariants } from './ModulerPresentationVariants';
 import ModularCheckSvg from '../utils/svgGeneralUtils.js';
-import useStore from '../utils/store';
+import useStore from '../lib/store';
 
 const ModularPresentationParts = ({ variant }) => {
   const variantData = ModulerPresentationVariants[variant];
@@ -85,7 +86,7 @@ const ModularPresentationParts = ({ variant }) => {
         <div className="flex flex-col gap-4 md:gap-6">
           <div className="flex flex-col gap-3 md:gap-4">
             <p className={`text-[14px] font-medium leading-[20px] tracking-[-0.09px]`} style={{ color: variantData.tagColor }}>{variantData.tag}</p>
-            <h2 className="w-full md:max-w-[448px] h-auto text-[#121212] font-sfPro font-[510] text-[26px] leading-[32px] md:text-[42px] md:leading-[48px] whitespace-pre-line">
+            <h2 className="w-full md:max-w-[448px] h-auto text-black-121212 font-sfPro font-[510] text-[26px] leading-[32px] md:text-[42px] md:leading-[48px] whitespace-pre-line">
               {variantData.title}
             </h2>
           </div>
@@ -102,15 +103,16 @@ const ModularPresentationParts = ({ variant }) => {
           </div>
         </div>
          
+         {/* ! YAP - videolarda toast mesajı koyacagız -- Coming soon! */}
         {/* BURADA şimdilik setShowVideoModal(false) yapıyoruz - gerçek video gelince true yap */}
         <div 
-          className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer hover:ring-1 hover:ring-offset hover:ring-[#f2f0ed] hover:ring-offset-12 hover:ring-offset-white" onClick={() => setShowVideoModal(false)} >
+          className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer hover:ring-1 hover:ring-offset hover:ring-[#f2f0ed] hover:ring-offset-12 hover:ring-offset-white" onClick={() => { setShowVideoModal(false); toast("Coming soon!"); }}>
             <div className="flex w-[85px] h-12 justify-center items-center rounded bg-[#E0E0E0]">
               <Image quality={100} loading='lazy' unoptimized src={variantData.videoImage} alt={variantData.imageAlt} width={85} height={48} className="object-cover rounded cursor-pointer"/>
             </div>
 
           <div className="flex flex-col gap-1 rounded">
-            <span className="text-[#121212] text-[15px] font-normal leading-[22px]">{variantData.videoTitle}</span>
+            <span className="text-black-121212 text-[15px] font-normal leading-[22px]">{variantData.videoTitle}</span>
             <span className="text-[#4A443F]/50 text-[13px] font-normal leading-[18px] tracking-[-0.13px]">{variantData.videoSubtitle}</span>
           </div>
         </div>

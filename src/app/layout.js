@@ -1,6 +1,7 @@
 import { Inter, Rethink_Sans,Geist, Fraunces,Urbanist,Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import { Toaster } from 'sonner';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -140,7 +141,11 @@ export default function RootLayout({ children }) {
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        
         {children}
+        
+        {/* Toast Notifications */}
+        <Toaster position="bottom-right" />
       </body>
     </html>
   );

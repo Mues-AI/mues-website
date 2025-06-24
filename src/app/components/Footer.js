@@ -20,52 +20,58 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 h-auto gap-x-8 gap-y-12 lg:gap-x-15">
+                <div className="w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 md:justify-items-center lg:grid-cols-4 h-auto gap-x-8 gap-y-12 lg:gap-x-15 ">
+{/*  geçici olarak use case container gelene kadar col-4 ten col 3 e geçirdim. ilk kodlardaki yapı alttaki div daha sonra yukarıdakini silip alttakini kullanırsın.
+                <div className="w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 h-auto gap-x-8 gap-y-12 lg:gap-x-15 "> */}
+
+                        {/* EMPTY DIV */}
+                        <div className="hidden flex-col gap-4 lg:flex"></div>
+
                         <div className="flex flex-col gap-4">
-                            <p className="text-[#17181A] text-[14px] font-normal leading-[16px] tracking-[0.14px]">Product</p>
+                            <p className="text-primary-black text-[14px] font-normal leading-[16px] tracking-[0.14px]">Product</p>
                             <div className="flex flex-col gap-3.5">
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Features" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Features</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Enterprise" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Enterprise</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Pricing" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Pricing</a>
-                                <a href="https://muesai.featurebase.app/en/help" target="_blank" rel="noopener noreferrer" aria-label="Go to Docs" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Docs</a>
-                                <a href="https://muesai.featurebase.app/en" target="_blank" rel="noopener noreferrer" aria-label="Go to Feedback" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Feedback</a>
-                                <a href="https://muesai.featurebase.app/en/changelog" target="_blank" rel="noopener noreferrer" aria-label="Go to Changelog" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Changelog</a>
+                                {/* <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Features" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Features</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Enterprise" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Enterprise</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Pricing" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Pricing</a> */}
+                                <a href="https://muesai.featurebase.app/en/help" target="_blank" rel="noopener noreferrer" aria-label="Go to Docs" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Docs</a>
+                                <a href="https://muesai.featurebase.app/en" target="_blank" rel="noopener noreferrer" aria-label="Go to Feedback" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Feedback</a>
+                                <a href="https://muesai.featurebase.app/en/changelog" target="_blank" rel="noopener noreferrer" aria-label="Go to Changelog" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Changelog</a>
+                            </div>
+                        </div>
+
+                        {/* <div className="flex flex-col gap-4">
+                            <p className="text-primary-black text-[14px] font-normal leading-[16px] tracking-[0.14px]">Use Cases</p>
+                            <div className="flex flex-col gap-3.5">
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Product adoption" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Product adoption</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Churn prevention" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Churn prevention</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Customer support" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Customer support</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to User experience" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">User experience</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Agentic AI" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Agentic AI</a>
+                            </div>
+                        </div> */}
+
+                        <div className="flex flex-col gap-4">
+                            <p className="text-primary-black text-[14px] font-normal leading-[16px] tracking-[0.14px]">Company</p>
+                            <div className="flex flex-col gap-3.5">
+                                {/* <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to About Mues AI" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">About Mues AI</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Manifesto" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Manifesto</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Blog" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Blog</a> */}
+                                <a href="https://mues-ai.notion.site/?pvs=4" target="_blank" rel="noopener noreferrer" aria-label="Go to Careers" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Careers</a>
+                                {/* <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Brand assets" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Brand assets</a> */}
+                                <a href="https://cal.com/mues-ai/speak-with-founder" target="_blank" rel="noopener noreferrer" aria-label="Go to Speak with founder" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Speak w/ founder</a>
+                                <a href="mailto:hi@mues.ai" target="_blank" rel="noopener noreferrer" aria-label="Contact us via email" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Contact us</a>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-4">
-                            <p className="text-[#17181A] text-[14px] font-normal leading-[16px] tracking-[0.14px]">Use Cases</p>
+                            <p className="text-primary-black text-[14px] font-normal leading-[16px] tracking-[0.14px]">Resources</p>
                             <div className="flex flex-col gap-3.5">
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Product adoption" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Product adoption</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Churn prevention" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Churn prevention</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Customer support" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Customer support</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to User experience" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">User experience</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Agentic AI" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Agentic AI</a>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col gap-4">
-                            <p className="text-[#17181A] text-[14px] font-normal leading-[16px] tracking-[0.14px]">Company</p>
-                            <div className="flex flex-col gap-3.5">
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to About Mues AI" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">About Mues AI</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Manifesto" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Manifesto</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Blog" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Blog</a>
-                                <a href="https://mues-ai.notion.site/?pvs=4" target="_blank" rel="noopener noreferrer" aria-label="Go to Careers" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Careers</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Brand assets" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Brand assets</a>
-                                <a href="https://cal.com/mues-ai/speak-with-founder" target="_blank" rel="noopener noreferrer" aria-label="Go to Speak with founder" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Speak w/ founder</a>
-                                <a href="mailto:hi@mues.ai" target="_blank" rel="noopener noreferrer" aria-label="Contact us via email" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Contact us</a>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col gap-4">
-                            <p className="text-[#17181A] text-[14px] font-normal leading-[16px] tracking-[0.14px]">Resources</p>
-                            <div className="flex flex-col gap-3.5">
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to The Muesum" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">The Muesum</a>
-                                <a href="https://discord.gg/GZGjemzU2H" target="_blank" rel="noopener noreferrer" aria-label="Go to Community" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Community</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Security" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Security</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Status" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Status</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Privacy policy" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Privacy policy</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Terms of service" className="text-[#8E8E8E] text-[14px] font-light leading-[16px] hover:text-[#17181A] cursor-pointer w-fit">Terms of service</a>
+                                <a href="https://themuesum.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to The Muesum" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">The Muesum</a>
+                                <a href="https://discord.gg/GZGjemzU2H" target="_blank" rel="noopener noreferrer" aria-label="Go to Community" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Community</a>
+                                {/* <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Security" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Security</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Status" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Status</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Privacy policy" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Privacy policy</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Terms of service" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Terms of service</a> */}
                             </div>
                         </div>
                 </div>
@@ -79,16 +85,16 @@ export default function Footer() {
                     
                     <div className="flex gap-x-2 xs:gap-x-3 md:gap-x-4">
                         <a href="https://x.com/mues_ai" target="_blank" rel="noopener noreferrer" aria-label="Go to X">
-                        <XIcon width={24} height={24} className="text-[#8E8E8E] hover:text-[#17181A]"/>
+                        <XIcon width={24} height={24} className="text-8e8e8e hover:text-primary-black"/>
                         </a>
                         <a href="https://www.linkedin.com/company/muesai/" target="_blank" rel="noopener noreferrer" aria-label="Go to LinkedIn">
-                        <LinkedinIcon width={24} height={24} className="text-[#8E8E8E] hover:text-[#17181A]"/>
+                        <LinkedinIcon width={24} height={24} className="text-8e8e8e hover:text-primary-black"/>
                         </a>
                         <a href="https://discord.gg/GZGjemzU2H" target="_blank" rel="noopener noreferrer" aria-label="Go to Discord">
-                        <DiscordIcon width={24} height={24} className="text-[#8E8E8E] hover:text-[#17181A]"/>
+                        <DiscordIcon width={24} height={24} className="text-8e8e8e hover:text-primary-black"/>
                         </a>
                         <a href="https://github.com/Mues-AI" target="_blank" rel="noopener noreferrer" aria-label="Go to GitHub">
-                        <GitHubIcon width={24} height={24} className="text-[#8E8E8E] hover:text-[#17181A]"/>
+                        <GitHubIcon width={24} height={24} className="text-8e8e8e hover:text-primary-black"/>
                         </a>
                     </div>
 
