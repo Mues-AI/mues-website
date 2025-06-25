@@ -92,7 +92,7 @@ export default function Showcase() {
         {/*  ////////////////////////////////////////////////////////////////////// */}
         {/* Central AI Agent Card */}
         <div className="absolute left-1/2 top-6 -translate-x-1/2 cursor-pointer scale-[1.75] origin-top flex flex-col items-center">
-          <ClickUpCard/>
+          <DropboxCard/>
 
           {/* Play Animation-Video Buttons */}
           <div className="w-fit flex items-center justify-center gap-4 mt-[27.4285px] scale-[0.5714] origin-top">

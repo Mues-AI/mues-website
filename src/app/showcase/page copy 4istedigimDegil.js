@@ -92,10 +92,10 @@ export default function Showcase() {
         {/*  ////////////////////////////////////////////////////////////////////// */}
         {/* Central AI Agent Card */}
         <div className="absolute left-1/2 top-6 -translate-x-1/2 cursor-pointer scale-[1.75] origin-top flex flex-col items-center">
-          <ClickUpCard/>
-
+          <MixpanelCard/>
+          
           {/* Play Animation-Video Buttons */}
-          <div className="w-fit flex items-center justify-center gap-4 mt-[27.4285px] scale-[0.5714] origin-top">
+          <div className="w-fit flex items-center justify-center gap-4 scale-[0.5714] origin-bottom absolute -bottom-0">
     
             {/* Sol Ok Butonu */}
             <button className="w-[30px] h-[30px] rounded-3xl border border-[#F4F4F4] bg-white flex items-center justify-center cursor-pointer hover:bg-[#F4F4F4]" 
@@ -124,7 +124,6 @@ export default function Showcase() {
 
           </div>
         </div>
-
 
         {/*  ////////////////////////////////////////////////////////////////////// */}
 

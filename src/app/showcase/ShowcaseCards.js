@@ -103,7 +103,7 @@ export const HubSpotCard = () => (
 );
 
 export const MixpanelCard = () => (
-    <div className="relative max-w-[456px] w-3xs h-auto rounded-xl border border-[#F1F1F1] bg-white shadow-[0px_1.8px_7px_0px_rgba(34,34,34,0.05)] flex flex-col p-[12px] gap-y-[10px]">
+    <div className="relative -translate-y-[8.5714px] max-w-[456px] w-3xs h-auto rounded-xl border border-[#F1F1F1] bg-white shadow-[0px_1.8px_7px_0px_rgba(34,34,34,0.05)] flex flex-col p-[12px] gap-y-[10px]">
 
         {/* CURSOR - Absolute */}
         <div className="absolute -left-[14px] -top-[14px] w-6 h-6 flex items-center justify-center">
