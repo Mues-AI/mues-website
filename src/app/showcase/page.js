@@ -114,7 +114,7 @@ const HubSpotCard = () => (
         A contact is anyone whose information is stored in your CRM—this could be a customer, a prospect you interact with.
       </p>
       <p className="text-gray-800 text-base mb-6">
-        Anything else you'd like to ask me?
+        Anything else you&apos;d like to ask me?
       </p>
       <button className="w-full text-blue-600 py-2 px-4 text-sm hover:text-blue-800 transition-colors">
         Reply to HubSpot AI Assistant

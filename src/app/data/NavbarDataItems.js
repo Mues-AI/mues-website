@@ -6,6 +6,7 @@ export const navItemsData = [
     // { title: "Features", desc: "Discover all features", icon: "/NavbarMenu/svg/angular1.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
     // { title: "Enterprise", desc: "Explore enterprise solutions", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
     // { title: "Pricing", desc: "View pricing options", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+    { title: "Demo", desc: "Book a demo call", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://cal.com/mues-ai/demo" },
     { title: "Docs", desc: "Read documentation", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://muesai.featurebase.app/en/help" },
     { title: "Feedback", desc: "Share your thoughts", icon: "/NavbarMenu/svg/angular5.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://muesai.featurebase.app/en" },
     { title: "Changelog", desc: "Track latest updates", icon: "/NavbarMenu/svg/angular6.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://muesai.featurebase.app/en/changelog" },

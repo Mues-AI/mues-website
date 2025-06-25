@@ -67,9 +67,9 @@ export default function MainContent() {
         <div className="w-fit">
           <div className="mb-6 max-w-fit">
             <h1 className="text-white font-rethinkSans font-bold leading-12 md:leading-16 lg:leading-[72px] tracking-[0.36px] md:tracking-[0.48px] lg:tracking-[0.56px] font-feature-settings-salt text-3xl xs:text-4xl sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] ">
-            Make your product
+            Boost user adoption
               <span className="block text-white font-instrumentSerif italic font-normal leading-12 lg:leading-[72px] tracking-[0.36px] lg:tracking-[0.56px] font-feature-settings-salt text-3xl xs:text-4xl sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] ">
-              AI-powered in seconds.
+              with AI-powered cursor.
               </span>
             </h1>
           </div>
