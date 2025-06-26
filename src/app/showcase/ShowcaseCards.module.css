@@ -1,0 +1,61 @@
+/* Ortak kart stilleri */
+.baseCard {
+  position: relative;
+  max-width: 456px; 
+  width: 456px;
+  height: auto;
+  border-radius: 24px;
+  border: 1.5px solid #F1F1F1;
+  background-color: white;
+  box-shadow: 0px 1.8px 7px 0px rgba(34, 34, 34, 0.05);
+  cursor: pointer;
+}
+
+.baseCardFirstContent {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  row-gap: 16px;
+}
+
+/* Ortak cursor absolute pozisyonu */
+.cursorAbsolute {
+  position: absolute;
+  left: -14px;
+  top: -14px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ortak title stilleri */
+.cardNameTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #777;
+  font-size: 21px;
+  line-height: 24px;
+  letter-spacing: 0.21px;
+  font-family: 'Open Runde', sans-serif;
+}
+
+.cardParagraph {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #323232;
+  font-family: 'Open Runde', sans-serif;
+  font-size: 23px;
+  line-height: 32px;
+  letter-spacing: 0.23px;
+  margin-top: 8px;
+}
+
+/* Kendinden sonraki ilk elemente margin-top uygulayan class - MİXPANEL Carda ekledim */
+.adjustNextMargin + * {
+  margin-top: 33px !important;
+}
+
