@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { ArrowRightIcon } from '../utils/svgIcons';
-import FooterTopTwo from './FooterTopTwo';
+import FooterTopTwoBenefit from './FooterTopTwoBenefit';
 
 const faqData = [
   {
@@ -93,8 +93,8 @@ export default function FAQ() {
     </div>
 </div>
 
-{/* FooterTopTwo Component */}
-<FooterTopTwo /> 
+{/* FooterTopTwoBenefit Component */}
+<FooterTopTwoBenefit /> 
 
     </div>
     );

@@ -1,21 +1,41 @@
 /* Ortak kart stilleri */
 .baseCard {
   position: relative;
-  max-width: 456px; 
   width: 456px;
   height: auto;
-  border-radius: 24px;
   border: 1.5px solid #F1F1F1;
   background-color: white;
   box-shadow: 0px 1.8px 7px 0px rgba(34, 34, 34, 0.05);
   cursor: pointer;
+  margin-top: 16px;
+
+  max-width: 320px; /* Mobile için küçük */
+  border-radius: 12px; /* Mobile için rounded-xl */
 }
+
+/* Desktop styles (md+) */
+@media (min-width: 768px) {
+  .baseCard {
+    max-width: 456px;
+    width: 456px;
+    border-radius: 24px; /* Desktop için rounded-2xl */
+  }
+}
+
 
 .baseCardFirstContent {
   display: flex;
   flex-direction: column;
-  padding: 24px;
-  row-gap: 16px;
+  padding: 12px; /* Mobile için küçük padding */
+  row-gap: 10px; /* Mobile için küçük gap */
+}
+
+/* Desktop styles (md+) */
+@media (min-width: 768px) {
+  .baseCardFirstContent {
+    padding: 24px;
+    row-gap: 16px;
+  }
 }
 
 /* Ortak cursor absolute pozisyonu */
@@ -30,16 +50,66 @@
   justify-content: center;
 }
 
+/* Header row */
+.headerRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Mobile için küçük gap */
+  height: 18px; /* Mobile için küçük height */
+}
+
+/* Desktop header row (md+) */
+@media (min-width: 768px) {
+  .headerRow {
+    gap: 16px;
+    height: 24px;
+  }
+}
+
+/* Logo image */
+.logoImage {
+  width: 16px;
+  height: 16px;
+}
+
+/* AWS logo special sizing */
+.logoImageAws {
+  width: 23px;
+  height: 13px;
+}
+
+/* Desktop logo sizes (md+) */
+@media (min-width: 768px) {
+  .logoImage {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .logoImageAws {
+    width: 48px;
+    height: 28px;
+  }
+}
+
 /* Ortak title stilleri */
 .cardNameTitle {
   width: 100%;
   display: flex;
   align-items: center;
   color: #777;
-  font-size: 21px;
-  line-height: 24px;
-  letter-spacing: 0.21px;
+  font-size: 12px; /* Mobile için küçük font */
+  line-height: 18px;
+  letter-spacing: 0.12px;
   font-family: 'Open Runde', sans-serif;
+}
+/* Desktop title (md+) */
+@media (min-width: 768px) {
+  .cardNameTitle {
+    font-size: 21px;
+    line-height: 24px;
+    letter-spacing: 0.21px;
+  }
 }
 
 .cardParagraph {
@@ -48,14 +118,215 @@
   align-items: center;
   color: #323232;
   font-family: 'Open Runde', sans-serif;
-  font-size: 23px;
-  line-height: 32px;
-  letter-spacing: 0.23px;
-  margin-top: 8px;
+  font-size: 12px; /* Mobile için küçük font */
+  line-height: 18px;
+  letter-spacing: 0.12px;
+  margin-top: 4px; /* Mobile için küçük margin */
+  margin-bottom: 2px;
 }
 
-/* Kendinden sonraki ilk elemente margin-top uygulayan class - MİXPANEL Carda ekledim */
-.adjustNextMargin + * {
+/* Desktop paragraph (md+) */
+@media (min-width: 768px) {
+  .cardParagraph {
+    font-size: 23px;
+    line-height: 32px;
+    letter-spacing: 0.23px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+  }
+}
+
+/* Reply text */
+.replyText {
+  color: #BBB;
+  font-family: 'Open Runde', sans-serif;
+  border-top: 1px solid #F5F6FA;
+
+  font-size: 13px; /* Mobile için küçük */
+  line-height: 16px;
+  padding: 12px;
+}
+
+/* Desktop reply text (md+) */
+@media (min-width: 768px) {
+  .replyText {
+    font-size: 23px;
+    line-height: 32px;
+    padding: 18px 24px;
+  }
+}
+
+/* Button container */
+.twoButtonsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* Mobile için gap */
+}
+
+/* Desktop button container (md+) */
+@media (min-width: 768px) {
+  .twoButtonsContainer {
+    gap: 10px;
+  }
+}
+
+/* Primary button */
+.primaryButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 28px; /* Mobile için küçük */
+  border-radius: 24px;
+  padding: 6px 12px;
+  gap: 6px;
+}
+
+/* Desktop primary button (md+) */
+@media (min-width: 768px) {
+  .primaryButton {
+    height: auto;
+    padding: 10px 24px;
+    gap: 10px;
+  }
+}
+
+/* Button text */
+.buttonText {
+  text-align: center;
+  font-family: 'Open Runde', sans-serif;
+  font-weight: normal;
+  font-size: 12px; /* Mobile için küçük */
+  line-height: 16px;
+  letter-spacing: 0.12px;
+}
+
+/* Desktop button text (md+) */
+@media (min-width: 768px) {
+  .buttonText {
+    font-size: 21px;
+    line-height: 28px;
+    letter-spacing: 0.21px;
+  }
+}
+
+/* Enter button */
+.enterButton {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px; /* Mobile için küçük */
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid #EEE;
+  padding-bottom: 1px;
+  box-shadow: 0px -1px 0px 1px #D8D8D8 inset;
+
+}
+
+/* Desktop enter button (md+) */
+@media (min-width: 768px) {
+  .enterButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    border: 1.75px solid #EEE;
+    padding-bottom: 4px;
+    box-shadow: 0px -1.75px 0px 1.75px #D8D8D8 inset;
+  }
+}
+
+/* Responsive enter button visibility */
+.enterButtonMobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enterButtonDesktop {
+  display: none;
+}
+
+/* Desktop responsive classes (md+) */
+@media (min-width: 768px) {
+  .enterButtonMobile {
+    display: none;
+  }
+  
+  .enterButtonDesktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Feedback buttons container */
+.feedbackContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Mobile için küçük gap */
+}
+
+/* Desktop feedback container (md+) */
+@media (min-width: 768px) {
+  .feedbackContainer {
+    gap: 10px;
+  }
+}
+
+/* Feedback button */
+.feedbackButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+
+  padding: 6px; /* Mobile için küçük padding */
+  border-radius: 8px; /* Mobile için küçük radius */
+  border: 1px solid #F1F1F1;
+  gap: 6px; /* Mobile için küçük gap */
+}
+
+/* Desktop feedback button (md+) */
+@media (min-width: 768px) {
+  .feedbackButton {
+    padding: 10px;
+    border-radius: 16px;
+    border: 2px solid #F1F1F1;
+    gap: 10px;
+  }
+}
+
+/* Responsive feedback icon visibility */
+.feedbackIconMobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedbackIconDesktop {
+  display: none;
+}
+
+/* Desktop responsive feedback icons (md+) */
+@media (min-width: 768px) {
+  .feedbackIconMobile {
+    display: none;
+  }
+  
+  .feedbackIconDesktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* MixpanelCard aktif olduğunda sadece play buttons container'ını ezer - play buton container seçsin diye çok detaylı seçici yazdım */
+:has(.adjustNextMargin) div[class*="w-fit"][class*="flex"][class*="items-center"][class*="justify-center"][class*="gap-4"][class*="mt-12"] {
   margin-top: 33px !important;
 }
 

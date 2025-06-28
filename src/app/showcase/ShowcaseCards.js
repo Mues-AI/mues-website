@@ -1,24 +1,32 @@
-import { CursorSvg, MiniEnterButton, MiniLike, MiniDislike } from '../utils/showcase/svgShowcase';
+import { CursorSvg, MiniEnterButton, MiniLike, MiniDislike, MiniEnterButtonMobile, MiniLikeMobile, MiniDislikeMobile } from '../utils/showcase/svgShowcase';
 import Image from 'next/image';
 import styles from './ShowcaseCards.module.css';
+import useStore from '../lib/store';
+
+// Custom hook for cursor size - ortak kullanım için
+const useCursorSize = () => {
+    const { isMobile } = useStore();
+    return isMobile ? 16 : 24;
+};
 
 // Card Components
 
 export const MixpanelCard = () => (
-    <div className={`${styles.baseCard} -translate-y-[15px] ${styles.adjustNextMargin} `}>
+    <div className={`${styles.baseCard} -translate-y-[15px]  ${styles.adjustNextMargin} `}>
         
         <div className={`${styles.baseCardFirstContent}`}>
-            {/* CURSOR - Absolute */}
+            {/* CURSOR */}
             <div className={styles.cursorAbsolute}>
-                <CursorSvg width={24} height={24} fill="#7856FF" />
+                <CursorSvg width={useCursorSize()} height={useCursorSize()} fill="#7856FF" />
             </div>
 
             {/* ilk satır */}
-            <div className='w-full flex items-center gap-4 h-[24px] '>
-                <div className="w-6 h-6 flex items-center justify-center">
+            <div className={styles.headerRow}>
+                <div className={styles.logoContainer}>
                     <Image 
                     src="/showcase/svg/mixpanel.svg" 
                     alt="Mixpanel" 
+                    className={styles.logoImage}
                     width={24} 
                     height={24}
                     />
@@ -36,7 +44,7 @@ export const MixpanelCard = () => (
         </div>
 
         {/* Reply Paragraph */}
-        <p className="text-[#BBB] font-openRunde text-[23px] leading-[32px] px-6 py-4.5 border-t border-[#F5F6FA]">
+        <p className={styles.replyText}>
         Reply to Mixpanel AI Assistant
         </p>
     </div>
@@ -46,18 +54,19 @@ export const HubSpotCard = () => (
     <div className={styles.baseCard}>
 
         <div className={`${styles.baseCardFirstContent}`}>
-            {/* CURSOR - Absolute */}
+            {/* CURSOR */}
             <div className={styles.cursorAbsolute}>
-                <CursorSvg width={24} height={24} fill="#F95C35" />
+                <CursorSvg width={useCursorSize()} height={useCursorSize()} fill="#F95C35" />
             </div>
 
             {/* ilk satır */}
-            <div className='w-full flex items-center gap-4 h-[24px] '>
+            <div className={styles.headerRow}>
 
-            <div className="w-6 h-6 flex items-center justify-center">
+            <div className={styles.logoContainer}>
                 <Image 
                 src="/showcase/svg/hubspot.svg" 
                 alt="HubSpot" 
+                className={styles.logoImage}
                 width={24} 
                 height={24}
                 />
@@ -77,7 +86,7 @@ export const HubSpotCard = () => (
         </div>
 
         {/* Reply Paragraph */}
-        <p className="text-[#BBB] font-openRunde text-[23px] leading-[32px] px-6 py-4.5 border-t border-[#F5F6FA]">
+        <p className={styles.replyText}>
         Reply to Hubspot AI Assistant
         </p>
     </div>
@@ -86,17 +95,18 @@ export const HubSpotCard = () => (
 export const DropboxCard = () => (
     <div className={styles.baseCard}>
         <div className={`${styles.baseCardFirstContent}`}>
-            {/* CURSOR - Absolute */}
+            {/* CURSOR */}
             <div className={styles.cursorAbsolute}>
-                <CursorSvg width={24} height={24} fill="#0061FE" />
+                <CursorSvg width={useCursorSize()} height={useCursorSize()} fill="#0061FE" />
             </div>
 
             {/* ilk satır */}
-            <div className='w-full flex items-center gap-4 h-[24px]'>
-                <div className="w-6 h-6 flex items-center justify-center">
+            <div className={styles.headerRow}>
+                <div className={styles.logoContainer}>
                     <Image 
                         src="/showcase/svg/dropbox.svg" 
                         alt="Dropbox" 
+                        className={styles.logoImage}
                         width={24} 
                         height={24}
                     />
@@ -113,23 +123,30 @@ export const DropboxCard = () => (
             </p>
 
             {/* Üçüncü ve dördüncü satır */}
-            <div className="w-full flex flex-col items-center gap-2.5">
+            <div className={styles.twoButtonsContainer}>
                 
                 {/* Üçüncü */}
-                <div className="w-full flex items-center h-auto rounded-3xl px-6 py-2.5 gap-2.5 border border-[rgba(0,97,254,0.15)] ">
-                    <p className="text-[#0061FE] text-center font-openRunde text-[21px] font-normal leading-[28px] tracking-[0.21px]">
+                <div className={`${styles.primaryButton} border border-[rgba(0,97,254,0.15)] `}>
+                    <p className={`${styles.buttonText} text-[#0061FE]`}>
                     Create a signature for me
                     </p>
 
-                    <div className="w-7 h-7 rounded-[7px] border-[1.75px] border-[#EEE] bg-white flex justify-center pt-[4px]"style={{ boxShadow: '0px -1.75px 0px 1.75px #D8D8D8 inset' }}>
-                        <MiniEnterButton />
+                    <div className={styles.enterButton}>
+                        {/* Mobile version - hidden on md+ */}
+                        <div className={styles.enterButtonMobile}>
+                            <MiniEnterButtonMobile />
+                        </div>
+                        {/* Desktop version - hidden on <md */}
+                        <div className={styles.enterButtonDesktop}>
+                            <MiniEnterButton />
+                        </div>
                     </div>
                 
                 </div>
 
                 {/* Dördüncü */}
-                <div className="w-full flex items-center h-auto rounded-3xl px-6 py-2.5 gap-2.5 border border-[#F4F4F4] ">
-                    <p className="text-[#323232] text-center font-openRunde text-[21px] font-normal leading-[28px] tracking-[0.21px]">
+                <div className={`${styles.primaryButton} border border-[#F4F4F4] `}>
+                    <p className={`${styles.buttonText} text-[#323232]`}>
                     I have another request
                     </p>      
                 </div>
@@ -142,18 +159,19 @@ export const DropboxCard = () => (
 export const JiraCard = () => (
     <div className={styles.baseCard}>
         <div className={`${styles.baseCardFirstContent}`}>
-            {/* CURSOR - Absolute */}
+            {/* CURSOR */}
             <div className={styles.cursorAbsolute}>
-                <CursorSvg width={24} height={24} fill="#1868DB" />
+                <CursorSvg width={useCursorSize()} height={useCursorSize()} fill="#1868DB" />
             </div>
 
             {/* ilk satır */}
-            <div className='w-full flex items-center gap-4 h-[24px] '>
+            <div className={styles.headerRow}>
 
-            <div className="w-6 h-6 flex items-center justify-center">
+            <div className={styles.logoContainer}>
                 <Image 
                     src="/showcase/svg/jira.svg" 
                     alt="Jira" 
+                    className={styles.logoImage}
                     width={24} 
                     height={24}
                 />
@@ -170,25 +188,32 @@ export const JiraCard = () => (
             </p>
 
             {/* Üçüncü ve dördüncü satır */}
-            <div className="w-full flex flex-col items-center gap-2.5">
-            
-            {/* Üçüncü */}
-            <div className="w-full flex items-center h-auto rounded-3xl px-6 py-2.5 gap-2.5 border border-[#1868DB26] ">
-                <p className="text-[#1868DB] text-center font-openRunde text-[21px] font-normal leading-[28px] tracking-[0.21px]">
-                Move to the next sprint
-                </p>
+            <div className={styles.twoButtonsContainer}>
 
-                <div className="w-7 h-7 rounded-[7px] border-[1.75px] border-[#EEE] bg-white flex justify-center pt-[4px]"style={{ boxShadow: '0px -1.75px 0px 1.75px #D8D8D8 inset' }}>
-                    <MiniEnterButton />
+                {/* Üçüncü */}
+                <div className={`${styles.primaryButton} border border-[#1868DB26] `}>
+                    <p className={`${styles.buttonText} text-[#1868DB]`}>
+                    Move to the next sprint
+                    </p>
+
+                    <div className={styles.enterButton}>
+                        {/* Mobile version - hidden on md+ */}
+                        <div className={styles.enterButtonMobile}>
+                            <MiniEnterButtonMobile />
+                        </div>
+                        {/* Desktop version - hidden on <md */}
+                        <div className={styles.enterButtonDesktop}>
+                            <MiniEnterButton />
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            {/* Dördüncü */}
-            <div className="w-full flex items-center h-auto rounded-3xl px-6 py-2.5 gap-2.5 border border-[#F4F4F4] ">
-                <p className="text-[#323232] text-center font-openRunde text-[21px] font-normal leading-[28px] tracking-[0.21px]">
-                I have another request
-                </p>      
-            </div>
+                {/* Dördüncü */}
+                <div className={`${styles.primaryButton} border border-[#F4F4F4] `}>
+                    <p className={`${styles.buttonText} text-[#323232]`}>
+                    I have another request
+                    </p>      
+                </div>
 
             </div>
         </div>
@@ -198,18 +223,19 @@ export const JiraCard = () => (
 export const ProductboardCard = () => (
     <div className={styles.baseCard}>
         <div className={`${styles.baseCardFirstContent}`}>
-            {/* CURSOR - Absolute */}
+            {/* CURSOR */}
             <div className={styles.cursorAbsolute}>
-                <CursorSvg width={24} height={24} fill="#F4BE00" />
+                <CursorSvg width={useCursorSize()} height={useCursorSize()} fill="#F4BE00" />
             </div>
 
             {/* ilk satır */}
-            <div className='w-full flex items-center gap-4 h-[24px] '>
+            <div className={styles.headerRow}>
 
-            <div className="w-6 h-6 flex items-center justify-center">
+            <div className={styles.logoContainer}>
                 <Image 
                     src="/showcase/svg/productboard.svg" 
                     alt="Productboard" 
+                    className={styles.logoImage}
                     width={24} 
                     height={24}
                 />
@@ -222,29 +248,36 @@ export const ProductboardCard = () => (
 
             {/* İkinci satır */}
             <p className={styles.cardParagraph}>
-            How would you like to handle feedback?
+            How do you manage feedback?
             </p>
 
             {/* Üçüncü ve dördüncü satır */}
-            <div className="w-full flex flex-col items-center gap-2.5">
-            
-            {/* Üçüncü */}
-            <div className="w-full flex items-center h-auto rounded-3xl px-6 py-2.5 gap-2.5 border border-[#F4BE0026] ">
-                <p className="text-[#F4BE00] text-center font-openRunde text-[21px] font-normal leading-[28px] tracking-[0.21px]">
-                Summarize feedback for me
-                </p>
+            <div className={styles.twoButtonsContainer}>
+                            
+                {/* Üçüncü */}
+                <div className={`${styles.primaryButton} border border-[#F4BE0026] `}>
+                    <p className={`${styles.buttonText} text-[#F4BE00]`}>
+                    Summarize feedback for me
+                    </p>
 
-                <div className="w-7 h-7 rounded-[7px] border-[1.75px] border-[#EEE] bg-white flex justify-center pt-[4px]"style={{ boxShadow: '0px -1.75px 0px 1.75px #D8D8D8 inset' }}>
-                    <MiniEnterButton />
+                    <div className={styles.enterButton}>
+                        {/* Mobile version - hidden on md+ */}
+                        <div className={styles.enterButtonMobile}>
+                            <MiniEnterButtonMobile />
+                        </div>
+                        {/* Desktop version - hidden on <md */}
+                        <div className={styles.enterButtonDesktop}>
+                            <MiniEnterButton />
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            {/* Dördüncü */}
-            <div className="w-full flex items-center h-auto rounded-3xl px-6 py-2.5 gap-2.5 border border-[#F4F4F4] ">
-                <p className="text-[#323232] text-center font-openRunde text-[21px] font-normal leading-[28px] tracking-[0.21px]">
-                I have another request
-                </p>      
-            </div>
+                {/* Dördüncü */}
+                <div className={`${styles.primaryButton} border border-[#F4F4F4] `}>
+                    <p className={`${styles.buttonText} text-[#323232]`}>
+                    I have another request
+                    </p>      
+                </div>
 
             </div>
         </div>
@@ -255,18 +288,19 @@ export const ClickUpCard = () => (
     <div className={styles.baseCard}>
         <div className={`${styles.baseCardFirstContent}`}>
 
-            {/* CURSOR - Absolute */}
+            {/* CURSOR */}
             <div className={styles.cursorAbsolute}>
-                <CursorSvg width={24} height={24} fill="#FA12E3" />
+                <CursorSvg width={useCursorSize()} height={useCursorSize()} fill="#FA12E3" />
             </div>
 
             {/* ilk satır */}
-            <div className='w-full flex items-center gap-4 h-[24px] '>
+            <div className={styles.headerRow}>
 
-            <div className="w-6 h-6 flex items-center justify-center">
+            <div className={styles.logoContainer}>
                 <Image 
                     src="/showcase/svg/clickup.svg" 
                     alt="ClickUp" 
+                    className={styles.logoImage}
                     width={24} 
                     height={24}
                 />
@@ -283,22 +317,36 @@ export const ClickUpCard = () => (
             </p>
 
             {/* Üçüncü ve dördüncü satır */}
-            <div className="w-full flex justify-center items-center gap-2.5">
+            <div className={styles.feedbackContainer}>
             
                 {/* Üçüncü */}
-                <div className='w-1/2 py-2.5 flex justify-center items-center rounded-2xl border-2 border-[#F1F1F1] gap-2.5'>
-                    <MiniLike />
+                <div className={styles.feedbackButton}>
+                    {/* Mobile version - hidden on md+ */}
+                    <div className={styles.feedbackIconMobile}>
+                        <MiniLikeMobile />
+                    </div>
+                    {/* Desktop version - hidden on <md */}
+                    <div className={styles.feedbackIconDesktop}>
+                        <MiniLike />
+                    </div>
 
-                    <p className='text-[#323232] text-center font-openRunde text-[21px] leading-[28px] tracking-[0.21px]'>
+                    <p className={`${styles.buttonText} text-[#323232]`}>
                     Helpful
                     </p>
                 </div>
 
                 {/* Dördüncü */}
-                <div className='w-1/2 py-2.5 flex justify-center items-center rounded-2xl border-2 border-[#F1F1F1] gap-2.5'>
-                    <MiniDislike />
+                <div className={styles.feedbackButton}>
+                    {/* Mobile version - hidden on md+ */}
+                    <div className={styles.feedbackIconMobile}>
+                        <MiniDislikeMobile />
+                    </div>
+                    {/* Desktop version - hidden on <md */}
+                    <div className={styles.feedbackIconDesktop}>
+                        <MiniDislike />
+                    </div>
 
-                    <p className='text-[#323232] text-center font-openRunde text-[21px] leading-[28px] tracking-[0.21px]'>
+                    <p className={`${styles.buttonText} text-[#323232]`}>
                     Not helpful
                     </p>
                 </div>
@@ -312,20 +360,21 @@ export const AWSCard = () => (
     <div className={styles.baseCard}>
         <div className={`${styles.baseCardFirstContent}`}>
 
-            {/* CURSOR - Absolute */}
+            {/* CURSOR */}
             <div className={styles.cursorAbsolute}>
-                <CursorSvg width={24} height={24} fill="#FF9900" />
+                <CursorSvg width={useCursorSize()} height={useCursorSize()} fill="#FF9900" />
             </div>
 
             {/* ilk satır */}
-            <div className='w-full flex items-center gap-4 h-[24px] '>
+            <div className={styles.headerRow}>
 
-            <div className="w-6 h-6 flex items-center justify-center">
+            <div className={styles.logoContainer}>
                 <Image 
                     src="/showcase/svg/aws.svg" 
                     alt="Amazon Web Services" 
-                    width={24} 
-                    height={14}
+                    className={styles.logoImageAws}
+                    width={23} 
+                    height={13}
                 />
             </div>
             
@@ -340,22 +389,36 @@ export const AWSCard = () => (
             </p>
 
             {/* Üçüncü ve dördüncü satır */}
-            <div className="w-full flex justify-center items-center gap-2.5">
+            <div className={styles.feedbackContainer}>
             
                 {/* Üçüncü */}
-                <div className='w-1/2 py-2.5 flex justify-center items-center rounded-2xl border-2 border-[#F1F1F1] gap-2.5'>
-                    <MiniLike />
+                <div className={styles.feedbackButton}>
+                    {/* Mobile version - hidden on md+ */}
+                    <div className={styles.feedbackIconMobile}>
+                        <MiniLikeMobile />
+                    </div>
+                    {/* Desktop version - hidden on <md */}
+                    <div className={styles.feedbackIconDesktop}>
+                        <MiniLike />
+                    </div>
 
-                    <p className='text-[#323232] text-center font-openRunde text-[21px] leading-[28px] tracking-[0.21px]'>
+                    <p className={`${styles.buttonText} text-[#323232]`}>
                     Helpful
                     </p>
                 </div>
 
                 {/* Dördüncü */}
-                <div className='w-1/2 py-2.5 flex justify-center items-center rounded-2xl border-2 border-[#F1F1F1] gap-2.5'>
-                    <MiniDislike />
+                <div className={styles.feedbackButton}>
+                    {/* Mobile version - hidden on md+ */}
+                    <div className={styles.feedbackIconMobile}>
+                        <MiniDislikeMobile />
+                    </div>
+                    {/* Desktop version - hidden on <md */}
+                    <div className={styles.feedbackIconDesktop}>
+                        <MiniDislike />
+                    </div>
 
-                    <p className='text-[#323232] text-center font-openRunde text-[21px] leading-[28px] tracking-[0.21px]'>
+                    <p className={`${styles.buttonText} text-[#323232]`}>
                     Not helpful
                     </p>
                 </div>

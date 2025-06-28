@@ -39,7 +39,7 @@ function BenefitCard({ bgColor, title, description, imageSrc, imageWidth, imageH
   );
 }
 
-export default function FooterTopTwo() {
+export default function FooterTopTwoBenefit() {
   return (
     <div className="max-w-[1168px] lg:h-37 flex flex-col md:flex-row gap-4 md:gap-6 mx-auto">
 
