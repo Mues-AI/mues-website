@@ -20,12 +20,12 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 md:justify-items-center lg:grid-cols-4 h-auto gap-x-8 gap-y-12 lg:gap-x-15 ">
-{/*  geçici olarak use case container gelene kadar col-4 ten col 3 e geçirdim. ilk kodlardaki yapı alttaki div daha sonra yukarıdakini silip alttakini kullanırsın.
-                <div className="w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 h-auto gap-x-8 gap-y-12 lg:gap-x-15 "> */}
+                {/* <div className="w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 md:justify-items-center lg:grid-cols-4 h-auto gap-x-8 gap-y-12 lg:gap-x-15 "> */}
+{/*  geçici olarak use case container gelene kadar col-4 ten col 3 e geçirdim. ilk kodlardaki yapı alttaki div daha sonra yukarıdakini silip alttakini kullanırsın. - tekrar col-4 e geçirdik - empty div de hidden geçti*/}
+                <div className="w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 h-auto gap-x-8 gap-y-12 lg:gap-x-15 "> 
 
-                        {/* EMPTY DIV */}
-                        <div className="hidden flex-col gap-4 lg:flex"></div>
+                        {/* EMPTY DIV - col 3 iken kullanıyoruz*/}
+                        {/* <div className="hidden flex-col gap-4 lg:flex"></div> */}
 
                         <div className="flex flex-col gap-4">
                             <p className="text-primary-black text-[14px] font-normal leading-[16px] tracking-[0.14px]">Product</p>
@@ -40,16 +40,17 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        {/* <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-4">
                             <p className="text-primary-black text-[14px] font-normal leading-[16px] tracking-[0.14px]">Use Cases</p>
                             <div className="flex flex-col gap-3.5">
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Product adoption" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Product adoption</a>
+                                <a href="/showcase" target="_blank" rel="noopener noreferrer" aria-label="Go to Showcase" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Showcase</a>
+                                {/* <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Product adoption" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Product adoption</a>
                                 <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Churn prevention" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Churn prevention</a>
                                 <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Customer support" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Customer support</a>
                                 <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to User experience" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">User experience</a>
-                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Agentic AI" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Agentic AI</a>
+                                <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Agentic AI" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Agentic AI</a> */}
                             </div>
-                        </div> */}
+                        </div> 
 
                         <div className="flex flex-col gap-4">
                             <p className="text-primary-black text-[14px] font-normal leading-[16px] tracking-[0.14px]">Company</p>

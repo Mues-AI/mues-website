@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
@@ -60,8 +60,8 @@ const products = [
     id: 'clickup',
     name: 'ClickUp',
     logo: '/showcase/svg/clickup.svg',
-    logoWidth: 48,
-    logoHeight: 48, 
+    logoWidth: 40,
+    logoHeight: 40, 
     component: ClickUpCard,
     color: '#FA12E3'
   },
@@ -143,6 +143,35 @@ export default function Showcase() {
     setCurrentIndex((prev) => (prev + 1) % products.length);
   };
 
+  // B ve J butonları için kullanıcıların sayfaya yönlendirilmesi 
+  // window.open() yaklaşımı daha hızlı - o yüzden butonlara ref vermedik - manuel olarak linkleri değiştirirsin.
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      const key = event.key.toLowerCase();
+      
+      if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+        return;
+      }
+
+      switch (key) {
+        case 'b':
+          window.open('https://cal.com/mues-ai/demo', '_blank', 'noopener,noreferrer');
+          break;
+        case 'j':
+          window.open('https://tally.so/r/w2V7Dg', '_blank', 'noopener,noreferrer');
+          break;
+        default:
+          break;
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
+
   // Position products - Initial
   const leftBottom = getProductAt(-3);   // Sol alt - aws
   const leftMiddle = getProductAt(-2);   // Sol orta - jira
@@ -186,7 +215,7 @@ export default function Showcase() {
      flex-col items-center justify-center gap-8'> 
 
       {/* Mobile Central Card - Scale edilmiş */}
-      <div className='w-full flex justify-center items-center h-[260px] sm:h-[390px] sm:scale-[1.5]'>
+      <div className='w-full flex justify-center sm:items-center sm:h-[390px] sm:scale-[1.5]'>
         <AnimatePresence mode="wait">
           <motion.div
             key={center.id}
@@ -341,8 +370,7 @@ export default function Showcase() {
       
     </div>
 
-    {/* ////////////////////////////////////////////////// */}
-      {/* Animation Container */}
+    {/* Desktop Animation Container */}
       <div className="hidden md:flex w-full h-[374px] self-center md:mb-37 
       flex-row flex-nowrap items-end justify-around min-[1380px]:justify-between">
         
@@ -591,17 +619,16 @@ export default function Showcase() {
           </div>
         </div>
       </div>
-    {/* ////////////////////////////////////////////////// */}
         
       
       {/* Padding Container */}
       <div className='w-full px-6 sm:px-9 md:px-12 lg:px-18'>
       
         {/* Talk With Us Frame */}
-        <div className="w-full max-w-[1168px] mx-auto mt-24 md:mt-[200px] rounded-2xl flex flex-row justify-center items-center px-6 py-4 xs:px-12 xs:py-10 overflow-hidden"
+        <div className="w-full max-w-[1168px] mx-auto mt-24 md:mt-[200px] rounded-2xl flex flex-row justify-center items-center px-6 py-4 xs:p-8 md:px-12 md:py-10 overflow-hidden"
         style={{ background: 'url(/showcase/images/talkWithBg.webp) no-repeat center center',backgroundSize: 'cover'}}>
 
-          <div className="w-full flex flex-col md:flex-row md:items-center md:justify-center gap-12">
+          <div className="w-full flex flex-col md:flex-row md:items-center md:justify-center gap-6 md:gap-12">
             
             {/* Text Content */}
             <p className="text-white text-[20px] font-medium leading-[26px] tracking-[-0.33px]">

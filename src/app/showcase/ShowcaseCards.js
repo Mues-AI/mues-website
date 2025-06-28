@@ -45,7 +45,7 @@ export const MixpanelCard = () => (
 
         {/* Reply Paragraph */}
         <p className={styles.replyText}>
-        Reply to Mixpanel AI Assistant
+        Reply to Mixpanel Agentic AI
         </p>
     </div>
 );

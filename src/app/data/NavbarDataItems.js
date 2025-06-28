@@ -12,17 +12,18 @@ export const navItemsData = [
     { title: "Changelog", desc: "Track latest updates", icon: "/NavbarMenu/svg/angular6.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://muesai.featurebase.app/en/changelog" },
     ],
 },
-// {
-//     label: "Use Cases", 
-//     href: "/#",
-//     menu: [
-//     { title: "Product adoption", desc: "Boost engagement", icon: "/NavbarMenu/svg/angular1.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
-//     { title: "Churn prevention", desc: "Retain your customers", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
-//     { title: "Customer support", desc: "Deliver top-notch help", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
-//     { title: "User experience", desc: "Enhance usability fast", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
-//     { title: "Agentic AI", desc: "Unlock AI's full potential", icon: "/NavbarMenu/svg/angular5.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
-//     ],
-// },
+{
+    label: "Use Cases", 
+    href: "/#",
+    menu: [
+    { title: "Showcase", desc: "See how Mues AI works", icon: "/NavbarMenu/svg/angular1.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "/showcase" },
+    // { title: "Product adoption", desc: "Boost engagement", icon: "/NavbarMenu/svg/angular1.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+    // { title: "Churn prevention", desc: "Retain your customers", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+    // { title: "Customer support", desc: "Deliver top-notch help", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+    // { title: "User experience", desc: "Enhance usability fast", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+    // { title: "Agentic AI", desc: "Unlock AI's full potential", icon: "/NavbarMenu/svg/angular5.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
+    ],
+},
 {
     label: "Company",
     href: "/#",
