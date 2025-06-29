@@ -39,3 +39,13 @@ export function ThickBgBlueSvg({ width = 16, height = 16, fill = '#0089FF',class
     </svg>
   );
 }
+
+export function OnlyLogo({ width = 12, height = 12, fill = '#17181A', ...props }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 12 12" fill="none" {...props}>
+    <path d="M12 4.04717H7.93412V0H4.03765C4.03765 2.23585 2.23059 4.04717 0 4.04717V7.95283H4.03765V12H7.93412C7.93412 9.76415 9.76941 7.95283 12 7.95283V4.04717Z" 
+        fill={fill}
+      />
+    </svg>
+  );
+}

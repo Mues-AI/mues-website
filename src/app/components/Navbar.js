@@ -34,13 +34,13 @@ function NavbarMenu({ items, isMobile = false, onItemClick = () => {}, theme }) 
   return (
     <div className={`${isMobile ? "w-full" : `absolute w-[578px] ${theme?.dropdownBg || 'bg-white'} p-2 border ${theme?.dropdownBorder || 'border-[#EEE]'}`} h-fit ${isMobile ? "" : `top-11 left-1/2 -translate-x-1/2`} z-50 rounded-2xl flex ${isMobile ? "flex-col" : `gap-2 ${theme?.dropdownShadow || 'shadow-[0px_1px_7px_0px_rgba(119,119,119,0.07)]'}`}`}>
       {!isMobile && (
-        <Image
-          src="/NavbarMenu/svg/menuPointerTop.svg"
-          alt="menu Pointer Top"
-          width={36}
-          height={14}
-          className="absolute max-w-[50px] max-h-[27px] -top-[13.5px] left-1/2 -translate-x-1/2"
-        />
+          <Image
+            src="/NavbarMenu/svg/menuPointerTop.svg"
+            alt="menu Pointer Top"
+            width={36}
+            height={14}
+            className="absolute min-w-[36px] min-h-[14px] max-w-[50px] max-h-[27px] -top-[13.5px] left-1/2 -translate-x-1/2 px-4 box-content"
+          />
       )}
 
       {/* Left: Items */}

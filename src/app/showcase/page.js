@@ -376,12 +376,22 @@ export default function Showcase() {
         
         {/* Sol Alt - Triangle */}
         <div className='w-fit h-fit relative min-[1380px]:-left-[46px] hidden min-[1380px]:flex'>
-          <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] 
+          <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px]
            flex items-end justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="150" height="132" viewBox="0 0 150 132" fill="none" style={{
               filter: 'drop-shadow(0px 0px 4px rgba(34, 34, 34, 0.05))'
             }}>
-              <path d="M65.041 6.25C69.4674 -1.41649 80.5326 -1.41649 84.959 6.25L147.313 114.25C151.74 121.917 146.206 131.5 137.354 131.5H12.6465C3.79384 131.5 -1.73966 121.917 2.68652 114.25L65.041 6.25Z" stroke="#EEEEEE"/>
+              <defs>
+                <linearGradient id="triangle-gradient" x1="75" y1="0" x2="75" y2="132" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#FFF" />
+                  <stop offset="100%" stopColor="#F7F7F7" />
+                </linearGradient>
+              </defs>
+              <path 
+                d="M65.041 6.25C69.4674 -1.41649 80.5326 -1.41649 84.959 6.25L147.313 114.25C151.74 121.917 146.206 131.5 137.354 131.5H12.6465C3.79384 131.5 -1.73966 121.917 2.68652 114.25L65.041 6.25Z" 
+                stroke="#EEEEEE"
+                fill="url(#triangle-gradient)"
+              />
             </svg>
 
             <div className='w-12 h-12 flex items-end justify-center absolute bottom-7 left-1/2 -translate-x-1/2'>
@@ -407,7 +417,7 @@ export default function Showcase() {
         </div>
 
         {/* Sol Orta - Circle */}
-        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] relative bottom-12 min-[1380px]:-left-[48px] hidden lg:flex 
+        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-12 min-[1380px]:-left-[48px] hidden lg:flex 
         rounded-full border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.07)] items-center justify-center">
           <div className='w-fit flex flex-col items-center justify-center gap-3'>
             <div className='w-12 h-12 flex items-center justify-center'>
@@ -447,7 +457,7 @@ export default function Showcase() {
         </div>
 
         {/* Sol İlk - Square */}
-        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] relative bottom-24 min-[1380px]:-left-6 
+        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-24 min-[1380px]:-left-6 
         rounded-3xl border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center ">
           <div className='w-fit flex flex-col items-center justify-center gap-4'>
             <div className='w-12 h-12 flex items-center justify-center'>
@@ -509,7 +519,7 @@ export default function Showcase() {
         </div>
 
         {/* Sağ İlk - Square */}
-        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] relative bottom-24 min-[1380px]:-right-6 
+        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-24 min-[1380px]:-right-6 
         rounded-3xl border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center">
           <div className='w-fit flex flex-col items-center justify-center gap-4'>
             <div className='w-12 h-12 flex items-center justify-center'>
@@ -549,7 +559,7 @@ export default function Showcase() {
         </div>
 
         {/* Sağ Orta - Circle */}
-        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] relative bottom-12 min-[1380px]:-right-[48px] hidden lg:flex 
+        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-12 min-[1380px]:-right-[48px] hidden lg:flex 
         rounded-full border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.07)] items-center justify-center">
           <div className='w-fit flex flex-col items-center justify-center gap-3'>
             <div className='w-12 h-12 flex items-center justify-center'>
@@ -590,13 +600,24 @@ export default function Showcase() {
 
         {/* Sağ Alt - Triangle */}
         <div className="w-fit h-fit relative min-[1380px]:-right-[46px] hidden min-[1380px]:flex">
-          <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px]
+          <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] 
           flex items-end justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="150" height="132" viewBox="0 0 150 132" fill="none" style={{
               filter: 'drop-shadow(0px 0px 4px rgba(34, 34, 34, 0.05))'
             }}>
-              <path d="M65.041 6.25C69.4674 -1.41649 80.5326 -1.41649 84.959 6.25L147.313 114.25C151.74 121.917 146.206 131.5 137.354 131.5H12.6465C3.79384 131.5 -1.73966 121.917 2.68652 114.25L65.041 6.25Z" stroke="#EEEEEE"/>
+              <defs>
+                <linearGradient id="triangle-gradient" x1="75" y1="0" x2="75" y2="132" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#FFF" />
+                  <stop offset="100%" stopColor="#F7F7F7" />
+                </linearGradient>
+              </defs>
+              <path 
+                d="M65.041 6.25C69.4674 -1.41649 80.5326 -1.41649 84.959 6.25L147.313 114.25C151.74 121.917 146.206 131.5 137.354 131.5H12.6465C3.79384 131.5 -1.73966 121.917 2.68652 114.25L65.041 6.25Z" 
+                stroke="#EEEEEE"
+                fill="url(#triangle-gradient)"
+              />
             </svg>
+
             <div className="w-12 h-12 flex items-end justify-center absolute bottom-7 left-1/2 -translate-x-1/2">
               <AnimatePresence mode="wait">
                 <motion.div
