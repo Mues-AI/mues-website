@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense, useCallback } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
@@ -255,7 +255,7 @@ const VideoOverlay = ({ product, isOpen, onClose, onPrevious, onNext }) => {
   );
 };
 
-export default function Showcase() {
+function ShowcaseContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   
@@ -283,11 +283,11 @@ export default function Showcase() {
     router.push(`/showcase?product=${product.id}`, { shallow: true });
   };
 
-  const closeVideoModal = () => {
+  const closeVideoModal = useCallback(() => {
     setShowVideoModal(false);
     setSelectedProduct(null);
     router.push('/showcase', { shallow: true });
-  };
+  }, [router]);
 
   // Prevent body scroll when video modal is open
   useEffect(() => {
@@ -304,21 +304,21 @@ export default function Showcase() {
   }, [showVideoModal]);
 
   // Video navigation handlers
-  const handleVideoNext = () => {
+  const handleVideoNext = useCallback(() => {
     const currentProductIndex = products.findIndex(p => p.id === selectedProduct.id);
     const nextProductIndex = (currentProductIndex + 1) % products.length;
     const nextProduct = products[nextProductIndex];
     setSelectedProduct(nextProduct);
     router.push(`/showcase?product=${nextProduct.id}`, { shallow: true });
-  };
+  }, [selectedProduct, router]);
 
-  const handleVideoPrevious = () => {
+  const handleVideoPrevious = useCallback(() => {
     const currentProductIndex = products.findIndex(p => p.id === selectedProduct.id);
     const prevProductIndex = (currentProductIndex - 1 + products.length) % products.length;
     const prevProduct = products[prevProductIndex];
     setSelectedProduct(prevProduct);
     router.push(`/showcase?product=${prevProduct.id}`, { shallow: true });
-  };
+  }, [selectedProduct, router]);
 
   // Ürünlerin pozisyonlarını ataması için hesaplama yapıyor
   const getProductAt = (offset) => {
@@ -395,7 +395,7 @@ export default function Showcase() {
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [showVideoModal, selectedProduct]);
+  }, [showVideoModal, selectedProduct, closeVideoModal, handleVideoNext, handleVideoPrevious]);
 
   // Position products - Initial
   const leftBottom = getProductAt(-3);   // Sol alt - aws
@@ -1001,5 +1001,13 @@ export default function Showcase() {
         onNext={handleVideoNext}
       />
     </div>
+  );
+}
+
+export default function Showcase() {
+  return (
+    <Suspense>
+      <ShowcaseContent />
+    </Suspense>
   );
 }

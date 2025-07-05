@@ -36,6 +36,8 @@ export default function MainContent() {
     document.addEventListener('keydown', handleKeyPress, { passive: false });
     
     if (isMobile && carouselRef.current) {
+      const carouselElement = carouselRef.current; 
+      
       // IntersectionObserver kullanarak element görünür olduğunda animasyonu başlat
       const observer = new IntersectionObserver(
         (entries) => {
@@ -51,13 +53,11 @@ export default function MainContent() {
         { threshold: 0.1 } // %10 görünür olduğunda tetikle
       );
       
-      observer.observe(carouselRef.current);
+      observer.observe(carouselElement);
       
       return () => {
         document.removeEventListener('keydown', handleKeyPress);
-        if (carouselRef.current) {
-          observer.unobserve(carouselRef.current);
-        }
+        observer.unobserve(carouselElement);
       };
     }
 
