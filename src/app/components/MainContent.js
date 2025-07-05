@@ -100,7 +100,7 @@ export default function MainContent() {
       />
       <div className="relative z-10 w-full h-full p-6 pt-10 pb-6 md:px-8 md:py-12 lg:pb-[8.47vh] lg:px-20 lg:pt-[11.754vh] flex flex-col gap-8 lg:gap-0 justify-between">
         
-        <div className='flex flex-col lg:flex-row items-center justify-between gap-12 xl:gap-15'>
+        <div className='flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 xl:gap-15'>
           {/* HEADER - Description - Join waitlist button */}
           <div className="w-fit flex-1 ">
             <div className="mb-6 max-w-fit">
@@ -112,7 +112,10 @@ export default function MainContent() {
               </h1>
             </div>
             
-            <p className="max-w-[520px] text-[#CCC] font-light leading-9 tracking-[0.2px] mt-4 lg:mt-6 text-base md:text-lg lg:text-[20px] ">
+            <p className="max-w-[520px] text-[#CCC] font-light mt-2 md:mt-4 lg:mt-6 
+            text-base leading-7 tracking-[0.16px]
+            md:text-lg md:leading-8 md:tracking-[0.2px]
+            lg:text-[20px] lg:leading-9 lg:tracking-[0.2px]">
             Your users ask to Mues AI-powered cursor. Mues acts like a power user of your product, instantly and 24/7.
             </p>
             
@@ -135,7 +138,7 @@ export default function MainContent() {
           </div>
 
           {/* Video */}
-          <div className="w-full min-[530px]:w-[480px] md:w-6/12  flex-1 min-w-0 flex items-start justify-center">
+          <div className="w-full min-[530px]:w-[400px] md:w-5/12  flex-1 min-w-0 flex items-start justify-center">
             <video
               className="rounded-xl w-full aspect-[372/233] lg:max-w-[744px] lg:max-h-[466px] object-cover"
               style={{
