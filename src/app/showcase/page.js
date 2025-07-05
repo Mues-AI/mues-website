@@ -1,12 +1,10 @@
 'use client';
 
-import { useState, useEffect, Suspense, useCallback } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import { CursorSvg, MiniArrow } from '../utils/showcase/svgShowcase';
-import { OnlyLogo } from '../utils/svgGeneralUtils';
 import {DropboxCard, HubSpotCard, MixpanelCard, JiraCard, ProductboardCard, ClickUpCard, AWSCard } from './ShowcaseCards';
 import Benefits from '../components/Benefits';
 import FooterTopTwoBenefit from '../components/FooterTopTwoBenefit';
@@ -20,10 +18,7 @@ const products = [
     logoWidth: 48,
     logoHeight: 28,
     component: AWSCard,
-    color: '#FF9900',
-    videoUrl: 'https://www.youtube.com/embed/_Yhyp-_hX2s',
-    videoTitle: 'AWS AI Assistant in Action',
-    videoDescription: 'See how Mues AI transforms the AWS experience for developers'
+    color: '#FF9900'
   },
   {
     id: 'jira',
@@ -32,10 +27,7 @@ const products = [
     logoWidth: 43,
     logoHeight: 48,
     component: JiraCard,
-    color: '#1868DB',
-    videoUrl: 'https://www.youtube.com/embed/eVTXPUF4Oz4',
-    videoTitle: 'Jira AI Companion Demo',
-    videoDescription: 'Streamline project management with intelligent assistance'
+    color: '#1868DB'
   },
   {
     id: 'hubspot',
@@ -44,10 +36,7 @@ const products = [
     logoWidth: 46,
     logoHeight: 48,
     component: HubSpotCard,
-    color: '#F95C35',
-    videoUrl: 'https://www.youtube.com/embed/kJQP7kiw5Fk',
-    videoTitle: 'HubSpot AI Assistant Overview',
-    videoDescription: 'Enhance your CRM workflow with AI-powered insights'
+    color: '#F95C35'
   },
   {
     id: 'dropbox',
@@ -56,10 +45,7 @@ const products = [
     logoWidth: 48,
     logoHeight: 48,
     component: DropboxCard,
-    color: '#0061FE',
-    videoUrl: 'https://www.youtube.com/embed/YVkUvmDQ3HY',
-    videoTitle: 'Dropbox AI Agent Demonstration',
-    videoDescription: 'Smart file management and collaboration made simple'
+    color: '#0061FE'
   },
   {
     id: 'mixpanel',
@@ -68,10 +54,7 @@ const products = [
     logoWidth: 48, 
     logoHeight: 46,
     component: MixpanelCard,
-    color: '#7856FF',
-    videoUrl: 'https://www.youtube.com/embed/hLQl3WQQoQ0',
-    videoTitle: 'Mixpanel Agentic AI Walkthrough',
-    videoDescription: 'Advanced analytics with conversational AI interface'
+    color: '#7856FF'
   },
   {
     id: 'clickup',
@@ -80,10 +63,7 @@ const products = [
     logoWidth: 40,
     logoHeight: 40, 
     component: ClickUpCard,
-    color: '#FA12E3',
-    videoUrl: 'https://www.youtube.com/embed/GHe8kKO8uds',
-    videoTitle: 'ClickUp Agent Experience',
-    videoDescription: 'Productivity redefined with intelligent task management'
+    color: '#FA12E3'
   },
   {
     id: 'productboard',
@@ -92,10 +72,7 @@ const products = [
     logoWidth: 48,
     logoHeight: 48,
     component: ProductboardCard,
-    color: '#F4BE00',
-    videoUrl: 'https://www.youtube.com/embed/btPJPFnesV4',
-    videoTitle: 'Productboard AI Agent Tour',
-    videoDescription: 'Product management excellence with AI-driven insights'
+    color: '#F4BE00'
   }
 ];
 
@@ -120,7 +97,7 @@ const cardVariants = {
 };
 
 // Play Buttons Component - Desktop ve Mobile için ortak kullanım
-const PlayButtons = ({ onNext, onPrevious, onPlay, className = "mt-12" }) => (
+const PlayButtons = ({ onNext, onPrevious, className = "mt-12" }) => (
   <div className={`w-fit flex items-center justify-center gap-4 ${className}`}>
     {/* Sol Ok Butonu */}
     <button onClick={onNext} className="w-[30px] h-[30px] rounded-3xl border border-[#F4F4F4] bg-white flex items-center justify-center cursor-pointer hover:bg-[#F4F4F4]" 
@@ -128,9 +105,9 @@ const PlayButtons = ({ onNext, onPrevious, onPlay, className = "mt-12" }) => (
       <MiniArrow />
     </button>
 
-    {/* Play Butonu - Now functional */}
+    {/* Play Butonu - Inactive for now */}
+    {/* TODO - YAP: Play butonunu aktif hale getir */}
     <button 
-      onClick={onPlay}
       className="inline-flex py-3 px-4 justify-center items-center gap-1.5 rounded-3xl border border-[#F4F4F4] bg-white cursor-pointer hover:bg-[#F4F4F4]" style={{ boxShadow: '0px 1px 4px 0px rgba(34, 34, 34, 0.05)' }}>
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
         <path d="M2.3335 6.99998V4.92331C2.3335 2.34498 4.15933 1.28915 6.3935 2.57831L8.196 3.61665L9.9985 4.65498C12.2327 5.94415 12.2327 8.05581 9.9985 9.34498L8.196 10.3833L6.3935 11.4216C4.15933 12.7108 2.3335 11.655 2.3335 9.07665V6.99998Z" stroke="#17181A" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
@@ -148,177 +125,8 @@ const PlayButtons = ({ onNext, onPrevious, onPlay, className = "mt-12" }) => (
   </div>
 );
 
-// Video Overlay Component
-const VideoOverlay = ({ product, isOpen, onClose, onPrevious, onNext }) => {
-  if (!isOpen || !product) return null;
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(151,151,151,0.10)] backdrop-blur-[48px] p-4 md:p-6 lg:p-8" style={{ paddingBlock: '6.517vh' }} >
-      <div className="relative w-full max-w-7xl h-full flex flex-col gap-2 mx-4 md:mx-6 lg:mx-8">
-        {/* Header */}
-        <div className="flex items-center justify-between rounded-[12px] border border-[#F1F1F1] bg-white shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)] px-4 lg:px-5 py-4">
-          <div className="flex flex-col gap-3 w-4/5 lg:w-full lg:gap-0 lg:flex-row lg:items-center">
-            <p className="text-[#777] text-[14px] not-italic font-normal leading-4 mr-3">
-              USER PROBLEM:
-            </p>
-            <p className="text-[#17181A] text-[16px] not-italic font-openRunde leading-normal tracking-[0.16px]">
-              {product.videoDescription}
-            </p>
-          </div>
-
-          {/* Close Button */}
-          <button onClick={onClose} className="w-4 h-4 cursor-pointer hover:opacity-80
-           absolute right-3 top-3 lg:static" >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M4 12L12 4M4 4L12 12" stroke="#777777" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-        </div>
-
-        {/* Video Container */}
-        <div className="relative flex-grow min-h-0 w-full flex items-center justify-center">
-           <div className="relative w-full h-full max-w-full max-h-full bg-black rounded-lg overflow-hidden" style={{ aspectRatio: '16/9' }}>
-              <iframe
-                src={product.videoUrl}
-                title={product.videoTitle}
-                className="absolute inset-0 w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-        </div>
-
-        {/* Footer Container */}
-        <div className="flex items-center justify-between rounded-[12px] border border-[#F1F1F1] bg-white shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)] pl-6 pr-3 py-5 h-16 relative">
-
-          {/* Logo and Title */}
-          <div className="flex items-center gap-3">
-            <Image 
-              src={product.logo} 
-              alt={product.name} 
-              width={24} 
-              height={24}
-              className="object-contain"
-            />
-            <p className="text-[#17181A] not-italic font-openRunde 
-            text-[14px] tracking-[0.14px] lg:text-[18px] lg:tracking-[0.18px]">
-              {product.videoTitle}
-            </p>
-          </div>
-
-          {/* // YAP - TO DO :  Tittle uzun ise previous ve next buttonları ile üst üste geliyor. düzeltirsin yazı uzunluklarına göre */}
-          {/* Previous and Next Buttons */}
-          <div className="md:absolute md:left-1/2 md:-translate-x-1/2 flex items-center gap-2 md:gap-4">
-            {/* Previous Button */}
-              <button onClick={onPrevious} className="flex items-center gap-1 md:gap-1.5 cursor-pointer hover:opacity-80">
-              <MiniArrow />
-              <p className="text-[#777] text-[14px] not-italic font-normal leading-4">
-                Previous
-              </p>
-            </button>
-
-            {/* Divider Line */}
-            <svg width="1" height="12" viewBox="0 0 1 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="0.5" y1="0" x2="0.5" y2="12" stroke="#EEE" strokeWidth="1"/>
-            </svg>
-
-            {/* Next Button */}
-            <button onClick={onNext} className="flex items-center gap-1 md:gap-1.5 cursor-pointer hover:opacity-80">
-              <p className="text-[#777] text-[14px] not-italic font-normal leading-4">
-                Next
-              </p>
-              <span className="rotate-180">
-                <MiniArrow />
-              </span>
-             </button>
-          </div>
-
-          {/* Add mues ai to your product Button */}
-           <button className="w-[246px] h-10 inline-flex px-4 py-3 items-center gap-2 rounded-xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)] hover:bg-[#F4F4F4] transition-opacity cursor-pointer
-           absolute left-1/2 -translate-x-1/2 top-[76px] md:static md:translate-x-0 md:top-0
-           ">
-             <span
-               className="flex items-center justify-center"
-               style={{ minWidth: 12, minHeight: 12, width: 12, height: 12}}>
-               <OnlyLogo width={12} height={12} fill="#17181A" />
-             </span>
-             <span className="text-[#17181A] font-inter text-[14px] font-medium leading-4">
-               Add Mues AI to your product
-             </span>
-           </button>
-
-        </div>
-
-
-      </div>
-    </div>
-  );
-};
-
-function ShowcaseContent() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  
+export default function Showcase() {
   const [currentIndex, setCurrentIndex] = useState(3); // Start with DropBox in center
-  const [showVideoModal, setShowVideoModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  // URL routing logic - Check if product is specified in URL
-  useEffect(() => {
-    const productId = searchParams.get('product');
-    if (productId) {
-      const productIndex = products.findIndex(p => p.id === productId);
-      if (productIndex !== -1) {
-        setCurrentIndex(productIndex);
-        setSelectedProduct(products[productIndex]);
-        setShowVideoModal(true);
-      }
-    }
-  }, [searchParams]);
-
-  // Update URL when modal opens/closes
-  const openVideoModal = (product) => {
-    setSelectedProduct(product);
-    setShowVideoModal(true);
-    router.push(`/showcase?product=${product.id}`, { shallow: true });
-  };
-
-  const closeVideoModal = useCallback(() => {
-    setShowVideoModal(false);
-    setSelectedProduct(null);
-    router.push('/showcase', { shallow: true });
-  }, [router]);
-
-  // Prevent body scroll when video modal is open
-  useEffect(() => {
-    if (showVideoModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
-    // Cleanup function to reset overflow when component unmounts
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [showVideoModal]);
-
-  // Video navigation handlers
-  const handleVideoNext = useCallback(() => {
-    const currentProductIndex = products.findIndex(p => p.id === selectedProduct.id);
-    const nextProductIndex = (currentProductIndex + 1) % products.length;
-    const nextProduct = products[nextProductIndex];
-    setSelectedProduct(nextProduct);
-    router.push(`/showcase?product=${nextProduct.id}`, { shallow: true });
-  }, [selectedProduct, router]);
-
-  const handleVideoPrevious = useCallback(() => {
-    const currentProductIndex = products.findIndex(p => p.id === selectedProduct.id);
-    const prevProductIndex = (currentProductIndex - 1 + products.length) % products.length;
-    const prevProduct = products[prevProductIndex];
-    setSelectedProduct(prevProduct);
-    router.push(`/showcase?product=${prevProduct.id}`, { shallow: true });
-  }, [selectedProduct, router]);
 
   // Ürünlerin pozisyonlarını ataması için hesaplama yapıyor
   const getProductAt = (offset) => {
@@ -335,21 +143,6 @@ function ShowcaseContent() {
     setCurrentIndex((prev) => (prev + 1) % products.length);
   };
 
-  // Click handlers for different elements
-  const handleProductClick = (product) => {
-    openVideoModal(product);
-  };
-
-  const handleCentralCardClick = () => {
-    const center = getProductAt(0);
-    openVideoModal(center);
-  };
-
-  const handlePlayButtonClick = () => {
-    const center = getProductAt(0);
-    openVideoModal(center);
-  };
-
   // B ve J butonları için kullanıcıların sayfaya yönlendirilmesi 
   // window.open() yaklaşımı daha hızlı - o yüzden butonlara ref vermedik - manuel olarak linkleri değiştirirsin.
   useEffect(() => {
@@ -358,24 +151,6 @@ function ShowcaseContent() {
       
       if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
         return;
-      }
-
-      // Handle ESC key to close modal
-      if (key === 'escape' && showVideoModal) {
-        closeVideoModal();
-        return;
-      }
-
-      // Handle arrow keys for video navigation when modal is open
-      if (showVideoModal) {
-        if (key === 'arrowleft') {
-          handleVideoPrevious();
-          return;
-        }
-        if (key === 'arrowright') {
-          handleVideoNext();
-          return;
-        }
       }
 
       switch (key) {
@@ -395,7 +170,7 @@ function ShowcaseContent() {
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [showVideoModal, selectedProduct, closeVideoModal, handleVideoNext, handleVideoPrevious]);
+  }, []);
 
   // Position products - Initial
   const leftBottom = getProductAt(-3);   // Sol alt - aws
@@ -449,8 +224,6 @@ function ShowcaseContent() {
             animate="animate"
             exit="exit"
             transition={{ duration: 0.4 }}
-            onClick={handleCentralCardClick}
-            className="cursor-pointer"
           >
             <CentralCard />
           </motion.div>
@@ -460,8 +233,7 @@ function ShowcaseContent() {
       {/* Mobile Logolar Container */}
       <div className="w-full flex justify-between items-center px-2 sm:scale-[1.2] sm:justify-evenly">
         {/* 1. Logo */}
-        <div className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center cursor-pointer "
-          onClick={() => handleProductClick(rightTop)}>
+        <div className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={rightTop.id}
@@ -483,10 +255,7 @@ function ShowcaseContent() {
         </div>
 
         {/* 2. Logo */}
-        <div 
-          className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center cursor-pointer "
-          onClick={() => handleProductClick(rightMiddle)}
-        >
+        <div className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={rightMiddle.id}
@@ -508,10 +277,7 @@ function ShowcaseContent() {
         </div>
 
         {/* 3. Logo */}
-        <div 
-          className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center cursor-pointer "
-          onClick={() => handleProductClick(rightBottom)}
-        >
+        <div className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={rightBottom.id}
@@ -533,10 +299,7 @@ function ShowcaseContent() {
         </div>
 
         {/* 4. Logo */}
-        <div 
-          className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center cursor-pointer "
-          onClick={() => handleProductClick(leftBottom)}
-        >
+        <div className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={leftBottom.id}
@@ -558,10 +321,7 @@ function ShowcaseContent() {
         </div>
 
         {/* 5. Logo */}
-        <div 
-          className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center cursor-pointer "
-          onClick={() => handleProductClick(leftMiddle)}
-        >
+        <div className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={leftMiddle.id}
@@ -583,10 +343,7 @@ function ShowcaseContent() {
         </div>
 
         {/* 6. Logo */}
-        <div 
-          className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center cursor-pointer "
-          onClick={() => handleProductClick(leftTop)}
-        >
+        <div className="w-12 h-12 rounded-lg border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={leftTop.id}
@@ -609,7 +366,7 @@ function ShowcaseContent() {
       </div>
 
       {/* Mobile Play Buttons */}
-      <PlayButtons onNext={handleNext}  onPrevious={handlePrevious} onPlay={handlePlayButtonClick} className=""/>
+      <PlayButtons onNext={handleNext}  onPrevious={handlePrevious} className=""/>
       
     </div>
 
@@ -619,10 +376,8 @@ function ShowcaseContent() {
         
         {/* Sol Alt - Triangle */}
         <div className='w-fit h-fit relative min-[1380px]:-left-[46px] hidden min-[1380px]:flex'>
-          <div 
-            className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] flex items-end justify-center "
-            onClick={() => handleProductClick(leftBottom)}
-          >
+          <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px]
+           flex items-end justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="150" height="132" viewBox="0 0 150 132" fill="none" style={{
               filter: 'drop-shadow(0px 0px 4px rgba(34, 34, 34, 0.05))'
             }}>
@@ -636,7 +391,6 @@ function ShowcaseContent() {
                 d="M65.041 6.25C69.4674 -1.41649 80.5326 -1.41649 84.959 6.25L147.313 114.25C151.74 121.917 146.206 131.5 137.354 131.5H12.6465C3.79384 131.5 -1.73966 121.917 2.68652 114.25L65.041 6.25Z" 
                 stroke="#EEEEEE"
                 fill="url(#triangle-gradient)"
-                className="cursor-pointer"
               />
             </svg>
 
@@ -663,11 +417,8 @@ function ShowcaseContent() {
         </div>
 
         {/* Sol Orta - Circle */}
-        <div 
-          className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-12 min-[1380px]:-left-[48px] hidden lg:flex rounded-full border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.07)] items-center justify-center cursor-pointer 
-          "
-          onClick={() => handleProductClick(leftMiddle)}
-        >
+        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-12 min-[1380px]:-left-[48px] hidden lg:flex 
+        rounded-full border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.07)] items-center justify-center">
           <div className='w-fit flex flex-col items-center justify-center gap-3'>
             <div className='w-12 h-12 flex items-center justify-center'>
               <AnimatePresence mode="wait">
@@ -706,10 +457,8 @@ function ShowcaseContent() {
         </div>
 
         {/* Sol İlk - Square */}
-        <div 
-          className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-24 min-[1380px]:-left-6 rounded-3xl border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center cursor-pointer "
-          onClick={() => handleProductClick(leftTop)}
-        >
+        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-24 min-[1380px]:-left-6 
+        rounded-3xl border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center ">
           <div className='w-fit flex flex-col items-center justify-center gap-4'>
             <div className='w-12 h-12 flex items-center justify-center'>
               <AnimatePresence mode="wait">
@@ -757,8 +506,6 @@ function ShowcaseContent() {
               animate="animate"
               exit="exit"
               transition={{ duration: 0.4 }}
-              onClick={handleCentralCardClick}
-              className="cursor-pointer"
             >
               <CentralCard />
             </motion.div>
@@ -768,15 +515,12 @@ function ShowcaseContent() {
           <PlayButtons 
             onNext={handleNext} 
             onPrevious={handlePrevious}
-            onPlay={handlePlayButtonClick}
           />
         </div>
 
         {/* Sağ İlk - Square */}
-        <div 
-          className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-24 min-[1380px]:-right-6 rounded-3xl border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center cursor-pointer "
-          onClick={() => handleProductClick(rightTop)}
-        >
+        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-24 min-[1380px]:-right-6 
+        rounded-3xl border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.1)] flex items-center justify-center">
           <div className='w-fit flex flex-col items-center justify-center gap-4'>
             <div className='w-12 h-12 flex items-center justify-center'>
               <AnimatePresence mode="wait">
@@ -815,10 +559,8 @@ function ShowcaseContent() {
         </div>
 
         {/* Sağ Orta - Circle */}
-        <div 
-          className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-12 min-[1380px]:-right-[48px] hidden lg:flex rounded-full border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.07)] items-center justify-center cursor-pointer "
-          onClick={() => handleProductClick(rightMiddle)}
-        >
+        <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] bg-[linear-gradient(180deg,_#FFF_0%,_#F7F7F7_100%)] relative bottom-12 min-[1380px]:-right-[48px] hidden lg:flex 
+        rounded-full border border-[#EEE] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.07)] items-center justify-center">
           <div className='w-fit flex flex-col items-center justify-center gap-3'>
             <div className='w-12 h-12 flex items-center justify-center'>
               <AnimatePresence mode="wait">
@@ -858,9 +600,8 @@ function ShowcaseContent() {
 
         {/* Sağ Alt - Triangle */}
         <div className="w-fit h-fit relative min-[1380px]:-right-[46px] hidden min-[1380px]:flex">
-          <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] flex items-end justify-center "
-            onClick={() => handleProductClick(rightBottom)}
-          >
+          <div className="w-[148px] h-[148px] min-w-[148px] min-h-[148px] 
+          flex items-end justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="150" height="132" viewBox="0 0 150 132" fill="none" style={{
               filter: 'drop-shadow(0px 0px 4px rgba(34, 34, 34, 0.05))'
             }}>
@@ -991,23 +732,6 @@ function ShowcaseContent() {
         <Footer/>
 
       </div>
-
-      {/* Video Overlay */}
-      <VideoOverlay
-        product={selectedProduct}
-        isOpen={showVideoModal}
-        onClose={closeVideoModal}
-        onPrevious={handleVideoPrevious}
-        onNext={handleVideoNext}
-      />
     </div>
-  );
-}
-
-export default function Showcase() {
-  return (
-    <Suspense>
-      <ShowcaseContent />
-    </Suspense>
   );
 }

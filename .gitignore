@@ -57,7 +57,6 @@ src/app/globals copy.css
 src/app/components/MainContent-OldFirstHero.js
 
 # SHOWCASE DEĞİŞİKLİKLERİ GİZLEDİM - videolar gelince gider.
-src/app/showcase/page.js
 
 # product adoption
 src/app/product-adoption/page.js
@@ -71,10 +70,16 @@ src/app/showcase/page copy 3VideoOverlayli.js
 src/app/showcase/page copy 4Son.js
 src/app/showcase/page copy 5Son.js
 src/app/showcase/page copy 6son.js
+src/app/showcase/page copy 7Videolu.js
 src/app/showcase/page copy.js
 src/app/showcase/ShowcaseCards copy.js
 src/app/showcase/ShowcaseCards.module copy.css
 src/app/showcase/.DS_Store
+
+# Showcase
+src/app/showcase/page copy 3videosuzEski.js
+src/app/showcase/ShowcaseCards copy 2videolu.js
+src/app/showcase/ShowcaseCards.module copy 2videolu.css
 
 /blog-module
 /sanity-cms
