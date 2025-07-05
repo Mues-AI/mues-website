@@ -89,7 +89,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      {/* <link
+
+        {/* <link
         rel="preload"
         as="image"
         href="/images/mainFirstImage-1512.webp"
@@ -98,7 +99,38 @@ export default function RootLayout({ children }) {
         "
         imageSizes="100vw"
       /> */}
-      <link rel="preload" as="image" href="/videos/videoFirstFrame.webp" />
+
+      {/* video First frame  */}
+      <link rel="preload" as="image" fetchpriority="high" href="/videos/videoFirstFrame.webp" />
+
+        {/* Resource Hints - Preconnect */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        
+        {/* Preload Critical Fonts */}
+        <link
+          rel="preload"
+          href="/fonts/sfPro/SFProDisplay-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/openRunde/OpenRunde-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/openRunde/OpenRunde-Medium.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
 
         <Script
           id="hotjar"

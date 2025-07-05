@@ -92,6 +92,7 @@ export default function MainContent() {
         fill
         sizes="100vw"
         priority
+        fetchPriority="high"
         className="object-cover w-full h-full opacity-[0.16]"
         quality={80}
         placeholder="blur"
@@ -158,7 +159,7 @@ export default function MainContent() {
 
         <div className="mt-auto">
           <div className="text-[rgba(255,255,255,0.40)] text-xs md:text-sm font-light leading-4 tracking-[0.11px] md:tracking-[0.14px] mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 w-fit ">
-            Trusted by industry leaders and developers worldwide
+            Trusted by product leaders and developers worldwide
           </div>
           
           {isMobile ? (
