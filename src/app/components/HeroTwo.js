@@ -11,6 +11,7 @@ export default function HeroTwo() {
           className="object-cover w-full h-full -z-10"
           quality={80}
           unoptimized
+          loading="lazy"
         />
         {/* Ana Flex Container */}
         <div className="w-full h-full flex flex-col justify-between pt-12 pb-6 lg:pt-0 lg:pb-0 lg:flex-row items-center">

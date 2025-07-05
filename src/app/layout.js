@@ -89,7 +89,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      <link
+      {/* <link
         rel="preload"
         as="image"
         href="/images/mainFirstImage-1512.webp"
@@ -97,11 +97,12 @@ export default function RootLayout({ children }) {
           /images/mainFirstImage-1512.webp 1512w,
         "
         imageSizes="100vw"
-      />
-        
+      /> */}
+      <link rel="preload" as="image" href="/videos/videoFirstFrame.webp" />
+
         <Script
           id="hotjar"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
             try {
@@ -117,7 +118,7 @@ export default function RootLayout({ children }) {
         />
 
         {/* Google Tag Manager – Head */}
-        <Script id="gtm-head" strategy="afterInteractive">
+        <Script id="gtm-head" strategy="lazyOnload">
           {`
             try {
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

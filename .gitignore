@@ -53,6 +53,17 @@ src/app/contact/page.js
 src/app/usecase/
 src/app/globals copy.css
 
+# MainContent-OldFirstHero.js
+src/app/components/MainContent-OldFirstHero.js
+
+# SHOWCASE DEĞİŞİKLİKLERİ GİZLEDİM - videolar gelince gider.
+src/app/showcase/page.js
+
+# product adoption
+src/app/product-adoption/page.js
+
+
+
 src/app/showcase/page copy 1 LinearGradientliVideoÖncesi.js
 src/app/showcase/page copy 2.js
 src/app/showcase/page copy 2AiOverleyli.js

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mues.ai/sitemap.xml
+Sitemap: https://mues.ai/sitemap.xml
