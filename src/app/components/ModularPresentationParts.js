@@ -103,9 +103,9 @@ const ModularPresentationParts = ({ variant }) => {
           </div>
         </div>
         {/* BURADA şimdilik setShowVideoModal(false) yapıyoruz - gerçek video gelince true yap */}
-        <div 
+        <button 
           className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer hover:ring-1 hover:ring-offset hover:ring-[#f2f0ed] hover:ring-offset-12 hover:ring-offset-white" onClick={() => { setShowVideoModal(false); toast("Coming soon!"); }}>
-            <div className="flex w-[85px] h-12 justify-center items-center rounded bg-[#E0E0E0]">
+            <div className="flex w-[85px] h-12 justify-center items-center rounded">
               <Image quality={100} loading='lazy' unoptimized src={variantData.videoImage} alt={variantData.imageAlt} width={85} height={48} className="object-cover rounded cursor-pointer"/>
             </div>
 
@@ -113,7 +113,7 @@ const ModularPresentationParts = ({ variant }) => {
             <span className="text-black-121212 text-[15px] font-normal leading-[22px]">{variantData.videoTitle}</span>
             <span className="text-[#4A443F]/50 text-[13px] font-normal leading-[18px] tracking-[-0.13px]">{variantData.videoSubtitle}</span>
           </div>
-        </div>
+        </button>
 
       </div>
 

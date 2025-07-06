@@ -101,10 +101,10 @@ export default function RootLayout({ children }) {
       /> */}
 
       {/* video First frame  */}
-      <link rel="preload" as="image" fetchpriority="high" href="/videos/videoFirstFrame.webp" />
+      <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" />
 
         {/* Resource Hints - Preconnect */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />

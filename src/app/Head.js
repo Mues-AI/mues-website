@@ -8,7 +8,7 @@ export default function Head() {
           href="/MainAiModels/sprite.svg" 
           as="image" 
           type="image/svg+xml" 
-          fetchpriority="low"
+          fetchPriority="low"
         />
 
         {/* Favicon */}
