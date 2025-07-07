@@ -1,6 +1,6 @@
 'use client'
 
-import Navbar from '../../components/Navbar.js';
+import Navbar from '../../components/Navbar';
 import Image from 'next/image';
 import { CursorSvg } from '../../utils/showcase/svgShowcase';
 import { useEffect, useRef, useState } from 'react';
