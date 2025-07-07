@@ -44,7 +44,8 @@ export default function Footer() {
                             <p className="text-primary-black text-[14px] font-normal leading-[16px] tracking-[0.14px]">Use Cases</p>
                             <div className="flex flex-col gap-3.5">
                                 <a href="/showcase" target="_blank" rel="noopener noreferrer" aria-label="Go to Showcase" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Showcase</a>
-                                {/* <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Product adoption" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Product adoption</a>
+                                <a href="/use-cases/product-adoption" target="_blank" rel="noopener noreferrer" aria-label="Go to Product adoption" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Product adoption</a>
+                                {/* 
                                 <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Churn prevention" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Churn prevention</a>
                                 <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Customer support" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Customer support</a>
                                 <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to User experience" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">User experience</a>

@@ -180,6 +180,7 @@ export default function MainContent() {
                       width={logo.width * 1} 
                       height={logo.height * 1} 
                       alt={logo.alt} 
+                      opacity="0.4"
                     />
                   </div>
                 ))}
@@ -195,6 +196,7 @@ export default function MainContent() {
                   width={logo.width} 
                   height={logo.height} 
                   alt={logo.alt} 
+                  opacity="0.4" 
                 />
               ))}
             </div>

@@ -1,6 +1,6 @@
-export function CursorSvg({ width = 24, height = 24, fill = '#0089FF' }) {
+export function CursorSvg({ width = 24, height = 24, fill = '#0089FF', className = '' }) {
   return (
-    <svg width={width} height={height} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} width={width} height={height} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M1.17778 25H2.47171C2.48733 25 2.5 24.9873 2.5 24.9717C2.5 23.0124 2.91117 21.0749 3.70693 19.2844L3.78717 19.1039C6.82074 12.2783 12.2783 6.82074 19.1039 3.78717L19.2844 3.70693C21.0749 2.91117 23.0124 2.5 24.9717 2.5C24.9873 2.5 25 2.48733 25 2.47171V1.17778C25 1.07959 24.9204 1 24.8222 1H2.77778C1.79594 1 1 1.79594 1 2.77778V24.8222C1 24.9204 1.07959 25 1.17778 25Z"
         fill={fill} 
         stroke={fill} 

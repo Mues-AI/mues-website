@@ -109,7 +109,7 @@ const ModularPresentationParts = ({ variant }) => {
               <Image quality={100} loading='lazy' unoptimized src={variantData.videoImage} alt={variantData.imageAlt} width={85} height={48} className="object-cover rounded cursor-pointer"/>
             </div>
 
-          <div className="flex flex-col gap-1 rounded">
+          <div className="flex flex-col items-start gap-1 rounded">
             <span className="text-black-121212 text-[15px] font-normal leading-[22px]">{variantData.videoTitle}</span>
             <span className="text-[#4A443F]/50 text-[13px] font-normal leading-[18px] tracking-[-0.13px]">{variantData.videoSubtitle}</span>
           </div>
