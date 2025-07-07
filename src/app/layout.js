@@ -55,8 +55,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Mues AI | Agentic AI",
-  description: "Mues is an agentic AI that lets your users delegate any task to an AI agent using human language in your product.",
+  title: "Mues AI - AI-powered cursor for your product",
+  description: "When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.",
   robots: "index, follow",
   canonical: "https://www.mues.ai/",
   openGraph: {

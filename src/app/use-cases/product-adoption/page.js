@@ -243,7 +243,7 @@ export default function ProductAdoption() {
                       height={logo.height * 0.8} 
                       alt={logo.alt} 
                       color="#474645"
-                      opacity="1"
+                      opacity={1}
                     />
                   </div>
                 ))}
@@ -260,7 +260,7 @@ export default function ProductAdoption() {
                     height={logo.height} 
                     alt={logo.alt} 
                     color="#474645"
-                    opacity="1"
+                    opacity={1}
                   />
                 </div>
               ))}
@@ -835,7 +835,7 @@ export default function ProductAdoption() {
         </div>
 
         {/* Numeric Content */}
-        <div className='w-full h-auto max-w-[1168px] mx-auto border-t border-[#EEE] mt-24 md:mt-[148px] pt-[30px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 '>
+        <div className='w-full h-auto max-w-[1168px] mx-auto border-t border-[#EEE] mt-12 md:mt-16 pt-[30px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 '>
           
           {/* 1. Kutu */}
           <div className="w-full flex flex-col gap-y-3 lg:pr-[20px]">

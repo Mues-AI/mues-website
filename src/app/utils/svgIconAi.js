@@ -5,7 +5,7 @@ export default function SvgIconAi({
   width = 24,
   height = 24,
   color = '#ffffff', 
-  opacity = 0.4,     
+  opacity = 1,     
   ...props
 }) {
   return (
