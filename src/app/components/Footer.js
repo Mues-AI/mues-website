@@ -62,7 +62,7 @@ export default function Footer() {
                                 <a href="https://mues-ai.notion.site/?pvs=4" target="_blank" rel="noopener noreferrer" aria-label="Go to Careers" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Careers</a>
                                 {/* <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Brand assets" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Brand assets</a> */}
                                 <a href="https://cal.com/mues-ai/speak-with-founder" target="_blank" rel="noopener noreferrer" aria-label="Go to Speak with founder" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Speak w/ founder</a>
-                                <a href="mailto:hi@mues.ai" target="_blank" rel="noopener noreferrer" aria-label="Contact us via email" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Contact us</a>
+                                <a href="/contact" target="_blank" rel="noopener noreferrer" aria-label="Go to Contact us" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Contact us</a>
                             </div>
                         </div>
 

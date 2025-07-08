@@ -30,7 +30,7 @@ export const navItemsData = [
     menu: [
     { title: "Careers", desc: "See open positions", icon: "/NavbarMenu/svg/angular1.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://mues-ai.notion.site/?pvs=4" },
     { title: "Speak w/ founder", desc: "Schedule a meeting", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://cal.com/mues-ai/speak-with-founder" },
-    { title: "Contact us", desc: "Get in touch now", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "mailto:hi@mues.ai" },
+    { title: "Contact us", desc: "Get in touch now", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "/contact" },
     // { title: "About Mues AI", desc: "Learn about our story", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
     // { title: "Manifesto", desc: "Read our vision", icon: "/NavbarMenu/svg/angular5.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
     // { title: "Blog", desc: "Explore our insights", icon: "/NavbarMenu/svg/angular6.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },

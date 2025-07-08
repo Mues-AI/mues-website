@@ -48,8 +48,8 @@ src/app/unUsed/
 # Temporary files - do not push - YAP sil sonra
 src/app/components/Footer.module.css
 src/app/components/FooterNextPageNotCompleted.js
-src/app/contact/
-src/app/contact/page.js
+src/app/terms-of-service/
+src/app/terms-of-service/page.js
 src/app/usecase/
 src/app/globals copy.css
 
@@ -80,6 +80,7 @@ src/app/showcase/page copy 4Son.js
 src/app/showcase/page copy 5Son.js
 src/app/showcase/page copy 6son.js
 src/app/showcase/page copy 7Videolu.js
+src/app/showcase/page copyCanlıda.js
 src/app/showcase/page copy.js
 src/app/showcase/ShowcaseCards copy.js
 src/app/showcase/ShowcaseCards.module copy.css
