@@ -13,10 +13,10 @@ export default function CorneredLine() {
         <div className="absolute w-[calc(100vw)] h-[1px] bottom-0 left-1/2 -translate-x-[50vw] bg-[#EBEBEB]"/>
 
         {/* Sol çizgi */}
-        <div className=" absolute w-px bg-[#EBEBEB] left-0 -top-6 -bottom-6 sm:-top-12 sm:-bottom-12 lg:-top-24 lg:-bottom-24  "/>
+        <div className=" absolute w-px bg-[#EBEBEB] left-0 -top-6 -bottom-6 sm:-top-9 sm:-bottom-9 md:-top-12 md:-bottom-12 lg:-top-18 lg:-bottom-18  "/>
 
         {/* Sağ çizgi */}
-        <div className=" absolute w-px bg-[#EBEBEB] right-0 -top-6 -bottom-6 sm:-top-12 sm:-bottom-12 lg:-top-24 lg:-bottom-24"/>
+        <div className=" absolute w-px bg-[#EBEBEB] right-0 -top-6 -bottom-6 sm:-top-9 sm:-bottom-9 md:-top-12 md:-bottom-12 lg:-top-18 lg:-bottom-18"/>
 
         {/* Sol üst köşe + */}
         <div className="absolute -top-3 left-0 w-[1px] h-6 bg-[#AAA]" />

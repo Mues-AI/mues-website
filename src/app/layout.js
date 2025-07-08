@@ -112,7 +112,28 @@ export default function RootLayout({ children }) {
         {/* Preload Critical Fonts */}
         <link
           rel="preload"
-          href="/fonts/sfPro/SFProDisplay-Regular.woff2"
+          href="/fonts/sfPro/sf-pro-display-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/sfPro/sf-pro-display-semibold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/sfPro/sf-pro-display-bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/sfPro/sf-pro-display-medium.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"

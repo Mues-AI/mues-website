@@ -80,7 +80,7 @@ export default function TermsOfService() {
                     sm:text-[48px] sm:leading-[56px] sm:tracking-[0.48px]
                     md:text-[52px] md:leading-[60px] md:tracking-[0.52px]
                     lg:text-[56px] lg:leading-[64px] lg:tracking-[0.56px]'>
-                        Contact Us
+                        Contact us
                     </h1>
 
                     {/* Last Updated */}
@@ -98,7 +98,7 @@ export default function TermsOfService() {
                         target="_blank" 
                         rel="noopener noreferrer" 
                         aria-label="Contact us" 
-                        className='w-fit rounded-xl cursor-pointer mt-4'
+                        className='w-fit rounded-xl cursor-pointer'
                     >
                         <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] bg-white hover:bg-[#ebebeb] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
                             <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Contact us</p>
