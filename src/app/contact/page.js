@@ -3,12 +3,13 @@
 import Navbar from '../components/Navbar.js';
 import FAQ from '../components/FAQ.js';
 import Footer from '../components/Footer.js';
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import CorneredLine from '../components/CorneredLine.js';
 import { XIcon, DiscordIcon } from '../utils/svgIcons.js';
 import { ArrowRightIcon } from '../utils/svgIcons.js';
 
-export default function TermsOfService() {
+export default function Contact() {
 
     // Contact button ref and useEffect for keypress
     const contactButtonRef = useRef(null);
@@ -121,8 +122,8 @@ export default function TermsOfService() {
                         {/* First Row - 2 Equal Boxes */}
                         <div className="h-auto p-8 lg:p-12 flex flex-col gap-8 justify-between">
                             <div className="flex flex-col gap-5">
-                                <img src="/Contact/svg/bulk-like.svg" alt="Support" width={48} height={48} />
-                                <h2 className="text-[#121212] font-sfPro font-[590]
+                                <Image src="/Contact/svg/bulk-like.svg" alt="Support" width={48} height={48} />
+                                <h2 className="text-[#121212] font-sfPro font-regular tracking-normal lg:tracking-[-0.05px] 
                                 text-[36px] leading-[48px]
                                 md:text-[42px] md:leading-[54px]
                                 lg:text-[48px] lg:leading-tight
@@ -153,8 +154,8 @@ export default function TermsOfService() {
 
                         <div className="h-auto p-8 lg:p-12 flex flex-col gap-8 justify-between border-l border-t lg:border-t-none border-[#EBEBEB]">
                             <div className="flex flex-col gap-5">
-                                <img src="/Contact/svg/bulk-building.svg" alt="Sales" width={48} height={48} />
-                                <h2 className="text-[#121212] font-sfPro font-[590]
+                                <Image src="/Contact/svg/bulk-building.svg" alt="Sales" width={48} height={48} />
+                                <h2 className="text-[#121212] font-sfPro font-regular tracking-normal lg:tracking-[-0.05px] 
                                 text-[36px] leading-[48px]
                                 md:text-[42px] md:leading-[54px]
                                 lg:text-[48px] lg:leading-tight">
@@ -196,7 +197,7 @@ export default function TermsOfService() {
                                         <path d="M10.6667 22.6666H21.3333" stroke="#979797" strokeWidth="2.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>
                                     <div className="flex flex-col gap-3">
-                                        <h3 className="text-[#121212] font-sfPro font-[510] 
+                                        <h3 className="text-[#121212] font-sfPro font-regular 
                                         text-[24px] leading-none
                                         md:text-[28px] md:leading-tight
                                         lg:text-[32px] lg:leading-normal">
@@ -228,7 +229,7 @@ export default function TermsOfService() {
                                 <div className="flex flex-col gap-5">
                                     <XIcon width={26} height={32} className="text-[#979797]" />
                                     <div className="flex flex-col gap-3">
-                                        <h3 className="text-[#121212] font-sfPro font-[510] 
+                                        <h3 className="text-[#121212] font-sfPro font-regular 
                                         text-[24px] leading-none
                                         md:text-[28px] md:leading-tight
                                         lg:text-[32px] lg:leading-normal">
@@ -260,7 +261,7 @@ export default function TermsOfService() {
                                 <div className="flex flex-col gap-5">
                                     <DiscordIcon width={30} height={32} className="text-[#979797]" />
                                     <div className="flex flex-col gap-3">
-                                        <h3 className="text-[#121212] font-sfPro font-[510] 
+                                        <h3 className="text-[#121212] font-sfPro font-regular 
                                         text-[24px] leading-none
                                         md:text-[28px] md:leading-tight
                                         lg:text-[32px] lg:leading-normal">

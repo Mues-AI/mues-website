@@ -86,7 +86,7 @@ const ModularPresentationParts = ({ variant }) => {
         <div className="flex flex-col gap-4 md:gap-6">
           <div className="flex flex-col gap-3 md:gap-4">
             <p className={`text-[14px] font-medium leading-[20px] tracking-[-0.09px]`} style={{ color: variantData.tagColor }}>{variantData.tag}</p>
-            <h2 className="w-full md:max-w-[448px] h-auto text-black-121212 font-sfPro font-[510] text-[26px] leading-[32px] md:text-[42px] md:leading-[48px] whitespace-pre-line">
+            <h2 className="w-full md:max-w-[448px] h-auto text-black-121212 font-sfPro font-medium text-[26px] leading-[32px] md:text-[42px] md:leading-[48px] whitespace-pre-line">
               {variantData.title}
             </h2>
           </div>

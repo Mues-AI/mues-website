@@ -43,35 +43,22 @@ next-env.d.ts
 # uzun süreli kullanılmayan dosyalar
 src/app/unUsed/
 
-# kısa süreli gitignore dosyaları
+####### kısa süreli gitignore dosyaları
 
 # Temporary files - do not push - YAP sil sonra
 src/app/components/Footer.module.css
 src/app/components/FooterNextPageNotCompleted.js
-src/app/terms-of-service/
-src/app/terms-of-service/page.js
-src/app/usecase/
+
 src/app/globals copy.css
 
-# MainContent-OldFirstHero.js
+# MainContent-OldFirstHero.js - eski hero
 src/app/components/MainContent-OldFirstHero.js
-
-# SHOWCASE DEĞİŞİKLİKLERİ GİZLEDİM - videolar gelince gider.
-
-# product adoption
-# src/app/product-adoption/page.js
-
 
 # deneme
 src/app/deneme
 src/app/deneme/page.js
 
-# product adoption
-src/app/product-adoption/
-src/app/product-adoption/page.js
-
-
-
+# Showcase
 src/app/showcase/page copy 1 LinearGradientliVideoÖncesi.js
 src/app/showcase/page copy 2.js
 src/app/showcase/page copy 2AiOverleyli.js
@@ -85,11 +72,27 @@ src/app/showcase/page copy.js
 src/app/showcase/ShowcaseCards copy.js
 src/app/showcase/ShowcaseCards.module copy.css
 src/app/showcase/.DS_Store
-
-# Showcase
 src/app/showcase/page copy 3videosuzEski.js
 src/app/showcase/ShowcaseCards copy 2videolu.js
 src/app/showcase/ShowcaseCards.module copy 2videolu.css
 
+# pricing
+src/app/pricing/page copy.js
+src/app/pricing/page copy 2.js
+src/app/pricing/page copy 3.js
+src/app/pricing/page copy 4.js
+src/app/pricing/page copy 5.js
+src/app/pricing/page copy 5ScrollSyncli.js
+src/app/pricing/page copy 6StickyOlmadanAynıKayma.js
+src/app/pricing/page copy.js
+
+
+src/app/pricing/pricing.module copy.css
+src/app/pricing/pricing.module copy 2.css
+src/app/pricing/pricing.module copy 3.css
+src/app/pricing/pricing.module copy 4.css
+
+
+# dosyalar        
 /blog-module
 /sanity-cms

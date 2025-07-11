@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { CursorSvg } from '../../utils/showcase/svgShowcase';
 import { useEffect } from 'react';
 import SvgIconAi from '../../utils/svgIconAi';
-import { productAdoptionData } from '../../data/usecase-prodocutAdoptionData';
+import { customerSupportData } from '../../data/usecase-customerSupportData';
 import { toast } from 'sonner';
 import UserCursor from '../../components/UserCursor';
 import HowItWorks from '../../components/HowItWorks';
@@ -58,7 +58,7 @@ function FeatureContainer({
   );
 }
 
-export default function ProductAdoption() {
+export default function CustomerSupport() {
   // LLM logos configuration
   const logos = [
     { name: "openai", width: 107, height: 32, alt: "OpenAI" },
@@ -128,7 +128,7 @@ export default function ProductAdoption() {
             <CursorSvg width={12} height={12} fill="#979797" />
 
                 <div className="text-center text-[12px] leading-4 tracking-[0.12px] text-[#979797]">
-                PRODUCT ADOPTION
+                CUSTOMER SUPPORT
                 </div>
             </div>
 
@@ -138,12 +138,12 @@ export default function ProductAdoption() {
             sm:text-[48px] sm:leading-[56px] sm:tracking-[0.48px]
             md:text-[52px] md:leading-[60px] md:tracking-[0.52px]
             lg:text-[56px] lg:leading-[64px] lg:tracking-[0.56px]">
-            Maximize product adoption with agentic AI
+            Guide users step by step while reducing costs
             </h1>
 
             {/* Subheading */}
             <p className="w-full text-center text-[#CCC] text-[20px] font-normal leading-[36px] tracking-[0.2px] not-italic">
-            Mues is an agentic AI that lets your users delegate any task <br /> to an AI agent using human language in your product.
+            Mues AI is the first context-aware AI support agent to resolve support issues instantly and 24/7, reducing support costs.
             </p>
 
             {/* Join Waitlist Button */}
@@ -227,18 +227,18 @@ export default function ProductAdoption() {
             </span>
           </div>
 
-          <h2 className="max-w-xl text-primary-black text-center font-rethinkSans font-semibold 
+          <h2 className="max-w-lg text-primary-black text-center font-rethinkSans font-semibold 
           text-[30px] leading-[40px] tracking-[0.3px]
           md:text-[56px] md:leading-[68px] md:tracking-[0.56px]
           ">
-            Eliminate frictions highlight value 
+            Stop Losing Users in Support Friction 
           </h2>
 
           <p className="w-full text-[#474645] text-center font-light tracking-[-0.3px] 
           text-[18px] leading-[32px]
           md:text-[22px] md:leading-[38px]
           ">
-            User frustration with your product doesn&apos;t just ruin the moment. <br className='hidden sm:block'/> It permanently changes how your users view its worth and usability.
+            Users expect instant answers. Your team spends hours on recurring tickets instead of scaling what matters. Traditional bots fail to adapt, and static help docs get ignored.
           </p>
 
         </div>
@@ -256,7 +256,7 @@ export default function ProductAdoption() {
               <h3 className="text-[#121212] font-sfPro font-normal leading-normal 
               text-[24px] tracking-[0.24px]
               md:text-[32px] md:tracking-[0.32px]">
-                Users hitting a wall in your product
+                Overflowing/recurring support tickets
               </h3>
             </div>
 
@@ -288,7 +288,7 @@ export default function ProductAdoption() {
                   <path d="M11.9945 17H12.0035" stroke="#FF3200" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <span className="text-[#474645] text-lg font-normal leading-[30px]">
-                  I was unable to create a Slack integration.
+                I don&apos;t know how to change my billing info.
                 </span>
               </div>
 
@@ -359,7 +359,7 @@ export default function ProductAdoption() {
             <div className="mb-1" style={{ width: 'calc(100% + 56px)', marginLeft: '-28px' }}>
               <div className="h-[52px] rounded-[4px_4px_20px_20px] bg-[#FBFBFB] flex items-center justify-center px-4">
                 <p className="text-[#777] text-center text-[13px] font-normal leading-5 tracking-[0.13px]">
-                  The user spent time to resolve the issue · Product adoption has decreased
+                Your support team is buried in repetitive questions while users wait—and churn.
                 </p>
               </div>
             </div>
@@ -375,7 +375,7 @@ export default function ProductAdoption() {
               <h3 className="text-[#121212] font-sfPro font-normal leading-normal 
               text-[24px] tracking-[0.24px]
               md:text-[32px] md:tracking-[0.32px]">
-                7x increase in product adoption
+                Reduce support costs by 40%
               </h3>
             </div>
 
@@ -407,7 +407,7 @@ export default function ProductAdoption() {
                   <path d="M11.9945 17H12.0035" stroke="#FF3200" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <span className="text-[#474645] text-lg font-normal leading-[30px]">
-                  I was unable to create a Slack integration.
+                I don&apos;t know how to change my billing info.
                 </span>
               </div>
 
@@ -431,7 +431,7 @@ export default function ProductAdoption() {
 
                 {/* Main Content */}
                 <p className="text-[#323232] font-openRunde text-[13px] font-normal leading-4 tracking-[0.13px] p-3">
-                  Integrate Slack with my workspace
+                Change my billing information to XYZ inc.
                 </p>
 
                 {/* Footer */}
@@ -461,7 +461,7 @@ export default function ProductAdoption() {
             <div className="mb-1" style={{ width: 'calc(100% + 56px)', marginLeft: '-28px' }}>
               <div className="h-[52px] rounded-[4px_4px_20px_20px] bg-[#FBFBFB] flex items-center justify-center px-4">
                 <p className="text-[#777] text-center text-[13px] font-normal leading-5 tracking-[0.13px]">
-                User watched Mues&apos; actions · Learn from Mues · Product adoption has increased
+                Users solve problems in-product—before they become support issues
                 </p>
               </div>
             </div>
@@ -475,20 +475,20 @@ export default function ProductAdoption() {
         <div className="flex flex-col items-start gap-4 md:gap-6 max-w-[1168px] mt-24 md:mt-32 lg:mt-[200px] mb-12 md:mb-15 lg:mb-18 mx-auto">
           <div className="flex justify-center items-center gap-1.5 px-3 py-2 rounded-xl border border-[rgba(0,137,255,0.25)] bg-white w-fit">
             <span className="text-primary-blue text-center text-[14px] font-normal leading-[17px]">
-            INCREASE ADOPTION
+            AI-POWERED SUPPORT
             </span>
           </div>
 
           <h2 className="max-w-xl text-primary-black font-rethinkSans font-semibold 
           text-[30px] leading-[40px] tracking-[0.3px]
           md:text-[56px] md:leading-[68px] md:tracking-[0.56px]">
-            A new kind of <br /> software interaction.
+            Mues AI transforms how support happens
           </h2>
         </div>
 
         {/* Feature Containers */}
         <div className="w-full h-auto max-w-[1168px] mx-auto flex flex-col gap-12">
-          {productAdoptionData.map((feature) => (
+          {customerSupportData.map((feature) => (
             <FeatureContainer
               key={feature.id}
               svgSrc={feature.svgSrc}
@@ -506,7 +506,7 @@ export default function ProductAdoption() {
         my-[200px]">
           {/* Text Content */}
           <p className="text-[#211D1D] text-[20px] font-medium leading-[26px] tracking-[-0.33px] text-center md:text-start">
-            Boost product adoption <br  /> and reduce churn
+          Your cursor becomes <br /> an AI support agent
           </p>
 
           {/* Divider Line */}
@@ -533,7 +533,7 @@ export default function ProductAdoption() {
 
             <div className="flex flex-col gap-1 rounded items-start">
               <span className="text-black-121212 text-[15px] font-normal leading-[22px]">
-                Churn Prevention with Mues
+              Reduce support ticket volume
               </span>
               <span className="text-[#4A443F]/50 text-[13px] font-normal leading-[18px] tracking-[-0.13px]">
                 Watch the video
@@ -574,7 +574,7 @@ export default function ProductAdoption() {
             text-[32px] sm:text-[48px] lg:text-[56px]  
             leading-[48px] sm:leading-[60px] lg:leading-[72px]
             tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px] ">
-              {" adoption"} <br />
+              {" support"} <br />
             </span>
             for your product.
           </p>

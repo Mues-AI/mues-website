@@ -1,0 +1,115 @@
+.tableContainer {
+    width: 100%;
+    max-width: 1116px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 52px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.tableContainer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableContainer tr {
+    border-bottom: 1px solid #EDEFF3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 60px;
+    gap: 24px;
+}
+
+.detailRow {
+    height: 44px !important;
+}
+
+.detailRow td{
+    height: 44px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    letter-spacing: -0.07px !important;
+    color: #646464 !important;
+    
+}
+
+.detailRow td:first-child {
+    padding-left: 16px;
+    color: #777777 !important;
+}
+
+.detailRow td:nth-child(3) {
+    border-bottom: 1px solid #EDEFF3;
+}
+
+.tableContainer thead {
+    display: table;
+    width: 100%;
+}
+
+.tableContainer tbody {
+    display: table;
+    width: 100%;
+}
+
+.tableContainer th span {
+    color: #0089FF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; 
+    letter-spacing: -0.18px;
+}
+
+.tableContainer td {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+
+    color: #121212;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; 
+    letter-spacing: -0.07px;
+}
+
+.tableContainer td div {
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tableContainer td:first-child {
+    flex: 1;
+    justify-content: flex-start;
+    width: 220px;
+}
+
+.tableContainer table tbody tr td:nth-child(3) {
+    background-color: #FBFBFB;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.tableContainer::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.tableContainer {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+

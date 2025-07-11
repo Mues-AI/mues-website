@@ -22,7 +22,7 @@ function BenefitCard({ bgColor, title, description, imageSrc, imageWidth, imageH
 
       </div>       
 
-      <div className='w-[170px] flex justify-center lg:h-full lg:w-auto self-center md:self-end relative -bottom-6 sm:bottom-0 md:-bottom-4 lg:bottom-0 lg:self-end rounded-2xl '>
+      <div className='flex justify-center lg:h-full lg:w-auto self-center md:self-end relative -bottom-6 sm:bottom-0 md:-bottom-4 lg:bottom-0 lg:self-end rounded-2xl '>
         <Image 
           quality={100} 
           loading='lazy' 
@@ -44,16 +44,16 @@ export default function FooterTopTwoBenefit() {
     <div className="max-w-[1168px] lg:h-37 flex flex-col md:flex-row gap-4 md:gap-6 mx-auto">
 
       <BenefitCard 
-        bgColor="bg-[#1A1A1A]"
+        bgColor="bg-[#07090B]"
         title="Benefits for your product"
         description="Increased product adoption and onboarding"
         imageSrc="/CommentsFAQ/images/faqBottomImage1.webp"
-        imageWidth={170}
-        imageHeight={140}
+        imageWidth={179}
+        imageHeight={88}
         imageAlt="benefits-for-product"
         textColor="text-white"
         subtextColor="text-[#DDD]"  
-        className="object-cover"
+        className="object-contain"
       />
 
       <BenefitCard 
