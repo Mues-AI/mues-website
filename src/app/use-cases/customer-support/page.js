@@ -147,8 +147,8 @@ export default function CustomerSupport() {
             </p>
 
             {/* Join Waitlist Button */}
-            <a href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className='w-fit rounded-xl cursor-pointer'>
-              <div className="inline-flex py-3.5 px-[19px] mt-2 md:mt-4 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] bg-white hover:bg-[#ebebeb] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
+            <a href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className='w-fit rounded-xl cursor-pointer mt-2 md:mt-4 '>
+              <div className="inline-flex py-3.5 px-[19px] justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
                 <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Join waitlist</p>
                 <span className="flex px-[4.5px] justify-center items-center rounded-[3px] bg-[rgba(119,119,119,0.10)]">
                   <p className="text-[rgba(119,119,119,0.75)] text-center text-[11px] font-medium leading-4 tracking-[0.11px]">J</p>
@@ -584,9 +584,9 @@ export default function CustomerSupport() {
             
             {/* Book a demo button */}
             <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className='w-fit rounded-xl cursor-pointer hover:opacity-90'>
-              <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-gradient-to-b from-[#252525] to-[#17181A]">
+              <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
                 <div className="w-[152px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.02)] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
+                bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
                   <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
                     Book a demo
                   </span>

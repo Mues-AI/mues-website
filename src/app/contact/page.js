@@ -101,7 +101,7 @@ export default function Contact() {
                         aria-label="Contact us" 
                         className='w-fit rounded-xl cursor-pointer'
                     >
-                        <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] bg-white hover:bg-[#ebebeb] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
+                        <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
                             <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Contact us</p>
                             <span className="flex px-[4.5px] justify-center items-center rounded-[3px] bg-[rgba(119,119,119,0.10)]">
                             <p className="text-[rgba(119,119,119,0.75)] text-center text-[11px] font-medium leading-4 tracking-[0.11px]">C</p>
@@ -139,9 +139,9 @@ export default function Contact() {
 
                             {/* Get Support Button */}
                             <a href="mailto:hi@mues.ai" target="_blank" rel="noopener noreferrer" aria-label="Get support" className='w-fit rounded-xl'>
-                                <div className="w-[142px] h-12 rounded-xl flex justify-center items-center bg-gradient-to-b from-[#252525] to-[#17181A]">
+                                <div className="w-[142px] h-12 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
                                     <div className="w-[140px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                    bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.02)] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
+                                    bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
                                         <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
                                         Get support
                                         </span>
@@ -170,9 +170,9 @@ export default function Contact() {
                             
                             {/* Contact Sales Button */}
                             <a href="https://cal.com/mues-ai/talk-with-sales" target="_blank" rel="noopener noreferrer" aria-label="Contact sales" className='w-fit rounded-xl'>
-                                <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-gradient-to-b from-[#252525] to-[#17181A]">
+                                <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
                                     <div className="w-[152px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                    bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.02)] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
+                                    bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
                                         <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
                                         Contact sales
                                         </span>
@@ -218,7 +218,7 @@ export default function Contact() {
                                     aria-label="Mues AI Docs" 
                                     className='w-fit rounded-xl cursor-pointer'
                                 >
-                                    <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] bg-white hover:bg-[#ebebeb] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
+                                    <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
                                         <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Mues AI Docs</p>
                                     </div>
                                 </a>
@@ -250,7 +250,7 @@ export default function Contact() {
                                     aria-label="Follow @mues_ai" 
                                     className='w-fit rounded-xl cursor-pointer'
                                 >
-                                    <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] bg-white hover:bg-[#ebebeb] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
+                                    <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
                                         <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Follow @mues_ai</p>
                                     </div>
                                 </a>
@@ -282,7 +282,7 @@ export default function Contact() {
                                     aria-label="Join our community" 
                                     className='w-fit rounded-xl cursor-pointer'
                                 >
-                                    <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] bg-white hover:bg-[#ebebeb] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
+                                    <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
                                         <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Join our community</p>
                                     </div>
                                 </a>
@@ -315,9 +315,9 @@ export default function Contact() {
                         
                         {/* Book a demo button */}
                         <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className='w-fit rounded-xl cursor-pointer hover:opacity-90'>
-                        <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-gradient-to-b from-[#252525] to-[#17181A]">
+                        <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
                             <div className="w-[152px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                            bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.02)] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
+                            bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
                             <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
                                 Book a demo
                             </span>
@@ -332,7 +332,7 @@ export default function Contact() {
 
                         {/* Join waitlist button */}
                         <a href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className='w-fit rounded-xl cursor-pointer'>
-                        <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] bg-white hover:bg-[#ebebeb] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
+                        <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
                             <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Join waitlist</p>
                             <span className="flex px-[4.5px] justify-center items-center rounded-[3px] bg-[rgba(119,119,119,0.10)]">
                             <p className="text-[rgba(119,119,119,0.75)] text-center text-[11px] font-medium leading-4 tracking-[0.11px]">J</p>

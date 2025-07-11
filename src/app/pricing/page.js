@@ -306,9 +306,9 @@ export default function Pricing() {
 
                             {/* Request Pricing Button */}
                             <a href="https://cal.com/mues-ai/talk-with-sales" target="_blank" rel="noopener noreferrer" aria-label="Request pricing" className='w-fit rounded-xl'>
-                                <div className="w-[140px] h-10 rounded-xl flex justify-center items-center bg-gradient-to-b from-[#252525] to-[#17181A]">
+                                <div className="w-[140px] h-10 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
                                     <div className="w-[138px] h-[38px] px-[14px] pt-[10px] pb-[11px] rounded-[11px] text-center flex justify-center items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                    bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.02)] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
+                                    bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
                                         <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
                                         Request pricing
                                         </span>
@@ -347,9 +347,9 @@ export default function Pricing() {
 
                             {/* Growth Plan - Request Pricing Button */}
                             <a href="https://cal.com/mues-ai/talk-with-sales" target="_blank" rel="noopener noreferrer" aria-label="Request pricing" className='w-fit rounded-xl'>
-                                <div className="w-[140px] h-10 rounded-xl flex justify-center items-center bg-gradient-to-b from-[#252525] to-[#17181A]">
+                                <div className="w-[140px] h-10 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
                                     <div className="w-[138px] h-[38px] px-[14px] pt-[10px] pb-[11px] rounded-[11px] text-center flex justify-center items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                    bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.02)] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
+                                    bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
                                         <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
                                         Request pricing
                                         </span>
@@ -382,9 +382,9 @@ export default function Pricing() {
                             <div className="flex gap-2 items-center flex-wrap">
                                 {/* Book a demo Button */}
                                 <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className='w-fit rounded-xl min-w-fit'>
-                                    <div className="w-[121px] h-10 rounded-xl flex justify-center items-center bg-gradient-to-b from-[#252525] to-[#17181A]">
+                                    <div className="w-[121px] h-10 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
                                         <div className="w-[calc(100%-2px)] h-[calc(100%-2px)] px-[14px] pt-[10px] pb-[11px] rounded-[11px] text-center flex justify-center items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                        bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.02)] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
+                                        bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
                                             <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
                                             Book a demo
                                             </span>
@@ -398,7 +398,7 @@ export default function Pricing() {
                                     aria-label="Contact us button" 
                                     className='w-fit rounded-xl min-w-fit cursor-pointer'
                                 >
-                                    <div className="inline-flex py-3 px-4 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] bg-white hover:bg-[#ebebeb] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
+                                    <div className="inline-flex py-3 px-4 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
                                         <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Contact us</p>
                                     </div>
                                 </a>
@@ -513,7 +513,7 @@ export default function Pricing() {
                                     aria-label="Basic Button" 
                                     className='w-full rounded-xl cursor-pointer'
                                 >
-                                    <div className="w-full inline-flex py-[11px] px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] bg-white hover:bg-[#ebebeb] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
+                                    <div className="w-full inline-flex py-[11px] px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
                                         <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Continue with Basic</p>
                                     </div>
                                 </a>
@@ -536,9 +536,9 @@ export default function Pricing() {
                                 </p>
                                 {/* Growth Button */}
                                 <a href="https://cal.com/mues-ai/talk-with-sales" target="_blank" rel="noopener noreferrer" aria-label="Growth Button" className='w-full rounded-xl mt-1'>
-                                    <div className="w-full h-10 rounded-xl flex justify-center items-center bg-gradient-to-b from-[#252525] to-[#17181A]">
+                                    <div className="w-full h-10 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
                                         <div className="w-[calc(100%-2px)] h-[calc(100%-2px)] px-[14px] pt-[10px] pb-[11px] rounded-[11px] text-center flex justify-center items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                        bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.02)] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
+                                        bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
                                             <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
                                             Continue with Growth
                                             </span>
@@ -680,9 +680,9 @@ export default function Pricing() {
                     
                     {/* Book a demo button */}
                     <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className='w-fit rounded-xl cursor-pointer hover:opacity-90'>
-                    <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-gradient-to-b from-[#252525] to-[#17181A]">
+                    <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
                         <div className="w-[152px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                        bg-gradient-to-b from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.02)] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
+                        bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
                         <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
                             Book a demo
                         </span>

@@ -128,7 +128,7 @@ export default function MainContent() {
               aria-label="Join waitlist" 
               className='w-fit rounded-xl cursor-pointer'
             >
-              <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] bg-white hover:bg-[#ebebeb] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)] mt-4 md:mt-6 lg:mt-8 w-fit">
+              <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)] mt-4 md:mt-6 lg:mt-8 w-fit">
                 <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Join waitlist</p>
                 <span className="flex px-[4.5px] justify-center items-center rounded-[3px] bg-[rgba(119,119,119,0.10)]">
                   <p className="text-[rgba(119,119,119,0.75)] text-center text-[11px] font-medium leading-4 tracking-[0.11px]">J</p>
