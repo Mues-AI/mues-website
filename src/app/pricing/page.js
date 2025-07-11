@@ -144,12 +144,12 @@ const pricingTableData = {
 
 const PRICING = {
     basic: {
-        monthly: 199,
-        annual: 99
+        monthly: "***",
+        annual: "**"
     },
     growth: {
-        monthly: 799,
-        annual: 599
+        monthly: "***",
+        annual: "***"
     }
 };
 
