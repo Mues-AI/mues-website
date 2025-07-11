@@ -60,8 +60,8 @@ export const metadata = {
   robots: "index, follow",
   canonical: "https://www.mues.ai/",
   openGraph: {
-    title: "Mues AI",
-    description: "Delegate any task to an AI agent using natural language.",
+    title: "Mues AI - AI-powered cursor for your product",
+    description: "When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.",
     url: "https://mues.ai", 
     siteName: "Mues AI",
     images: [
@@ -77,8 +77,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mues AI",
-    description: "Delegate any task to an AI agent using natural language.",
+    title: "Mues AI - AI-powered cursor for your product",
+    description: "When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.",
     images: ["https://mues.ai/images/og-image.webp"], 
     creator: "@MuesAI", 
   },

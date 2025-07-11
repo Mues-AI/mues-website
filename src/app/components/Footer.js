@@ -33,7 +33,7 @@ export default function Footer() {
                                 {/* <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Features" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Features</a>
                                 <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Enterprise" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Enterprise</a> */}
                                 <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Go to Demo" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Demo</a>
-                                <a href="/pricing" target="_blank" rel="noopener noreferrer" aria-label="Go to Pricing" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Pricing</a>
+                                <a href="/pricing"rel="noopener noreferrer" aria-label="Go to Pricing" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Pricing</a>
                                 <a href="https://muesai.featurebase.app/en/help" target="_blank" rel="noopener noreferrer" aria-label="Go to Docs" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Docs</a>
                                 <a href="https://muesai.featurebase.app/en" target="_blank" rel="noopener noreferrer" aria-label="Go to Feedback" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Feedback</a>
                                 <a href="https://muesai.featurebase.app/en/changelog" target="_blank" rel="noopener noreferrer" aria-label="Go to Changelog" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Changelog</a>
@@ -43,9 +43,9 @@ export default function Footer() {
                         <div className="flex flex-col gap-4">
                             <p className="text-primary-black text-[14px] font-normal leading-[16px] tracking-[0.14px]">Use Cases</p>
                             <div className="flex flex-col gap-3.5">
-                                <a href="/showcase" target="_blank" rel="noopener noreferrer" aria-label="Go to Showcase" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Showcase</a>
-                                <a href="/use-cases/product-adoption" target="_blank" rel="noopener noreferrer" aria-label="Go to Product adoption" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Product adoption</a>
-                                <a href="/use-cases/customer-support" target="_blank" rel="noopener noreferrer" aria-label="Go to Customer support" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Customer support</a>
+                                <a href="/showcase" rel="noopener noreferrer" aria-label="Go to Showcase" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Showcase</a>
+                                <a href="/use-cases/product-adoption" rel="noopener noreferrer" aria-label="Go to Product adoption" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Product adoption</a>
+                                <a href="/use-cases/customer-support" rel="noopener noreferrer" aria-label="Go to Customer support" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Customer support</a>
                                 {/* 
                                 <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Churn prevention" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Churn prevention</a>
                                 <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to User experience" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">User experience</a>
@@ -62,8 +62,8 @@ export default function Footer() {
                                 <a href="https://mues-ai.notion.site/?pvs=4" target="_blank" rel="noopener noreferrer" aria-label="Go to Careers" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Careers</a>
                                 {/* <a href="https://www.mues.ai/" target="_blank" rel="noopener noreferrer" aria-label="Go to Brand assets" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Brand assets</a> */}
                                 <a href="https://cal.com/mues-ai/speak-with-founder" target="_blank" rel="noopener noreferrer" aria-label="Go to Speak with founder" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Speak w/ founder</a>
-                                <a href="/contact" target="_blank" rel="noopener noreferrer" aria-label="Go to Contact us" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Contact us</a>
-                                <a href="/terms-of-service" target="_blank" rel="noopener noreferrer" aria-label="Go to Legal docs" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Legal docs</a>
+                                <a href="/contact" rel="noopener noreferrer" aria-label="Go to Contact us" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Contact us</a>
+                                <a href="/terms-of-service" rel="noopener noreferrer" aria-label="Go to Legal docs" className="text-8e8e8e text-[14px] font-light leading-[16px] hover:text-primary-black cursor-pointer w-fit">Legal docs</a>
                             </div>
                         </div>
 

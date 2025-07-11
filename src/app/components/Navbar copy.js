@@ -50,8 +50,8 @@ function NavbarMenu({ items, isMobile = false, onItemClick = () => {}, theme }) 
           <Link 
             key={idx}
             href={item.href}
-            target={item.href.startsWith('http') ? "_blank" : undefined}
-            rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center md:p-2.5 h-16 rounded-xl gap-3 hover:bg-[#F8F8F8] cursor-pointer"
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}

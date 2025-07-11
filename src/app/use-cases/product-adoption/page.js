@@ -219,7 +219,7 @@ export default function ProductAdoption() {
       <div className='w-full px-6 sm:px-9 md:px-12 lg:px-18'>
 
         {/* Problem Section - Like Meet Mues Section */}
-        <div className="flex flex-col items-center gap-4 md:gap-6 max-w-[1168px] mt-24 md:mt-32 lg:mt-[200px] mb-12 md:mb-15 lg:mb-18 mx-auto">
+        <div className="flex flex-col items-center gap-4 md:gap-6 max-w-[1168px] mt-24 md:mt-32 lg:mt-[152px] mb-12 md:mb-15 lg:mb-18 mx-auto">
 
           <div className="flex justify-center items-center gap-1.5 px-3 py-2 rounded-xl border border-[rgba(0,137,255,0.25)] bg-white w-fit">
             <span className="text-primary-blue text-center text-[14px] font-normal leading-[17px]">

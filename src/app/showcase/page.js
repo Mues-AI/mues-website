@@ -664,11 +664,11 @@ export default function Showcase() {
             <div className="hidden md:block flex-1 h-[1px] bg-[rgba(238,238,238,0.20)]"></div>
             
             {/* Talk With Us Button */}
-            <button className="max-w-[122px] inline-flex py-4 px-5 justify-center items-center rounded-xl border border-[#F4F4F4] bg-white cursor-pointer hover:bg-[#F4F4F4] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
+            <a href="https://cal.com/mues-ai/talk-with-sales" target="_blank" rel="noopener noreferrer" className="max-w-[122px] inline-flex py-4 px-5 justify-center items-center rounded-xl border border-[#F4F4F4] bg-white cursor-pointer hover:bg-[#F4F4F4] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
               <span className="text-[#17181A] text-[14px] font-medium leading-4">
                 Talk with us
               </span>
-            </button>
+            </a>
             
           </div>
         </div>
