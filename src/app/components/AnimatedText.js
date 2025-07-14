@@ -22,7 +22,7 @@ export default function AnimatedText() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [controls]);
 
-  const text = "Users sometimes experience problems with your product. These are key moments. Because product adoption is affected dramatically.";
+  const text = "Every day, users hit roadblocks while using your product. They get stuck, confused, and lost. These moments are critical for your user. Adopt or churn?";
 
   // Kelime uzunluklarını hesapla
   const words = text.split(' ');
