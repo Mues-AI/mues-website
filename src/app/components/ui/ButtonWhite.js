@@ -23,7 +23,6 @@ const getNavigationSystem = () => {
       },
       
       handleKeyPress: (event) => {
-        // Skip if typing in input/textarea
         if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
           return;
         }
@@ -37,7 +36,6 @@ const getNavigationSystem = () => {
       }
     };
 
-    // Setup global listener once
     if (typeof window !== 'undefined') {
       document.addEventListener('keydown', navigationSystem.handleKeyPress);
     }
@@ -46,28 +44,27 @@ const getNavigationSystem = () => {
   return navigationSystem;
 };
 
-const ButtonBlack = forwardRef(({ 
+const ButtonWhite = forwardRef(({ 
   children,
   href,
   onClick,
-  width = 'w-[154px]', 
-  height = 'h-12',
+  width = 'w-fit',
+  height = 'h-auto',
   badge,
-  icon, // Yeni prop: icon component
+  icon,
   ariaLabel,
   target = '_blank',
   rel = 'noopener noreferrer',
   disabled = false,
-  wrapperClassName = 'rounded-xl', // a veya button elementi için class
-  className = '', // default values and props for outerClass - first div
-  innerDivPadding = 'px-[19px] py-[13px]',
-  innerClassName = '', // props for innerClass - second div
-  textClassName = '', // props for textClass - span - text
-  badgeClassName = '', // props for badgeClass - span - icon
-  iconClassName = '', // icon için container class
+  wrapperClassName = 'w-fit rounded-xl cursor-pointer', // a tag class
+  className = '', // div class
+  padding = 'py-4 px-5', // outer div padding
+  textClassName = '', // text class
+  badgeClassName = '', // badge container class
+  iconClassName = '', // icon container class
   ...props
 }, ref) => {
-  // Setup badge navigation only when badge and href exist
+  // Badge navigation setup
   useEffect(() => {
     if (!badge || !href || typeof badge !== 'string') return;
 
@@ -85,51 +82,36 @@ const ButtonBlack = forwardRef(({
     };
   }, [badge, href, target]);
 
-  // Base styling for outer container
-  const outerClass = `
-    ${width} ${height} rounded-xl flex justify-center items-center 
-    ${disabled 
-      ? 'bg-gray-400 cursor-not-allowed' 
-      : 'bg-black hover:bg-[#17181A] active:bg-[#262728]'
-    } 
+  // Base styling for container
+  const containerClass = `
+    inline-flex ${padding} justify-center items-center gap-2 rounded-xl
+    border border-[#F4F4F4] 
+    bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] 
+    active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)]
+    hover:border-[#EEE] active:border-[#EEE]
+    shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]
+    ${width} ${height}
+    ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
     ${className}
-  `.trim();
-
-  // Base styling for inner container
-  const innerClass = `
-    w-[calc(100%-2px)] h-[calc(100%-2px)] ${innerDivPadding} rounded-[11px] text-center 
-    flex justify-center items-center gap-x-2 
-    shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-    outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]
-    ${disabled
-      ? 'bg-gray-500'
-      : `bg-gradient-to-b from-[#252525] to-[#17181A] 
-         hover:from-[#323232] hover:to-[#17181A] 
-         active:from-[#484848] active:to-[#262728]`
-    }
-    ${(badge || icon) ? 'justify-between' : 'justify-center'}
-    ${innerClassName}
   `.trim();
 
   // Text styling
   const textClass = `
-    text-white font-openRunde text-[14px] font-medium 
-    leading-[17px] tracking-[0.14px] 
-    ${(badge || icon) ? 'w-fit' : ''}
+    text-[#17181A] text-center text-[14px] font-medium leading-4
     ${textClassName}
   `.trim();
 
-  // Badge styling  
+  // Badge styling
   const badgeClass = `
-    w-[17px] h-[17px] flex items-center justify-center 
-    py-[0.5px] px-[4.5px] rounded-[3px] 
-    bg-[rgba(255,255,255,0.10)]
+    flex items-center justify-center
+    px-[4.5px] rounded-[3px] 
+    bg-[rgba(119,119,119,0.10)]
     ${badgeClassName}
   `.trim();
 
   const badgeTextClass = `
-    text-[rgba(255,255,255,0.75)] text-center 
-    text-[11px] font-normal leading-[16px] tracking-[0.11px]
+    text-[rgba(119,119,119,0.75)] text-center text-[11px] 
+    font-medium leading-4 tracking-[0.11px]
   `.trim();
 
   // Icon container class
@@ -140,32 +122,25 @@ const ButtonBlack = forwardRef(({
 
   // Content JSX
   const content = (
-    <div className={outerClass}>
-      <div className={innerClass}>
-        <span className={textClass}>
-          {children}
+    <div className={containerClass}>
+      <p className={textClass}>
+        {children}
+      </p>
+      {badge && (
+        <span className={badgeClass}>
+          <p className={badgeTextClass}>
+            {badge}
+          </p>
         </span>
-        {badge && (
-          <span className={badgeClass}>
-            {typeof badge === 'string' ? (
-              <span className={badgeTextClass}>
-                {badge}
-              </span>
-            ) : (
-              badge
-            )}
-          </span>
-        )}
-        {!badge && icon && (
-          <span className={iconContainerClass}>
-            {icon}
-          </span>
-        )}
-      </div>
+      )}
+      {!badge && icon && (
+        <span className={iconContainerClass}>
+          {icon}
+        </span>
+      )}
     </div>
   );
 
-  // Return appropriate element based on props
   if (href) {
     return (
       <a
@@ -196,7 +171,7 @@ const ButtonBlack = forwardRef(({
   );
 });
 
-ButtonBlack.displayName = 'ButtonBlack';
+ButtonWhite.displayName = 'ButtonWhite';
 
 // Cleanup on module unload
 if (typeof window !== 'undefined') {
@@ -206,4 +181,4 @@ if (typeof window !== 'undefined') {
   });
 }
 
-export default ButtonBlack;
+export default ButtonWhite;

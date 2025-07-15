@@ -2,11 +2,9 @@
 
 import Image from 'next/image';
 import CorneredLine from './CorneredLine.js';
-import { useRef, useEffect } from 'react';
 import ButtonBlack from './ui/ButtonBlack.js';
 
 export default function Steps() {
-    const waitlistButtonRef = useRef(null);
 
     // Card data for Step 2
     const cardListData = [
@@ -39,18 +37,6 @@ export default function Steps() {
             title: "Internal Files"
         }
     ];
-
-    // Handle keyboard shortcut for the waitlist button
-    useEffect(() => {
-        const handleKeyPress = (e) => {
-            if (e.key === 'j' && waitlistButtonRef.current) {
-                waitlistButtonRef.current.click();
-            }
-        };
-        
-        window.addEventListener('keydown', handleKeyPress);
-        return () => window.removeEventListener('keydown', handleKeyPress);
-    }, []);
 
     return (
         <div className="relative w-full max-w-[1512px] h-auto mx-auto p-6 md:p-10 lg:p-16 ">
@@ -123,7 +109,6 @@ export default function Steps() {
 
                             {/* Waitlist Button */}
                             <ButtonBlack
-                                ref={waitlistButtonRef}
                                 href="https://tally.so/r/w2V7Dg"
                                 width="w-[154px]"
                                 height="h-12"

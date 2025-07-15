@@ -17,6 +17,7 @@ import Footer from '../../components/Footer';
 import DeployFiveHero from '../../components/DeployFiveHero';
 import ImpactCircle from '../../components/ImpactCircle';
 import ButtonBlack from '@/app/components/ui/ButtonBlack';
+import ButtonWhite from '@/app/components/ui/ButtonWhite';
 
 function FeatureContainer({
   svgSrc,
@@ -72,31 +73,6 @@ export default function ProductAdoption() {
     { name: "ollama", width: 83, height: 30, alt: "Ollama" }
   ];
 
-  // ! YAP : kaldır daha sonra J butonları için kullanıcıların sayfaya yönlendirilmesi 
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      const key = event.key.toLowerCase();
-      
-      if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
-        return;
-      }
-
-      switch (key) {
-        case 'j':
-          window.open('https://tally.so/r/w2V7Dg', '_blank', 'noopener,noreferrer');
-          break;
-        default:
-          break;
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyPress);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyPress);
-    };
-  }, []);
-
   return (
     <div className='min-h-screen'>
       <Navbar />
@@ -144,15 +120,18 @@ export default function ProductAdoption() {
             Mues is an agentic AI that lets your users delegate any task <br /> to an AI agent using human language in your product.
             </p>
 
-            {/* Join Waitlist Button */}
-            <a href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className='w-fit rounded-xl cursor-pointer mt-2 md:mt-4'>
-              <div className="inline-flex py-3.5 px-[19px] justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
-                <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Join waitlist</p>
-                <span className="flex px-[4.5px] justify-center items-center rounded-[3px] bg-[rgba(119,119,119,0.10)]">
-                  <p className="text-[rgba(119,119,119,0.75)] text-center text-[11px] font-medium leading-4 tracking-[0.11px]">J</p>
-                </span>
-              </div>
-            </a>
+            {/* Join waitlist button */}
+            <ButtonWhite
+            href="https://tally.so/r/w2V7Dg"
+            target="_blank"
+            rel="noopener noreferrer"
+            ariaLabel="Join waitlist"
+            badge="J"
+            className="mt-2 md:mt-4"
+            padding="py-3.5 px-[19px]"
+            >
+            Join waitlist
+            </ButtonWhite>
 
         </div>
 

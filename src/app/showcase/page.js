@@ -10,6 +10,7 @@ import Benefits from '../components/Benefits';
 import FooterTopTwoBenefit from '../components/FooterTopTwoBenefit';
 import Footer from '../components/Footer';
 import ButtonBlack from '../components/ui/ButtonBlack';
+import ButtonWhite from '../components/ui/ButtonWhite';
 
 const products = [
   {
@@ -143,35 +144,6 @@ export default function Showcase() {
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % products.length);
   };
-
-  // B ve J butonları için kullanıcıların sayfaya yönlendirilmesi 
-  // window.open() yaklaşımı daha hızlı - o yüzden butonlara ref vermedik - manuel olarak linkleri değiştirirsin.
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      const key = event.key.toLowerCase();
-      
-      if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
-        return;
-      }
-
-      switch (key) {
-        case 'b':
-          window.open('https://cal.com/mues-ai/demo', '_blank', 'noopener,noreferrer');
-          break;
-        case 'j':
-          window.open('https://tally.so/r/w2V7Dg', '_blank', 'noopener,noreferrer');
-          break;
-        default:
-          break;
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyPress);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyPress);
-    };
-  }, []);
 
   // Position products - Initial
   const leftBottom = getProductAt(-3);   // Sol alt - aws
@@ -664,12 +636,16 @@ export default function Showcase() {
             {/* Divider Line */}
             <div className="hidden md:block flex-1 h-[1px] bg-[rgba(238,238,238,0.20)]"></div>
             
-            {/* Talk With Us Button */}
-            <a href="https://cal.com/mues-ai/talk-with-sales" target="_blank" rel="noopener noreferrer" className="max-w-[122px] inline-flex py-4 px-5 justify-center items-center rounded-xl border border-[#F4F4F4] bg-white cursor-pointer hover:bg-[#F4F4F4] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
-              <span className="text-[#17181A] text-[14px] font-medium leading-4">
-                Talk with us
-              </span>
-            </a>
+            {/* Talk with us button */}
+            <ButtonWhite
+              href="https://cal.com/mues-ai/talk-with-sales"
+              target="_blank"
+              rel="noopener noreferrer"
+              ariaLabel="Talk with us"
+              className="max-w-[122px]"
+              >
+              Talk with us
+            </ButtonWhite>
             
           </div>
         </div>
@@ -715,14 +691,15 @@ export default function Showcase() {
             </ButtonBlack>   
 
             {/* Join waitlist button */}
-            <a href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className='w-fit rounded-xl cursor-pointer'>
-              <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
-                <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Join waitlist</p>
-                <span className="flex px-[4.5px] justify-center items-center rounded-[3px] bg-[rgba(119,119,119,0.10)]">
-                  <p className="text-[rgba(119,119,119,0.75)] text-center text-[11px] font-medium leading-4 tracking-[0.11px]">J</p>
-                </span>
-              </div>
-            </a>
+            <ButtonWhite
+              href="https://tally.so/r/w2V7Dg"
+              target="_blank"
+              rel="noopener noreferrer"
+              ariaLabel="Join waitlist"
+              badge="J"
+              >
+              Join waitlist
+            </ButtonWhite>
           </div>
 
         </div>

@@ -14,6 +14,7 @@ import ImpactCircle from '../components/ImpactCircle.js';
 import FAQ from '../components/FAQ.js';
 import Footer from '../components/Footer.js';
 import ButtonBlack from '../components/ui/ButtonBlack.js';
+import ButtonWhite from '../components/ui/ButtonWhite.js';
 
 
 const pricingTableData = {
@@ -390,17 +391,12 @@ export default function Pricing() {
 
 
                                 {/* Contact us Button */}
-                                <a 
+                                <ButtonWhite
                                     href="mailto:hi@mues.ai"
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    aria-label="Contact us button" 
-                                    className='w-fit rounded-xl min-w-fit cursor-pointer'
+                                    padding="py-3 px-4"
                                 >
-                                    <div className="inline-flex py-3 px-4 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
-                                        <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Contact us</p>
-                                    </div>
-                                </a>
+                                    Contact us
+                                </ButtonWhite>
                             </div>    
 
 
@@ -504,18 +500,16 @@ export default function Pricing() {
                                 <p className="text-[#777] text-xs font-medium leading-4">
                                     {formatPrice(isMonthly ? PRICING.basic.monthly : PRICING.basic.annual)} {isMonthly ? 'per month,' : 'per month,'}<br/>{isMonthly ? 'billed monthly' : 'billed annually'}
                                 </p>
-                                {/* Basic Button */}
-                                <a 
-                                    href="https://cal.com/mues-ai/talk-with-sales"  
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    aria-label="Basic Button" 
-                                    className='w-full rounded-xl cursor-pointer'
+                                
+                                {/* Continue with Basic Button */}
+                                <ButtonWhite
+                                    href="https://cal.com/mues-ai/talk-with-sales"
+                                    padding="py-[11px] px-5"
+                                    className="w-full"
+                                    wrapperClassName="w-full"
                                 >
-                                    <div className="w-full inline-flex py-[11px] px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
-                                        <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Continue with Basic</p>
-                                    </div>
-                                </a>
+                                    Continue with Basic
+                                </ButtonWhite>
                             </div>
 
                             {/* Growth Plan */}

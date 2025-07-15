@@ -52,7 +52,6 @@ const card_data = [
 export default function HowItWorks() {
   const sectionRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const bookDemoButtonRef = useRef(null);
   const { isMobile } = useStore();
   
   // Track scroll progress within the section
@@ -81,18 +80,6 @@ export default function HowItWorks() {
     
     return () => unsubscribe();
   }, [scrollYProgress]);
-  
-  // Handle keyboard shortcut for the demo button
-  useEffect(() => {
-    const handleKeyPress = (e) => {
-      if (e.key === 'b' && bookDemoButtonRef.current) {
-        bookDemoButtonRef.current.click();
-      }
-    };
-    
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, []);
   
   // Modify the transform to prevent unwanted movement at the end
   // When progress reaches 95%, we keep the transform at 0% instead of moving to 100%
@@ -137,7 +124,6 @@ export default function HowItWorks() {
 
           {/* 1.4. Button - Hidden on mobile (md below) */}
           <ButtonBlack
-            ref={bookDemoButtonRef}
             href="https://cal.com/mues-ai/demo"
             width="w-[154px]"
             height="h-12"

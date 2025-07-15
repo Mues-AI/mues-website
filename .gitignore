@@ -94,8 +94,6 @@ src/app/pricing/pricing.module copy 4.css
 
 # ui components
 src/app/components/ui/ButtonBlack copy.js
-src/app/components/ui/ButtonWhite.js
-
 
 # dosyalar        
 /blog-module

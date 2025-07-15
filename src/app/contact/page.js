@@ -4,60 +4,14 @@ import Navbar from '../components/Navbar.js';
 import FAQ from '../components/FAQ.js';
 import Footer from '../components/Footer.js';
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
 import CorneredLine from '../components/CorneredLine.js';
 import { XIcon, DiscordIcon } from '../utils/svgIcons.js';
 import { ArrowRightIcon } from '../utils/svgIcons.js';
 import ButtonBlack from '@/app/components/ui/ButtonBlack';
+import ButtonWhite from '@/app/components/ui/ButtonWhite';
 
 export default function Contact() {
 
-    // Contact button ref and useEffect for keypress
-    const contactButtonRef = useRef(null);
-    useEffect(() => {
-        const handleKeyPress = (event) => {
-            if ((event.key === 'c' || event.key === 'C') && 
-                !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
-                contactButtonRef.current?.click();
-            }
-        };
-
-        // Add event listener
-        window.addEventListener('keydown', handleKeyPress);
-
-        // Cleanup
-        return () => {
-            window.removeEventListener('keydown', handleKeyPress);
-        };
-    }, []);
-
-    // ! YAP : kaldır daha sonra J butonları için kullanıcıların sayfaya yönlendirilmesi 
-    // window.open() yaklaşımı daha hızlı - o yüzden butonlara ref vermedik - manuel olarak linkleri değiştirirsin.
-    useEffect(() => {
-        const handleKeyPress = (event) => {
-        const key = event.key.toLowerCase();
-        
-        if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
-            return;
-        }
-
-        switch (key) {
-            case 'j':
-            window.open('https://tally.so/r/w2V7Dg', '_blank', 'noopener,noreferrer');
-            break;
-            default:
-            break;
-        }
-        };
-
-        document.addEventListener('keydown', handleKeyPress);
-
-        return () => {
-        document.removeEventListener('keydown', handleKeyPress);
-        };
-    }, []);
-
-    
     return (
         <div className="min-h-screen flex flex-col">
             <Navbar variant="light" />
@@ -91,21 +45,15 @@ export default function Contact() {
                     </p>
 
                     {/* Contact us Button */}
-                    <a 
-                        ref={contactButtonRef}
-                        href="mailto:hi@mues.ai" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        aria-label="Contact us" 
-                        className='w-fit rounded-xl cursor-pointer'
-                    >
-                        <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
-                            <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Contact us</p>
-                            <span className="flex px-[4.5px] justify-center items-center rounded-[3px] bg-[rgba(119,119,119,0.10)]">
-                            <p className="text-[rgba(119,119,119,0.75)] text-center text-[11px] font-medium leading-4 tracking-[0.11px]">C</p>
-                            </span>
-                        </div>
-                    </a>
+                    <ButtonWhite
+                        href="mailto:hi@mues.ai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="Contact us"
+                        badge="C"
+                        >
+                        Contact us
+                    </ButtonWhite>
 
                 </div>
 
@@ -213,17 +161,14 @@ export default function Contact() {
                                     </div>
                                 </div>
                                 {/* Mues AI Docs Button */}
-                                <a 
-                                    href="https://muesai.featurebase.app/en/help" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    aria-label="Mues AI Docs" 
-                                    className='w-fit rounded-xl cursor-pointer'
+                                <ButtonWhite
+                                href="https://muesai.featurebase.app/en/help"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ariaLabel="Mues AI Docs"
                                 >
-                                    <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
-                                        <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Mues AI Docs</p>
-                                    </div>
-                                </a>
+                                Mues AI Docs
+                                </ButtonWhite>
                             </div>
 
                             {/* Follow on X Box */}
@@ -245,17 +190,14 @@ export default function Contact() {
                                     </div>
                                 </div>
                                 {/* Follow @mues_ai Button */}
-                                <a 
-                                    href="https://x.com/mues_ai" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    aria-label="Follow @mues_ai" 
-                                    className='w-fit rounded-xl cursor-pointer'
+                                <ButtonWhite
+                                href="https://x.com/mues_ai"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ariaLabel="Follow @mues_ai"
                                 >
-                                    <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
-                                        <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Follow @mues_ai</p>
-                                    </div>
-                                </a>
+                                Follow @mues_ai
+                                </ButtonWhite>
                             </div>
 
                             {/* Join Discord Box */}
@@ -277,17 +219,14 @@ export default function Contact() {
                                     </div>
                                 </div>
                                 {/* Join our community Button */}
-                                <a 
-                                    href="https://discord.gg/GZGjemzU2H" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    aria-label="Join our community" 
-                                    className='w-fit rounded-xl cursor-pointer'
+                                <ButtonWhite
+                                href="https://discord.gg/GZGjemzU2H"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ariaLabel="Join our community"
                                 >
-                                    <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
-                                        <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Join our community</p>
-                                    </div>
-                                </a>
+                                Join our community
+                                </ButtonWhite>
                             </div>
                         </div>
                     </div>
@@ -331,14 +270,15 @@ export default function Contact() {
                         </ButtonBlack> 
 
                         {/* Join waitlist button */}
-                        <a href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className='w-fit rounded-xl cursor-pointer'>
-                        <div className="inline-flex py-4 px-5 justify-center items-center gap-2 rounded-xl border border-[#F4F4F4] hover:border-[#EEE] active:border-[#EEE] bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]">
-                            <p className="text-[#17181A] text-center text-[14px] font-medium leading-4">Join waitlist</p>
-                            <span className="flex px-[4.5px] justify-center items-center rounded-[3px] bg-[rgba(119,119,119,0.10)]">
-                            <p className="text-[rgba(119,119,119,0.75)] text-center text-[11px] font-medium leading-4 tracking-[0.11px]">J</p>
-                            </span>
-                        </div>
-                        </a>
+                        <ButtonWhite
+                        href="https://tally.so/r/w2V7Dg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="Join waitlist"
+                        badge="J"
+                        >
+                        Join waitlist
+                        </ButtonWhite>
                     </div>
                 </div>
 
