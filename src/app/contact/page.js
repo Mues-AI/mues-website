@@ -8,6 +8,7 @@ import { useEffect, useRef } from 'react';
 import CorneredLine from '../components/CorneredLine.js';
 import { XIcon, DiscordIcon } from '../utils/svgIcons.js';
 import { ArrowRightIcon } from '../utils/svgIcons.js';
+import ButtonBlack from '@/app/components/ui/ButtonBlack';
 
 export default function Contact() {
 
@@ -30,7 +31,7 @@ export default function Contact() {
         };
     }, []);
 
-    // B ve J butonları için kullanıcıların sayfaya yönlendirilmesi 
+    // ! YAP : kaldır daha sonra J butonları için kullanıcıların sayfaya yönlendirilmesi 
     // window.open() yaklaşımı daha hızlı - o yüzden butonlara ref vermedik - manuel olarak linkleri değiştirirsin.
     useEffect(() => {
         const handleKeyPress = (event) => {
@@ -41,9 +42,6 @@ export default function Contact() {
         }
 
         switch (key) {
-            case 'b':
-            window.open('https://cal.com/mues-ai/demo', '_blank', 'noopener,noreferrer');
-            break;
             case 'j':
             window.open('https://tally.so/r/w2V7Dg', '_blank', 'noopener,noreferrer');
             break;
@@ -136,19 +134,21 @@ export default function Contact() {
                                 Get help from the community. If you&apos;re on a paid plan, submit a ticket to our support team.
                                 </p>
                             </div>
-
+  
                             {/* Get Support Button */}
-                            <a href="mailto:hi@mues.ai" target="_blank" rel="noopener noreferrer" aria-label="Get support" className='w-fit rounded-xl'>
-                                <div className="w-[142px] h-12 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
-                                    <div className="w-[140px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                    bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
-                                        <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
-                                        Get support
-                                        </span>
-                                        <ArrowRightIcon width={12} height={12} color='#FFFFFF'/>
-                                    </div>
-                                </div>
-                            </a>    
+                            <ButtonBlack
+                            href="mailto:hi@mues.ai"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            ariaLabel="Get support"
+                            width="w-[142px]"
+                            height="h-12"
+                            icon={<ArrowRightIcon width={12} height={12} color='#FFFFFF'/>}
+                            innerDivPadding="px-[19px] py-[13px]"
+                            className="min-w-fit"
+                            >
+                            Get support
+                            </ButtonBlack> 
                         
                         </div>
 
@@ -169,17 +169,19 @@ export default function Contact() {
                             </div>
                             
                             {/* Contact Sales Button */}
-                            <a href="https://cal.com/mues-ai/talk-with-sales" target="_blank" rel="noopener noreferrer" aria-label="Contact sales" className='w-fit rounded-xl'>
-                                <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
-                                    <div className="w-[152px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                    bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
-                                        <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
-                                        Contact sales
-                                        </span>
-                                        <ArrowRightIcon width={12} height={12} color='#FFFFFF'/>
-                                    </div>
-                                </div>
-                            </a>
+                            <ButtonBlack
+                            href="https://cal.com/mues-ai/talk-with-sales"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            ariaLabel="Contact sales"
+                            width="w-[154px]"
+                            height="h-12"
+                            icon={<ArrowRightIcon width={12} height={12} color='#FFFFFF'/>}
+                            innerDivPadding="px-[19px] py-[13px]"
+                            className="min-w-fit"
+                            >
+                            Contact sales
+                            </ButtonBlack> 
                         </div>
 
                         {/* Divider Line */}
@@ -314,21 +316,19 @@ export default function Contact() {
                     <div className='flex flex-col xs:flex-row items-center w-fit gap-3'>
                         
                         {/* Book a demo button */}
-                        <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className='w-fit rounded-xl cursor-pointer hover:opacity-90'>
-                        <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
-                            <div className="w-[152px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                            bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
-                            <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
-                                Book a demo
-                            </span>
-                            <span className="w-[17px] h-[17px] flex items-center justify-center py-[0.5px] px-[4.5px] rounded-[3px] bg-[rgba(255,255,255,0.10)]">
-                                <span className="text-[rgba(255,255,255,0.75)] text-center text-[11px] font-normal leading-[16px] tracking-[0.11px]">
-                                B
-                                </span>
-                            </span>
-                            </div>
-                        </div>
-                        </a>
+                        <ButtonBlack
+                        href="https://cal.com/mues-ai/demo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="Book a demo"
+                        width="w-[154px]"
+                        height="h-12"
+                        badge="B"
+                        innerDivPadding="px-[19px] py-[13px]"
+                        className="min-w-fit"
+                        >
+                        Book a demo
+                        </ButtonBlack> 
 
                         {/* Join waitlist button */}
                         <a href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className='w-fit rounded-xl cursor-pointer'>

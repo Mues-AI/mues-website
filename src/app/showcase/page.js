@@ -9,6 +9,7 @@ import {DropboxCard, HubSpotCard, MixpanelCard, JiraCard, ProductboardCard, Clic
 import Benefits from '../components/Benefits';
 import FooterTopTwoBenefit from '../components/FooterTopTwoBenefit';
 import Footer from '../components/Footer';
+import ButtonBlack from '../components/ui/ButtonBlack';
 
 const products = [
   {
@@ -128,7 +129,7 @@ const PlayButtons = ({ onNext, onPrevious, className = "mt-12" }) => (
 export default function Showcase() {
   const [currentIndex, setCurrentIndex] = useState(3); // Start with DropBox in center
 
-  // Ürünlerin pozisyonlarını ataması için hesaplama yapıyor
+  // Ürünlerin pozisyonlarını ataması için hesaplama
   const getProductAt = (offset) => {
     const index = (currentIndex + offset + products.length) % products.length;
     return products[index];
@@ -699,21 +700,19 @@ export default function Showcase() {
           <div className='flex flex-col xs:flex-row items-center w-fit gap-3'>
             
             {/* Book a demo button */}
-            <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className='w-fit rounded-xl cursor-pointer hover:opacity-90'>
-              <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
-                <div className="w-[152px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
-                  <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
-                    Book a demo
-                  </span>
-                  <span className="w-[17px] h-[17px] flex items-center justify-center py-[0.5px] px-[4.5px] rounded-[3px] bg-[rgba(255,255,255,0.10)]">
-                    <span className="text-[rgba(255,255,255,0.75)] text-center text-[11px] font-normal leading-[16px] tracking-[0.11px]">
-                      B
-                    </span>
-                  </span>
-                </div>
-              </div>
-            </a>
+            <ButtonBlack
+              href="https://cal.com/mues-ai/demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              ariaLabel="Book a demo"
+              width="w-[154px]"
+              height="h-12"
+              badge="B"
+              innerDivPadding="px-[19px] py-[13px]"
+              className="min-w-fit"
+              >
+              Book a demo
+            </ButtonBlack>   
 
             {/* Join waitlist button */}
             <a href="https://tally.so/r/w2V7Dg" target="_blank" rel="noopener noreferrer" aria-label="Join waitlist" className='w-fit rounded-xl cursor-pointer'>

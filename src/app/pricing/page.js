@@ -13,6 +13,7 @@ import Steps from '../components/Steps.js';
 import ImpactCircle from '../components/ImpactCircle.js';
 import FAQ from '../components/FAQ.js';
 import Footer from '../components/Footer.js';
+import ButtonBlack from '../components/ui/ButtonBlack.js';
 
 
 const pricingTableData = {
@@ -305,16 +306,15 @@ export default function Pricing() {
                             </div>
 
                             {/* Request Pricing Button */}
-                            <a href="https://cal.com/mues-ai/talk-with-sales" target="_blank" rel="noopener noreferrer" aria-label="Request pricing" className='w-fit rounded-xl'>
-                                <div className="w-[140px] h-10 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
-                                    <div className="w-[138px] h-[38px] px-[14px] pt-[10px] pb-[11px] rounded-[11px] text-center flex justify-center items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                    bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
-                                        <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
-                                        Request pricing
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>    
+                            <ButtonBlack
+                                href="https://cal.com/mues-ai/talk-with-sales"
+                                width="w-[140px]"
+                                height="h-10"
+                                innerDivPadding="px-[14px] pt-[10px] pb-[11px]"
+                                ariaLabel="Request pricing"
+                                >
+                                Request pricing
+                            </ButtonBlack>
                         </div>
 
                         {/* Growth Plan */}
@@ -346,16 +346,15 @@ export default function Pricing() {
                             </div>
 
                             {/* Growth Plan - Request Pricing Button */}
-                            <a href="https://cal.com/mues-ai/talk-with-sales" target="_blank" rel="noopener noreferrer" aria-label="Request pricing" className='w-fit rounded-xl'>
-                                <div className="w-[140px] h-10 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
-                                    <div className="w-[138px] h-[38px] px-[14px] pt-[10px] pb-[11px] rounded-[11px] text-center flex justify-center items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                    bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
-                                        <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
-                                        Request pricing
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>  
+                            <ButtonBlack
+                                href="https://cal.com/mues-ai/talk-with-sales"
+                                width="w-[140px]"
+                                height="h-10"
+                                innerDivPadding="px-[14px] pt-[10px] pb-[11px]"
+                                ariaLabel="Request pricing"
+                                >
+                                Request pricing
+                            </ButtonBlack>  
                         </div>
 
                         {/* Enterprise Plan */}
@@ -374,23 +373,23 @@ export default function Pricing() {
                             </div>
 
                             {/* Enterprise Plan - Buttons */}
-                            {/* YAP - TO DO - ÖNEMLİ - Tüm bu siyah butonlar da büyük arka planlı dive px-1 ekle ki w-full yaptığında işin kolay olsun - alt dive de w-[calc(100%-2px)] ekle. belki şeyde yapabilirsin flex grow ve basis değerleri ekleyerek eğer satırda yalnız kalırsa buton yatayı full kaplasın diyebiliriz. 
-                            
-                            h değerini de h- calc -2px yap
-                            
-                            siyah buntonların arka planları full siyaha dönmüş -- coomponent yaparken değiştir*/}
                             <div className="flex gap-2 items-center flex-wrap">
                                 {/* Book a demo Button */}
-                                <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className='w-fit rounded-xl min-w-fit'>
-                                    <div className="w-[121px] h-10 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
-                                        <div className="w-[calc(100%-2px)] h-[calc(100%-2px)] px-[14px] pt-[10px] pb-[11px] rounded-[11px] text-center flex justify-center items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                        bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
-                                            <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
-                                            Book a demo
-                                            </span>
-                                        </div>
-                                    </div>
-                                </a>   
+                                <ButtonBlack
+                                    href="https://cal.com/mues-ai/demo"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    ariaLabel="Book a demo"
+                                    width="w-[121px]"
+                                    height="h-10"
+                                    innerDivPadding="px-[14px] pt-[10px] pb-[11px]"
+                                    className="min-w-fit"
+                                    >
+                                    Book a demo
+                                </ButtonBlack>   
+
+
+                                {/* Contact us Button */}
                                 <a 
                                     href="mailto:hi@mues.ai"
                                     target="_blank" 
@@ -535,16 +534,16 @@ export default function Pricing() {
                                     {formatPrice(isMonthly ? PRICING.growth.monthly : PRICING.growth.annual)} {isMonthly ? 'per month,' : 'per month,'}<br/>{isMonthly ? 'billed monthly' : 'billed annually'}
                                 </p>
                                 {/* Growth Button */}
-                                <a href="https://cal.com/mues-ai/talk-with-sales" target="_blank" rel="noopener noreferrer" aria-label="Growth Button" className='w-full rounded-xl mt-1'>
-                                    <div className="w-full h-10 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
-                                        <div className="w-[calc(100%-2px)] h-[calc(100%-2px)] px-[14px] pt-[10px] pb-[11px] rounded-[11px] text-center flex justify-center items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                                        bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
-                                            <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
-                                            Continue with Growth
-                                            </span>
-                                        </div>
-                                    </div>
-                                </a>  
+                                <ButtonBlack
+                                href="https://cal.com/mues-ai/talk-with-sales"
+                                width="w-full"
+                                height="h-10"
+                                innerDivPadding="px-[14px] pt-[10px] pb-[11px]"
+                                wrapperClassName="rounded-xl w-full mt-1"
+                                ariaLabel="Growth Button"
+                                >
+                                Continue with Growth
+                                </ButtonBlack>
                             </div>
 
                             {/* Enterprise Plan */}
@@ -563,7 +562,7 @@ export default function Pricing() {
 
                     </div>
 
-                    {/* //////////////////////////////////////////////////////////////////////////////////// */}
+                    
                     {/* Features Table */}
                     <div className={`${styles.tableContainer} scroll-sync `}>
                         <table>
@@ -639,7 +638,7 @@ export default function Pricing() {
                             </tbody>
                         </table>
                     </div>
-                    {/* //////////////////////////////////////////////////////////////////////////////////// */}
+                    
                 </div>
 
             </div>
@@ -659,42 +658,39 @@ export default function Pricing() {
 
                 {/* Drive more adoption for your product -- add mues ai to your product ile aynı formatta sadece dışına MARGİN EKLEYECEĞİM. */}
                 <div className='w-full flex flex-col items-center gap-8  lg:py-31 lg:px-16 mx-auto my-[176px]'>
-                
-                {/* Main Text */}
-                <p className='w-[520px] text-center text-[#17181A] font-rethinkSans font-bold  font-feature-settings-salt 
-                    text-[32px] sm:text-[48px] lg:text-[56px]
-                    leading-[48px] sm:leading-[60px] lg:leading-[72px]
-                    tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px]'>
-                    Drive more
-                    <span className="font-instrumentSerif font-normal font-feature-settings-salt italic bg-gradient-to-r from-[#0089FF] to-[#7D52F4] bg-clip-text text-transparent
-                    text-[32px] sm:text-[48px] lg:text-[56px]  
-                    leading-[48px] sm:leading-[60px] lg:leading-[72px]
-                    tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px] ">
-                    {" adoption"} <br />
-                    </span>
-                    for your product.
-                </p>
-
-                {/* Buttons Container */}
-                <div className='flex flex-col xs:flex-row items-center w-fit gap-3'>
                     
-                    {/* Book a demo button */}
-                    <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className='w-fit rounded-xl cursor-pointer hover:opacity-90'>
-                    <div className="w-[154px] h-12 rounded-xl flex justify-center items-center bg-black hover:bg-[#17181A] active:bg-[#262728]">
-                        <div className="w-[152px] h-[46px] rounded-[11px] px-[19px] py-[13px] text-center flex justify-between items-center gap-x-2 shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
-                        bg-gradient-to-b from-[#252525] to-[#17181A] hover:from-[#323232] hover:to-[#17181A] active:from-[#484848] active:to-[#262728] outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]">
-                        <span className="w-fit text-white font-openRunde text-[14px] font-medium leading-[17px] tracking-[0.14px]">
+                    {/* Main Text */}
+                    <p className='w-[520px] text-center text-[#17181A] font-rethinkSans font-bold  font-feature-settings-salt 
+                        text-[32px] sm:text-[48px] lg:text-[56px]
+                        leading-[48px] sm:leading-[60px] lg:leading-[72px]
+                        tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px]'>
+                        Drive more
+                        <span className="font-instrumentSerif font-normal font-feature-settings-salt italic bg-gradient-to-r from-[#0089FF] to-[#7D52F4] bg-clip-text text-transparent
+                        text-[32px] sm:text-[48px] lg:text-[56px]  
+                        leading-[48px] sm:leading-[60px] lg:leading-[72px]
+                        tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px] ">
+                        {" adoption"} <br />
+                        </span>
+                        for your product.
+                    </p>
+
+                    {/* Buttons Container */}
+                    <div className='flex flex-col xs:flex-row items-center w-fit gap-3'>
+                        {/* Book a demo button */}
+                        <ButtonBlack
+                            href="https://cal.com/mues-ai/demo"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            ariaLabel="Book a demo"
+                            width="w-[154px]"
+                            height="h-12"
+                            badge="B"
+                            innerDivPadding="px-[19px] py-[13px]"
+                            className="min-w-fit"
+                            >
                             Book a demo
-                        </span>
-                        <span className="w-[17px] h-[17px] flex items-center justify-center py-[0.5px] px-[4.5px] rounded-[3px] bg-[rgba(255,255,255,0.10)]">
-                            <span className="text-[rgba(255,255,255,0.75)] text-center text-[11px] font-normal leading-[16px] tracking-[0.11px]">
-                            B
-                            </span>
-                        </span>
-                        </div>
+                        </ButtonBlack>   
                     </div>
-                    </a>
-                </div>
 
                 </div>
 
