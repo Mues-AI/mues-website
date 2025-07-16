@@ -53,6 +53,8 @@ src/app/globals copy.css
 
 # MainContent-OldFirstHero.js - eski hero
 src/app/components/MainContent-OldFirstHero.js
+src/app/components/MainContent-Inputsuz.js
+src/app/components/MainContent copy.js
 
 # deneme
 src/app/deneme

@@ -65,10 +65,10 @@ export function MiniDislikeMobile() {
 
 
 
-export function MiniArrow() {
+export function MiniArrow({ width = 14, height = 14, stroke = "#777777", className }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <path d="M8.75007 11.62L4.94674 7.81667C4.49757 7.36751 4.49757 6.63251 4.94674 6.18334L8.75007 2.38" stroke="#777777" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 14 14" fill="none" className={className}>
+      <path d="M8.75007 11.62L4.94674 7.81667C4.49757 7.36751 4.49757 6.63251 4.94674 6.18334L8.75007 2.38" stroke={stroke} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );
 }

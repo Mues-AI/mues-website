@@ -57,8 +57,8 @@ const ButtonWhite = forwardRef(({
   rel = 'noopener noreferrer',
   disabled = false,
   wrapperClassName = 'w-fit rounded-xl cursor-pointer', // a tag class
-  className = '', // div class
-  padding = 'py-4 px-5', // outer div padding
+  className = 'gap-2', // div class
+  padding = 'py-[15px] px-5', // outer div padding
   textClassName = '', // text class
   badgeClassName = '', // badge container class
   iconClassName = '', // icon container class
@@ -84,12 +84,13 @@ const ButtonWhite = forwardRef(({
 
   // Base styling for container
   const containerClass = `
-    inline-flex ${padding} justify-center items-center gap-2 rounded-xl
+    inline-flex ${padding} justify-center items-center rounded-xl
     border border-[#F4F4F4] 
     bg-white hover:bg-[linear-gradient(180deg,#FFF_0%,#FBFBFB_100%)] 
     active:bg-[linear-gradient(180deg,#FBFBFB_0%,#F7F7F7_100%)]
     hover:border-[#EEE] active:border-[#EEE]
     shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]
+    min-w-fit shrink-0
     ${width} ${height}
     ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
     ${className}
@@ -97,7 +98,7 @@ const ButtonWhite = forwardRef(({
 
   // Text styling
   const textClass = `
-    text-[#17181A] text-center text-[14px] font-medium leading-4
+    text-[#17181A] text-center text-[14px] font-medium leading-4 whitespace-nowrap
     ${textClassName}
   `.trim();
 

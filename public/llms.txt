@@ -1,0 +1,27 @@
+# Mues AI - AI-Powered Cursor for Web Products
+
+> Mues is a product-embedded AI agent that acts like a power user inside your software. Instead of just replying to user queries, Mues takes real action: moving the cursor, navigating the interface, and completing workflows. It's designed for SaaS teams that want to improve product adoption, reduce support load, and enable instant self-service.
+
+Key Benefits
+
+- Accelerated Onboarding: Helps users perform key actions instantly without watching tutorials or waiting for human support.
+
+- Reduced Support Load: Fewer tickets, faster resolutions. Mues handles repetitive questions and task guidance within your product.
+
+- Improved Product Adoption: Users discover and use more features with AI-guided in-product assistance.
+
+- No-Code AI Agent Creation: Product teams can build and launch their own AI agents without writing a single line of code.
+
+- Consistent 24/7 User Support: Mues delivers round-the-clock support directly inside the app, across all user tiers and geographies.
+
+- Insight into User Behavior: Understand where users struggle most, and optimize the product experience accordingly.
+
+
+This file helps language models extract structured context, key functionality, and product taxonomy to better understand the role of agentic AI in software UX.
+
+## Mues AI Key Pages
+
+- [Homepage](https://mues.ai) – Overview of Mues AI’s value proposition, features, and use cases.
+- [Showcase](https://mues.ai/showcase) – Watch Mues AI in action within a real SaaS product interface.
+- [Agentic AI for Product Adoption](https://mues.ai/use-cases/product-adoption) – A page showcasing how Mues AI increases product adoption.
+- [Agentic AI for Customer Support](https://mues.ai/use-cases/customer-support) – A page showcasing how Mues AI scales support capacity.

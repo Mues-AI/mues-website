@@ -1,13 +1,14 @@
 "use client";
 import Image from 'next/image';
-
-import { useEffect, useRef, useCallback, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { toast } from 'sonner';
 import SvgIconAi from '../utils/svgIconAi';
 import ButtonWhite from './ui/ButtonWhite';
 
 export default function MainContent() {
   const [isMobile, setIsMobile] = useState(false);
-  const joinButtonRef = useRef(null);
+  const [domain, setDomain] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const logos = [
     { name: "openai", width: 107, height: 32, alt: "OpenAI" },
@@ -24,18 +25,60 @@ export default function MainContent() {
   // ekranın görünür olup olmadığını takip ederek animasyonu duraklatabiliriz
   const carouselRef = useRef(null);
 
-  // Optimize keyboard handler
-  const handleKeyPress = useCallback((event) => {
-    if (event.key === 'j' || event.key === 'J') {
-      event.preventDefault();
-      joinButtonRef.current?.click();
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!domain.trim()) {
+      toast.error('Please enter your domain');
+      return;
     }
-  }, []);
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          domain: domain.trim()
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      // Success
+      toast.success('Successfully submitted!');
+      
+      // Reset form
+      setDomain('');
+      
+      // Redirect after a short delay
+      setTimeout(() => {
+        window.open('https://cal.com/mues-ai/demo', '_blank');
+      }, 1000);
+      
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast.error(error.message || 'Failed to submit. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Handle button click
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    handleSubmit(e);
+  };
 
   useEffect(() => {
-    // Keyboard listener
-    document.addEventListener('keydown', handleKeyPress, { passive: false });
-    
     if (isMobile && carouselRef.current) {
       const carouselElement = carouselRef.current; 
       
@@ -57,15 +100,10 @@ export default function MainContent() {
       observer.observe(carouselElement);
       
       return () => {
-        document.removeEventListener('keydown', handleKeyPress);
         observer.unobserve(carouselElement);
       };
     }
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyPress);
-    };
-  }, [isMobile, handleKeyPress]);
+  }, [isMobile]);
 
   // Check if screen width is below 1024px
   useEffect(() => {
@@ -120,17 +158,54 @@ export default function MainContent() {
             When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.
             </p>
             
-            {/* Join waitlist button */}
-            <ButtonWhite
-              href="https://tally.so/r/w2V7Dg"
-              target="_blank"
-              rel="noopener noreferrer"
-              ariaLabel="Join waitlist"
-              badge="J"
-              className="mt-4 md:mt-6 lg:mt-8 w-fit"
-              >
-              Join waitlist
-            </ButtonWhite>
+            <form onSubmit={handleSubmit} className='max-w-[442px] flex flex-col items-center xs:flex-row xs:items-start gap-2 mt-4 md:mt-6 lg:mt-8'>
+
+              <input 
+                type="text"
+                value={domain}
+                onChange={(e) => setDomain(e.target.value)}
+                placeholder="yourproduct.com"
+                disabled={isSubmitting}
+                className="w-full h-[48px] min-w-[130px] flex-1 rounded-xl border border-[#2A2A2A] bg-[#121212] px-4 pt-[15px] pb-[16px]
+                  text-[rgba(255,255,255,0.33)] font-Inter text-[14px] font-normal tracking-[0.14px] leading-[17px]
+                  hover:border-[#333] hover:text-[rgba(255,255,255,0.50)]
+                  focus:border-[#2A2A2A] focus:text-white focus:outline-none
+                  placeholder:text-[rgba(255,255,255,0.33)] placeholder:font-Inter placeholder:text-[14px] placeholder:tracking-[0.14px] placeholder:leading-[17px]
+                  placeholder:hover:text-[rgba(255,255,255,0.50)]
+                  [&:not(:placeholder-shown)]:border-[#2A2A2A] [&:not(:placeholder-shown)]:bg-[#121212] [&:not(:placeholder-shown)]:text-white
+                  disabled:opacity-50 disabled:cursor-not-allowed"
+              />
+
+              <div className="flex flex-col gap-2 items-center">
+                {/* Get a demo button */}
+                <ButtonWhite
+                  onClick={handleButtonClick}
+                  ariaLabel="Get a demo"
+                  className="gap-1"
+                  disabled={isSubmitting}
+                  icon={
+                    isSubmitting ? (
+                      <svg className="animate-spin h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M4.45508 9.95998L7.71508 6.69998C8.10008 6.31498 8.10008 5.68498 7.71508 5.29998L4.45508 2.03998" stroke="#17181A" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )
+                  }
+                  >
+                  {isSubmitting ? 'Submitting...' : 'Get a demo'}
+                </ButtonWhite>
+
+                <p className="text-[rgba(255,255,255,0.66)] font-openRunde text-[11px] font-normal leading-normal tracking-[0.11px]">
+                  on your own product!
+                </p>
+              </div>
+
+            </form>
+
           </div>
 
           {/* Video */}
@@ -154,7 +229,6 @@ export default function MainContent() {
           </div>
 
         </div>
-
 
         <div className="mt-auto">
           <div className="text-[rgba(255,255,255,0.40)] text-xs md:text-sm font-light leading-4 tracking-[0.11px] md:tracking-[0.14px] mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 w-fit ">
