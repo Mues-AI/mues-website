@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Badge from './ui/Badge';
 
 export default function HeroTwo() {
     return (
@@ -20,12 +21,14 @@ export default function HeroTwo() {
             <div className="w-full flex justify-center lg:justify-start px-6 sm:px-9 md:px-12 lg:px-0 lg:w-1/2 lg:pl-[72px] xl:pl-[124px]">
                 
                 <div className='flex flex-col gap-4 lg:gap-6 w-full lg:w-[322px]'>
-                    {/* İçerik 1 */}
-                    <div className="flex justify-center items-center px-3 py-2 rounded-xl border border-[rgba(255,255,255,0.25)] w-fit">
-                        <p className="text-[rgba(255,255,255,0.75)] text-center text-[14px] font-normal leading-[17px]">
-                        SECURITY                    
-                        </p>            
-                    </div>
+                    {/* İçerik 1 - SECURITY BADGE */}
+                    <Badge 
+                    className="border-[rgba(255,255,255,0.25)]" 
+                    textClassName="text-[rgba(255,255,255,0.75)]"
+                    >
+                    SECURITY
+                    </Badge>
+
                     {/* İçerik 2 */}
                     <h3 className="text-white font-rethinkSans text-[30px] font-normal leading-[40px] tracking-[0.3px] lg:text-[56px] lg:leading-[68px] lg:tracking-[0.56px]">
                     Blinded and compliant.

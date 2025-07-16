@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Badge from "./ui/Badge";
 
 // List item data
 const listItems = [
@@ -82,11 +83,8 @@ export default function Benefits() {
         
         {/* AGENTIC AI unlocked parts */}
         <div className="flex flex-col items-start gap-4 md:gap-6 w-full max-w-[1168px]">
-            <div className="flex items-start gap-1.5 px-3 py-2 rounded-xl border border-[rgba(0,137,255,0.25)] bg-white w-fit">
-                <span className="text-primary-blue text-center text-[14px] font-normal leading-[17px]">
-                    BENEFITS
-                </span>
-            </div>
+            <Badge>BENEFITS</Badge>
+
     
             <h3 className="max-w-[1168px] text-primary-black font-rethinkSans font-semibold text-[30px] leading-[40px] tracking-[0.3px] md:text-[56px] md:leading-[68px] md:tracking-[0.56px]">
                 Agentic AI unlocked.

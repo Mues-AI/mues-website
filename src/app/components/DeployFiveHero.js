@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Badge from './ui/Badge';
 
 export default function DeployFiveHero() {
     return (
@@ -18,12 +19,14 @@ export default function DeployFiveHero() {
     {/* Ana Flex Container */}
     <div className="w-full h-full flex flex-col justify-between gap-20 xl:gap-[119px] p-12 2xl:p-20">
         
-        {/* BADGE */}
-        <div className="w-fit inline-flex px-[12px] py-[8px] justify-center items-center gap-[6px] rounded-[12px] border border-[rgba(255,255,255,0.25)] xl:mt-6 lg:ml-12 xl:ml-[124px]">
-            <p className="text-[rgba(255,255,255,0.75)] text-center text-[14px] font-medium leading-[16px]">
-            DEPLOY IN 5 MINS
-            </p>
-        </div>
+        {/* DEPLOY IN 5 MINS BADGE */}
+        <Badge 
+        className="bg-transparent border-[rgba(255,255,255,0.25)] xl:mt-6 lg:ml-12 xl:ml-[124px]"
+        textClassName="text-[rgba(255,255,255,0.75)]"
+        padding="px-[12px] py-[8px]"
+        >
+        DEPLOY IN 5 MINS
+        </Badge>
 
         {/* Content */}
         <div className="w-full h-full relative">

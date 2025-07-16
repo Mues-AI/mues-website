@@ -1,12 +1,11 @@
+import Badge from './ui/Badge';
+
 export default function MeetMuse() {
   return (
     <div className="flex flex-col items-center gap-4 md:gap-6 max-w-[1168px] mt-24 md:mt-32 lg:mt-[200px] mb-12 md:mb-18 lg:mb-24 mx-auto">
 
-      <div className="flex justify-center items-center gap-1.5 px-3 py-2 rounded-xl border border-[rgba(0,137,255,0.25)] bg-white w-fit">
-        <span className="text-primary-blue text-center text-[14px] font-normal leading-[17px]">
-          MEET MUES
-        </span>
-      </div>
+      <Badge>MEET MUES</Badge>
+
 
       <h2 className="max-w-xl text-primary-black text-center font-rethinkSans font-semibold 
       text-[30px] leading-[40px] tracking-[0.3px]

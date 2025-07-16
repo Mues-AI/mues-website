@@ -1,6 +1,7 @@
 import { OnlyLogo } from '../utils/svgGeneralUtils';
 import { CursorSvg } from '../utils/showcase/svgShowcase';
 import ButtonBlack from './ui/ButtonBlack';
+import Badge from './ui/Badge';
 
 export default function ImpactCircle() {
   return (
@@ -15,11 +16,7 @@ export default function ImpactCircle() {
     <div className="w-full flex-1 max-w-[570px] flex flex-col gap-y-4 md:gap-y-6 
     items-center md:items-start text-center md:text-start">
       {/* 1.1. IMPACT badge */}
-      <span className="text-primary-blue text-center text-[14px] font-normal leading-[17px] w-fit">
-        <span className="flex px-3 py-2 justify-center items-center rounded-xl border border-[rgba(0,137,255,0.25)] bg-white">
-          IMPACT
-        </span>
-      </span>
+      <Badge>IMPACT</Badge>
 
       {/* 1.2. Heading */}
       <h3 className="text-primary-black font-rethinkSans font-semibold 

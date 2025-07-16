@@ -3,7 +3,6 @@
 import Navbar from '../../components/Navbar';
 import Image from 'next/image';
 import { CursorSvg } from '../../utils/showcase/svgShowcase';
-import { useEffect } from 'react';
 import SvgIconAi from '../../utils/svgIconAi';
 import { productAdoptionData } from '../../data/usecase-prodocutAdoptionData';
 import { toast } from 'sonner';
@@ -18,6 +17,7 @@ import DeployFiveHero from '../../components/DeployFiveHero';
 import ImpactCircle from '../../components/ImpactCircle';
 import ButtonBlack from '@/app/components/ui/ButtonBlack';
 import ButtonWhite from '@/app/components/ui/ButtonWhite';
+import Badge from '../../components/ui/Badge';
 
 function FeatureContainer({
   svgSrc,
@@ -198,11 +198,7 @@ export default function ProductAdoption() {
         {/* Problem Section - Like Meet Mues Section */}
         <div className="flex flex-col items-center gap-4 md:gap-6 max-w-[1168px] mt-24 md:mt-32 lg:mt-[152px] mb-12 md:mb-15 lg:mb-18 mx-auto">
 
-          <div className="flex justify-center items-center gap-1.5 px-3 py-2 rounded-xl border border-[rgba(0,137,255,0.25)] bg-white w-fit">
-            <span className="text-primary-blue text-center text-[14px] font-normal leading-[17px]">
-              PROBLEM
-            </span>
-          </div>
+          <Badge>PROBLEM</Badge>
 
           <h2 className="max-w-xl text-primary-black text-center font-rethinkSans font-semibold 
           text-[30px] leading-[40px] tracking-[0.3px]
@@ -450,11 +446,7 @@ export default function ProductAdoption() {
         {/* A new kind of software interaction */}
         {/* INFO : componentleştirirken her şey aynı diğerleriyle -- desciription paragrafı yok -- saadece mb-12 md:mb-15 lg:mb-18 değerleri farklı */}
         <div className="flex flex-col items-start gap-4 md:gap-6 max-w-[1168px] mt-24 md:mt-32 lg:mt-[200px] mb-12 md:mb-15 lg:mb-18 mx-auto">
-          <div className="flex justify-center items-center gap-1.5 px-3 py-2 rounded-xl border border-[rgba(0,137,255,0.25)] bg-white w-fit">
-            <span className="text-primary-blue text-center text-[14px] font-normal leading-[17px]">
-            INCREASE ADOPTION
-            </span>
-          </div>
+          <Badge>INCREASE ADOPTION</Badge>
 
           <h2 className="max-w-xl text-primary-black font-rethinkSans font-semibold 
           text-[30px] leading-[40px] tracking-[0.3px]
