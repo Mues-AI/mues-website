@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { NextResponse } from 'next/server';
 
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
@@ -32,6 +34,8 @@ function sanitizeDomain(domain) {
 }
 
 export async function POST(request) {
+  console.log('API Route Hit: /api/waitlist POST');
+  
   try {
     if (!NOTION_DATABASE_ID || !NOTION_TOKEN) {
       console.error('Missing Notion configuration');
@@ -44,6 +48,8 @@ export async function POST(request) {
     // Parse request body
     const body = await request.json();
     const { domain } = body;
+
+    console.log('Received domain:', domain);
 
     // Validate and sanitize domain
     const sanitizedDomain = sanitizeDomain(domain);
@@ -98,6 +104,8 @@ export async function POST(request) {
 
     const notionData = await notionResponse.json();
     
+    console.log('Successfully saved to Notion:', notionData.id);
+    
     // Return success response
     return NextResponse.json(
       { 
@@ -120,8 +128,9 @@ export async function POST(request) {
   }
 }
 
-// Handle unsupported methods
+// Handle unsupported methods with logging
 export async function GET() {
+  console.log('API Route Hit: /api/waitlist GET');
   return NextResponse.json(
     { error: 'Method not allowed' },
     { status: 405 }
@@ -129,6 +138,7 @@ export async function GET() {
 }
 
 export async function PUT() {
+  console.log('API Route Hit: /api/waitlist PUT');
   return NextResponse.json(
     { error: 'Method not allowed' },
     { status: 405 }
@@ -136,6 +146,7 @@ export async function PUT() {
 }
 
 export async function DELETE() {
+  console.log('API Route Hit: /api/waitlist DELETE');
   return NextResponse.json(
     { error: 'Method not allowed' },
     { status: 405 }

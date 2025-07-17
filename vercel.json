@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "src/app/api/waitlist/route.js": {
+      "maxDuration": 10
+    }
+  }
+} 
