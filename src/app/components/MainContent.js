@@ -37,9 +37,9 @@ export default function MainContent() {
     setIsSubmitting(true);
 
     try {
-      console.log('Submitting to /api/waitlist with domain:', domain.trim());
+      console.log('Submitting to /api/submit with domain:', domain.trim());
       
-      const response = await fetch('/api/waitlist', {
+      const response = await fetch('/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
