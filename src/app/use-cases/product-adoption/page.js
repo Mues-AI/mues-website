@@ -536,6 +536,7 @@ export default function ProductAdoption() {
         highlightWords={["adoption"]}
         buttons={[
           <ButtonBlack
+            key="book-demo"
             href="https://cal.com/mues-ai/demo"
             target="_blank"
             rel="noopener noreferrer"

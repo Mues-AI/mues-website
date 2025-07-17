@@ -660,6 +660,7 @@ export default function Showcase() {
         highlightWords={["adoption"]}
         buttons={[
           <ButtonBlack
+            key="book-demo"
             href="https://cal.com/mues-ai/demo"
             target="_blank"
             rel="noopener noreferrer"
@@ -673,6 +674,7 @@ export default function Showcase() {
             Book a demo
           </ButtonBlack>,
           <ButtonWhite
+            key="join-waitlist"
             href="https://tally.so/r/w2V7Dg"
             target="_blank"
             rel="noopener noreferrer"

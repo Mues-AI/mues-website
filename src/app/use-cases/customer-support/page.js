@@ -536,6 +536,7 @@ export default function CustomerSupport() {
         highlightWords={["support"]}
         buttons={[
           <ButtonBlack
+            key="book-demo"
             href="https://cal.com/mues-ai/demo"
             target="_blank"
             rel="noopener noreferrer"
