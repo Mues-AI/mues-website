@@ -18,6 +18,7 @@ import ImpactCircle from '../../components/ImpactCircle';
 import ButtonBlack from '@/app/components/ui/ButtonBlack';
 import ButtonWhite from '@/app/components/ui/ButtonWhite';
 import Badge from '../../components/ui/Badge';
+import CallToAction from '@/app/components/ui/CallToAction';
 
 function FeatureContainer({
   svgSrc,
@@ -530,44 +531,25 @@ export default function ProductAdoption() {
 
         <ImpactCircle />
 
-        {/* Drive more adoption for your product -- add mues ai to your product ile aynı formatta sadece dışına MARGİN EKLEYECEĞİM. */}
-        <div className='w-full flex flex-col items-center gap-8  lg:py-31 lg:px-16 mx-auto my-[176px]'>
-          
-          {/* Main Text */}
-          <p className='w-[520px] text-center text-[#17181A] font-rethinkSans font-bold  font-feature-settings-salt 
-            text-[32px] sm:text-[48px] lg:text-[56px]
-            leading-[48px] sm:leading-[60px] lg:leading-[72px]
-            tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px]'>
-              Drive more
-            <span className="font-instrumentSerif font-normal font-feature-settings-salt italic bg-gradient-to-r from-[#0089FF] to-[#7D52F4] bg-clip-text text-transparent
-            text-[32px] sm:text-[48px] lg:text-[56px]  
-            leading-[48px] sm:leading-[60px] lg:leading-[72px]
-            tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px] ">
-              {" adoption"} <br />
-            </span>
-            for your product.
-          </p>
-
-          {/* Buttons Container */}
-          <div className='flex flex-col xs:flex-row items-center w-fit gap-3'>
-            
-            {/* Book a demo button */}
-            <ButtonBlack
-              href="https://cal.com/mues-ai/demo"
-              target="_blank"
-              rel="noopener noreferrer"
-              ariaLabel="Book a demo"
-              width="w-[154px]"
-              height="h-12"
-              badge="B"
-              innerDivPadding="px-[19px] py-[13px]"
-              className="min-w-fit"
-              >
-              Book a demo
-            </ButtonBlack>  
-          </div>
-
-        </div>
+        <CallToAction 
+        text="Drive more adoption<br/>for your product."
+        highlightWords={["adoption"]}
+        buttons={[
+          <ButtonBlack
+            href="https://cal.com/mues-ai/demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            ariaLabel="Book a demo"
+            width="w-[154px]"
+            height="h-12"
+            badge="B"
+            innerDivPadding="px-[19px] py-[13px]"
+            className="min-w-fit"
+          >
+            Book a demo
+          </ButtonBlack>
+        ]}
+      />
 
         <Comments />
         

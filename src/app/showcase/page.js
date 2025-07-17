@@ -11,6 +11,7 @@ import FooterTopTwoBenefit from '../components/FooterTopTwoBenefit';
 import Footer from '../components/Footer';
 import ButtonBlack from '../components/ui/ButtonBlack';
 import ButtonWhite from '../components/ui/ButtonWhite';
+import CallToAction from '../components/ui/CallToAction';
 
 const products = [
   {
@@ -653,56 +654,35 @@ export default function Showcase() {
         {/* Benefits Component */}
         <Benefits/>
 
-        {/* Add Mues AI to your product */}
-        <div className='w-full flex flex-col items-center gap-8  lg:py-31 lg:px-16 mx-auto'>
-          
-          {/* Main Text */}
-          <p className='w-[520px] text-center text-[#17181A] font-rethinkSans font-bold  font-feature-settings-salt 
-            text-[32px] sm:text-[48px] lg:text-[56px]
-            leading-[48px] sm:leading-[60px] lg:leading-[72px]
-            tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px]'>
-              Add Mues AI<br />
-              to your product<br />
-              for more 
-            <span className="font-instrumentSerif font-normal font-feature-settings-salt italic bg-gradient-to-r from-[#0089FF] to-[#7D52F4] bg-clip-text text-transparent
-            text-[32px] sm:text-[48px] lg:text-[56px]  
-            leading-[48px] sm:leading-[60px] lg:leading-[72px]
-            tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px] ">
-              {" adoption"}
-            </span>
-          </p>
-
-          {/* Buttons Container */}
-          <div className='flex flex-col xs:flex-row items-center w-fit gap-3'>
-            
-            {/* Book a demo button */}
-            <ButtonBlack
-              href="https://cal.com/mues-ai/demo"
-              target="_blank"
-              rel="noopener noreferrer"
-              ariaLabel="Book a demo"
-              width="w-[154px]"
-              height="h-12"
-              badge="B"
-              innerDivPadding="px-[19px] py-[13px]"
-              className="min-w-fit"
-              >
-              Book a demo
-            </ButtonBlack>   
-
-            {/* Join waitlist button */}
-            <ButtonWhite
-              href="https://tally.so/r/w2V7Dg"
-              target="_blank"
-              rel="noopener noreferrer"
-              ariaLabel="Join waitlist"
-              badge="J"
-              >
-              Join waitlist
-            </ButtonWhite>
-          </div>
-
-        </div>
+        <CallToAction 
+        containerClassName="my-0"
+        text="Add Mues AI<br/>to your product<br/>for more adoption"
+        highlightWords={["adoption"]}
+        buttons={[
+          <ButtonBlack
+            href="https://cal.com/mues-ai/demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            ariaLabel="Book a demo"
+            width="w-[154px]"
+            height="h-12"
+            badge="B"
+            innerDivPadding="px-[19px] py-[13px]"
+            className="min-w-fit"
+          >
+            Book a demo
+          </ButtonBlack>,
+          <ButtonWhite
+            href="https://tally.so/r/w2V7Dg"
+            target="_blank"
+            rel="noopener noreferrer"
+            ariaLabel="Join waitlist"
+            badge="J"
+          >
+            Join waitlist
+          </ButtonWhite>
+        ]}
+      />
 
         {/* FooterTopTwoBenefit Component */}
         <div className='mt-24 lg:mt-37'>
