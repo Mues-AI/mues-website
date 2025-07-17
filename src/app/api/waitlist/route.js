@@ -107,14 +107,7 @@ export async function POST(request) {
         domain: sanitizedDomain,
         submissionDate
       },
-      { 
-        status: 200,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        }
-      }
+      { status: 200 }
     );
 
   } catch (error) {
@@ -122,29 +115,16 @@ export async function POST(request) {
     
     return NextResponse.json(
       { error: 'Internal server error' },
-      { 
-        status: 500,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        }
-      }
+      { status: 500 }
     );
   }
 }
 
 // Handle unsupported methods
 export async function GET() {
-  console.log('API Route Hit: /api/waitlist GET');
   return NextResponse.json(
-    { 
-      message: 'Waitlist API is working!', 
-      method: 'GET',
-      timestamp: new Date().toISOString(),
-      status: 'active'
-    },
-    { status: 200 }
+    { error: 'Method not allowed' },
+    { status: 405 }
   );
 }
 
@@ -160,16 +140,4 @@ export async function DELETE() {
     { error: 'Method not allowed' },
     { status: 405 }
   );
-}
-
-export async function OPTIONS() {
-  console.log('API Route Hit: /api/waitlist OPTIONS');
-  return new NextResponse(null, {
-    status: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    },
-  });
-}
+} 

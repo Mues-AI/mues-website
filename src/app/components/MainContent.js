@@ -37,9 +37,7 @@ export default function MainContent() {
     setIsSubmitting(true);
 
     try {
-      console.log('Submitting to /api/submit with domain:', domain.trim());
-      
-      const response = await fetch('/api/submit', {
+      const response = await fetch('/api/waitlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,11 +47,7 @@ export default function MainContent() {
         }),
       });
 
-      console.log('Response status:', response.status);
-      console.log('Response ok:', response.ok);
-
       const data = await response.json();
-      console.log('Response data:', data);
 
       if (!response.ok) {
         throw new Error(data.error || 'Something went wrong');
