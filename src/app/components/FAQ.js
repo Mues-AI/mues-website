@@ -49,11 +49,11 @@ export default function FAQ() {
 {/* faq and list container */}
 <div className="max-w-[1168px] mb-24 lg:my-[148px] mx-auto flex flex-col items-start gap-6 lg:flex-row lg:justify-between">
 
-    <div className="text-center text-primary-black font-semibold font-rethinkSans  
+    <h3 className="text-center text-primary-black font-semibold font-rethinkSans  
     text-[30px] leading-[40px] tracking-[0.3px]
     lg:text-[56px] lg:leading-[68px] lg:tracking-[0.56px]">
     FAQ
-    </div>
+    </h3>
 
     <div className="w-full lg:w-[800px] max-w-[800px] inline-flex flex-col justify-start items-start gap-8">
         <div className="self-stretch flex flex-col justify-start items-start gap-2">
@@ -68,10 +68,10 @@ export default function FAQ() {
                         <h4 className={`${openIndex === idx ? '' : ' '} min-h-8 w-full flex items-center`}>{item.question}</h4>
                         
                             {openIndex === idx && (
-                              <div
+                              <p
                               className="flex w-full rounded-b-xl text-8e8e8e text-[14px] font-light leading-6 tracking-[0.14px]">
                               {item.answer}
-                              </div>
+                              </p>
                             )}
                     </div>
                     {openIndex === idx ? (

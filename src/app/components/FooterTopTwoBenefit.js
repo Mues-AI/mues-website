@@ -8,17 +8,17 @@ function BenefitCard({ bgColor, title, description, imageSrc, imageWidth, imageH
 
         <div className="inline-flex justify-center items-center gap-2">
 
-          <div className={`${textColor} font-rethinkSans font-semibold leading-[30px] 
+          <h5 className={`${textColor} font-rethinkSans font-semibold leading-[30px] 
           text-[20px] tracking-[0.2px]
           lg:text-[24px] lg:tracking-[0.24px]`}>
             {title}
-          </div>
+          </h5>
 
         </div>
 
-        <div className={`${subtextColor} text-[16px] font-light leading-[20px]`}>
+        <p className={`${subtextColor} text-[16px] font-light leading-[20px]`}>
           {description}
-        </div>
+        </p>
 
       </div>       
 

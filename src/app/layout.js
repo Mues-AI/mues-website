@@ -8,6 +8,8 @@ const inter = Inter({
   subsets: ["latin"],
   style: ["normal", "italic"],
   fontFamily: "Inter, sans-serif",
+  display: 'swap',
+  preload: true
 });
 
 const rethinkSans = Rethink_Sans({
@@ -57,6 +59,17 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   title: "Mues AI - AI-powered cursor for your product",
   description: "When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.",
+  keywords: [
+    "AI cursor",
+    "Cursor Agent",
+    "AI-powered assistant",
+    "product adoption",
+    "user onboarding",
+    "interactive tutorials",
+    "user experience",
+    "product analytics",
+    "customer success"
+  ],
   robots: "index, follow",
   canonical: "https://www.mues.ai/",
   openGraph: {
@@ -69,7 +82,7 @@ export const metadata = {
         url: "https://mues.ai/images/og-image.webp", 
         width: 1600,
         height: 836,
-        alt: "Mues AI - Open Graph Image",
+        alt: "Mues AI - AI-powered cursor",
       },
     ],
     locale: "en_US",

@@ -231,9 +231,9 @@ export default function MainContent() {
         </div>
 
         <div className="mt-auto">
-          <div className="text-[rgba(255,255,255,0.40)] text-xs md:text-sm font-light leading-4 tracking-[0.11px] md:tracking-[0.14px] mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 w-fit ">
+          <p className="text-[rgba(255,255,255,0.40)] text-xs md:text-sm font-light leading-4 tracking-[0.11px] md:tracking-[0.14px] mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 w-fit ">
             Trusted by product leaders and developers worldwide
-          </div>
+          </p>
           
           {isMobile ? (
             // Mobil ekranlarda animasyonlu logo carousel

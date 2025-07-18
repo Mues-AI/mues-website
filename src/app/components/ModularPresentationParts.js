@@ -137,7 +137,6 @@ const ModularPresentationParts = ({ variant }) => {
           <Image 
             quality={100} 
             loading='lazy' 
-            unoptimized 
             src={variantData.imageSrc} 
             alt={variantData.imageAlt} 
             fill={true}
