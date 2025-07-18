@@ -4,6 +4,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
   },
+  
   async rewrites() {
     return [
       {
@@ -24,13 +25,13 @@ const nextConfig = {
           },
         ],
       },
-      // Images - 2 days cache
+      // Images - 1 week cache 
       {
         source: '/:path*.webp',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=604800, stale-while-revalidate=86400',
           },
         ],
       },
@@ -39,7 +40,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=604800, stale-while-revalidate=86400',
           },
         ],
       },
@@ -48,7 +49,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=604800, stale-while-revalidate=86400',
           },
         ],
       },
@@ -57,7 +58,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=604800, stale-while-revalidate=86400',
           },
         ],
       },
@@ -66,7 +67,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=604800, stale-while-revalidate=86400',
           },
         ],
       },
@@ -75,7 +76,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=604800, stale-while-revalidate=86400',
           },
         ],
       },
@@ -84,7 +85,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=604800, stale-while-revalidate=86400',
           },
         ],
       },
@@ -93,17 +94,17 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=604800, stale-while-revalidate=86400',
           },
         ],
       },
-      // Videos - 2 days cache
+      // Videos - 1 month cache 
       {
         source: '/:path*.mp4',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=2592000, stale-while-revalidate=604800',
           },
         ],
       },
@@ -112,7 +113,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=2592000, stale-while-revalidate=604800',
           },
         ],
       },
@@ -121,7 +122,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=2592000, stale-while-revalidate=604800',
           },
         ],
       },
@@ -130,17 +131,17 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=172800, stale-while-revalidate=86400',
+            value: 'public, max-age=2592000, stale-while-revalidate=604800',
           },
         ],
       },
-      // Fonts - 1 day cache with immutable
+      // Fonts - 1 month cache with immutable
       {
         source: '/:path*.woff',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, immutable',
+            value: 'public, max-age=2592000, immutable',
           },
         ],
       },
@@ -149,7 +150,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, immutable',
+            value: 'public, max-age=2592000, immutable',
           },
         ],
       },
@@ -158,7 +159,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, immutable',
+            value: 'public, max-age=2592000, immutable',
           },
         ],
       },
@@ -167,7 +168,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, immutable',
+            value: 'public, max-age=2592000, immutable',
           },
         ],
       },
@@ -176,7 +177,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, immutable',
+            value: 'public, max-age=2592000, immutable',
           },
         ],
       },
