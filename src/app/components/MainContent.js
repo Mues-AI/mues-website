@@ -37,7 +37,7 @@ export default function MainContent() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/waitlist', {
+      const response = await fetch('/web-api/waitlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
