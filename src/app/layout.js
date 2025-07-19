@@ -9,7 +9,7 @@ const inter = Inter({
   style: ["normal", "italic"],
   fontFamily: "Inter, sans-serif",
   display: 'swap',
-  preload: true
+  preload: true,
 });
 
 const rethinkSans = Rethink_Sans({
@@ -17,6 +17,8 @@ const rethinkSans = Rethink_Sans({
   subsets: ["latin"],
   style: ["normal"],
   fontFamily: "Rethink Sans, sans-serif",
+  display: 'swap',
+  preload: false,
 });
 
 const geist = Geist({
@@ -24,6 +26,8 @@ const geist = Geist({
   subsets: ["latin"],
   style: ["normal"],
   fontFamily: "Geist, sans-serif",
+  display: 'swap',
+  preload: false,
 });
 
 const fraunces = Fraunces({
@@ -31,6 +35,8 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   style: ["normal"],
   fontFamily: "Fraunces, serif",
+  display: 'swap',
+  preload: false,
 });
 
 const urbanist = Urbanist({
@@ -38,6 +44,8 @@ const urbanist = Urbanist({
   subsets: ["latin"],
   style: ["normal"],
   fontFamily: "Urbanist, sans-serif",
+  display: 'swap',
+  preload: false,
 });
 
 const instrumentSerif = Instrument_Serif({
@@ -46,6 +54,8 @@ const instrumentSerif = Instrument_Serif({
   weight: ["400"],
   style: ["italic"],
   fontFamily: "Instrument Serif, serif",
+  display: 'swap',
+  preload: false,
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -54,6 +64,8 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400"],
   style: ["normal"],
   fontFamily: "JetBrains Mono, monospace",
+  display: 'swap',
+  preload: false,
 });
 
 export const metadata = {
@@ -102,19 +114,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Favicon - moved from Head.js */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
 
-        {/* <link
-        rel="preload"
-        as="image"
-        href="/images/mainFirstImage-1512.webp"
-        imageSrcSet="
-          /images/mainFirstImage-1512.webp 1512w,
-        "
-        imageSizes="100vw"
-      /> */}
+        {/* Preload SVG Sprite - moved from Head.js */}
+        <link 
+          rel="preload" 
+          href="/MainAiModels/sprite.svg" 
+          as="image" 
+          type="image/svg+xml" 
+          fetchPriority="low"
+        />
 
-      {/* video First frame  */}
-      <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" />
+        {/* First frame image preload */}
+        <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" />
 
         {/* Preload Critical Fonts */}
         <link
@@ -126,35 +140,7 @@ export default function RootLayout({ children }) {
         />
         <link
           rel="preload"
-          href="/fonts/sfPro/sf-pro-display-semibold.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/sfPro/sf-pro-display-bold.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/sfPro/sf-pro-display-medium.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
           href="/fonts/openRunde/OpenRunde-Regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/openRunde/OpenRunde-Medium.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"

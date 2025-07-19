@@ -8,6 +8,15 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browserslist": {
+    "production": [
+      "supports es6-module",
+      "not dead"
+    ],
+    "development": [
+      "supports es6-module"
+    ]
+  },
   "dependencies": {
     "framer-motion": "^12.10.5",
     "next": "^15.3.2",

@@ -12,10 +12,22 @@ export default function SvgIconAi({
     <svg
       width={width}
       height={height}
-      style={{ color, opacity }}
+      style={{ 
+        color, 
+        opacity,
+        // Safari fix: Direct fill override
+        fill: color
+      }}
       {...props}
     >
-      <use href={`/MainAiModels/sprite.svg#${name}`} />
+      <use 
+        href={`/MainAiModels/sprite.svg#${name}`}
+        style={{
+          // Force color inheritance for all browsers
+          fill: color,
+          color: color
+        }}
+      />
     </svg>
   );
 } 
