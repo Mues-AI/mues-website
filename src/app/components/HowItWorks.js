@@ -63,20 +63,30 @@ export default function HowItWorks() {
   
   // Divide the scroll progress into segments for each card
   useEffect(() => {
+    let lastProgress = -1;
+    
     const unsubscribe = scrollYProgress.on("change", (progress) => {
+      // Throttle updates - only update if progress changed significantly
+      if (Math.abs(progress - lastProgress) < 0.01) return;
+      lastProgress = progress;
+      
       // Map progress 0-1 to card indexes (0-4)
       // We want animation to start when section is centered on screen
+      let newIndex;
       if (progress < 0.2) {
-        setActiveIndex(0);
+        newIndex = 0;
       } else if (progress < 0.4) {
-        setActiveIndex(1);
+        newIndex = 1;
       } else if (progress < 0.6) {
-        setActiveIndex(2);
+        newIndex = 2;
       } else if (progress < 0.8) {
-        setActiveIndex(3);
+        newIndex = 3;
       } else {
-        setActiveIndex(4);
+        newIndex = 4;
       }
+      
+      // Only update if index actually changed
+      setActiveIndex(current => current === newIndex ? current : newIndex);
     });
     
     return () => unsubscribe();

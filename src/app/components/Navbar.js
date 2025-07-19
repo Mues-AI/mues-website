@@ -233,31 +233,43 @@ export default function Navbar({ variant = 'dark' }) {
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
+    // Cache the current scroll position
+    const scrollY = window.scrollY;
+    
     if (isMobileMenuOpen) {
       // Mobil menü açıkken scrollu engelle
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
       document.body.style.width = '100%';
-      document.body.style.height = '100%';
-      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.top = `-${scrollY}px`;
     } else {
       // Mobil menü kapalıyken normal hale getir
-      const scrollY = parseInt(document.body.style.top || '0') * -1;
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.height = '';
-      document.body.style.top = '';
-      window.scrollTo(0, scrollY);
+      const savedScrollY = parseInt(document.body.style.top || '0') * -1;
+      
+      // Reset styles in single batch to minimize reflow
+      Object.assign(document.body.style, {
+        overflow: '',
+        position: '',
+        width: '',
+        height: '',
+        top: ''
+      });
+      
+      // Restore scroll position only if it changed
+      if (savedScrollY !== window.scrollY) {
+        window.scrollTo(0, savedScrollY);
+      }
     }
     
     return () => {
-      // Temizlik
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.height = '';
-      document.body.style.top = '';
+      // Temizlik - reset all at once
+      Object.assign(document.body.style, {
+        overflow: '',
+        position: '',
+        width: '',
+        height: '',
+        top: ''
+      });
     };
   }, [isMobileMenuOpen]);
 

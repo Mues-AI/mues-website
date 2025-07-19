@@ -10,11 +10,13 @@
   },
   "browserslist": {
     "production": [
+      "Chrome >= 60",
+      "Firefox >= 60", 
+      "Safari >= 12",
+      "Edge >= 79",
+      "not IE 11",
       "supports es6-module",
       "not dead"
-    ],
-    "development": [
-      "supports es6-module"
     ]
   },
   "dependencies": {

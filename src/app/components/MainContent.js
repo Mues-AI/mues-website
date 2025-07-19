@@ -1,12 +1,11 @@
 "use client";
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import SvgIconAi from '../utils/svgIconAi';
 import ButtonWhite from './ui/ButtonWhite';
 
 export default function MainContent() {
-  const [isMobile, setIsMobile] = useState(false);
   const [domain, setDomain] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -20,10 +19,6 @@ export default function MainContent() {
     { name: "mistral-ai", width: 84, height: 24, alt: "Mistral AI" },
     { name: "ollama", width: 83, height: 30, alt: "Ollama" }
   ];
-
-  // CSS animasyon hızını performans ve pil tüketimi için optimize etmek için
-  // ekranın görünür olup olmadığını takip ederek animasyonu duraklatabiliriz
-  const carouselRef = useRef(null);
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -78,51 +73,6 @@ export default function MainContent() {
     handleSubmit(e);
   };
 
-  useEffect(() => {
-    if (isMobile && carouselRef.current) {
-      const carouselElement = carouselRef.current; 
-      
-      // IntersectionObserver kullanarak element görünür olduğunda animasyonu başlat
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach(entry => {
-            const carousel = entry.target;
-            if (entry.isIntersecting) {
-              carousel.style.animationPlayState = 'running';
-            } else {
-              carousel.style.animationPlayState = 'paused';
-            }
-          });
-        },
-        { threshold: 0.1 } // %10 görünür olduğunda tetikle
-      );
-      
-      observer.observe(carouselElement);
-      
-      return () => {
-        observer.unobserve(carouselElement);
-      };
-    }
-  }, [isMobile]);
-
-  // Check if screen width is below 1024px
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-
-    // Initial check
-    checkScreenSize();
-
-    // Add event listener
-    window.addEventListener('resize', checkScreenSize);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('resize', checkScreenSize);
-    };
-  }, []);
-
   return (
     <main className="relative w-full bg-[#010101]" style={{ height: 'calc(100vh - 68px)'}}>
       <Image
@@ -137,9 +87,9 @@ export default function MainContent() {
         placeholder="blur"
         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
       />
-      <div className="relative z-10 w-full h-full p-6 pt-10 pb-6 md:px-8 md:py-12 lg:pb-[8.47vh] lg:px-20 lg:pt-[11.754vh] flex flex-col gap-8 lg:gap-0 justify-between">
+      <div className="relative z-10 w-full h-full p-6 pt-10 pb-6 md:px-8 md:py-12 lg:pb-[8.47vh] lg:px-20 lg:pt-[11.754vh] flex flex-col gap-6 lg:gap-0 justify-between">
         
-        <div className='flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 xl:gap-15'>
+        <div className='flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-12 xl:gap-15'>
           {/* HEADER - Description - Join waitlist button */}
           <div className="w-fit flex-1 ">
             <div className="mb-6 max-w-fit">
@@ -235,42 +185,37 @@ export default function MainContent() {
             Trusted by product leaders and developers worldwide
           </p>
           
-          {isMobile ? (
-            // Mobil ekranlarda animasyonlu logo carousel
-            <div className="w-full overflow-hidden">
-              <div 
-                ref={carouselRef}
-                className="inline-flex whitespace-nowrap animate-marquee"
-              >
-                {/* Logolar iki kez listelendiğinde sonsuz döngü daha temiz görünür */}
-                {[...logos, ...logos].map((logo, idx) => (
-                  <div key={idx} className="mx-4 flex items-center justify-center">
-                    <SvgIconAi 
-                      name={logo.name} 
-                      width={logo.width * 1} 
-                      height={logo.height * 1} 
-                      alt={logo.alt} 
-                      opacity="0.4"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : (
-            // Desktop ekranlarda normal görünüm
-            <div className="w-fit h-8 flex items-center space-x-6">
-              {logos.map((logo, idx) => (
-                <SvgIconAi 
-                  key={idx}
-                  name={logo.name} 
-                  width={logo.width} 
-                  height={logo.height} 
-                  alt={logo.alt} 
-                  opacity="0.4" 
-                />
+          {/* Mobile: Animasyonlu carousel (lg breakpoint altında) */}
+          <div className="w-full overflow-hidden lg:hidden">
+            <div className="inline-flex whitespace-nowrap animate-marquee">
+              {/* Logolar iki kez listelendiğinde sonsuz döngü daha temiz görünür */}
+              {[...logos, ...logos].map((logo, idx) => (
+                <div key={idx} className="mx-4 flex items-center justify-center">
+                  <SvgIconAi 
+                    name={logo.name} 
+                    width={logo.width} 
+                    height={logo.height} 
+                    alt={logo.alt} 
+                    opacity="0.4"
+                  />
+                </div>
               ))}
             </div>
-          )}
+          </div>
+
+          {/* Desktop: Statik logo listesi (lg breakpoint ve üstü) */}
+          <div className="w-fit h-8 hidden lg:flex items-center space-x-6">
+            {logos.map((logo, idx) => (
+              <SvgIconAi 
+                key={idx}
+                name={logo.name} 
+                width={logo.width} 
+                height={logo.height} 
+                alt={logo.alt} 
+                opacity="0.4" 
+              />
+            ))}
+          </div>
           
         </div>
 

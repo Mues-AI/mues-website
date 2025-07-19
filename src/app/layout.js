@@ -114,11 +114,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Favicon - moved from Head.js */}
+        {/* Favicon */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
 
-        {/* Preload SVG Sprite - moved from Head.js */}
+        {/* Preload SVG Sprite */}
         <link 
           rel="preload" 
           href="/MainAiModels/sprite.svg" 
@@ -129,22 +129,6 @@ export default function RootLayout({ children }) {
 
         {/* First frame image preload */}
         <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" />
-
-        {/* Preload Critical Fonts */}
-        <link
-          rel="preload"
-          href="/fonts/sfPro/sf-pro-display-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/openRunde/OpenRunde-Regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
 
         <Script
           id="hotjar"

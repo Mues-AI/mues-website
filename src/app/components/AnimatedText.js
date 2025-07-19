@@ -1,25 +1,48 @@
 "use client";
 import { ThickBgBlueSvg } from '../utils/svgGeneralUtils';
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function AnimatedText() {
   const controls = useAnimation();
+  const rafRef = useRef(null);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-      controls.start((index) => {
-        const progress = (scrollY - windowHeight / 2) / 700;
-        return {
-          color: progress >= index / 100 ? '#17181A' : 'rgba(23, 24, 26, 0.1)',
-        };
+      // Cancel previous RAF if exists
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+
+      // Use requestAnimationFrame to batch DOM reads
+      rafRef.current = requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        
+        // Only update if scroll position changed significantly 
+        if (Math.abs(scrollY - lastScrollY.current) > 5) {
+          lastScrollY.current = scrollY;
+          
+          const windowHeight = window.innerHeight;
+          controls.start((index) => {
+            const progress = (scrollY - windowHeight / 2.2) / 700;
+            return {
+              color: progress >= index / 100 ? '#17181A' : 'rgba(23, 24, 26, 0.1)',
+            };
+          });
+        }
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Use passive listener for better performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
   }, [controls]);
 
   const text = "Every day, users hit roadblocks while using your product. They get stuck, confused, and lost. These moments are critical for your user. Adopt or churn?";
