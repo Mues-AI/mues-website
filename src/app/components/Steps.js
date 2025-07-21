@@ -107,15 +107,15 @@ export default function Steps() {
                                 </h3>
                             </div>
 
-                            {/* Waitlist Button */}
+                            {/* Get started Button */}
                             <ButtonBlack
-                                href="https://tally.so/r/w2V7Dg"
+                                href="https://cal.com/mues-ai/demo"
                                 width="w-[154px]"
                                 height="h-12"
-                                badge="J"
-                                ariaLabel="Join waitlist"
+                                badge="G"
+                                ariaLabel="Get started"
                             >
-                                Join waitlist
+                                Get started
                             </ButtonBlack>
 
                         </div>

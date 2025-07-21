@@ -121,17 +121,17 @@ export default function ProductAdoption() {
             Mues is an agentic AI that lets your users delegate any task <br /> to an AI agent using human language in your product.
             </p>
 
-            {/* Join waitlist button */}
+            {/* Get started button */}
             <ButtonWhite
-            href="https://tally.so/r/w2V7Dg"
+            href="https://cal.com/mues-ai/demo"
             target="_blank"
             rel="noopener noreferrer"
-            ariaLabel="Join waitlist"
-            badge="J"
+            ariaLabel="Get started"
+            badge="G"
             className="mt-2 md:mt-4"
             padding="py-3.5 px-[19px]"
             >
-            Join waitlist
+            Get started
             </ButtonWhite>
 
         </div>

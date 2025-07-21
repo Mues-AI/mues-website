@@ -91,9 +91,8 @@ const ButtonWhite = forwardRef(({
     hover:border-[#EEE] active:border-[#EEE]
     shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]
     min-w-fit shrink-0
-    ${width} ${height}
+    ${width} ${height} ${className}
     ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
-    ${className}
   `.trim();
 
   // Text styling

@@ -90,7 +90,7 @@ export default function MainContent() {
       <div className="relative z-10 w-full h-full p-6 pt-10 pb-6 md:px-8 md:py-12 lg:pb-[8.47vh] lg:px-20 lg:pt-[11.754vh] flex flex-col gap-6 lg:gap-0 justify-between">
         
         <div className='flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-12 xl:gap-15'>
-          {/* HEADER - Description - Join waitlist button */}
+          {/* HEADER - Description - Get Domain Input */}
           <div className="w-fit flex-1 ">
             <div className="mb-6 max-w-fit">
               <h1 className="text-white font-rethinkSans font-bold leading-12 md:leading-16 lg:leading-[72px] tracking-[0.36px] md:tracking-[0.48px] lg:tracking-[0.56px] font-feature-settings-salt text-3xl xs:text-4xl sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] lg:whitespace-nowrap">

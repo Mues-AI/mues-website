@@ -672,17 +672,7 @@ export default function Showcase() {
             className="min-w-fit"
           >
             Book a demo
-          </ButtonBlack>,
-          <ButtonWhite
-            key="join-waitlist"
-            href="https://tally.so/r/w2V7Dg"
-            target="_blank"
-            rel="noopener noreferrer"
-            ariaLabel="Join waitlist"
-            badge="J"
-          >
-            Join waitlist
-          </ButtonWhite>
+          </ButtonBlack>
         ]}
       />
 

@@ -121,17 +121,17 @@ export default function CustomerSupport() {
             Mues AI is the first context-aware AI support agent to resolve support issues instantly and 24/7, reducing support costs.
             </p>
 
-            {/* Join waitlist button */}
+            {/* Get started button */}
             <ButtonWhite
-            href="https://tally.so/r/w2V7Dg"
+            href="https://cal.com/mues-ai/demo"
             target="_blank"
             rel="noopener noreferrer"
-            ariaLabel="Join waitlist"
-            badge="J"
+            ariaLabel="Get started"
+            badge="G"
             className="mt-2 md:mt-4"
             padding="py-3.5 px-[19px]"
             >
-            Join waitlist
+            Get started
             </ButtonWhite>
 
         </div>
