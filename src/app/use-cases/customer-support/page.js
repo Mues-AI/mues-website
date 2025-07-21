@@ -128,7 +128,7 @@ export default function CustomerSupport() {
             rel="noopener noreferrer"
             ariaLabel="Get started"
             badge="G"
-            className="mt-2 md:mt-4"
+            className="mt-2 md:mt-4 gap-2"
             padding="py-3.5 px-[19px]"
             >
             Get started
