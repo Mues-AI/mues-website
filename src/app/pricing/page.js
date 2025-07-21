@@ -414,7 +414,7 @@ export default function Pricing() {
             <section className="w-full py-12 mt-43">
                 <div className="w-full max-w-6xl mx-auto text-center">
                     <p className="text-[rgba(71,70,69,0.40)] text-xs md:text-sm font-light leading-4 tracking-[0.14px] md:tracking-[0.14px] mb-8">
-                        Trusted by product leaders and developers worldwide
+                        Compatible with all major LLM providers
                     </p>
                     
                     {/* Mobile: Animated infinite carousel (< 1024px) */}

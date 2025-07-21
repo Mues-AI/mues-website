@@ -182,7 +182,7 @@ export default function MainContent() {
 
         <div className="mt-auto">
           <p className="text-[rgba(255,255,255,0.40)] text-xs md:text-sm font-light leading-4 tracking-[0.11px] md:tracking-[0.14px] mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 w-fit ">
-            Trusted by product leaders and developers worldwide
+            Compatible with all major LLM providers
           </p>
           
           {/* Mobile: Animasyonlu carousel (lg breakpoint altında) */}
