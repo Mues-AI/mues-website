@@ -656,18 +656,18 @@ export default function Pricing() {
                 highlightWords={["adoption"]}
                 buttons={[
                     <ButtonBlack
-                    key="book-demo"
+                    key="get-started"
                     href="https://cal.com/mues-ai/demo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    ariaLabel="Book a demo"
+                    ariaLabel="Get started"
                     width="w-[154px]"
                     height="h-12"
-                    badge="B"
+                    badge="G"
                     innerDivPadding="px-[19px] py-[13px]"
                     className="min-w-fit"
                     >
-                    Book a demo
+                    Get started
                     </ButtonBlack>
                 ]}
                 />
