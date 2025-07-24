@@ -94,9 +94,9 @@ export default function MainContent() {
           <div className="w-fit flex-1 ">
             <div className="mb-6 max-w-fit">
               <h1 className="text-white font-rethinkSans font-bold leading-12 md:leading-16 lg:leading-[72px] tracking-[0.36px] md:tracking-[0.48px] lg:tracking-[0.56px] font-feature-settings-salt text-3xl xs:text-4xl sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] lg:whitespace-nowrap">
-              Cursor meets AI
+              Your uses get stuck,
                 <span className="block text-white font-instrumentSerif italic font-normal leading-12 lg:leading-[72px] tracking-[0.36px] lg:tracking-[0.56px] font-feature-settings-salt text-3xl xs:text-4xl sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] ">
-                your users ask, it acts
+                AI Cursor solves instantly
                 </span>
               </h1>
             </div>
@@ -105,7 +105,7 @@ export default function MainContent() {
             text-base leading-7 tracking-[0.16px]
             md:text-lg md:leading-8 md:tracking-[0.2px]
             lg:text-[20px] lg:leading-9 lg:tracking-[0.2px]">
-            When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.
+            Users just ask, and AI Cursor handles the rest right away. Instantly, personalized, and 24/7.
             </p>
             
             <form onSubmit={handleSubmit} className='max-w-[442px] flex flex-col items-center xs:flex-row xs:items-start gap-2 mt-4 md:mt-6 lg:mt-8'>
