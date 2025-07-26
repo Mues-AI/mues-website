@@ -82,10 +82,14 @@ export default function RoiCalculatorComponent() {
                   id="team-size"
                   type="number"
                   value={teamSize}
-                  onChange={(e) => setTeamSize(Number(e.target.value))}
+                  onChange={(e) => {
+                    const value = Number(e.target.value);
+                    setTeamSize(value > 2000000 ? 2000000 : value);
+                  }}
                   className="flex-1 border-0 rounded-r-none outline-none shadow-none bg-white"
                   height={40}
                   min={1}
+                  max={2000000}
                 />
                 <span className="bg-gray-100 text-gray-600 text-sm px-3 py-2 rounded-r-xl flex items-center h-10 whitespace-nowrap border-0">
                   members
@@ -102,9 +106,13 @@ export default function RoiCalculatorComponent() {
                   id="hours-week"
                   type="number"
                   value={hoursPerWeek}
-                  onChange={(e) => setHoursPerWeek(Number(e.target.value))}
+                  onChange={(e) => {
+                    const value = Number(e.target.value);
+                    setHoursPerWeek(value > 168 ? 168 : value);
+                  }}
                   className="flex-1 border-0 rounded-r-none outline-none shadow-none bg-white"
                   min={1}
+                  max={168}
                   height={40}
                 />
                 <span className="bg-gray-100 text-gray-600 text-sm px-3 py-2 rounded-r-xl flex items-center h-10 whitespace-nowrap border-0">
