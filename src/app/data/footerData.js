@@ -176,6 +176,12 @@ export const footerData = {
         active: true
       },
       {
+        href: "/roi-calculator",
+        label: "ROI Calculator",
+        ariaLabel: "Go to ROI Calculator",
+        active: true
+      },
+      {
         href: "https://discord.gg/GZGjemzU2H",
         label: "Community",
         ariaLabel: "Go to Community",

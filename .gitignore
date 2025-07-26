@@ -94,3 +94,13 @@ src/app/components/ui/CallToAction copy.js
 # dosyalar        
 /blog-module
 /sanity-cms
+
+# input
+src/app/components/ui/Input.module.css
+src/app/components/ui/Input.module copy.css
+src/app/components/ui/Input.module copy 2.css
+
+
+# RoiCalculator
+src/app/components/RoiCalculator copy.js
+src/app/components/RoiCalculator copy 2.js

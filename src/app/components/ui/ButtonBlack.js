@@ -58,7 +58,7 @@ const ButtonBlack = forwardRef(({
   target = '_blank',
   rel = 'noopener noreferrer',
   disabled = false,
-  wrapperClassName = 'rounded-xl', // a veya button elementi için class
+  wrapperClassName = '', // a veya button elementi için class
   className = '', // default values and props for outerClass - first div
   innerDivPadding = 'px-[19px] py-[13px]',
   innerClassName = '', // props for innerClass - second div
@@ -174,7 +174,7 @@ const ButtonBlack = forwardRef(({
         target={disabled ? undefined : target}
         rel={disabled ? undefined : rel}
         aria-label={ariaLabel || children}
-        className={wrapperClassName}
+        className={`rounded-xl cursor-pointer ${wrapperClassName}`}
         {...props}
       >
         {content}
@@ -188,7 +188,7 @@ const ButtonBlack = forwardRef(({
       onClick={disabled ? undefined : onClick}
       aria-label={ariaLabel || children}
       disabled={disabled}
-      className={wrapperClassName}
+      className={`rounded-xl cursor-pointer ${wrapperClassName}`}
       {...props}
     >
       {content}

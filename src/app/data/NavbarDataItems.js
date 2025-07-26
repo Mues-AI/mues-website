@@ -42,7 +42,8 @@ export const navItemsData = [
     href: "/#",
     menu: [
     { title: "The Muesum", desc: "Visit interaction museum", icon: "/NavbarMenu/svg/angular1.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://themuesum.mues.ai/" },
-    { title: "Community", desc: "Join our community", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://discord.gg/GZGjemzU2H" },
+    { title: "ROI Calculator", desc: "Calculate your ROI", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "/roi-calculator" },
+    { title: "Community", desc: "Join our community", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://discord.gg/GZGjemzU2H" },
     // { title: "Security", desc: "Review our measures", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
     // { title: "Status", desc: "Check system status", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },
     // { title: "Privacy policy", desc: "Read our policies", icon: "/NavbarMenu/svg/angular5.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },

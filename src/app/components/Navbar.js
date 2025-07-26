@@ -176,7 +176,7 @@ function MobileMenu({ navItemsData, isOpen, setIsOpen, theme }) {
 }
 
 // Navbar (Main)
-export default function Navbar({ variant = 'dark' }) {
+export default function Navbar({ variant = 'dark', className = '', ...rest }) {
   const [hoveredNavIndex, setHoveredNavIndex] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
@@ -275,7 +275,10 @@ export default function Navbar({ variant = 'dark' }) {
 
 
   return (
-    <nav className={`${isMobileMenuOpen ? "fixed top-0 left-0 right-0 z-40" : ""} h-auto w-full ${theme.bg} p-6 md:py-4 md:px-12 lg:px-[80px]`}>
+    <nav
+      {...rest}
+      className={`${isMobileMenuOpen ? "fixed top-0 left-0 right-0 z-40" : ""} h-auto w-full ${theme.bg} p-6 md:py-4 md:px-12 lg:px-[80px] ${className}`.trim()}
+    >
       <div className="w-full h-5 md:h-9 relative z-40 flex items-center justify-between">
 
         {/* Logo */}
