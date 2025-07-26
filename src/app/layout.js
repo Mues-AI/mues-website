@@ -107,6 +107,16 @@ export const metadata = {
     images: ["https://mues.ai/images/og-image.webp"], 
     creator: "@MuesAI", 
   },
+  other: {
+    "discord:image": "https://mues.ai/images/og-image.webp",
+    "discord:image:width": "1600",
+    "discord:image:height": "836",
+    "discord:image:alt": "Mues AI - AI-powered cursor for your product",
+    "discord:title": "Mues AI - AI-powered cursor for your product",  
+    "discord:description": "When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.",
+    "discord:site_name": "Mues AI",
+    "discord:image:type": "image/webp",
+  },
 };
 
 
