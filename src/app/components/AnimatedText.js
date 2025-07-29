@@ -44,14 +44,17 @@ export default function AnimatedText() {
   const words = text.split(' ');
   const wordLengths = words.map(word => word.length);
   
-  // Create a function to get color based on scroll and character index
-  const getCharacterColor = (index) => {
+  // Calculate total character count for creating transforms
+  const totalChars = text.replace(/ /g, '').length;
+  
+  // Create color transforms for each character at the top level
+  const characterColors = Array.from({ length: totalChars }, (_, index) => {
     return useTransform(scrollY, (value) => {
       const windowHeight = typeof window !== 'undefined' ? window.innerHeight : 800;
       const progress = (value - windowHeight / 2.2) / 700;
       return progress >= index / 100 ? '#17181A' : 'rgba(23, 24, 26, 0.1)';
     });
-  };
+  });
 
   return (
     <div className="">
@@ -69,13 +72,12 @@ export default function AnimatedText() {
             <span key={wordIndex} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
               {word.split('').map((char, charIndex) => {
                 const characterIndex = wordStartIndex + charIndex;
-                const color = getCharacterColor(characterIndex);
                 return (
                   <motion.span
                     key={charIndex}
                     style={{ 
                       display: 'inline-block',
-                      color
+                      color: characterColors[characterIndex]
                     }}
                   >
                     {char}
