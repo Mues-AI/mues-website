@@ -116,7 +116,7 @@ function MobileMenu({ navItemsData, isOpen, setIsOpen, theme }) {
         {navItemsData.map((item, idx) => (
           <div key={idx} className="flex flex-col">
             <button 
-              className={`flex justify-between items-center py-3 ${theme.mobileText} border-b border-gray-800`}
+              className={`flex justify-between items-center py-3 ${theme.mobileText} border-b border-[#EEE]`}
               onClick={() => setExpandedMenuIndex(expandedMenuIndex === idx ? null : idx)}
             >
               <span className="text-lg font-medium">{item.label}</span>

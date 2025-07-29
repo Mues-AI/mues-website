@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Mues AI - AI-powered cursor for your product",
-  description: "When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.",
+  title: "Contact Us | Mues AI",
+  description: "Get in touch with the Mues AI team. Whether you have questions, need a demo, or want to explore how agentic AI can help your product, we’re here to chat.",
 };
 
 export default function ContactLayout({ children }) {

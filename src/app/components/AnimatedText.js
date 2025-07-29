@@ -1,10 +1,10 @@
 "use client";
 import { ThickBgBlueSvg } from '../utils/svgGeneralUtils';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 export default function AnimatedText() {
-  const controls = useAnimation();
+  const scrollY = useMotionValue(0);
   const rafRef = useRef(null);
   const lastScrollY = useRef(0);
 
@@ -17,19 +17,12 @@ export default function AnimatedText() {
 
       // Use requestAnimationFrame to batch DOM reads
       rafRef.current = requestAnimationFrame(() => {
-        const scrollY = window.scrollY;
+        const currentScrollY = window.scrollY;
         
-        // Only update if scroll position changed significantly 
-        if (Math.abs(scrollY - lastScrollY.current) > 5) {
-          lastScrollY.current = scrollY;
-          
-          const windowHeight = window.innerHeight;
-          controls.start((index) => {
-            const progress = (scrollY - windowHeight / 2.2) / 700;
-            return {
-              color: progress >= index / 100 ? '#17181A' : 'rgba(23, 24, 26, 0.1)',
-            };
-          });
+        // Only update if scroll position changed significantly
+        if (Math.abs(currentScrollY - lastScrollY.current) > 5) {
+          lastScrollY.current = currentScrollY;
+          scrollY.set(currentScrollY);
         }
       });
     };
@@ -43,13 +36,22 @@ export default function AnimatedText() {
         cancelAnimationFrame(rafRef.current);
       }
     };
-  }, [controls]);
+  }, [scrollY]);
 
   const text = "Every day, users hit roadblocks while using your product. They get stuck, confused, and lost. These moments are critical for your user. Adopt or churn?";
 
   // Kelime uzunluklarını hesapla
   const words = text.split(' ');
   const wordLengths = words.map(word => word.length);
+  
+  // Create a function to get color based on scroll and character index
+  const getCharacterColor = (index) => {
+    return useTransform(scrollY, (value) => {
+      const windowHeight = typeof window !== 'undefined' ? window.innerHeight : 800;
+      const progress = (value - windowHeight / 2.2) / 700;
+      return progress >= index / 100 ? '#17181A' : 'rgba(23, 24, 26, 0.1)';
+    });
+  };
 
   return (
     <div className="">
@@ -61,22 +63,29 @@ export default function AnimatedText() {
         lg:text-[80px] lg:leading-[96px] lg:tracking-[0.8px]"
         style={{ fontFeatureSettings: "'salt' on", whiteSpace: 'pre-wrap' }}
       >
-        {words.map((word, wordIndex) => (
-          <span key={wordIndex} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-            {word.split('').map((char, charIndex) => (
-              <motion.span
-                key={charIndex}
-                custom={wordLengths.slice(0, wordIndex).reduce((a, b) => a + b, 0) + charIndex}
-                animate={controls}
-                initial={{ color: 'rgba(23, 24, 26, 0.1)' }}
-                style={{ display: 'inline-block' }}
-              >
-                {char}
-              </motion.span>
-            ))}
-            {'\u00A0'}
-          </span>
-        ))}
+        {words.map((word, wordIndex) => {
+          const wordStartIndex = wordLengths.slice(0, wordIndex).reduce((a, b) => a + b, 0);
+          return (
+            <span key={wordIndex} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+              {word.split('').map((char, charIndex) => {
+                const characterIndex = wordStartIndex + charIndex;
+                const color = getCharacterColor(characterIndex);
+                return (
+                  <motion.span
+                    key={charIndex}
+                    style={{ 
+                      display: 'inline-block',
+                      color
+                    }}
+                  >
+                    {char}
+                  </motion.span>
+                );
+              })}
+              {'\u00A0'}
+            </span>
+          );
+        })}
       </p>
 
       <div className="mx-auto max-w-[1168px]">

@@ -257,7 +257,7 @@ export default function Contact() {
                 />
 
 
-                <FAQ />
+                <FAQ type="contact" />
                 <Footer/>
 
             </div>
