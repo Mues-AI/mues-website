@@ -124,21 +124,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Favicon */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
-
-        {/* Preload SVG Sprite */}
-        <link 
-          rel="preload" 
-          href="/MainAiModels/sprite.svg" 
-          as="image" 
-          type="image/svg+xml" 
-          fetchPriority="low"
-        />
-
-        {/* First frame image preload */}
-        <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" />
+        {/* Google Tag Manager – Head */}
+        <Script id="gtm-head" strategy="afterInteractive">
+          {`
+            try {
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-56KJVTJX');
+            } catch(e) {}
+          `}
+        </Script>
 
         <Script
           id="hotjar"
@@ -156,19 +153,22 @@ export default function RootLayout({ children }) {
               })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
             } catch(e) {}`}}
         />
+        
+        {/* Favicon */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
 
-        {/* Google Tag Manager – Head */}
-        <Script id="gtm-head" strategy="lazyOnload">
-          {`
-            try {
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-56KJVTJX');
-            } catch(e) {}
-          `}
-        </Script>
+        {/* Preload SVG Sprite */}
+        <link 
+          rel="preload" 
+          href="/MainAiModels/sprite.svg" 
+          as="image" 
+          type="image/svg+xml" 
+          fetchPriority="low"
+        />
+
+        {/* First frame image preload */}
+        <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" />
       </head>
       <body 
         className={`${inter.variable} ${rethinkSans.variable} ${geist.variable} ${fraunces.variable} ${urbanist.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}

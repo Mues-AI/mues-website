@@ -44,7 +44,7 @@ export default function Footer() {
                     <Image src={"/svg/logoFooter.svg"} width={80} height={16} alt="mues logo"/>
 
                     <div className="md:w-[320px]">
-                        <p className="w-fit md:w-[300px] h-auto tracking-[0.1px] text-[#AAA] font-Urbanist text-[13px] font-medium leading-[20px]">Software Interaction Company</p>
+                        <p className="w-fit md:w-[300px] h-auto tracking-[0.1px] text-[#AAA] font-Urbanist text-[13px] font-medium leading-[20px]">The Software Interaction Company</p>
                         <p className="w-fit md:w-[300px] h-auto tracking-[0.1px] text-[#B6B6B6] text-[12px] font-light leading-[20px]">to create a world where software adapts to humans,
                         not humans to software.</p>
                     </div>

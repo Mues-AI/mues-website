@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'sonner';
 import SvgIconAi from '../utils/svgIconAi';
 import ButtonWhite from './ui/ButtonWhite';
