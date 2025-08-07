@@ -4,7 +4,7 @@ export default function MeetMuse() {
   return (
     <div className="flex flex-col items-center gap-4 md:gap-6 max-w-[1168px] mt-24 md:mt-32 lg:mt-[200px] mb-12 md:mb-18 lg:mb-24 mx-auto">
 
-      <Badge>MEET MUES</Badge>
+      <Badge>MEET MUES AI</Badge>
 
 
       <h2 className="max-w-xl text-primary-black text-center font-rethinkSans font-semibold 
