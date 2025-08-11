@@ -1,3 +1,4 @@
+"use client"
 import React, { forwardRef, useEffect } from 'react';
 {/* YAP - TO DO - İLERİDE YAPABİLİRİZ : belki şeyde yapabilirsin flex grow ve basis değerleri ekleyerek eğer satırda yalnız kalırsa buton yatayı full kaplasın diyebiliriz. */}
 
@@ -54,6 +55,7 @@ const ButtonBlack = forwardRef(({
   height = 'h-12',
   badge,
   icon, // Yeni prop: icon component
+  iconPosition = 'right',
   ariaLabel,
   target = '_blank',
   rel = 'noopener noreferrer',
@@ -142,6 +144,9 @@ const ButtonBlack = forwardRef(({
   const content = (
     <div className={outerClass}>
       <div className={innerClass}>
+        {iconPosition === 'left' && icon && !badge && (
+          <span className={iconContainerClass}>{icon}</span>
+        )}
         <span className={textClass}>
           {children}
         </span>
@@ -156,7 +161,7 @@ const ButtonBlack = forwardRef(({
             )}
           </span>
         )}
-        {!badge && icon && (
+        {iconPosition === 'right' && icon && !badge && (
           <span className={iconContainerClass}>
             {icon}
           </span>
