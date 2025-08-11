@@ -20,7 +20,6 @@ export default function MainContent() {
     { name: "ollama", width: 83, height: 30, alt: "Ollama" }
   ];
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -48,13 +47,10 @@ export default function MainContent() {
         throw new Error(data.error || 'Something went wrong');
       }
 
-      // Success
       toast.success('Successfully submitted!');
       
-      // Reset form
       setDomain('');
       
-      // Redirect after a short delay
       setTimeout(() => {
         window.open('https://cal.com/mues-ai/demo', '_blank');
       }, 1000);
@@ -67,7 +63,6 @@ export default function MainContent() {
     }
   };
 
-  // Handle button click
   const handleButtonClick = (e) => {
     e.preventDefault();
     handleSubmit(e);

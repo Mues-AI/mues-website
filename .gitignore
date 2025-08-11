@@ -40,14 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# uzun süreli kullanılmayan dosyalar
-src/app/unUsed/
-
 ####### kısa süreli gitignore dosyaları
-
-# deneme
-src/app/deneme
-src/app/deneme/page.js
 
 # Showcase
 src/app/showcase/page copy 7Videolu.js
@@ -63,4 +56,8 @@ src/app/showcase/ShowcaseCards.module copy 2videolu.css
 # dosyalar        
 /blog-module
 /sanity-cms
+
+# scripts 
+/scripts/*
+
 

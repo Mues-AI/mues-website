@@ -474,7 +474,7 @@ export default function TermsOfService() {
                             <p className={styles.paragraph}>
                                 For technical support or questions about the Services:<br />
                                 Email: <a href="mailto:support@mues.ai" className="underline">support@mues.ai</a><br />
-                                Website: <a href="https://mues.ai/support" className="underline">https://mues.ai/support</a>
+                                Website: <a href="https://mues.ai/contact" className="underline">https://mues.ai/contact</a>
                             </p>
 
                             <p className={styles.subTitle}>19.3 Legal Inquiries</p>

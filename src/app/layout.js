@@ -69,24 +69,25 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Mues AI - AI-powered cursor for your product",
-  description: "When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.",
+  title: "Mues AI | SaaS Onboarding and Support with AI",
+  description: "Mues AI transforms SaaS onboarding, product adoption, and support with agentic AI. Guide users and resolve tasks instantly inside your product.",
   keywords: [
     "AI cursor",
     "Cursor Agent",
     "AI-powered assistant",
-    "product adoption",
+    "AI-powered product adoption",
     "user onboarding",
-    "interactive tutorials",
+    "AI SaaS onboarding",
     "user experience",
-    "product analytics",
-    "customer success"
+    "Agentic AI platforms",
+    "AI customer support",
+    "Reduce customer churn with Mues AI"
   ],
   robots: "index, follow",
   canonical: "https://www.mues.ai/",
   openGraph: {
-    title: "Mues AI - AI-powered cursor for your product",
-    description: "When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.",
+    title: "Mues AI | SaaS Onboarding and Support with AI",
+    description: "Mues AI transforms SaaS onboarding, product adoption, and support with agentic AI. Guide users and resolve tasks instantly inside your product.",
     url: "https://mues.ai", 
     siteName: "Mues AI",
     images: [
@@ -102,8 +103,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mues AI - AI-powered cursor for your product",
-    description: "When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.",
+    title: "Mues AI | SaaS Onboarding and Support with AI",
+    description: "Mues AI transforms SaaS onboarding, product adoption, and support with agentic AI. Guide users and resolve tasks instantly inside your product.",
     images: ["https://mues.ai/images/og-image.webp"], 
     creator: "@MuesAI", 
   },
@@ -111,9 +112,9 @@ export const metadata = {
     "discord:image": "https://mues.ai/images/og-image.webp",
     "discord:image:width": "1600",
     "discord:image:height": "836",
-    "discord:image:alt": "Mues AI - AI-powered cursor for your product",
-    "discord:title": "Mues AI - AI-powered cursor for your product",  
-    "discord:description": "When your users get stuck, the AI cursor takes over. Users just ask, and it handles the rest right away.",
+    "discord:image:alt": "Mues AI | SaaS Onboarding and Support with AI",
+    "discord:title": "Mues AI | SaaS Onboarding and Support with AI",  
+    "discord:description": "Mues AI transforms SaaS onboarding, product adoption, and support with agentic AI. Guide users and resolve tasks instantly inside your product.",
     "discord:site_name": "Mues AI",
     "discord:image:type": "image/webp",
   },
