@@ -308,28 +308,28 @@ export default function MainContent() {
         <div className="w-full p-6 lg:p-12 flex flex-col h-full justify-between">
           <div className="flex flex-row items-center justify-center ">
             {emailSubmitSuccess ? (
-              <div className="text-center flex flex-row items-center gap-3">
-                <OnlyLogo width={16} height={16} fill="#17181A" />
+              <div className="text-center flex flex-col md:flex-row items-center gap-3">
+                <OnlyLogo width={16} height={16} fill="#17181A" className="shrink-0"/>
                 <p className="text-[#17181A] font-openRunde text-[16px] font-medium leading-6 tracking-[0.16px]">
                   We’ve received your submission and will get back to you
                   within 24 hours.
                 </p>
               </div>
             ) : (
-              <div className="flex flex-row gap-4 ">
-                <span className="text-[#17181A] font-openRunde text-[16px] font-medium leading-6 tracking-[0.16px]">
-                  Contact us with <br /> me via email
+              <div className="w-full flex flex-col items-center gap-2 md:flex-row md:justify-center md:gap-4 ">
+                <span className="text-[#17181A] font-openRunde text-[16px] font-medium leading-6 tracking-[0.16px] text-center md:text-left shrink-0">
+                  Contact us with <br className="hidden md:block" /> me via email
                 </span>
                 <form
                   onSubmit={handleEmailSubmit}
-                  className="flex items-center gap-3"
+                  className="w-full flex flex-col items-center gap-2 md:w-auto md:flex-row md:gap-3"
                 >
                   <Input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
-                    className="min-w-80"
+                    width="md:w-80"
                     height="h-12"
                     disabled={isEmailSubmitting}
                   />
