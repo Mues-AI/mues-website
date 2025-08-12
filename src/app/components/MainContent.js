@@ -28,7 +28,7 @@ const logos = [
 export default function MainContent() {
   const [domain, setDomain] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(true);
   const [email, setEmail] = useState("");
   const [isEmailSubmitting, setIsEmailSubmitting] = useState(false);
   const [emailSubmitSuccess, setEmailSubmitSuccess] = useState(false);
@@ -318,7 +318,7 @@ export default function MainContent() {
             ) : (
               <div className="w-full flex flex-col items-center gap-2 md:flex-row md:justify-center md:gap-4 ">
                 <span className="text-[#17181A] font-openRunde text-[16px] font-medium leading-6 tracking-[0.16px] text-center md:text-left shrink-0">
-                  Contact us with <br className="hidden md:block" /> me via email
+                  Reach out to <br className="hidden md:block" /> me via email
                 </span>
                 <form
                   onSubmit={handleEmailSubmit}
