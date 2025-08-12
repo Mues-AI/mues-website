@@ -28,7 +28,7 @@ const logos = [
 export default function MainContent() {
   const [domain, setDomain] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isOverlayOpen, setIsOverlayOpen] = useState(true);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [isEmailSubmitting, setIsEmailSubmitting] = useState(false);
   const [emailSubmitSuccess, setEmailSubmitSuccess] = useState(false);
