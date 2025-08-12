@@ -15,9 +15,12 @@ import React from 'react';
  */
 const Input = React.forwardRef(function Input(
   {
+    id,
+    name,
     type = 'text',
     value,
     onChange,
+    width = '',
     height = 'h-12', // default height as Tailwind class
     padding = 'p-4', // default padding as Tailwind class
     className = '',
@@ -28,7 +31,7 @@ const Input = React.forwardRef(function Input(
 ) {
   // Base styling for input
   const inputClass = `
-    w-full ${height} ${padding} rounded-xl border border-[#F4F4F4] bg-white box-border
+    w-full ${width} ${height} ${padding} rounded-xl border border-[#F4F4F4] bg-white box-border
     text-[#17181A] font-inter text-sm font-normal leading-4 tracking-[0.14px]
     placeholder:text-[#8C97AC] placeholder:font-inter placeholder:text-sm placeholder:font-normal placeholder:leading-4 placeholder:tracking-[0.14px]
     ${disabled 
@@ -48,6 +51,8 @@ const Input = React.forwardRef(function Input(
 
   return (
     <input
+      id={id}
+      name={name}
       ref={ref}
       type={type}
       value={value}

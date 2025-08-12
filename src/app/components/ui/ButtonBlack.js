@@ -89,10 +89,10 @@ const ButtonBlack = forwardRef(({
 
   // Base styling for outer container
   const outerClass = `
-    ${width} ${height} rounded-xl flex justify-center items-center 
+    ${width} ${height} rounded-xl flex justify-center items-center bg-black
     ${disabled 
-      ? 'bg-gray-400 cursor-not-allowed' 
-      : 'bg-black hover:bg-[#17181A] active:bg-[#262728]'
+      ? 'cursor-not-allowed' 
+      : 'hover:bg-[#17181A] active:bg-[#262728]'
     } 
     ${className}
   `.trim();
@@ -104,7 +104,7 @@ const ButtonBlack = forwardRef(({
     shadow-[0px_3px_8px_0px_rgba(0,0,0,0.15)] 
     outline-[1px] outline-offset-[-1px] outline-[rgba(255,255,255,0.12)]
     ${disabled
-      ? 'bg-gray-500'
+      ? 'bg-[#454545]'
       : `bg-gradient-to-b from-[#252525] to-[#17181A] 
          hover:from-[#323232] hover:to-[#17181A] 
          active:from-[#484848] active:to-[#262728]`

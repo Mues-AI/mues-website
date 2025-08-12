@@ -1,120 +1,97 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
+import { knownRegex } from "@/../const/knownRegex";
 
-const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
-const NOTION_TOKEN = process.env.NOTION_TOKEN;
+const { NOTION_DATABASE_ID, NOTION_TOKEN } = process.env;
+const isNotionConfigured = NOTION_DATABASE_ID && NOTION_TOKEN;
 
-if (!NOTION_DATABASE_ID || !NOTION_TOKEN) {
-  console.error('Missing required environment variables: NOTION_DATABASE_ID or NOTION_TOKEN');
-}
+function sanitizeAndValidateDomain(domain) {
+  if (!domain || typeof domain !== "string") {
+    return { isValid: false, sanitized: null };
+  }
 
-// Validate domain format
-function isValidDomain(domain) {
-  if (!domain || typeof domain !== 'string') return false;
-  
-  const cleanDomain = domain.replace(/^https?:\/\//, '').replace(/\/$/, '');
-  
-  // Basic domain validation regex
-  const domainRegex = /^[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]?\.([a-zA-Z]{2,}\.)*[a-zA-Z]{2,}$/;
-  
-  return domainRegex.test(cleanDomain) && cleanDomain.length <= 253;
-}
-
-// Sanitize domain input
-function sanitizeDomain(domain) {
-  if (!domain) return '';
-  
-  return domain
+  const sanitized = domain
     .trim()
     .toLowerCase()
-    .replace(/^https?:\/\//, '')
-    .replace(/\/$/, '')
+    .replace(/^https?:\/\//, "")
+    .replace(/\/$/, "")
     .slice(0, 253);
+
+  const isValid = knownRegex.domain.test(sanitized);
+
+  return { isValid, sanitized };
+}
+
+async function createNotionEntry(domain, uid) {
+  const payload = {
+    parent: { database_id: NOTION_DATABASE_ID },
+    properties: {
+      Domain: { url: `https://${domain}` },
+      UID: { rich_text: [{ type: "text", text: { content: uid } }] },
+      "Created at": { date: { start: new Date().toISOString() } },
+    },
+  };
+
+  const response = await fetch("https://api.notion.com/v1/pages", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${NOTION_TOKEN}`,
+      "Content-Type": "application/json",
+      "Notion-Version": "2022-06-28",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.text();
+    console.error("Notion API error on create:", response.status, errorData);
+    throw new Error("Failed to save submission to Notion.");
+  }
+
+  return response.json();
 }
 
 export async function POST(request) {
+  if (!isNotionConfigured) {
+    console.error("Notion API is not configured. Check environment variables.");
+    return NextResponse.json(
+      { error: "Server configuration error" },
+      { status: 503 }
+    );
+  }
+
   try {
-    if (!NOTION_DATABASE_ID || !NOTION_TOKEN) {
-      console.error('Missing Notion configuration');
-      return NextResponse.json(
-        { error: 'Server configuration error' },
-        { status: 500 }
-      );
-    }
-
-    // Parse request body
     const body = await request.json();
-    const { domain } = body;
+    let { domain, uid } = body;
 
-    // Validate and sanitize domain
-    const sanitizedDomain = sanitizeDomain(domain);
-    
-    if (!isValidDomain(sanitizedDomain)) {
+    const { isValid, sanitized: sanitizedDomain } =
+      sanitizeAndValidateDomain(domain);
+    if (!isValid) {
       return NextResponse.json(
-        { error: 'Invalid domain format' },
+        { error: "Invalid domain format" },
         { status: 400 }
       );
     }
 
-    // Current timestamp
-    const submissionDate = new Date().toISOString();
-
-    // Prepare Notion API payload for database row
-    const notionPayload = {
-      parent: {
-        database_id: NOTION_DATABASE_ID
-      },
-      properties: {
-        Domain: {
-          url: `https://${sanitizedDomain}`
-        },
-        'Created at': {
-          date: {
-            start: submissionDate
-          }
-        }
-      }
-    };
-
-    // Add new row to database
-    const NOTION_API_URL = 'https://api.notion.com/v1/pages';
-    const notionResponse = await fetch(NOTION_API_URL, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${NOTION_TOKEN}`,
-        'Content-Type': 'application/json',
-        'Notion-Version': '2022-06-28'
-      },
-      body: JSON.stringify(notionPayload)
-    });
-
-    if (!notionResponse.ok) {
-      const errorData = await notionResponse.text();
-      console.error('Notion API error:', notionResponse.status, errorData);
-      return NextResponse.json(
-        { error: 'Failed to save submission' },
-        { status: 500 }
-      );
+    if (!uid) {
+      uid = crypto.randomUUID();
     }
 
-    const notionData = await notionResponse.json();
-    
-    // Return success response
+    const notionData = await createNotionEntry(sanitizedDomain, uid);
+
     return NextResponse.json(
-      { 
-        success: true, 
-        message: 'Domain added to database successfully',
+      {
+        success: true,
+        message: "Domain added to database successfully",
         submissionId: notionData.id,
         domain: sanitizedDomain,
-        submissionDate
+        uid,
       },
       { status: 200 }
     );
-
   } catch (error) {
-    console.error('API error:', error);
-    
+    console.error("API error in /api/waitlist:", error.message);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: "An internal server error occurred." },
       { status: 500 }
     );
   }
@@ -122,22 +99,13 @@ export async function POST(request) {
 
 // Handle unsupported methods
 export async function GET() {
-  return NextResponse.json(
-    { error: 'Method not allowed' },
-    { status: 405 }
-  );
+  return NextResponse.json({ error: "Method Not Allowed" }, { status: 405 });
 }
 
 export async function PUT() {
-  return NextResponse.json(
-    { error: 'Method not allowed' },
-    { status: 405 }
-  );
+  return NextResponse.json({ error: "Method Not Allowed" }, { status: 405 });
 }
 
 export async function DELETE() {
-  return NextResponse.json(
-    { error: 'Method not allowed' },
-    { status: 405 }
-  );
-} 
+  return NextResponse.json({ error: "Method Not Allowed" }, { status: 405 });
+}
