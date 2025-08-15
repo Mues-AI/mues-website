@@ -146,7 +146,7 @@ export default function RootLayout({ children }) {
             try {
               (function(h,o,t,j,a,r){
                 h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                h._hjSettings={hjid:6384438,hjsv:6};
+                h._hjSettings={hjid:6384438,hjsv:6, secure: true};
                 a=o.getElementsByTagName('head')[0];
                 r=o.createElement('script');r.async=1;
                 r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
@@ -159,17 +159,19 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
 
-        {/* Preload SVG Sprite */}
-        <link 
-          rel="preload" 
-          href="/MainAiModels/sprite.svg" 
-          as="image" 
-          type="image/svg+xml" 
-          fetchPriority="low"
-        />
+        {/* Minimal kritik CSS - Sadece layout için */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            html,body{margin:0;padding:0;background:#fff;font-family:system-ui,-apple-system,sans-serif}
+            *{font-display:swap}
+          `
+        }} />
 
-        {/* First frame image preload */}
+        {/* Sadece kritik görsel - diğerleri lazy */}
         <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" />
+        <link rel="preload" as="image" fetchPriority="high" href="/images/mainNewHero.webp" />
+        <link rel="preload" as="video" href="/videos/mainVideo.mp4" type="video/mp4" />
+        <link rel="preload" as="video" href="/videos/mainVideo.webm" type="video/webm" />
       </head>
       <body 
         className={`${inter.variable} ${rethinkSans.variable} ${geist.variable} ${fraunces.variable} ${urbanist.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}

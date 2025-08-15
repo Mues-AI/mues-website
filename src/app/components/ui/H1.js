@@ -21,8 +21,7 @@ const H1 = ({
 
 
   return (
-    <h1 className={`${className} ${theme.textColor} text-center font-rethinkSans font-bold
-      font-feature-settings-salt not-italic
+    <h1 className={`${className} ${theme.textColor} text-center font-rethinkSans font-bold not-italic
       text-[36px] leading-[48px] tracking-[0.36px]
       sm:text-[48px] sm:leading-[56px] sm:tracking-[0.48px]
       md:text-[52px] md:leading-[60px] md:tracking-[0.52px]

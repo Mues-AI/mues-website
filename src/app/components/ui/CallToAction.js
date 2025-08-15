@@ -35,7 +35,7 @@ const CallToAction = ({
                 return (
                   <span 
                     key={`${partIndex}-${chunkIndex}`}
-                    className="font-instrumentSerif font-normal font-feature-settings-salt italic bg-gradient-to-r from-[#0089FF] to-[#7D52F4] bg-clip-text text-transparent text-[32px] sm:text-[48px] lg:text-[56px] leading-[48px] sm:leading-[60px] lg:leading-[72px] tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px]"
+                    className="font-instrumentSerif font-normal italic bg-gradient-to-r from-[#0089FF] to-[#7D52F4] bg-clip-text text-transparent text-[32px] sm:text-[48px] lg:text-[56px] leading-[48px] sm:leading-[60px] lg:leading-[72px] tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px]"
                   >
                     {chunk}
                   </span>
@@ -55,7 +55,7 @@ const CallToAction = ({
   return (
     <div className={`w-full flex flex-col items-center gap-8 lg:py-31 lg:px-16 mx-auto ${containerClassName}`} {...props}>
       {/* Main Text */}
-      <p className="w-[520px] text-center text-[#17181A] font-rethinkSans font-bold font-feature-settings-salt text-[32px] sm:text-[48px] lg:text-[56px] leading-[48px] sm:leading-[60px] lg:leading-[72px] tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px]">
+      <p className="w-[520px] text-center text-[#17181A] font-rethinkSans font-bold text-[32px] sm:text-[48px] lg:text-[56px] leading-[48px] sm:leading-[60px] lg:leading-[72px] tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px]">
         {renderText()}
       </p>
         

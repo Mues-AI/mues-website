@@ -63,7 +63,7 @@ export default function FAQ({ type = 'general' }) {
                     </div>
                     {/* Show 'See more' FAQ */}
                     {type !== 'contact' && (
-                        <div className="inline-flex justify-between items-center gap-2 cursor-pointer mt-4" onClick={handleSeeMoreClick}>
+                        <div className="inline-flex justify-between items-center gap-2 cursor-pointer" onClick={handleSeeMoreClick}>
                             <div className="text-primary-blue text-[16px] font-normal leading-[20px]">See more</div>
                             <ArrowRightIcon width={16} height={16} color="#0089FF" alt="arrow right icon"/>
                         </div>
