@@ -159,14 +159,6 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
 
-        {/* Minimal kritik CSS - Sadece layout için */}
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            html,body{margin:0;padding:0;background:#fff;font-family:system-ui,-apple-system,sans-serif}
-            *{font-display:swap}
-          `
-        }} />
-
         {/* Sadece kritik görsel - diğerleri lazy */}
         <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" />
         <link rel="preload" as="image" fetchPriority="high" href="/images/mainNewHero.webp" />
