@@ -17,12 +17,17 @@ import DeployFiveHero from '../../components/DeployFiveHero';
 import ImpactCircle from '../../components/ImpactCircle';
 import ButtonBlack from '@/app/components/ui/ButtonBlack';
 import ButtonWhite from '@/app/components/ui/ButtonWhite';
-import Badge from '../../components/ui/Badge';
+import BorderBadge from '../../components/ui/BorderBadge';
 import CallToAction from '@/app/components/ui/CallToAction';
+import { ProfileCircle,Danger,DocumentText,MessageQuestion } from 'iconsax-react';
+import HeadingBadge from '@/app/components/ui/HeadingBadge';
+import H1 from '@/app/components/ui/H1';
+import SubHeadings from '@/app/components/ui/SubHeadings';
 
 function FeatureContainer({
   svgSrc,
   svgAlt,
+  icon,
   title,
   description,
   imageSrc,
@@ -35,7 +40,7 @@ function FeatureContainer({
       <div className="w-full max-w-[297px] md:max-w-[304px] flex flex-col gap-6 md:gap-8">
         {/* SVG */}
         <div className="w-8 h-8 flex items-center justify-center">
-          <Image src={svgSrc} alt={svgAlt} width={32} height={32} />
+          {icon ? icon : <Image src={svgSrc} alt={svgAlt} width={32} height={32} />}
         </div>
 
         {/* Title & Description */}
@@ -98,23 +103,20 @@ export default function ProductAdoption() {
         md:mt-[128px] md:mb-[138px] 
         lg:mt-[148px] lg:mb-[148px]  ">
 
-            {/* Badge */}
-            <div className="w-fit h-fit bg-[#F8F8F814] rounded-full py-[7px] px-3 flex items-center justify-center gap-2 mb-2">
-            <CursorSvg width={12} height={12} fill="#979797" />
-
-                <div className="text-center text-[12px] leading-4 tracking-[0.12px] text-[#979797]">
-                PRODUCT ADOPTION
-                </div>
-            </div>
+            {/* HeadingBadge */}
+            <HeadingBadge 
+            variant="dark"
+            icon={
+              <CursorSvg width={12} height={12} fill="#979797" />
+            }
+            >
+            PRODUCT ADOPTION
+            </HeadingBadge >
 
             {/* Main Heading */}
-            <h1 className="w-full text-white text-center font-rethinkSans  font-bold font-feature-settings-salt not-italic md:mb-2
-            text-[36px] leading-[48px] tracking-[0.36px]
-            sm:text-[48px] sm:leading-[56px] sm:tracking-[0.48px]
-            md:text-[52px] md:leading-[60px] md:tracking-[0.52px]
-            lg:text-[56px] lg:leading-[64px] lg:tracking-[0.56px]">
+            <H1 variant="white" className="mt-2 md:mb-2">
             Maximize product adoption with agentic AI
-            </h1>
+            </H1>
 
             {/* Subheading */}
             <p className="w-full text-center text-[#CCC] text-[20px] font-normal leading-[36px] tracking-[0.2px] not-italic">
@@ -199,19 +201,13 @@ export default function ProductAdoption() {
         {/* Problem Section - Like Meet Mues Section */}
         <div className="flex flex-col items-center gap-4 md:gap-6 max-w-[1168px] mt-24 md:mt-32 lg:mt-[152px] mb-12 md:mb-15 lg:mb-18 mx-auto">
 
-          <Badge>PROBLEM</Badge>
+          <BorderBadge>PROBLEM</BorderBadge>
 
-          <h2 className="max-w-xl text-primary-black text-center font-rethinkSans font-semibold 
-          text-[30px] leading-[40px] tracking-[0.3px]
-          md:text-[56px] md:leading-[68px] md:tracking-[0.56px]
-          ">
-            Eliminate frictions highlight value 
-          </h2>
+          <SubHeadings type="h2" className="max-w-xl text-center">
+          Eliminate frictions highlight value
+          </SubHeadings>
 
-          <p className="w-full text-[#474645] text-center font-light tracking-[-0.3px] 
-          text-[18px] leading-[32px]
-          md:text-[22px] md:leading-[38px]
-          ">
+          <p className="subHeadingsDescription w-full text-center">
             User frustration with your product doesn&apos;t just ruin the moment. <br className='hidden sm:block'/> It permanently changes how your users view its worth and usability.
           </p>
 
@@ -239,11 +235,7 @@ export default function ProductAdoption() {
             
               {/* User Icon */}
               <div className="w-16 h-16 rounded-2xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(23,24,26,0.05)] p-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <path d="M16.16 17.04C16.0667 17.0266 15.9467 17.0266 15.84 17.04C13.4933 16.96 11.6267 15.04 11.6267 12.68C11.6267 10.2666 13.5733 8.30664 16 8.30664C18.4133 8.30664 20.3733 10.2666 20.3733 12.68C20.36 15.04 18.5067 16.96 16.16 17.04Z" stroke="#777777" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M24.9867 25.84C22.6133 28.0133 19.4667 29.3333 16 29.3333C12.5333 29.3333 9.38667 28.0133 7.01334 25.84C7.14667 24.5866 7.94667 23.36 9.37334 22.4C13.0267 19.9733 19 19.9733 22.6267 22.4C24.0533 23.36 24.8533 24.5866 24.9867 25.84Z" stroke="#777777" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M16 29.3333C23.3638 29.3333 29.3333 23.3638 29.3333 16C29.3333 8.63616 23.3638 2.66663 16 2.66663C8.63619 2.66663 2.66666 8.63616 2.66666 16C2.66666 23.3638 8.63619 29.3333 16 29.3333Z" stroke="#777777" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+              <ProfileCircle size="32" color="#777777"/>
               </div>
 
               {/* Down Arrow */}
@@ -256,11 +248,7 @@ export default function ProductAdoption() {
 
               {/* Problem Description */}
               <div className='h-auto w-fit rounded-2xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(23,24,26,0.05)] py-[17px] px-6 flex justify-center items-center gap-3'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ minWidth: 24, minHeight: 24 }}>
-                  <path d="M12 9V14" stroke="#FF3200" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 21.41H5.93999C2.46999 21.41 1.01999 18.93 2.69999 15.9L5.81999 10.28L8.75999 5.00003C10.54 1.79003 13.46 1.79003 15.24 5.00003L18.18 10.29L21.3 15.91C22.98 18.94 21.52 21.42 18.06 21.42H12V21.41Z" stroke="#FF3200" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M11.9945 17H12.0035" stroke="#FF3200" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <Danger size="24" color="#ff3200"/>
                 <span className="text-[#474645] text-lg font-normal leading-[30px]">
                   I was unable to create a Slack integration.
                 </span>
@@ -278,12 +266,7 @@ export default function ProductAdoption() {
               <div className='flex flex-row flex-wrap justify-center gap-4 w-fit'>
                 {/* Document Text */}
                 <div className="w-16 h-16 rounded-2xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(23,24,26,0.05)] p-4 flex items-center justify-center"> 
-                  <Image 
-                    src="/use-cases/product-adoption/svg/documentText.svg"
-                    alt="Document"
-                    width={32}
-                    height={32}
-                  />
+                  <DocumentText size="32" color="#17181a"/>
                 </div>
 
                 {/* Google Logo */}
@@ -318,12 +301,7 @@ export default function ProductAdoption() {
 
                 {/* Message Question */}
                 <div className="w-16 h-16 rounded-2xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(23,24,26,0.05)] p-4 flex items-center justify-center"> 
-                  <Image 
-                    src="/use-cases/product-adoption/svg/messageQuestion.svg"
-                    alt="Message Question"
-                    width={32}
-                    height={32}
-                  />
+                  <MessageQuestion size="32" color="#17181a"/>
                 </div>
               </div>
 
@@ -358,11 +336,7 @@ export default function ProductAdoption() {
             
               {/* User Icon */}
               <div className="w-16 h-16 rounded-2xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(23,24,26,0.05)] p-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <path d="M16.16 17.04C16.0667 17.0266 15.9467 17.0266 15.84 17.04C13.4933 16.96 11.6267 15.04 11.6267 12.68C11.6267 10.2666 13.5733 8.30664 16 8.30664C18.4133 8.30664 20.3733 10.2666 20.3733 12.68C20.36 15.04 18.5067 16.96 16.16 17.04Z" stroke="#777777" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M24.9867 25.84C22.6133 28.0133 19.4667 29.3333 16 29.3333C12.5333 29.3333 9.38667 28.0133 7.01334 25.84C7.14667 24.5866 7.94667 23.36 9.37334 22.4C13.0267 19.9733 19 19.9733 22.6267 22.4C24.0533 23.36 24.8533 24.5866 24.9867 25.84Z" stroke="#777777" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M16 29.3333C23.3638 29.3333 29.3333 23.3638 29.3333 16C29.3333 8.63616 23.3638 2.66663 16 2.66663C8.63619 2.66663 2.66666 8.63616 2.66666 16C2.66666 23.3638 8.63619 29.3333 16 29.3333Z" stroke="#777777" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <ProfileCircle size="32" color="#777777"/>
               </div>
 
               {/* Down Arrow */}
@@ -375,11 +349,7 @@ export default function ProductAdoption() {
 
               {/* Problem Description */}
               <div className='h-auto w-fit rounded-2xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(23,24,26,0.05)] py-[17px] px-6 flex justify-center items-center gap-3'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ minWidth: 24, minHeight: 24 }}>
-                  <path d="M12 9V14" stroke="#FF3200" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 21.41H5.93999C2.46999 21.41 1.01999 18.93 2.69999 15.9L5.81999 10.28L8.75999 5.00003C10.54 1.79003 13.46 1.79003 15.24 5.00003L18.18 10.29L21.3 15.91C22.98 18.94 21.52 21.42 18.06 21.42H12V21.41Z" stroke="#FF3200" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M11.9945 17H12.0035" stroke="#FF3200" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <Danger size="24" color="#ff3200"/>
                 <span className="text-[#474645] text-lg font-normal leading-[30px]">
                   I was unable to create a Slack integration.
                 </span>
@@ -447,13 +417,11 @@ export default function ProductAdoption() {
         {/* A new kind of software interaction */}
         {/* INFO : componentleştirirken her şey aynı diğerleriyle -- desciription paragrafı yok -- saadece mb-12 md:mb-15 lg:mb-18 değerleri farklı */}
         <div className="flex flex-col items-start gap-4 md:gap-6 max-w-[1168px] mt-24 md:mt-32 lg:mt-[200px] mb-12 md:mb-15 lg:mb-18 mx-auto">
-          <Badge>INCREASE ADOPTION</Badge>
+          <BorderBadge>INCREASE ADOPTION</BorderBadge>
 
-          <h2 className="max-w-xl text-primary-black font-rethinkSans font-semibold 
-          text-[30px] leading-[40px] tracking-[0.3px]
-          md:text-[56px] md:leading-[68px] md:tracking-[0.56px]">
-            A new kind of <br /> software interaction.
-          </h2>
+          <SubHeadings type="h2" className="max-w-xl">
+          A new kind of <br /> software interaction.
+          </SubHeadings>
         </div>
 
         {/* Feature Containers */}
@@ -463,6 +431,7 @@ export default function ProductAdoption() {
               key={feature.id}
               svgSrc={feature.svgSrc}
               svgAlt={feature.svgAlt}
+              icon={feature.icon}
               title={feature.title}
               description={feature.description}
               imageSrc={feature.imageSrc}
@@ -556,7 +525,7 @@ export default function ProductAdoption() {
         
         <div className="w-4/5 max-w-[1024px] h-[1px] bg-[#fff] mx-auto hidden lg:block"></div>
 
-        <FAQ />
+        <FAQ type="productAdoption" />
 
         <Footer />
 

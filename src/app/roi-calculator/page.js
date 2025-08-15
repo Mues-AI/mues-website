@@ -8,6 +8,8 @@ import CallToAction from "../components/ui/CallToAction"
 import ButtonBlack from '../components/ui/ButtonBlack.js';
 import FAQ from "../components/FAQ"
 import Footer from "../components/Footer"
+import H1 from "../components/ui/H1"
+
 
 export default function RoiCalculator() {
   return (
@@ -38,13 +40,10 @@ export default function RoiCalculator() {
       lg:mt-[148px] lg:mb-[148px]  ">
 
           {/* Main Heading */}
-          <h1 className="w-full text-white text-center font-rethinkSans  font-bold font-feature-settings-salt not-italic md:mb-2
-          text-[36px] leading-[48px] tracking-[0.36px]
-          sm:text-[48px] sm:leading-[56px] sm:tracking-[0.48px]
-          md:text-[52px] md:leading-[60px] md:tracking-[0.52px]
-          lg:text-[56px] lg:leading-[64px] lg:tracking-[0.56px]">
+          <H1 variant="white" className="md:mb-2">
           Mues AI <br/> ROI Calculator
-          </h1>
+          </H1>
+          
 
           {/* Subheading */}
           <p className="w-full text-center text-[#CCC] text-[20px] font-normal leading-[36px] tracking-[0.2px] not-italic">

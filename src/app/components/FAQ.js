@@ -1,11 +1,11 @@
 "use client";
 import { useState } from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { ArrowRightIcon } from '../utils/svgIcons';
 import FooterTopTwoBenefit from './FooterTopTwoBenefit';
 import { faqData } from '../data/faqData';
-
+import SubHeadings from './ui/SubHeadings';
+import { Add,Minus } from 'iconsax-react';
 
 
 export default function FAQ({ type = 'general' }) {
@@ -32,9 +32,9 @@ export default function FAQ({ type = 'general' }) {
         <div id="faq">
             {/* faq and list container */}
             <div className="max-w-[1168px] mb-24 lg:my-[148px] mx-auto flex flex-col items-start gap-6 lg:flex-row lg:justify-between">
-                <h3 className="text-center text-primary-black font-semibold font-rethinkSans  text-[30px] leading-[40px] tracking-[0.3px] lg:text-[56px] lg:leading-[68px] lg:tracking-[0.56px]">
+                <SubHeadings type="h3" className="text-center">
                     FAQ
-                </h3>
+                </SubHeadings>
                 <div className="w-full lg:w-[800px] max-w-[800px] inline-flex flex-col justify-start items-start gap-8">
                     <div className="self-stretch flex flex-col justify-start items-start gap-2">
                         {/* list elements */}
@@ -53,16 +53,16 @@ export default function FAQ({ type = 'general' }) {
                                         )}
                                     </div>
                                     {openIndex === idx ? (
-                                        <Image className='self-start' src="/CommentsFAQ/svg/minus.svg" alt="minus icon" width={32} height={32} />
+                                        <Minus className='self-start' size="32" color="#8E8E8E"/>
                                     ) : (
-                                        <Image className='self-start' src="/CommentsFAQ/svg/add.svg" alt="add icon" width={32} height={32} />
+                                        <Add className='self-start' size="32" color="#0089ff"/>
                                     )}
                                 </div>
                             </div>
                         ))}
                     </div>
-                    {/* Show 'See more' only for general FAQ */}
-                    {type === 'general' && (
+                    {/* Show 'See more' FAQ */}
+                    {type !== 'contact' && (
                         <div className="inline-flex justify-between items-center gap-2 cursor-pointer mt-4" onClick={handleSeeMoreClick}>
                             <div className="text-primary-blue text-[16px] font-normal leading-[20px]">See more</div>
                             <ArrowRightIcon width={16} height={16} color="#0089FF" alt="arrow right icon"/>

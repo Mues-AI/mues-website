@@ -16,6 +16,8 @@ import Footer from '../components/Footer.js';
 import ButtonBlack from '../components/ui/ButtonBlack.js';
 import ButtonWhite from '../components/ui/ButtonWhite.js';
 import CallToAction from '../components/ui/CallToAction.js';
+import HeadingBadge from '../components/ui/HeadingBadge.js';
+import H1 from '../components/ui/H1.js';
 
 
 const pricingTableData = {
@@ -222,23 +224,20 @@ export default function Pricing() {
                 {/* Main Hero Container */}
                 <div className='w-full flex flex-col items-center gap-6 mt-24 md:mt-[148px]'>
 
-                    {/* Badge - VALUE FOCUS */}
-                    <div className="w-fit h-fit bg-f8f8f8 rounded-full py-[7px] px-3 flex items-center justify-center gap-2">
-                        <CursorSvg width={12} height={12} fill="#777777" />  
-                        <div className="text-center text-[12px] leading-4 tracking-[0.12px] text-[#777]">
-                        VALUE FOCUS
-                        </div>
-                    </div>
+                    {/* HeadingBadge - VALUE FOCUS */}
+                    <HeadingBadge 
+                        icon={
+                        <CursorSvg width={12} height={12} fill="#777777" />
+                        }
+                    >
+                    VALUE FOCUS
+                    </HeadingBadge >
 
 
                     {/* Main Title */}
-                    <h1 className='text-primary-black text-center font-rethinkSans font-bold 
-                    text-[36px] leading-[48px] tracking-[0.36px]
-                    sm:text-[48px] sm:leading-[56px] sm:tracking-[0.48px]
-                    md:text-[52px] md:leading-[60px] md:tracking-[0.52px]
-                    lg:text-[56px] lg:leading-[64px] lg:tracking-[0.56px]'>
+                    <H1 className=''>
                         Simple and <br className='hidden md:block' /> transparent pricing
-                    </h1>
+                    </H1>
 
                     {/* Proven ROI */}
                     <p className='text-[#474645] text-center

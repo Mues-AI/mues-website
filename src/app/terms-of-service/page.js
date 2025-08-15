@@ -4,6 +4,9 @@ import FAQ from '../components/FAQ.js';
 import Footer from '../components/Footer.js';
 import styles from './terms.module.css';
 import Link from 'next/link';
+import HeadingBadge from '@/app/components/ui/HeadingBadge';
+import H1 from '@/app/components/ui/H1';
+
 
 export default function TermsOfService() {
     return (
@@ -27,11 +30,9 @@ export default function TermsOfService() {
                         </Link>
 
                         {/* Badge - LEGAL DOCUMENTS */}
-                        <div className="w-fit h-fit bg-f8f8f8 rounded-full py-[7px] px-3 flex items-center justify-center gap-2">
-                            <div className="text-center text-[12px] leading-4 tracking-[0.12px] text-[#777]">
+                        <HeadingBadge >
                             LEGAL DOCUMENTS
-                            </div>
-                        </div>
+                        </HeadingBadge >
 
                         {/* RIGHT ARROW - PRIVACY POLICY */}
                         <Link href="/privacy-policy" className='w-fit flex-row items-center gap-2 cursor-pointer hidden md:flex'>
@@ -44,13 +45,9 @@ export default function TermsOfService() {
                     </div>
 
                     {/* Main Title */}
-                    <h1 className='text-primary-black text-center font-rethinkSans font-bold 
-                    text-[36px] leading-[48px] tracking-[0.36px]
-                    sm:text-[48px] sm:leading-[56px] sm:tracking-[0.48px]
-                    md:text-[52px] md:leading-[60px] md:tracking-[0.52px]
-                    lg:text-[56px] lg:leading-[64px] lg:tracking-[0.56px]'>
+                    <H1>
                         Terms of Service
-                    </h1>
+                    </H1>
 
                     {/* Last Updated */}
                     <p className='text-[#474645] text-center

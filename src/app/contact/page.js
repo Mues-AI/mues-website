@@ -6,10 +6,13 @@ import Footer from '../components/Footer.js';
 import Image from 'next/image';
 import CorneredLine from '../components/CorneredLine.js';
 import { XIcon, DiscordIcon } from '../utils/svgIcons.js';
+import { Like, Building, DocumentText } from 'iconsax-react';
 import { ArrowRightIcon } from '../utils/svgIcons.js';
 import ButtonBlack from '@/app/components/ui/ButtonBlack';
 import ButtonWhite from '@/app/components/ui/ButtonWhite';
 import CallToAction from '@/app/components/ui/CallToAction';
+import HeadingBadge from '@/app/components/ui/HeadingBadge';
+import H1 from '@/app/components/ui/H1';
 
 export default function Contact() {
 
@@ -21,21 +24,15 @@ export default function Contact() {
                 {/* Main Hero Container */}
                 <div className='w-full flex flex-col items-center gap-6 mt-24 md:mt-[148px] mb-24 md:mb-[120px]'>
 
-                    {/* Badge - GET SUPPORT */}
-                    <div className="w-fit h-fit bg-f8f8f8 rounded-full py-[7px] px-3 flex items-center justify-center gap-2">
-                        <div className="text-center text-[12px] leading-4 tracking-[0.12px] text-[#777]">
-                        GET SUPPORT
-                        </div>
-                    </div>
+                    {/* HeadingBadge - GET SUPPORT */}
+                    <HeadingBadge >
+                    GET SUPPORT
+                    </HeadingBadge >
 
                     {/* Main Title */}
-                    <h1 className='text-primary-black text-center font-rethinkSans font-bold 
-                    text-[36px] leading-[48px] tracking-[0.36px]
-                    sm:text-[48px] sm:leading-[56px] sm:tracking-[0.48px]
-                    md:text-[52px] md:leading-[60px] md:tracking-[0.52px]
-                    lg:text-[56px] lg:leading-[64px] lg:tracking-[0.56px]'>
+                    <H1>
                         Contact us
-                    </h1>
+                    </H1>
 
                     {/* Last Updated */}
                     <p className='text-[#474645] text-center
@@ -69,7 +66,7 @@ export default function Contact() {
                         {/* First Row - 2 Equal Boxes */}
                         <div className="h-auto p-8 lg:p-12 flex flex-col gap-8 justify-between">
                             <div className="flex flex-col gap-5">
-                                <Image src="/Contact/svg/bulk-like.svg" alt="Support" width={48} height={48} />
+                                <Like size="48" color="#979797" variant="Bulk"/>
                                 <h2 className="text-[#121212] font-sfPro font-regular tracking-normal lg:tracking-[-0.05px] 
                                 text-[36px] leading-[48px]
                                 md:text-[42px] md:leading-[54px]
@@ -103,7 +100,7 @@ export default function Contact() {
 
                         <div className="h-auto p-8 lg:p-12 flex flex-col gap-8 justify-between border-l border-t lg:border-t-none border-[#EBEBEB]">
                             <div className="flex flex-col gap-5">
-                                <Image src="/Contact/svg/bulk-building.svg" alt="Sales" width={48} height={48} />
+                                <Building size="48" color="#979797" variant="Bulk"/>
                                 <h2 className="text-[#121212] font-sfPro font-regular tracking-normal lg:tracking-[-0.05px] 
                                 text-[36px] leading-[48px]
                                 md:text-[42px] md:leading-[54px]
@@ -141,12 +138,7 @@ export default function Contact() {
                             {/* Documentation Box */}
                             <div className="h-auto p-8 lg:p-12 lg:pt-10 flex flex-col gap-6 justify-between">
                                 <div className="flex flex-col gap-5">
-                                    {/* Document Text Icon */}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                        <path d="M28 9.33329V22.6666C28 26.6666 26 29.3333 21.3333 29.3333H10.6667C6 29.3333 4 26.6666 4 22.6666V9.33329C4 5.33329 6 2.66663 10.6667 2.66663H21.3333C26 2.66663 28 5.33329 28 9.33329Z" stroke="#979797" strokeWidth="2.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                                        <path d="M10.6667 17.3334H16" stroke="#979797" strokeWidth="2.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                                        <path d="M10.6667 22.6666H21.3333" stroke="#979797" strokeWidth="2.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
+                                    <DocumentText size="32" color="#979797"/>
                                     <div className="flex flex-col gap-3">
                                         <h3 className="text-[#121212] font-sfPro font-regular 
                                         text-[24px] leading-none

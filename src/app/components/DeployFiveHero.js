@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Badge from './ui/Badge';
+import BorderBadge from './ui/BorderBadge';
 
 export default function DeployFiveHero() {
     return (
@@ -20,13 +20,13 @@ export default function DeployFiveHero() {
     <div className="w-full h-full flex flex-col justify-between gap-20 xl:gap-[119px] p-12 2xl:p-20">
         
         {/* DEPLOY IN 5 MINS BADGE */}
-        <Badge 
+        <BorderBadge 
         className="bg-transparent border-[rgba(255,255,255,0.25)] xl:mt-6 lg:ml-12 xl:ml-[124px]"
         textClassName="text-[rgba(255,255,255,0.75)]"
         padding="px-[12px] py-[8px]"
         >
         DEPLOY IN 5 MINS
-        </Badge>
+        </BorderBadge>
 
         {/* Content */}
         <div className="w-full h-full relative">

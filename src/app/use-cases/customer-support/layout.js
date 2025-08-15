@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Use Cases - Customer Support',
+  title: 'AI-Powered Customer Support - Use Case',
   description: "Mues AI boosts customer support capacity through agentic AI that acts inside your product to resolve issues before they become tickets.",
 };
 

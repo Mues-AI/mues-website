@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Badge from "./ui/Badge";
+import BorderBadge from "./ui/BorderBadge";
+import SubHeadings from "./ui/SubHeadings";
 
 // List item data
 const listItems = [
@@ -83,14 +84,13 @@ export default function Benefits() {
         
         {/* AGENTIC AI unlocked parts */}
         <div className="flex flex-col items-start gap-4 md:gap-6 w-full max-w-[1168px]">
-            <Badge>BENEFITS</Badge>
+            <BorderBadge>BENEFITS</BorderBadge>
 
+            <SubHeadings type="h3" className="max-w-[1168px]">
+            Agentic AI unlocked.
+            </SubHeadings>
     
-            <h3 className="max-w-[1168px] text-primary-black font-rethinkSans font-semibold text-[30px] leading-[40px] tracking-[0.3px] md:text-[56px] md:leading-[68px] md:tracking-[0.56px]">
-                Agentic AI unlocked.
-            </h3>
-    
-            <p className="max-w-xl text-[#474645] font-light text-[18px] leading-[32px] md:text-[22px] md:leading-[38px] tracking-[-0.3px]">
+            <p className="max-w-xl subHeadingsDescription">
             With Mues, make your product completely self-serve while turning your users into power users.
             </p>
         </div>  

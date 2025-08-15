@@ -3,6 +3,7 @@ import Footer from "./components/Footer.js";
 import { ArrowLeft } from "iconsax-react";
 import ButtonWhite from "./components/ui/ButtonWhite.js";
 import Link from "next/link";
+import H1 from "./components/ui/H1.js";
 
 export default function NotFound() {
   return (
@@ -17,15 +18,9 @@ export default function NotFound() {
           </div>
 
           {/* Main Title */}
-          <h1
-            className="text-primary-black text-center font-rethinkSans font-bold 
-          text-[36px] leading-[48px] tracking-[0.36px]
-          sm:text-[48px] sm:leading-[56px] sm:tracking-[0.48px]
-          md:text-[52px] md:leading-[60px] md:tracking-[0.52px]
-          lg:text-[56px] lg:leading-[64px] lg:tracking-[0.56px]"
-          >
+          <H1>
             404
-          </h1>
+          </H1>
 
           {/* Last Updated */}
           <p

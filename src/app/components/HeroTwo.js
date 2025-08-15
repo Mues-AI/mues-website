@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Badge from './ui/Badge';
+import BorderBadge from './ui/BorderBadge';
 
 export default function HeroTwo() {
     return (
@@ -22,12 +22,12 @@ export default function HeroTwo() {
                 
                 <div className='flex flex-col gap-4 lg:gap-6 w-full lg:w-[322px]'>
                     {/* İçerik 1 - SECURITY BADGE */}
-                    <Badge 
+                    <BorderBadge 
                     className="border-[rgba(255,255,255,0.25)]" 
                     textClassName="text-[rgba(255,255,255,0.75)]"
                     >
                     SECURITY
-                    </Badge>
+                    </BorderBadge>
 
                     {/* İçerik 2 */}
                     <h3 className="text-white font-rethinkSans text-[30px] font-normal leading-[40px] tracking-[0.3px] lg:text-[56px] lg:leading-[68px] lg:tracking-[0.56px]">

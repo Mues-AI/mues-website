@@ -5,7 +5,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Card from './HowItWorksCard';
 import useStore from '../lib/store';
 import ButtonBlack from './ui/ButtonBlack';
-import Badge from './ui/Badge';
+import BorderBadge from './ui/BorderBadge';
+import SubHeadings from './ui/SubHeadings';
 
 const card_data = [
   {
@@ -115,15 +116,13 @@ export default function HowItWorks() {
         <div className="w-full flex-1 max-w-[600px] flex flex-col gap-y-4 md:gap-y-6 
         items-center md:items-start text-center md:text-start">
           {/* 1.1. HOW IT WORKS badge */}
-          <Badge>HOW IT WORKS</Badge>
+          <BorderBadge>HOW IT WORKS</BorderBadge>
 
 
           {/* 1.2. Heading */}
-          <h3 className="text-primary-black font-rethinkSans font-semibold 
-          text-[30px] leading-[40px] tracking-[0.3px] 
-          md:text-[56px] md:leading-[68px] md:tracking-[0.56px]">
+          <SubHeadings type="h3">
             Details matter.
-          </h3>
+          </SubHeadings>
 
           {/* 1.3. Description */}
           <div className="text-[#474645] text-[22px] font-light leading-[38px] tracking-[-0.4px]">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Badge = ({ 
+const BorderBadge = ({ 
   children = "",
   className = "bg-white border-[rgba(0,137,255,0.25)]",
   textClassName = "text-primary-blue",
@@ -16,6 +16,6 @@ const Badge = ({
   );
 };
 
-export default Badge;
+export default BorderBadge;
 
 

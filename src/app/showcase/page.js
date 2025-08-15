@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
-import { CursorSvg, MiniArrow } from '../utils/showcase/svgShowcase';
+import { CursorSvg } from '../utils/showcase/svgShowcase';
+import { ArrowLeft2,ArrowRight2,Play } from 'iconsax-react';
 import {DropboxCard, HubSpotCard, MixpanelCard, JiraCard, ProductboardCard, ClickUpCard, AWSCard } from './ShowcaseCards';
 import Benefits from '../components/Benefits';
 import FooterTopTwoBenefit from '../components/FooterTopTwoBenefit';
@@ -12,6 +13,9 @@ import Footer from '../components/Footer';
 import ButtonBlack from '../components/ui/ButtonBlack';
 import ButtonWhite from '../components/ui/ButtonWhite';
 import CallToAction from '../components/ui/CallToAction';
+import HeadingBadge from '../components/ui/HeadingBadge';
+import H1 from '../components/ui/H1.js';
+
 
 const products = [
   {
@@ -105,16 +109,15 @@ const PlayButtons = ({ onNext, onPrevious, className = "mt-12" }) => (
     {/* Sol Ok Butonu */}
     <button onClick={onNext} className="w-[30px] h-[30px] rounded-3xl border border-[#F4F4F4] bg-white flex items-center justify-center cursor-pointer hover:bg-[#F4F4F4]" 
     style={{ boxShadow: '0px 1px 4px 0px rgba(34, 34, 34, 0.05)' }}>
-      <MiniArrow />
+      <ArrowLeft2 size="14" color="#777777"/>
     </button>
 
     {/* Play Butonu - Inactive for now */}
     {/* TODO - YAP: Play butonunu aktif hale getir */}
     <button 
       className="inline-flex py-3 px-4 justify-center items-center gap-1.5 rounded-3xl border border-[#F4F4F4] bg-white cursor-pointer hover:bg-[#F4F4F4]" style={{ boxShadow: '0px 1px 4px 0px rgba(34, 34, 34, 0.05)' }}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-        <path d="M2.3335 6.99998V4.92331C2.3335 2.34498 4.15933 1.28915 6.3935 2.57831L8.196 3.61665L9.9985 4.65498C12.2327 5.94415 12.2327 8.05581 9.9985 9.34498L8.196 10.3833L6.3935 11.4216C4.15933 12.7108 2.3335 11.655 2.3335 9.07665V6.99998Z" stroke="#17181A" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
+      
+      <Play size="14" color="#17181A"/>
       
       <span className="text-[#17181A] text-center text-[14px] font-normal leading-4">
         Play
@@ -122,8 +125,8 @@ const PlayButtons = ({ onNext, onPrevious, className = "mt-12" }) => (
     </button>
 
     {/* Sağ Ok Butonu */}
-    <button onClick={onPrevious} className="w-[30px] h-[30px] rounded-3xl border border-[#F4F4F4] bg-white flex items-center justify-center cursor-pointer hover:bg-[#F4F4F4] rotate-180" style={{ boxShadow: '0px 1px 4px 0px rgba(34, 34, 34, 0.05)' }} >
-      <MiniArrow />
+    <button onClick={onPrevious} className="w-[30px] h-[30px] rounded-3xl border border-[#F4F4F4] bg-white flex items-center justify-center cursor-pointer hover:bg-[#F4F4F4]" style={{ boxShadow: '0px 1px 4px 0px rgba(34, 34, 34, 0.05)' }} >
+      <ArrowRight2 size="14" color="#777777"/>
     </button>
   </div>
 );
@@ -161,27 +164,26 @@ export default function Showcase() {
     <div className="min-h-screen flex flex-col">
       <Navbar variant="light" />
 
-      {/* Badget - Heading */}
+      {/* HeadingBadge - Heading */}
       <div className="w-full flex flex-col items-center p-6 md:py-4 md:px-12 lg:px-[80px] md:mb-12 mx-auto 
       mt-10 md:mt-16 xl:mt-24 ">
         
-        {/* Badge */}
-        <div className="w-fit h-fit bg-f8f8f8 rounded-full py-[7px] px-3 flex items-center justify-center gap-2 mb-6">
-          <CursorSvg width={12} height={12} fill="#777777" />
-
-          <div className="text-center text-[12px] leading-4 tracking-[0.12px] text-[#777]">
-          INCREASE PRODUCT ADOPTION
-          </div>
-        </div>
+        {/* HeadingBadge */}
+        <HeadingBadge 
+            icon={
+            <CursorSvg width={12} height={12} fill="#777777" />
+            }
+        >
+        INCREASE PRODUCT ADOPTION
+        </HeadingBadge >
 
         {/* Main Heading */}
-        <h1 className="w-full text-primary-black text-center font-rethinkSans  font-bold font-feature-settings-salt not-italic
-        text-[36px] leading-[48px] tracking-[0.36px]
-        sm:text-[48px] sm:leading-[56px] sm:tracking-[0.48px]
-        md:text-[52px] md:leading-[60px] md:tracking-[0.52px]
-        lg:text-[56px] lg:leading-[64px] lg:tracking-[0.56px]">
-          See Mues AI <br className='block sm:hidden' /> in action <br className='hidden sm:block' /> on your <br className='block sm:hidden' />  favorite softwares
-        </h1>
+        <H1 className="mt-6">
+          See Mues AI <br className='block sm:hidden' /> 
+          in action <br className='hidden sm:block' />
+          on your <br className='block sm:hidden' />  
+          favorite softwares
+        </H1>
       </div>
 
     {/* MOBILE ANIMATION CONTAINER */}

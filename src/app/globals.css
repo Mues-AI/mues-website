@@ -181,7 +181,18 @@
       animation-play-state: paused;
     }
   }
+
+  /* GENERAL CSS  */
+
+  
 }
+
+@layer components {
+  .subHeadingsDescription {
+    @apply text-[#474645] font-light tracking-[-0.3px] text-[18px] leading-[32px] md:text-[22px] md:leading-[38px];
+  }
+}
+
 
 html, body {
   height: 100%;
