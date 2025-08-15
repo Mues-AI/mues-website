@@ -249,18 +249,15 @@ export default function MainContent() {
               style={{
                 width: "100%",
                 height: "auto",
-                aspectRatio: '372/233'
               }}
               autoPlay
               loop
               muted
               playsInline
-              preload="auto" 
+              preload="none"
               poster="/videos/videoFirstFrame.webp"
-              disablePictureInPicture
             >
               <source src="/videos/mainVideo.mp4" type="video/mp4" />
-              <source src="/videos/mainVideo.webm" type="video/webm" />
               Your browser does not support the video tag.
             </video>
           </div>
