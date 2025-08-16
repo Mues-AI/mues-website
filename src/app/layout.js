@@ -169,7 +169,7 @@ export default function RootLayout({ children }) {
         <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
 
         {/* First frame image preload */}
-        <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" />
+        {/* <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" /> */}
       </head>
       <body 
         className={`${inter.variable} ${sfPro.variable} ${openRunde.variable} ${rethinkSans.variable} ${instrumentSerif.variable}`}

@@ -255,7 +255,6 @@ export default function MainContent() {
               muted
               playsInline
               preload="none"
-              poster="/videos/videoFirstFrame.webp"
             >
               <source src="/videos/mainVideo.mp4" type="video/mp4" />
               Your browser does not support the video tag.
