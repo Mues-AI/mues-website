@@ -1,17 +1,31 @@
 import Navbar from './components/Navbar';
 import MainContent from './components/MainContent';
-import AnimatedText from './components/AnimatedText';
-import MeetMuse from './components/MeetMuse';
-import ModularPresentationMain from './components/ModularPresentationMain';
-import HowItWorks from './components/HowItWorks';
-import UserCursor from './components/UserCursor';
-import Benefits from './components/Benefits';
-import HeroTwo from './components/HeroTwo';
-import PlugAndPlay from './components/PlugAndPlay';
-import Steps from './components/Steps';
-import Comments from './components/Comments'
-import FAQ from './components/FAQ.js';
-import Footer from './components/Footer.js';
+import {
+  AnimatedText,
+  MeetMuse,
+  ModularPresentationMain,
+  HowItWorks,
+  UserCursor,
+  Benefits,
+  HeroTwo,
+  PlugAndPlay,
+  Steps,
+  Comments,
+  FAQ,
+  Footer
+} from './dynamicImports';
+// import AnimatedText from './components/AnimatedText';
+// import MeetMuse from './components/MeetMuse';
+// import ModularPresentationMain from './components/ModularPresentationMain';
+// import HowItWorks from './components/HowItWorks';
+// import UserCursor from './components/UserCursor';
+// import Benefits from './components/Benefits';
+// import HeroTwo from './components/HeroTwo';
+// import PlugAndPlay from './components/PlugAndPlay';
+// import Steps from './components/Steps';
+// import Comments from './components/Comments'
+// import FAQ from './components/FAQ.js';
+// import Footer from './components/Footer.js';
 
 
 export default function Home() {
