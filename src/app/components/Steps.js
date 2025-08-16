@@ -1,45 +1,53 @@
 'use client';
-
+import { Geist } from "next/font/google";
 import Image from 'next/image';
 import CorneredLine from './CorneredLine.js';
 import ButtonBlack from './ui/ButtonBlack.js';
 
+const geist = Geist({
+    variable: "--font-geist",
+    subsets: ["latin"],
+    style: ["normal"],
+    fontFamily: "Geist, sans-serif",
+    display: 'swap',
+    preload: false,
+  });
+
+const cardListData = [
+    {
+        id: 1,
+        imageSrc: "/Steps/svg/step2card1.svg",
+        imageWidth: 71,
+        imageHeight: 58,
+        title: "Website"
+    },
+    {
+        id: 2,
+        imageSrc: "/Steps/svg/step2card2.svg",
+        imageWidth: 91,
+        imageHeight: 75,
+        title: "Knowledge Base"
+    },
+    {
+        id: 3,
+        imageSrc: "/Steps/svg/step2card3.svg",
+        imageWidth: 47,
+        imageHeight: 32,
+        title: "Tutorial Videos"
+    },
+    {
+        id: 4,
+        imageSrc: "/Steps/svg/step2card4.svg",
+        imageWidth: 70,
+        imageHeight: 32,
+        title: "Internal Files"
+    }
+];
+
 export default function Steps() {
 
-    // Card data for Step 2
-    const cardListData = [
-        {
-            id: 1,
-            imageSrc: "/Steps/svg/step2card1.svg",
-            imageWidth: 71,
-            imageHeight: 58,
-            title: "Website"
-        },
-        {
-            id: 2,
-            imageSrc: "/Steps/svg/step2card2.svg",
-            imageWidth: 91,
-            imageHeight: 75,
-            title: "Knowledge Base"
-        },
-        {
-            id: 3,
-            imageSrc: "/Steps/svg/step2card3.svg",
-            imageWidth: 47,
-            imageHeight: 32,
-            title: "Tutorial Videos"
-        },
-        {
-            id: 4,
-            imageSrc: "/Steps/svg/step2card4.svg",
-            imageWidth: 70,
-            imageHeight: 32,
-            title: "Internal Files"
-        }
-    ];
-
     return (
-        <div className="relative w-full max-w-[1512px] h-auto mx-auto p-6 md:p-10 lg:p-16 ">
+        <div className={`${geist.variable} relative w-full max-w-[1512px] h-auto mx-auto p-6 md:p-10 lg:p-16 `}>
 
             <CorneredLine/>
 

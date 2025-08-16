@@ -1,6 +1,17 @@
 import Image from "next/image";
 import { XIcon, LinkedinIcon, GitHubIcon, DiscordIcon } from '../utils/svgIcons';
 import { footerData } from '../data/footerData';
+import { Urbanist } from "next/font/google";
+
+const urbanist = Urbanist({
+    variable: "--font-urbanist",
+    subsets: ["latin"],
+    style: ["normal"],
+    fontFamily: "Urbanist, sans-serif",
+    display: 'swap',
+    preload: false,
+  });
+
 
 export default function Footer() {
 
@@ -34,7 +45,7 @@ export default function Footer() {
 
     return (
     <>
-    <div className="flex flex-col mb-8">
+    <div className={`${urbanist.variable} flex flex-col mb-8`}>
         {/* FOOTER */}
         <div className="w-full max-w-[1168px] h-auto flex flex-col mx-auto bg-[#F8F8F8] rounded-xl p-6 md:p-9 lg:p-12 mt-4 md:mt-6">
 

@@ -1,8 +1,18 @@
 import Image from 'next/image';
+import { Fraunces } from "next/font/google";
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  style: ["normal"],
+  fontFamily: "Fraunces, serif",
+  display: 'swap',
+  preload: false,
+});
 
 function CommentItem({ text, avatarSrc, name, title }) {
   return (
-    <div className="flex-1 max-w-[434px] h-auto lg:h-full flex flex-col justify-between items-center gap-8 lg:gap-12 ">
+    <div className={`${fraunces.variable} flex-1 max-w-[434px] h-auto lg:h-full flex flex-col justify-between items-center gap-8 lg:gap-12 `}>
       {/* Testimonial Text */}
       <p className="w-full text-[#171717] text-center font-Fraunces font-normal tracking-[-0.1px] text-[18px] leading-[30px] lg:text-[20px] lg:leading-[28px]">
         {text}

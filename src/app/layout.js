@@ -1,7 +1,52 @@
-import { Inter, Rethink_Sans,Geist, Fraunces,Urbanist,Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Inter, Rethink_Sans,Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { Toaster } from 'sonner';
+import localFont from 'next/font/local';
+
+const sfPro = localFont({
+  src: [
+    {
+      path: '../../public/fonts/sfPro/sf-pro-display-regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/sfPro/sf-pro-display-medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/sfPro/sf-pro-display-semibold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/sfPro/sf-pro-display-bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-sfPro',
+  display: 'swap', // Font-display: swap özelliğini korur
+});
+
+const openRunde = localFont({
+  src: [
+    {
+      path: '../../public/fonts/openRunde/OpenRunde-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/openRunde/OpenRunde-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-openRunde',
+  display: 'swap',
+});
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,33 +66,6 @@ const rethinkSans = Rethink_Sans({
   preload: false,
 });
 
-const geist = Geist({
-  variable: "--font-geist",
-  subsets: ["latin"],
-  style: ["normal"],
-  fontFamily: "Geist, sans-serif",
-  display: 'swap',
-  preload: false,
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  style: ["normal"],
-  fontFamily: "Fraunces, serif",
-  display: 'swap',
-  preload: false,
-});
-
-const urbanist = Urbanist({
-  variable: "--font-urbanist",
-  subsets: ["latin"],
-  style: ["normal"],
-  fontFamily: "Urbanist, sans-serif",
-  display: 'swap',
-  preload: false,
-});
-
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
   subsets: ["latin"],
@@ -58,15 +76,6 @@ const instrumentSerif = Instrument_Serif({
   preload: false,
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal"],
-  fontFamily: "JetBrains Mono, monospace",
-  display: 'swap',
-  preload: false,
-});
 
 export const metadata = {
   title: "Mues AI | SaaS Onboarding and Support with AI",
@@ -163,7 +172,7 @@ export default function RootLayout({ children }) {
         <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" />
       </head>
       <body 
-        className={`${inter.variable} ${rethinkSans.variable} ${geist.variable} ${fraunces.variable} ${urbanist.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
+        className={`${inter.variable} ${sfPro.variable} ${openRunde.variable} ${rethinkSans.variable} ${instrumentSerif.variable}`}
       >
         {/* Google Tag Manager – Body */}
         <noscript>
