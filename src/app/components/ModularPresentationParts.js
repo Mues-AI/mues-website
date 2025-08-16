@@ -105,8 +105,10 @@ const ModularPresentationParts = ({ variant }) => {
         {/* BURADA şimdilik setShowVideoModal(false) yapıyoruz - gerçek video gelince true yap */}
         <button 
           className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer hover:ring-1 hover:ring-offset hover:ring-[#f2f0ed] hover:ring-offset-12 hover:ring-offset-white" onClick={() => { setShowVideoModal(false); toast("Coming soon!"); }}>
-            <div className="flex w-[85px] h-12 justify-center items-center rounded">
-              <Image quality={100} priority={false} src={variantData.videoImage} alt={variantData.imageAlt} sizes="100vw" width={85} height={48} className="object-cover rounded cursor-pointer"/>
+            <div className="flex w-[85px] h-12 justify-center items-center rounded relative">
+              <Image quality={100} priority={false} src={variantData.videoImage} alt={variantData.imageAlt} sizes="100%" width={340} height={192} className="object-cover rounded cursor-pointer"/>
+              <Image src="/svg/play.svg" alt="play button svg" sizes="15px" width={15} height={16}
+              className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10'/>
             </div>
 
           <div className="flex flex-col items-start gap-1 rounded">
@@ -140,7 +142,7 @@ const ModularPresentationParts = ({ variant }) => {
             src={variantData.imageSrc} 
             alt={variantData.imageAlt} 
             fill={true}
-            sizes="(max-width: 768px) 400px, (max-width: 1024px) 600px, 600px"
+            sizes="(max-width: 768px) 352px, 504px"
             className="object-contain" 
           />
         </div>
