@@ -166,7 +166,7 @@ export default function Benefits() {
             {/* 4 */}
             <div className="w-full lg:w-[calc(50%-16px)] sm:max-w-[568px] min-h-[274px] max-h-[300px] h-auto bg-[#FBFBFB] rounded-3xl flex flex-col justify-between">
                 <div className="h-[50%] rounded-t-3xl w-full flex justify-start items-end overflow-hidden">
-                    <Image src="/Benefits/svg/supportTicketCharts.svg" alt="Less support tickets svg" width={568} height={150} className="object-contain h-full w-full" />
+                    <Image src="/Benefits/svg/supportTicketCharts.svg" alt="Less support tickets svg" width={568} height={150} className="object-contain" />
                 </div>
 
                 <div className="h-auto xs:h-fit rounded-b-3xl p-6 md:p-8 pt-[22px] flex flex-col gap-y-1 sm:gap-y-3">

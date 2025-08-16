@@ -27,7 +27,7 @@ export default function AnimatedText() {
   });
 
   return (
-    <div>
+    <div className="relative">
       <p
         ref={element}
         className="mx-auto mt-24 md:mt-30 lg:mt-[148px] mb-6 lg:mb-8 max-w-[1168px] text-[rgba(23,24,26,0.10)] font-bold font-rethinkSans 

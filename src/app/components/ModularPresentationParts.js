@@ -106,7 +106,7 @@ const ModularPresentationParts = ({ variant }) => {
         <button 
           className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer hover:ring-1 hover:ring-offset hover:ring-[#f2f0ed] hover:ring-offset-12 hover:ring-offset-white" onClick={() => { setShowVideoModal(false); toast("Coming soon!"); }}>
             <div className="flex w-[85px] h-12 justify-center items-center rounded">
-              <Image quality={75} loading='lazy' unoptimized src={variantData.videoImage} alt={variantData.imageAlt} width={85} height={48} className="object-cover rounded cursor-pointer"/>
+              <Image quality={100} priority={false} src={variantData.videoImage} alt={variantData.imageAlt} sizes="100vw" width={85} height={48} className="object-cover rounded cursor-pointer"/>
             </div>
 
           <div className="flex flex-col items-start gap-1 rounded">
@@ -136,10 +136,11 @@ const ModularPresentationParts = ({ variant }) => {
         <div className="relative w-full h-full flex items-center justify-center">
           <Image 
             quality={75} 
-            loading='lazy' 
+            priority={false} 
             src={variantData.imageSrc} 
             alt={variantData.imageAlt} 
             fill={true}
+            sizes="(max-width: 768px) 400px, (max-width: 1024px) 600px, 600px"
             className="object-contain" 
           />
         </div>

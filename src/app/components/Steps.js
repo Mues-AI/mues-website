@@ -48,7 +48,7 @@ export default function Steps() {
                 <div className="w-full h-auto flex flex-wrap flex-col lg:flex-row gap-y-12 lg:gap-4">
                     {/* İlk Öğe */}
                     <div className="flex-1 md:min-w-[350px] lg:min-w-[450px]">
-                        <div className="inline-flex flex-col gap-6">
+                        <div className="inline-flex flex-col gap-6 max-w-[482px]">
                             <div className="flex flex-col gap-4 max-w-[352px]">
                                 <p className="text-[#777] text-[14px] font-normal leading-[20px] tracking-[-0.09px]">
                                 Step 1
@@ -58,7 +58,8 @@ export default function Steps() {
                                 </h3>
                             </div>
 
-                            <Image quality={100} loading='lazy' unoptimized src="/Steps/images/step1image.webp" alt="Step 1 Image" width={500} height={196} className="object-contain w-full h-auto max-w-[500px] max-h-[196px] min-w-[200px] min-h-[98px] " />
+                            {/* <Image quality={100} loading='lazy' unoptimized src="/Steps/images/step1image.webp" alt="Step 1 Image" className="object-contain w-full h-auto max-w-[500px] max-h-[196px] min-w-[200px] min-h-[98px] " /> */}
+                            <img src="/Steps/images/step1image.webp" alt="Step 1 Image" loading='lazy' className="object-contain min-w-[200px] min-h-[98px] " />
                         </div>
                     </div>
 
