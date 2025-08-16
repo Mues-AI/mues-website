@@ -32,7 +32,6 @@ function BenefitCard({ bgColor, title, description, imageSrc, imageWidth, imageH
           width={imageWidth} 
           height={imageHeight}
           className={`rounded-2xl ${className}`}
-          style={{ width: 'auto', height: 'auto' }}
         />
       </div>
 
