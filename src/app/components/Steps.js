@@ -66,8 +66,7 @@ export default function Steps() {
                                 </h3>
                             </div>
 
-                            {/* <Image quality={100} loading='lazy' unoptimized src="/Steps/images/step1image.webp" alt="Step 1 Image" className="object-contain w-full h-auto max-w-[500px] max-h-[196px] min-w-[200px] min-h-[98px] " /> */}
-                            <img src="/Steps/images/step1image.webp" alt="Step 1 Image" loading='lazy' className="object-contain min-w-[200px] min-h-[98px] " />
+                            <Image unoptimized src="/Steps/images/step1image.webp" alt="Step 1 Image" className="object-contain w-full h-auto max-w-[500px] max-h-[196px] min-w-[200px] min-h-[98px] " width={500} height={196} />
                         </div>
                     </div>
 

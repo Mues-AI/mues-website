@@ -149,12 +149,12 @@ const pricingTableData = {
 
 const PRICING = {
     basic: {
-        monthly: "***",
-        annual: "**"
+        monthly: "149",
+        annual: "99"
     },
     growth: {
-        monthly: "***",
-        annual: "***"
+        monthly: "699",
+        annual: "449"
     }
 };
 
@@ -306,15 +306,15 @@ export default function Pricing() {
                                 </div>
                             </div>
 
-                            {/* Request Pricing Button */}
+                            {/* Book a demo Button */}
                             <ButtonBlack
                                 href="https://cal.com/mues-ai/talk-with-sales"
-                                width="w-[140px]"
+                                width="w-[121px]"
                                 height="h-10"
                                 innerDivPadding="px-[14px] pt-[10px] pb-[11px]"
-                                ariaLabel="Request pricing"
+                                ariaLabel="Book a demo"
                                 >
-                                Request pricing
+                                Book a demo
                             </ButtonBlack>
                         </div>
 
@@ -346,15 +346,15 @@ export default function Pricing() {
                                 </div>
                             </div>
 
-                            {/* Growth Plan - Request Pricing Button */}
+                            {/* Growth Plan - Book a demo Button */}
                             <ButtonBlack
                                 href="https://cal.com/mues-ai/talk-with-sales"
-                                width="w-[140px]"
+                                width="w-[121px]"
                                 height="h-10"
                                 innerDivPadding="px-[14px] pt-[10px] pb-[11px]"
-                                ariaLabel="Request pricing"
+                                ariaLabel="Book a demo"
                                 >
-                                Request pricing
+                                Book a demo
                             </ButtonBlack>  
                         </div>
 

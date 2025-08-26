@@ -37,22 +37,22 @@ function CommentItem({ text, avatarSrc, name, title }) {
   );
 }
 
+const commentsData = [
+  {
+    text: "Implementing Mues as our AI companion has reduced customer support tickets by 40% and improved user activation rates. It's  like having an expert product guide available 24/7, allowing our team to focus on building new features rather than explaining existing ones.",
+    avatarSrc: "/CommentsFAQ/images/commentsAvatar1.webp",
+    name: "Sarah Kendrick",
+    title: "Principal PM, Plaid"
+  },
+  {
+    text: "Mues doesn't just answer user questions - it proactively guides them through complex workflows. Our product adoption metrics have improved across all segments while creating a more intuitive and unique experience.",
+    avatarSrc: "/CommentsFAQ/images/commentsAvatar2.webp",
+    name: "Daniel Mehta",
+    title: "Head of Product, Bright"
+  }
+];
+
 export default function Comments() {
-    const commentsData = [
-      {
-        text: "Implementing Mues as our AI companion has reduced customer support tickets by 40% and improved user activation rates. It's  like having an expert product guide available 24/7, allowing our team to focus on building new features rather than explaining existing ones.",
-        avatarSrc: "/CommentsFAQ/images/commentsAvatar1.webp",
-        name: "Sarah Kendrick",
-        title: "Principal PM, Plaid"
-      },
-      {
-        text: "Mues doesn't just answer user questions - it proactively guides them through complex workflows. Our product adoption metrics have improved across all segments while creating a more intuitive and unique experience.",
-        avatarSrc: "/CommentsFAQ/images/commentsAvatar2.webp",
-        name: "Daniel Mehta",
-        // Main row - div
-        title: "Head of Product, Bright"
-      }
-    ];
 
     return (
       <div className="w-full max-w-[1120px] md:max-w-[1088px] lg:max-w-[1296px] h-auto lg:h-[330px] 

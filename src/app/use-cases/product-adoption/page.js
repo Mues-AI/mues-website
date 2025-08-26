@@ -217,7 +217,7 @@ export default function ProductAdoption() {
         <div className="max-w-[1168px] mx-auto flex flex-col lg:flex-row gap-6">
           
           {/* BEFORE MUES CARD */}
-          <div className="relative flex-1 h-auto lg:h-[652px] rounded-[24px] border border-[#EEE] bg-white py-8 px-7.5 pb-0 flex flex-col">
+          <div className="relative flex-1 h-auto lg:min-h-[652px] rounded-[24px] border border-[#EEE] bg-white p-8 pb-0 flex flex-col">
             {/* Header */}
             <div className="w-full flex flex-col gap-3">
               <span className="text-[#777] text-[13px] md:text-[14px] font-medium leading-5 tracking-[-0.09px]">
@@ -318,7 +318,7 @@ export default function ProductAdoption() {
           </div>
 
           {/* AFTER MUES CARD */}
-          <div className="relative flex-1 h-auto lg:h-[652px] rounded-[24px] border border-[#EEE] bg-white p-8 pb-0 flex flex-col">
+          <div className="relative flex-1 h-auto lg:min-h-[652px] rounded-[24px] border border-[#EEE] bg-white p-8 pb-0 flex flex-col">
             {/* Header */}
             <div className="w-full flex flex-col gap-3">
               <span className="text-[#777] text-[13px] md:text-[14px] font-medium leading-5 tracking-[-0.09px]">
@@ -457,7 +457,7 @@ export default function ProductAdoption() {
             className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer hover:ring-1 hover:ring-offset hover:ring-[#f2f0ed] hover:ring-offset-12 hover:ring-offset-white"
             onClick={() => toast('Coming soon!')}
           >
-            <div className="flex w-[85px] h-12 justify-center items-center rounded ">
+            <div className="flex w-[85px] h-12 justify-center items-center rounded relative">
               <Image
                 quality={100}
                 loading="lazy"
@@ -468,6 +468,8 @@ export default function ProductAdoption() {
                 height={48}
                 className="object-cover rounded cursor-pointer"
               />
+              <Image src="/svg/play.svg" alt="play button svg" sizes="15px" width={15} height={16}
+              className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10'/>
             </div>
 
             <div className="flex flex-col gap-1 rounded items-start">

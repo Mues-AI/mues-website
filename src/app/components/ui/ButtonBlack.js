@@ -116,7 +116,7 @@ const ButtonBlack = forwardRef(({
   // Text styling
   const textClass = `
     text-white font-openRunde text-[14px] font-medium 
-    leading-[17px] tracking-[0.14px] 
+    leading-[17px] tracking-[0.14px] whitespace-nowrap
     ${(badge || icon) ? 'w-fit' : ''}
     ${textClassName}
   `.trim();

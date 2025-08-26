@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar';
 import Image from 'next/image';
 import { CursorSvg } from '../../utils/showcase/svgShowcase';
 import SvgIconAi from '../../utils/svgIconAi';
-import { customerSupportData } from '../../data/usecase-customerSupportData';
+import { onboardignData } from '../../data/usecase-onboarding';
 import { toast } from 'sonner';
 import UserCursor from '../../components/UserCursor';
 import HowItWorks from '../../components/HowItWorks';
@@ -110,17 +110,17 @@ export default function CustomerSupport() {
               <CursorSvg width={12} height={12} fill="#979797" />
             }
             >
-            CUSTOMER SUPPORT
+            PRODUCT ONBOARDING
             </HeadingBadge >
 
             {/* Main Heading */}
-            <H1 variant="white" className="mt-2 md:mb-2">
-            Guide users step by step while reducing costs
+            <H1 variant="white" className="mt-2 md:mb-2 w-[576px]">
+            Shorter time to value in your onboarding
             </H1>
 
             {/* subdesc */}
             <p className="w-full text-center text-[#CCC] text-[20px] font-normal leading-[36px] tracking-[0.2px] not-italic">
-            Mues AI is the first context-aware AI support agent to resolve support issues instantly and 24/7, reducing support costs.
+            Mues AI offers personalized onboarding tailored to each user&apos;s specific needs. It helps users recognize the value as early.
             </p>
 
             {/* Get started button */}
@@ -203,12 +203,14 @@ export default function CustomerSupport() {
 
          <BorderBadge>PROBLEM</BorderBadge>
 
-          <SubHeadings type="h2" className="max-w-lg text-center">
-          Stop Losing Users in Support Friction
+          <SubHeadings type="h2" className="max-w-3xl text-center">
+          Generic product tours crash your product onboarding
           </SubHeadings>
 
-          <p className="subHeadingsDescription w-full text-center">
-            Users expect instant answers. Your team spends hours on recurring tickets instead of scaling what matters. Traditional bots fail to adapt, and static help docs get ignored.
+          <p className="subHeadingsDescription w-full text-center max-w-3xl">
+          User frustration with your product doesn&apos;t just ruin the moment. 
+          <br className='hidden sm:block'/>
+          It permanently changes how your users view its worth and usability.
           </p>
 
         </div>
@@ -226,7 +228,7 @@ export default function CustomerSupport() {
               <h3 className="text-[#121212] font-sfPro font-normal leading-normal 
               text-[24px] tracking-[0.24px]
               md:text-[32px] md:tracking-[0.32px]">
-                Overflowing/recurring support tickets
+                Users drop off after signing up
               </h3>
             </div>
 
@@ -249,8 +251,8 @@ export default function CustomerSupport() {
               {/* Problem Description */}
               <div className='h-auto w-fit rounded-2xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(23,24,26,0.05)] py-[17px] px-6 flex justify-center items-center gap-3'>
                 <Danger size="24" color="#ff3200"/>
-                <span className="text-[#474645] text-lg font-normal leading-[30px]">
-                I don&apos;t know how to change my billing info.
+                I didn&apos;t understand the chart&apos;s conversion calculation.
+                <span className="text-[#474645] text-sm font-normal leading-[30px]">
                 </span>
               </div>
 
@@ -310,8 +312,8 @@ export default function CustomerSupport() {
             {/* Footer */}
             <div className="mb-1" style={{ width: 'calc(100% + 56px)', marginLeft: '-28px' }}>
               <div className="h-[52px] rounded-[4px_4px_20px_20px] bg-[#FBFBFB] flex items-center justify-center px-4">
-                <p className="text-[#777] text-center text-[13px] font-normal leading-5 tracking-[0.13px]">
-                Your support team is buried in repetitive questions while users wait—and churn.
+                <p className="text-[#777] text-start text-[13px] font-normal leading-5 tracking-[-0.01px]">
+                Users lost while searching for the answer · They leave before discovering aha moment
                 </p>
               </div>
             </div>
@@ -327,7 +329,7 @@ export default function CustomerSupport() {
               <h3 className="text-[#121212] font-sfPro font-normal leading-normal 
               text-[24px] tracking-[0.24px]
               md:text-[32px] md:tracking-[0.32px]">
-                Reduce support costs by 40%
+                3x faster time-to-value
               </h3>
             </div>
 
@@ -350,8 +352,8 @@ export default function CustomerSupport() {
               {/* Problem Description */}
               <div className='h-auto w-fit rounded-2xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(23,24,26,0.05)] py-[17px] px-6 flex justify-center items-center gap-3'>
                 <Danger size="24" color="#ff3200"/>
-                <span className="text-[#474645] text-lg font-normal leading-[30px]">
-                I don&apos;t know how to change my billing info.
+                I didn&apos;t understand the chart&apos;s conversion calculation.
+                <span className="text-[#474645] text-sm font-normal leading-[30px]">
                 </span>
               </div>
 
@@ -375,7 +377,7 @@ export default function CustomerSupport() {
 
                 {/* Main Content */}
                 <p className="text-[#323232] font-openRunde text-[13px] font-normal leading-4 tracking-[0.13px] p-3">
-                Change my billing information to XYZ inc.
+                Explain this chart to me,<br/>how do they create this conversion?
                 </p>
 
                 {/* Footer */}
@@ -404,8 +406,8 @@ export default function CustomerSupport() {
             {/* Footer */}
             <div className="mb-1" style={{ width: 'calc(100% + 56px)', marginLeft: '-28px' }}>
               <div className="h-[52px] rounded-[4px_4px_20px_20px] bg-[#FBFBFB] flex items-center justify-center px-4">
-                <p className="text-[#777] text-center text-[13px] font-normal leading-5 tracking-[0.13px]">
-                Users solve problems in-product—before they become support issues
+                <p className="text-[#777] text-start text-[13px] font-normal leading-5 tracking-[-0.01px]">
+                User asked Mues AI Cursor · It gives an instant answer inside the product
                 </p>
               </div>
             </div>
@@ -417,16 +419,16 @@ export default function CustomerSupport() {
         {/* A new kind of software interaction */}
         {/* INFO : componentleştirirken her şey aynı diğerleriyle -- desciription paragrafı yok -- saadece mb-12 md:mb-15 lg:mb-18 değerleri farklı */}
         <div className="flex flex-col items-start gap-4 md:gap-6 max-w-[1168px] mt-24 md:mt-32 lg:mt-[200px] mb-12 md:mb-15 lg:mb-18 mx-auto">
-          <BorderBadge>AI-POWERED SUPPORT</BorderBadge>
+          <BorderBadge>PERSONALIZED ONBOARDING</BorderBadge>
 
-          <SubHeadings type="h2" className="max-w-xl">
-          Mues AI transforms how support happens
+          <SubHeadings type="h2" className="max-w-2xl">
+          Change your onboarding and reduce drop-offs
           </SubHeadings>
         </div>
 
         {/* Feature Containers */}
         <div className="w-full h-auto max-w-[1168px] mx-auto flex flex-col gap-12">
-          {customerSupportData.map((feature) => (
+          {onboardignData.map((feature) => (
             <FeatureContainer
               key={feature.id}
               svgSrc={feature.svgSrc}
@@ -445,7 +447,7 @@ export default function CustomerSupport() {
         my-[200px]">
           {/* Text Content */}
           <p className="text-[#211D1D] text-[20px] font-medium leading-[26px] tracking-[-0.33px] text-center md:text-start">
-          Your cursor becomes <br /> an AI support agent
+          To get fastest time-to-value <br/> with Mues AI Cursor
           </p>
 
           {/* Divider Line */}
@@ -462,7 +464,7 @@ export default function CustomerSupport() {
                 quality={100}
                 loading="lazy"
                 unoptimized
-                src="/ModularParts/images/modularPartsVideo2.webp"
+                src="/ModularParts/images/modularPartsVideo1.webp"
                 alt="Product adoption video preview"
                 width={85}
                 height={48}
@@ -474,7 +476,7 @@ export default function CustomerSupport() {
 
             <div className="flex flex-col gap-1 rounded items-start">
               <span className="text-black-121212 text-[15px] font-normal leading-[22px]">
-              Reduce support ticket volume
+              Live Onboarding in Action
               </span>
               <span className="text-[#4A443F]/50 text-[13px] font-normal leading-[18px] tracking-[-0.13px]">
                 Watch the video
@@ -503,8 +505,8 @@ export default function CustomerSupport() {
         <ImpactCircle />
 
         <CallToAction 
-        text="Drive more support<br/>for your product."
-        highlightWords={["support"]}
+        text="Drive more onboarding<br/>for your product."
+        highlightWords={["onboarding"]}
         buttons={[
           <ButtonBlack
             key="get-started"

@@ -21,7 +21,6 @@ const Card = ({ title, description, src, alt, width, height, i, activeIndex }) =
     }
   };
 
-  // Card is visible when it's the active card or has already been shown
   const isVisible = i <= activeIndex;
 
   return (
@@ -30,7 +29,7 @@ const Card = ({ title, description, src, alt, width, height, i, activeIndex }) =
       style={{ 
         top: 0, 
         left: 0,
-        background: "#FFFFFF", // Add white background to completely cover previous cards
+        background: "#FFFFFF",
       }}
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}

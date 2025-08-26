@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "generate-sitemap": "node scripts/generate-sitemap.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build"
   },
   "browserslist": {
     "production": [
@@ -33,9 +34,11 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.4.6",
     "@tailwindcss/postcss": "^4.1.3",
     "eslint": "^9",
     "eslint-config-next": "15.2.5",
+    "sass": "^1.90.0",
     "tailwindcss": "^4.1.3",
     "xml2js": "^0.6.2"
   }

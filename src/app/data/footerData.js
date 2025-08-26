@@ -77,14 +77,13 @@ export const footerData = {
         ariaLabel: "Go to Customer support",
         active: true
       },
-      // Inactive/commented links
       {
-        href: "https://www.mues.ai/",
-        label: "Churn prevention",
-        ariaLabel: "Go to Churn prevention",
-        target: "_blank",
-        active: false
+        href: "/use-cases/onboarding",
+        label: "Onboarding",
+        ariaLabel: "Go to Onboarding",
+        active: true
       },
+      // Inactive/commented links
       {
         href: "https://www.mues.ai/",
         label: "User experience", 

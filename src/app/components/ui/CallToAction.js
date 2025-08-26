@@ -55,7 +55,7 @@ const CallToAction = ({
   return (
     <div className={`w-full flex flex-col items-center gap-8 lg:py-31 lg:px-16 mx-auto ${containerClassName}`} {...props}>
       {/* Main Text */}
-      <p className="w-[520px] text-center text-[#17181A] font-rethinkSans font-bold text-[32px] sm:text-[48px] lg:text-[56px] leading-[48px] sm:leading-[60px] lg:leading-[72px] tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px]">
+      <p className="w-[540px] text-center text-[#17181A] font-rethinkSans font-bold text-[32px] sm:text-[48px] lg:text-[56px] leading-[48px] sm:leading-[60px] lg:leading-[72px] tracking-[0.32px] sm:tracking-[0.48px] lg:tracking-[0.56px]">
         {renderText()}
       </p>
         

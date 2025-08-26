@@ -3,6 +3,7 @@ import { CursorSvg } from '../utils/showcase/svgShowcase';
 import ButtonBlack from './ui/ButtonBlack';
 import BorderBadge from './ui/BorderBadge';
 import SubHeadings from './ui/SubHeadings';
+import styles from './ImpactCircle.module.scss';
 
 export default function ImpactCircle() {
   return (
@@ -53,72 +54,60 @@ export default function ImpactCircle() {
       
 
       {/* Sol */}
-      <div className='w-fit h-[auto] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-[10px] bg-[#0089FF] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]
-      absolute left-0 top-1/2 -translate-y-1/2 ml-[10px] ring-6 ring-offset-6 ring-offset-white ring-white'>
+      <div className={`${styles.cursorBaseClasses}
+      absolute left-0 top-1/2 -translate-y-1/2 ml-[10px] ring-6 ring-offset-6 ring-offset-white ring-white`}>
         
         <span className='absolute -top-[6px] -left-[6px] sm:-top-[10px] sm:-left-[10px] z-10'>
           <CursorSvg className="block sm:hidden" width={9} height={9} fill="#0089FF" />
           <CursorSvg className="hidden sm:block" width={14} height={14} fill="#0089FF" />
         </span>
 
-        <p className='text-white font-openRunde text-center  font-medium
-        text-[9px] leading-[14px] tracking-[0.09px]
-        sm:text-[12px] sm:leading-[16px] sm:tracking-[0.12px]'>
+        <p className={`${styles.cursorTextClasses}`}>
         Analyzing..
         </p>
       </div>
 
       {/* Top */}
-      <div className='w-fit h-[auto] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-[10px] bg-[#0089FF] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]
-      absolute top-0 left-1/2 -translate-x-1/2 mt-[16px] ring-8 ring-offset-8 ring-offset-white ring-white'>
+      <div className={`${styles.cursorBaseClasses}
+      absolute top-0 left-1/2 -translate-x-1/2 mt-[16px] ring-8 ring-offset-8 ring-offset-white ring-white`}>
         
         <span className='absolute -top-[6px] -left-[6px] sm:-top-[10px] sm:-left-[10px] z-10'>
           <CursorSvg className="block sm:hidden" width={9} height={9} fill="#0089FF" />
           <CursorSvg className="hidden sm:block" width={14} height={14} fill="#0089FF" />
         </span>
 
-        <p className='text-white font-openRunde text-center  font-medium
-        text-[9px] leading-[14px] tracking-[0.09px]
-        sm:text-[12px] sm:leading-[16px] sm:tracking-[0.12px]'>
+        <p className={`${styles.cursorTextClasses}`}>
         Typing..
         </p>
       </div>
 
       {/* Right */}
-      <div className='w-fit h-[auto] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-[10px] bg-[#0089FF] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]
-      absolute right-0 top-1/2 -translate-y-1/2 mr-[10px] ring-6 ring-offset-6 ring-offset-white ring-white'>
+      <div className={`${styles.cursorBaseClasses}
+      absolute right-0 top-1/2 -translate-y-1/2 mr-[10px] ring-6 ring-offset-6 ring-offset-white ring-white`}>
           
         <span className='absolute -top-[6px] -left-[6px] sm:-top-[10px] sm:-left-[10px] z-10'>
           <CursorSvg className="block sm:hidden" width={9} height={9} fill="#0089FF" />
           <CursorSvg className="hidden sm:block" width={14} height={14} fill="#0089FF" />
         </span>
 
-        <p className='text-white font-openRunde text-center  font-medium
-        text-[9px] leading-[14px] tracking-[0.09px]
-        sm:text-[12px] sm:leading-[16px] sm:tracking-[0.12px]'>
+        <p className={`${styles.cursorTextClasses}`}>
         Searching..
         </p>  
       </div>
 
       {/* Bottom */}
-      <div className='w-fit h-[auto] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-[10px] bg-[#0089FF] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]
-      absolute bottom-0 left-1/2 -translate-x-1/2 mb-[16px] ring-8 ring-offset-8 ring-offset-white ring-white'>
+      <div className={`${styles.cursorBaseClasses}
+      absolute bottom-0 left-1/2 -translate-x-1/2 mb-[16px] ring-8 ring-offset-8 ring-offset-white ring-white`}>
         
         <span className='absolute -top-[6px] -left-[6px] sm:-top-[10px] sm:-left-[10px] z-10'>
           <CursorSvg className="block sm:hidden" width={9} height={9} fill="#0089FF" />
           <CursorSvg className="hidden sm:block" width={14} height={14} fill="#0089FF" />
         </span>
 
-        <p className='text-white font-openRunde text-center  font-medium
-        text-[9px] leading-[14px] tracking-[0.09px]
-        sm:text-[12px] sm:leading-[16px] sm:tracking-[0.12px]'>
+        <p className={`${styles.cursorTextClasses}`}>
         Clicking..
         </p>
       </div>
-
-
-
-
 
     </div>
   </div>
@@ -127,36 +116,36 @@ export default function ImpactCircle() {
   <div className='w-full h-auto max-w-[1168px] mx-auto border-t border-[#EEE] mt-12 md:mt-16 pt-[30px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 '>
     
     {/* 1. Kutu */}
-    <div className="w-full flex flex-col gap-y-3 lg:pr-[20px]">
-      <p className="text-[#17181A] text-[28px] font-semibold leading-[36px] tracking-[-0.8px]">3x</p>
-      <p className="text-[#777] text-[14px] leading-[22px]">
+    <div className={`${styles.numecirContainer}`}>
+      <p className={`${styles.numecirTitle}`}>3x</p>
+      <p className={`${styles.numecirDescription}`}>
         Increase product adoption<br className='hidden xl:block'/>
         with 3x faster time-to-value
       </p>
     </div>
 
     {/* 2. Kutu */}
-    <div className="w-full flex flex-col gap-y-3 lg:pr-[20px]">
-      <p className="text-[#17181A] text-[28px] font-semibold leading-[36px] tracking-[-0.8px]">82%</p>
-      <p className="text-[#777] text-[14px] leading-[22px]">
+    <div className={`${styles.numecirContainer}`}>
+      <p className={`${styles.numecirTitle}`}>82%</p>
+      <p className={`${styles.numecirDescription}`}>
         Higher retention rates among users<br className='hidden xl:block'/>
         guided by AI-powered onboarding
       </p>
     </div>
 
     {/* 3. Kutu */}
-    <div className="w-full flex flex-col gap-y-3 lg:pr-[20px]">
-      <p className="text-[#17181A] text-[28px] font-semibold leading-[36px] tracking-[-0.8px]">2.6x</p>
-      <p className="text-[#777] text-[14px] leading-[22px]">
+    <div className={`${styles.numecirContainer}`}>
+      <p className={`${styles.numecirTitle}`}>2.6x</p>
+      <p className={`${styles.numecirDescription}`}>
         Get higher satisfaction scores with<br className='hidden xl:block'/>
         Mues AI-powered cursor
       </p>
     </div>
 
     {/* 4. Kutu */}
-    <div className="w-full flex flex-col gap-y-3 lg:pr-[20px]">
-      <p className="text-[#17181A] text-[28px] font-semibold leading-[36px] tracking-[-0.8px]">40%</p>
-      <p className="text-[#777] text-[14px] leading-[22px]">
+    <div className={`${styles.numecirContainer}`}>
+      <p className={`${styles.numecirTitle}`}>40%</p>
+      <p className={`${styles.numecirDescription}`}>
         Reduce support ticket volume by 40%<br className='hidden xl:block'/>
         through self-service resolution
       </p>

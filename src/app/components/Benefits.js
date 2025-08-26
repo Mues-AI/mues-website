@@ -1,6 +1,7 @@
 import Image from "next/image";
 import BorderBadge from "./ui/BorderBadge";
 import SubHeadings from "./ui/SubHeadings";
+import styles from "./Benefits.module.scss";
 
 // List item data
 const listItems = [
@@ -100,14 +101,14 @@ export default function Benefits() {
         <div className="w-full h-auto mt-8 md:mt-12 lg:mt-18 mb-12 flex flex-wrap justify-center gap-4 md:gap-8">
             
             {/* 1 */}
-            <div className="w-full  lg:w-[calc(50%-16px)] sm:max-w-[568px] min-h-[274px] max-h-[300px] h-auto bg-[#FBFBFB] rounded-3xl flex flex-col justify-between">
+            <div className={`${styles.cardContainer}`}>
                 <div className="h-[50%] rounded-t-3xl w-full flex justify-center items-end px-8 pt-4 overflow-hidden">
                     <Image src="/Benefits/svg/orangeLine.svg" alt="Product adoption svg" width={473} height={96} className="object-contain w-fit h-auto" />
                 </div>
 
                 <div className="h-auto xs:h-fit rounded-b-3xl p-6 md:p-8 pt-[22px] flex flex-col gap-y-1 sm:gap-y-3">
-                    <h4 className="text-[#222] text-[19px] md:text-[22px] font-normal leading-[24px]">Product adoption</h4>
-                    <p className="text-[#777] text-base md:text-[18px] font-light leading-[26px] md:leading-[30px]">
+                    <h4 className={`${styles.cardTitle}`}>Product adoption</h4>
+                    <p className={`${styles.cardDescription}`}>
                     Help users master your product with AI guidance, they watch the agent, learn from it with every action.
                     </p>
                 </div>
@@ -115,10 +116,10 @@ export default function Benefits() {
 
 
             {/* 2 */}
-            <div className="w-full lg:w-[calc(50%-16px)] sm:max-w-[568px] min-h-[274px] max-h-[300px] h-auto bg-[#FBFBFB] rounded-3xl flex flex-col justify-between">
+            <div className={`${styles.cardContainer}`}>
                 <div className="h-auto xs:h-fit rounded-t-3xl p-6 md:p-8 md:pb-[22px] flex flex-col gap-y-1 sm:gap-y-3">
-                    <h4 className="text-[#222] text-[19px] md:text-[22px] font-normal leading-[24px]">Churn prevention</h4>
-                    <p className="text-[#777] text-base md:text-[18px] font-light leading-[26px] md:leading-[30px]">
+                    <h4 className={`${styles.cardTitle}`}>Churn prevention</h4>
+                    <p className={`${styles.cardDescription}`}>
                     Reduce churn by addressing user friction early with proactive, behavior-driven AI agent support.
                     </p>
                 </div>
@@ -129,26 +130,24 @@ export default function Benefits() {
             </div>
 
             {/* 3 */}
-            <div className="w-full lg:w-[calc(50%-16px)] sm:max-w-[568px] min-h-[274px] max-h-[300px] h-auto bg-[#FBFBFB] rounded-3xl flex flex-col border-3 border-primary-blue justify-between relative">
-
+            <div className={`${styles.cardContainer} border-3 border-primary-blue relative`}>
                 <div className="absolute top-0 w-[125px] left-[50%] -translate-x-1/2 h-8 max-h-8 rounded-b-xl bg-primary-blue flex justify-center items-center ">
-                    <span className="absolute -left-[4px] top-[0px] w-1 h-1 scale-[1.05]">
-                        <svg viewBox="0 0 100 100" className="w-full h-full fill-primary-blue" >
-                        <path d="M0,0 L100,0 L100,100 A100,100 0 0,0 0,0 Z" />
-                        </svg>
-                    </span>
+                  <span className="absolute -left-[4px] top-[0px] w-1 h-1 scale-[1.05]">
+                      <svg viewBox="0 0 100 100" className="w-full h-full fill-primary-blue" >
+                      <path d="M0,0 L100,0 L100,100 A100,100 0 0,0 0,0 Z" />
+                      </svg>
+                  </span>
 
-                    <p className="relative text-white text-[13px] font-openRunde font-medium leading-[24px] tracking-[0.13px]">
-                        Auto Browsing
-                    </p>
+                  <p className="relative text-white text-[13px] font-openRunde font-medium leading-[24px] tracking-[0.13px]">
+                      Auto Browsing
+                  </p>
 
-                    <span className="absolute -right-[4px] top-[0px] w-1 h-1 scale-[1.1]">
-                        <svg viewBox="0 0 100 100" className="w-full h-full fill-primary-blue" >
-                        <path d="M0,0 L100,0 A100,100 0 0,0 0,100 Z" />
-                        </svg>
-                    </span>
-
-                </div>
+                  <span className="absolute -right-[4px] top-[0px] w-1 h-1 scale-[1.1]">
+                      <svg viewBox="0 0 100 100" className="w-full h-full fill-primary-blue" >
+                      <path d="M0,0 L100,0 A100,100 0 0,0 0,100 Z" />
+                      </svg>
+                  </span>
+                </div>  
 
                 <div className="h-[50%] rounded-t-3xl w-full flex justify-start sm:justify-center items-center px-5 pt-4
                 ">
@@ -156,22 +155,22 @@ export default function Benefits() {
                 </div>
 
                 <div className="h-auto xs:h-fit rounded-b-3xl p-6 md:p-8 pt-3 flex flex-col gap-y-1 sm:gap-y-3">
-                    <h4 className="text-[#222] text-[19px] md:text-[22px] font-normal leading-[24px]">Live onboarding</h4>
-                    <p className="text-[#777] text-base md:text-[18px] font-light leading-[26px] md:leading-[30px]">
+                    <h4 className={`${styles.cardTitle}`}>Live onboarding</h4>
+                    <p className={`${styles.cardDescription}`}>
                     Deliver real-time, personalized onboarding that adapts to each user&apos;s pace and needs.
                     </p>
                 </div>
             </div>
 
             {/* 4 */}
-            <div className="w-full lg:w-[calc(50%-16px)] sm:max-w-[568px] min-h-[274px] max-h-[300px] h-auto bg-[#FBFBFB] rounded-3xl flex flex-col justify-between">
+            <div className={`${styles.cardContainer}`}>
                 <div className="h-[50%] rounded-t-3xl w-full flex justify-start items-end overflow-hidden">
-                    <Image src="/Benefits/svg/supportTicketCharts.svg" alt="Less support tickets svg" width={568} height={150} className="object-contain" />
+                    <Image src="/Benefits/svg/supportTicketCharts.svg" alt="Less support tickets svg" width={568} height={150} className="object-cover w-full h-full" />
                 </div>
 
                 <div className="h-auto xs:h-fit rounded-b-3xl p-6 md:p-8 pt-[22px] flex flex-col gap-y-1 sm:gap-y-3">
-                    <h4 className="text-[#222] text-[19px] md:text-[22px] font-normal leading-[24px]">Less support tickets</h4>
-                    <p className="text-[#777] text-base md:text-[18px] font-light leading-[26px] md:leading-[30px]">
+                    <h4 className={`${styles.cardTitle}`}>Less support tickets</h4>
+                    <p className={`${styles.cardDescription}`}>
                     Reduce support tickets by empowering users to solve issues with 24/7 AI help, freeing team for high-value tasks.
                     </p>
                 </div>
@@ -181,7 +180,7 @@ export default function Benefits() {
 
 
         {/* List part */}
-        <div className="flex flex-col   gap-1.5 w-full max-w-[1168px]">
+        <div className="flex flex-col gap-1.5 w-full max-w-[1168px]">
           {listItems.map((item, index) => (
             <ListItem 
               key={index}

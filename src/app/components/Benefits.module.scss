@@ -1,0 +1,51 @@
+.cardContainer {
+  width: 100%;
+  min-height: 274px;
+  max-height: 300px;
+  height: auto;
+  background-color: #FBFBFB;
+  border-radius: 24px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: 640) {
+    max-width: 568px;
+  }
+  
+  @media (min-width: 1024px) {
+    max-width: calc(50% - 16px);
+  }
+}
+
+.cardTitle {
+  color: #222;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 24px;
+
+  @media (min-width: 768px) {
+      font-size: 22px;
+  }
+}
+
+.cardDescription {
+  color: #777;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 26px;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+

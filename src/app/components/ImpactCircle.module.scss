@@ -1,0 +1,53 @@
+.cursorBaseClasses {
+  width: fit-content;
+  height: auto;
+  padding: 4px 6px;
+  border-radius: 10px;
+  background-color: #0089FF;
+  box-shadow: 0px 1px 4px 0px rgba(34, 34, 34, 0.05);
+
+  @media (min-width: 640px) {
+    padding: 6px 8px;
+  }
+}
+
+.cursorTextClasses {
+  color: white;
+  font-family: var(--font-openRunde);
+  text-align: center;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 14px;
+  letter-spacing: 0.09px;
+
+  @media (min-width: 640px) {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.12px;
+  }
+}
+
+.numecirContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+
+  @media (min-width: 1024px) {
+    padding-right: 20px;
+  }
+}
+
+.numecirTitle {
+  color: #17181A;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -0.8px;
+}
+
+.numecirDescription {
+  color: #777;
+  font-size: 14px;
+  line-height: 22px;
+}
