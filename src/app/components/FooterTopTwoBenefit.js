@@ -1,11 +1,9 @@
 import Image from 'next/image';
 
-// Modular Benefit Card Component
 function BenefitCard({ bgColor, title, description, imageSrc, imageWidth, imageHeight, imageAlt, textColor, subtextColor, className }) {
   return (
     <div className={`flex flex-col min-h-37 sm:max-h-37 sm:flex-row lg:inline-flex w-full lg:w-1/2 h-auto lg:h-full p-6 md:p-4 md:pe-0 lg:p-0 ${bgColor} rounded-2xl justify-start sm:justify-between items-center lg:pl-10 gap-5 transition-all group overflow-hidden`}>
-      <div className="inline-flex flex-col justify-center items-start gap-2 lg:gap-3 relative top-[-1px]
-      flex-shrink-0">
+      <div className="inline-flex flex-col justify-center items-start gap-2 lg:gap-3 relative top-[-1px]">
 
         <h5 className={`${textColor} font-rethinkSans font-semibold leading-[30px] 
         text-[20px] tracking-[0.2px]
