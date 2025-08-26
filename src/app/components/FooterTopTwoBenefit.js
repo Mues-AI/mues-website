@@ -22,7 +22,7 @@ function BenefitCard({ bgColor, title, description, imageSrc, imageWidth, imageH
 
       </div>       
 
-      <div className='flex justify-center lg:h-full lg:w-auto self-center md:self-end relative -bottom-6 sm:bottom-0 md:-bottom-4 lg:bottom-0 lg:self-end rounded-2xl '>
+      <div className='flex justify-center lg:h-full lg:w-auto rounded-2xl'>
         <Image 
           quality={100} 
           loading='lazy' 
