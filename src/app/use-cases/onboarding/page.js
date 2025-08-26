@@ -80,7 +80,7 @@ export default function CustomerSupport() {
   ];
 
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen flex flex-col'>
       <Navbar />
       
       {/* Hero Section */}
@@ -488,7 +488,10 @@ export default function CustomerSupport() {
 
         <UserCursor />
         
-        <HowItWorks />
+        {/* TODO : how it works ü props almaya çevirincec UserCursora olan margin değerini değiştir usecaselerin hepsinde. 148px yerine 272px olacak. şimdilik ekstra elementle sarmalayıp genişleticem.  */}
+        <div className='lg:pt-[124px] lg:pb-[80px]'>
+          <HowItWorks />
+        </div>
       </div>
 
 

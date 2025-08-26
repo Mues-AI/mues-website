@@ -80,7 +80,7 @@ export default function CustomerSupport() {
   ];
 
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen flex flex-col'>
       <Navbar />
       
       {/* Hero Section */}
@@ -486,7 +486,9 @@ export default function CustomerSupport() {
 
         <UserCursor />
         
-        <HowItWorks />
+        <div className='lg:pt-[124px] lg:pb-[80px]'>
+          <HowItWorks />
+        </div>
       </div>
 
 
