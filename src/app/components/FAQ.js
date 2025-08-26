@@ -35,7 +35,7 @@ export default function FAQ({ type = 'general' }) {
                 <SubHeadings type="h3" className="text-center">
                     FAQ
                 </SubHeadings>
-                <div className="w-full lg:w-[800px] max-w-[800px] inline-flex flex-col justify-start items-start gap-8">
+                <div className="w-full lg:w-[800px] inline-flex flex-col justify-start items-start gap-8">
                     <div className="self-stretch flex flex-col justify-start items-start gap-2">
                         {/* list elements */}
                         {faqs.map((item, idx) => (
