@@ -30,7 +30,7 @@ export const navItemsData = [
     href: "/#",
     menu: [
     { title: "Careers", desc: "See open positions", icon: "/NavbarMenu/svg/angular1.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://mues-ai.notion.site/?pvs=4" },
-    { title: "Speak w/ founder", desc: "Schedule a meeting", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://cal.com/mues-ai/speak-with-founder" },
+    { title: "Speak w/ founder", desc: "Schedule a meeting", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://cal.com/mues-ai/founders" },
     { title: "Contact us", desc: "Get in touch now", icon: "/NavbarMenu/svg/angular3.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "/contact" },
     { title: "Legal docs", desc: "Read our legal policies", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "/terms-of-service" },
     // { title: "About Mues AI", desc: "Learn about our story", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: "/NavbarMenu/svg/angularHover.svg", href: "https://www.mues.ai/" },

@@ -113,7 +113,7 @@ export const footerData = {
         active: true
       },
       {
-        href: "https://cal.com/mues-ai/speak-with-founder",
+        href: "https://cal.com/mues-ai/founders",
         label: "Speak w/ founder",
         ariaLabel: "Go to Speak with founder",
         target: "_blank",
