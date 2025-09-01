@@ -1,0 +1,27 @@
+.tooltipFloating {
+  max-width: 25vw;
+  padding: 5px 8px;
+  background: #414349;
+  border-radius: 6px;
+
+  font-family: var(--font-openRunde);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+
+  & kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background: #565a64;
+    border-radius: 4px;
+
+    font-family: var(--font-openRunde);
+    font-weight: 600;
+    font-size: 11px;
+  }
+}

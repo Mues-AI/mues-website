@@ -6,7 +6,9 @@ import { useState, useEffect, useRef } from 'react';
 import CorneredLine from '../components/CorneredLine.js';
 import SvgIconAi from '../utils/svgIconAi.js';
 import styles from './pricing.module.css';
-import { NoneXIcon, TickIcon, InfoIcon } from "../utils/pricing/pricingSvg.js";
+import { NoneXIcon, TickIcon } from "../utils/pricing/pricingSvg.js";
+import { InfoCircle } from 'iconsax-react';
+import { Tooltip } from '../components/ui/Floating/Tooltip/Tooltip.js';
 import DeployFiveHero from '../components/DeployFiveHero.js';
 import PlugAndPlay from '../components/PlugAndPlay.js';
 import Steps from '../components/Steps.js';
@@ -18,134 +20,7 @@ import ButtonWhite from '../components/ui/ButtonWhite.js';
 import CallToAction from '../components/ui/CallToAction.js';
 import HeadingBadge from '../components/ui/HeadingBadge.js';
 import H1 from '../components/ui/H1.js';
-
-
-const pricingTableData = {
-    mainFeatures: {
-        title: 'Features',
-        features: [
-            {
-                name: 'AI Cursor',
-                hasInfo: false,
-                values: ['tick', 'tick', 'tick']
-            },
-            {
-                name: 'Journeys',
-                hasInfo: false,
-                values: ['Up to 1000', 'Up to 2000', 'Unlimited'],
-                details: {
-                    name: 'Included free journeys',
-                    values: ['200', '1000', 'Unlimited']
-                }
-            },
-            {
-                name: 'Members',
-                hasInfo: false,
-                values: ['Unlimited', 'Unlimited', 'Unlimited']
-            },
-            {
-                name: 'Multi model support',
-                hasInfo: false,
-                values: ['none', 'tick', 'tick']
-            },
-            {
-                name: 'ROI analytics',
-                hasInfo: false,
-                values: ['none', 'tick', 'tick']
-            },
-            {
-                name: 'Pre-defined actions',
-                hasInfo: false,
-                values: ['none', 'tick', 'tick']
-            },
-            {
-                name: 'Remove Mues branding',
-                hasInfo: false,
-                values: ['none', 'tick', 'tick']
-            },
-            {
-                name: 'Custom theme',
-                hasInfo: false,
-                values: ['tick', 'tick', 'tick']
-            },
-            {
-                name: 'Rulesets',
-                hasInfo: false,
-                values: ['tick', 'tick', 'tick']
-            },
-            {
-                name: 'Community support',
-                hasInfo: false,
-                values: ['tick', 'tick', 'tick']
-            },
-            {
-                name: 'File limit',
-                hasInfo: false,
-                values: ['100MB', '1GB', 'Unlimited']
-            },
-            {
-                name: 'Ruleset limit',
-                hasInfo: false,
-                values: ['5', '20', 'Unlimited']
-            }
-        ]
-    },
-    enterpriseFeatures: {
-        title: 'Only for Enterprise',
-        features: [
-            {
-                name: 'Account manager',
-                hasInfo: false,
-                values: ['none', 'none', 'tick']
-            },
-            {
-                name: 'On premise setup',
-                hasInfo: false,
-                values: ['none', 'none', 'tick']
-            },
-            {
-                name: '99.99% SLA',
-                hasInfo: false,
-                values: ['none', 'none', 'tick']
-            },
-            {
-                name: 'Priority support',
-                hasInfo: false,
-                values: ['none', 'none', 'tick']
-            },
-            {
-                name: 'Google SSO + SAML',
-                hasInfo: false,
-                values: ['none', 'none', 'tick']
-            },
-            {
-                name: 'HIPAA compliance',
-                hasInfo: false,
-                values: ['none', 'none', 'tick']
-            },
-            {
-                name: 'Advanced security',
-                hasInfo: false,
-                values: ['none', 'none', 'tick']
-            },
-            {
-                name: 'Audit log',
-                hasInfo: false,
-                values: ['none', 'none', 'tick']
-            },
-            {
-                name: 'Custom terms',
-                hasInfo: false,
-                values: ['none', 'none', 'tick']
-            },
-            {
-                name: 'Custom models',
-                hasInfo: false,
-                values: ['none', 'none', 'tick']
-            }
-        ]
-    }
-};
+import { pricingTableData } from "../data/pricingTableData.js";
 
 const PRICING = {
     basic: {
@@ -458,7 +333,7 @@ export default function Pricing() {
                 {/* Scroll Sync Container */}
                 <div ref={scrollContainerRef}>
                     {/* Pricing Table */}
-                    <div className='mt-30 pt-8 pb-8 max-w-[1116px] mx-auto flex flex-nowrap items-end justify-between overflow-x-auto border-b border-[#EDEFF3] sticky top-0 bg-white gap-6 scroll-sync [&::-webkit-scrollbar]:hidden scroll-behavior: smooth'>
+                    <div className='mt-30 pt-8 pb-8 max-w-[1116px] mx-auto flex flex-nowrap items-end justify-between overflow-x-auto border-b border-[#EDEFF3] sticky top-0 bg-white gap-6 scroll-sync [&::-webkit-scrollbar]:hidden scroll-behavior: smooth z-10'>
 
                         {/* Select Billing Section */}
                         <div className="flex flex-col gap-[19px] min-w-[220px] flex-shrink-0">
@@ -574,7 +449,14 @@ export default function Pricing() {
                                             <td>
                                                 <div>
                                                     <span>{feature.name}</span>
-                                                    {feature.hasInfo && <InfoIcon />}
+                                                    {feature.hasInfo && 
+                                                    <Tooltip 
+                                                        tooltip={feature.info}
+                                                        placement="top-start"
+                                                    >
+                                                        <InfoCircle size={18} color="#979797" className="rotate-180"/>
+                                                    </Tooltip>
+                                                    }
                                                 </div>
                                             </td>
                                             {feature.values.map((value, valueIndex) => (
@@ -618,7 +500,14 @@ export default function Pricing() {
                                             <td>
                                                 <div>
                                                     <span>{feature.name}</span>
-                                                    {feature.hasInfo && <InfoIcon />}
+                                                    {feature.hasInfo && 
+                                                    <Tooltip 
+                                                        tooltip={feature.info}
+                                                        placement="top-start"
+                                                    >
+                                                        <InfoCircle size={18} color="#979797" className="rotate-180"/>
+                                                    </Tooltip>
+                                                    }
                                                 </div>
                                             </td>
                                             {feature.values.map((value, valueIndex) => (

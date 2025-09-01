@@ -39,35 +39,3 @@ export const TickIcon = ({ width = 19, height = 18, strokeColor = "#0089FF", str
     </svg>
   );
 };
-
-export const InfoIcon = ({ width = 18, height = 18, strokeColor = "#979797", strokeWidth = 1.2, className = "" }) => {
-  return (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      width={width} 
-      height={height} 
-      viewBox="0 0 18 18" 
-      fill="none"
-      className={className}
-    >
-      <path 
-        d="M9 16C12.866 16 16 12.866 16 9C16 5.13401 12.866 2 9 2C5.13401 2 2 5.13401 2 9C2 12.866 5.13401 16 9 16Z" 
-        stroke={strokeColor} 
-        strokeWidth={strokeWidth} 
-        strokeLinecap="round" 
-        strokeLinejoin="round"
-      />
-      <path 
-        d="M9.021 11.385V9.31104" 
-        stroke={strokeColor} 
-        strokeWidth={strokeWidth} 
-        strokeLinecap="round" 
-        strokeLinejoin="round"
-      />
-      <path 
-        d="M8.99989 7.86598C9.49197 7.86598 9.89089 7.46707 9.89089 6.97498C9.89089 6.4829 9.49197 6.08398 8.99989 6.08398C8.5078 6.08398 8.10889 6.4829 8.10889 6.97498C8.10889 7.46707 8.5078 7.86598 8.99989 7.86598Z" 
-        fill={strokeColor}
-      />
-    </svg>
-  );
-};
