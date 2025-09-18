@@ -1,12 +1,12 @@
 'use client';
 import React from 'react';
 import Navbar from '../components/Navbar.js';
-import { CursorSvg } from '../utils/showcase/svgShowcase.js';
+import { CursorSvg } from '../utils/svgOurBrand.js';
 import { useState, useEffect, useRef } from 'react';
 import CorneredLine from '../components/CorneredLine.js';
-import SvgIconAi from '../utils/svgIconAi.js';
+import SvgIconAiSprite from '../utils/svgIconAiSprite.js';
 import styles from './pricing.module.css';
-import { NoneXIcon, TickIcon } from "../utils/pricing/pricingSvg.js";
+import { XCloseIcon, OvalTickIcon } from "../utils/svgGeneralUtils.js";
 import { InfoCircle } from 'iconsax-react';
 import { Tooltip } from '../components/ui/Floating/Tooltip/Tooltip.js';
 import DeployFiveHero from '../components/DeployFiveHero.js';
@@ -36,9 +36,9 @@ const PRICING = {
 const renderValue = (value) => {
     switch(value) {
         case 'tick':
-            return <TickIcon />;
+            return <OvalTickIcon />;
         case 'none':
-            return <NoneXIcon />;
+            return <XCloseIcon />;
         default:
             return <span>{value}</span>;
     }
@@ -297,7 +297,7 @@ export default function Pricing() {
                             {/* Duplicate logos for seamless infinite loop */}
                             {[...logos, ...logos].map((logo, idx) => (
                                 <div key={`${logo.name}-${idx}`} className="mx-6 flex items-center justify-center flex-shrink-0">
-                                    <SvgIconAi 
+                                    <SvgIconAiSprite 
                                         name={logo.name} 
                                         width={logo.width * 0.8} 
                                         height={logo.height * 0.8} 
@@ -314,7 +314,7 @@ export default function Pricing() {
                     <div className="hidden lg:flex items-center justify-center flex-nowrap gap-6 lg:gap-8 xl:gap-12">
                         {logos.map((logo) => (
                             <div key={logo.name} className="flex items-center justify-center">
-                                <SvgIconAi 
+                                <SvgIconAiSprite 
                                     name={logo.name} 
                                     width={logo.width} 
                                     height={logo.height} 

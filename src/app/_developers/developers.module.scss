@@ -1,0 +1,251 @@
+// INTELLIGENT Grid - First & only AI Cursor 
+.benchmarkContainer {
+  max-width: 1168px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin: 0 auto;
+  white-space: nowrap;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+.benchmarkBox {
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.04);
+
+  @media (min-width: 768px) {
+    padding: 32px;
+    border-radius: 24px;
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 24px;
+
+  @media (min-width: 768px) {
+    gap: 32px;
+  }
+
+  @media (min-width: 1280px) {
+    gap: 40px;
+  }
+}
+
+.tableHeader {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-rethink-sans);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  font-size: 15px;
+  letter-spacing: 0.15px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    letter-spacing: 0.16px;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.10);
+  margin: 16px 0;
+
+  @media (min-width: 768px) {
+    margin: 24px 0;
+  }
+}
+
+%baseText {
+  font-family: var(--font-inter);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+.benchmarkText {
+  @extend %baseText;
+  color: #DDD;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.redText {
+  @extend %baseText;
+  color: #FF4D4F;
+
+  @media (max-width: 768px) {
+    font-size: 14px !important; 
+  }
+}
+
+.whiteText {
+  @extend %baseText;
+  color: #FFF;
+
+  @media (max-width: 768px) {
+    font-size: 14px !important; 
+  }
+}
+
+.greenText {
+  @extend %baseText;
+  color: #1FC16B;
+
+  @media (max-width: 768px) {
+    font-size: 14px !important; 
+  }
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.verticalDivider {
+  width: 1px;
+  height: 16px;
+  background: #474645;
+}
+
+.modelText {
+  color: #FFF;
+  font-family: var(--font-rethink-sans);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.15px;
+}
+
+// CORNERED Three Box styles
+.corneredTitle {
+  color: #FFF;
+  font-family: var(--font-sfPro);
+  font-weight: 500;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+.corneredDesc {
+  color: #777;
+  font-family: var(--font-inter);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.3px;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @media (min-width: 1500px) {
+    width: 9/10;
+  }
+}
+
+// MODIFICATION grid / Magical Touch -Signal -Customization -CSP Permission
+
+.featuresGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 72px;
+  max-width: 1328px;
+  margin: 0 auto;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(262px, 1fr));
+    gap: clamp(24px, calc((100% - (3 * 262px)) / 2), 96px);
+    padding: 0 24px;
+  }
+}
+
+.featureColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.imageContainer {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 320px;
+  margin-top: 0px;
+
+  @media (min-width: 1024px) {
+    margin-top: 24px;
+  }
+}
+
+.featureTitle {
+  color: #FFF;
+  text-align: center;
+  font-family: var(--font-sfPro);
+  font-style: normal;
+  font-weight: 510;
+  font-size: 24px;
+  line-height: 29px;
+
+  @media (min-width: 640px) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+.featureDescription {
+  color: #777;
+  text-align: center;
+  font-family: var(--font-inter);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  font-size: 15px;
+  line-height: 24px;
+
+  @media (min-width: 640px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

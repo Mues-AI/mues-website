@@ -58,7 +58,7 @@ const ButtonWhite = forwardRef(({
   target = '_blank',
   rel = 'noopener noreferrer',
   disabled = false,
-  wrapperClassName = 'w-fit rounded-xl cursor-pointer', // a tag class
+  wrapperClassName = 'w-fit', // a tag class
   className = 'gap-2', // div class
   padding = 'py-[15px] px-5', // outer div padding
   textClassName = '', // text class
@@ -122,6 +122,9 @@ const ButtonWhite = forwardRef(({
     ${iconClassName}
   `.trim();
 
+  const wrapperClass = `
+  rounded-xl cursor-pointer ${wrapperClassName}`;
+
   // Content JSX
   const content = (
     <div className={containerClass}>
@@ -152,7 +155,7 @@ const ButtonWhite = forwardRef(({
         target={disabled ? undefined : target}
         rel={disabled ? undefined : rel}
         aria-label={ariaLabel || children}
-        className={wrapperClassName}
+        className={wrapperClass}
         {...props}
       >
         {content}
@@ -166,7 +169,7 @@ const ButtonWhite = forwardRef(({
       onClick={disabled ? undefined : onClick}
       aria-label={ariaLabel || children}
       disabled={disabled}
-      className={wrapperClassName}
+      className={wrapperClass}
       {...props}
     >
       {content}

@@ -2,8 +2,8 @@
 
 import Navbar from '../../components/Navbar';
 import Image from 'next/image';
-import { CursorSvg } from '../../utils/showcase/svgShowcase';
-import SvgIconAi from '../../utils/svgIconAi';
+import { CursorSvg } from '../../utils/svgOurBrand';
+import SvgIconAiSprite from '../../utils/svgIconAiSprite';
 import { onboardignData } from '../../data/usecase-onboarding';
 import { toast } from 'sonner';
 import UserCursor from '../../components/UserCursor';
@@ -23,6 +23,8 @@ import { ProfileCircle,Danger,DocumentText,MessageQuestion } from 'iconsax-react
 import HeadingBadge from '@/app/components/ui/HeadingBadge';
 import H1 from '@/app/components/ui/H1';
 import SubHeadings from "../../components/ui/SubHeadings";
+import CursorPrompt from '@/app/components/ui/cursorPrompt/cursorPrompt';
+
 
 function FeatureContainer({
   svgSrc,
@@ -165,7 +167,7 @@ export default function CustomerSupport() {
               {/* Duplicate logos for seamless infinite loop */}
               {[...logos, ...logos].map((logo, idx) => (
                 <div key={`${logo.name}-${idx}`} className="mx-6 flex items-center justify-center flex-shrink-0">
-                  <SvgIconAi 
+                  <SvgIconAiSprite 
                     name={logo.name} 
                     width={logo.width * 0.8} 
                     height={logo.height * 0.8} 
@@ -182,7 +184,7 @@ export default function CustomerSupport() {
           <div className="hidden lg:flex items-center justify-center flex-nowrap gap-6 lg:gap-8 xl:gap-12">
             {logos.map((logo) => (
               <div key={logo.name} className="flex items-center justify-center">
-                <SvgIconAi 
+                <SvgIconAiSprite 
                   name={logo.name} 
                   width={logo.width} 
                   height={logo.height} 
@@ -365,41 +367,7 @@ export default function CustomerSupport() {
                 height={66}
               />
 
-              {/* Mues Cursor Mini */}
-              <div className='w-fit h-auto flex-shrink-0 rounded-xl border border-[#F1F1F1] bg-white shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)] relative'>
-                
-                {/* Cursor Icon */}
-                <div className="absolute -left-[14px] -top-[14px] w-6 h-6 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M1.1 15H1.8585C1.86761 15 1.875 14.9926 1.875 14.9835C1.875 13.8406 2.11485 12.7103 2.57904 11.6659L2.62585 11.5606C4.39543 7.57903 7.57903 4.39543 11.5606 2.62585L11.6659 2.57904C12.7103 2.11485 13.8406 1.875 14.9835 1.875C14.9926 1.875 15 1.86761 15 1.8585V1.1C15 1.04477 14.9552 1 14.9 1H2C1.44772 1 1 1.44772 1 2V14.9C1 14.9552 1.04477 15 1.1 15Z" fill="#0089FF" stroke="#0089FF"/>
-                  </svg>
-                </div>
-
-                {/* Main Content */}
-                <p className="text-[#323232] font-openRunde text-[13px] font-normal leading-4 tracking-[0.13px] p-3">
-                Explain this chart to me,<br/>how do they create this conversion?
-                </p>
-
-                {/* Footer */}
-                <div className="w-full rounded-b-[11px] bg-[#FAFAFA] flex justify-between items-center px-[11px] py-2">
-                  <span className="text-[#A1A1A1] text-center font-sfPro text-[10px] font-normal">
-                    Press &apos;Enter&apos; to prompt
-                  </span>
-                  
-                  <div className="flex items-center gap-1">
-                    <span className="text-[#CCC] text-center font-sfPro text-[10px] font-normal leading-3">
-                      Powered by
-                    </span>
-                    <Image 
-                      src="/svg/logoFooter.svg"
-                      alt="Mues Logo"
-                      width={40}
-                      height={8}
-                    />
-                  </div>
-                </div>
-
-              </div>
+              <CursorPrompt prompt="Explain this chart to me,<br/>how do they create this conversion?" />
 
             </div>
 

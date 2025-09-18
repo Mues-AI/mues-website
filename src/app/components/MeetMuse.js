@@ -8,7 +8,7 @@ export default function MeetMuse() {
       <BorderBadge>MEET MUES AI</BorderBadge>
 
       <SubHeadings type="h2" className="max-w-xl text-center">
-        A new kind of <p>software interaction.</p> 
+      A new kind of <br /> software interaction.
       </SubHeadings>
 
       <p className="subHeadingsDescription w-full max-w-[576px] text-center">

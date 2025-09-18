@@ -1,4 +1,4 @@
-import { Inter, Rethink_Sans,Instrument_Serif } from "next/font/google";
+import { Inter, Rethink_Sans, Instrument_Serif, Urbanist } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { Toaster } from 'sonner';
@@ -28,7 +28,7 @@ const sfPro = localFont({
     },
   ],
   variable: '--font-sfPro',
-  display: 'swap', // Font-display: swap özelliğini korur
+  display: 'swap',
 });
 
 const openRunde = localFont({
@@ -76,6 +76,14 @@ const instrumentSerif = Instrument_Serif({
   preload: false,
 });
 
+const urbanist = Urbanist({
+  variable: "--font-urbanist",
+  subsets: ["latin"],
+  style: ["normal"],
+  fontFamily: "Urbanist, sans-serif",
+  display: 'swap',
+  preload: false,
+});
 
 export const metadata = {
   title: "Mues AI | SaaS Onboarding and Support with AI",
@@ -172,7 +180,7 @@ export default function RootLayout({ children }) {
         <link rel="preload" as="image" fetchPriority="high" href="/videos/videoFirstFrame.webp" />
       </head>
       <body 
-        className={`${inter.variable} ${sfPro.variable} ${openRunde.variable} ${rethinkSans.variable} ${instrumentSerif.variable}`}
+        className={`${inter.variable} ${sfPro.variable} ${openRunde.variable} ${rethinkSans.variable} ${instrumentSerif.variable} ${urbanist.variable}`}
       >
         {/* Google Tag Manager – Body */}
         <noscript>

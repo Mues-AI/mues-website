@@ -1,9 +1,13 @@
-import { OnlyLogo } from '../utils/svgGeneralUtils';
-import { CursorSvg } from '../utils/showcase/svgShowcase';
+import { OnlyLogo } from '../utils/svgOurBrand';
+import { CursorSvg } from '../utils/svgOurBrand';
 import ButtonBlack from './ui/ButtonBlack';
 import BorderBadge from './ui/BorderBadge';
 import SubHeadings from './ui/SubHeadings';
 import styles from './ImpactCircle.module.scss';
+
+// module css alınca ring calismiyor, o yuzden bu sekilde yapildi
+const cursorBaseClasses = "w-fit px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-[10px] bg-[#0089FF] shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]";
+
 
 export default function ImpactCircle() {
   return (
@@ -54,8 +58,7 @@ export default function ImpactCircle() {
       
 
       {/* Sol */}
-      <div className={`${styles.cursorBaseClasses}
-      absolute left-0 top-1/2 -translate-y-1/2 ml-[10px] ring-6 ring-offset-6 ring-offset-white ring-white`}>
+      <div className={`${cursorBaseClasses} absolute left-0 top-1/2 -translate-y-1/2 ml-[10px] ring-6 ring-offset-6 ring-offset-white ring-white`}> 
         
         <span className='absolute -top-[6px] -left-[6px] sm:-top-[10px] sm:-left-[10px] z-10'>
           <CursorSvg className="block sm:hidden" width={9} height={9} fill="#0089FF" />
@@ -68,8 +71,7 @@ export default function ImpactCircle() {
       </div>
 
       {/* Top */}
-      <div className={`${styles.cursorBaseClasses}
-      absolute top-0 left-1/2 -translate-x-1/2 mt-[16px] ring-8 ring-offset-8 ring-offset-white ring-white`}>
+      <div className={`${cursorBaseClasses} absolute top-0 left-1/2 -translate-x-1/2 mt-[16px] ring-8 ring-offset-8 ring-offset-white ring-white`}>
         
         <span className='absolute -top-[6px] -left-[6px] sm:-top-[10px] sm:-left-[10px] z-10'>
           <CursorSvg className="block sm:hidden" width={9} height={9} fill="#0089FF" />
@@ -82,8 +84,7 @@ export default function ImpactCircle() {
       </div>
 
       {/* Right */}
-      <div className={`${styles.cursorBaseClasses}
-      absolute right-0 top-1/2 -translate-y-1/2 mr-[10px] ring-6 ring-offset-6 ring-offset-white ring-white`}>
+      <div className={`${cursorBaseClasses} absolute right-0 top-1/2 -translate-y-1/2 mr-[10px] ring-6 ring-offset-6 ring-offset-white ring-white`}>
           
         <span className='absolute -top-[6px] -left-[6px] sm:-top-[10px] sm:-left-[10px] z-10'>
           <CursorSvg className="block sm:hidden" width={9} height={9} fill="#0089FF" />
@@ -96,8 +97,7 @@ export default function ImpactCircle() {
       </div>
 
       {/* Bottom */}
-      <div className={`${styles.cursorBaseClasses}
-      absolute bottom-0 left-1/2 -translate-x-1/2 mb-[16px] ring-8 ring-offset-8 ring-offset-white ring-white`}>
+      <div className={`${cursorBaseClasses} absolute bottom-0 left-1/2 -translate-x-1/2 mb-[16px] ring-8 ring-offset-8 ring-offset-white ring-white`}>
         
         <span className='absolute -top-[6px] -left-[6px] sm:-top-[10px] sm:-left-[10px] z-10'>
           <CursorSvg className="block sm:hidden" width={9} height={9} fill="#0089FF" />

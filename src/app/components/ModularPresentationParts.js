@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { toast } from 'sonner';
 import { ModulerPresentationVariants } from './ModulerPresentationVariants';
-import ModularCheckSvg from '../utils/svgGeneralUtils.js';
+import CheckSvg from '../utils/svgGeneralUtils.js';
 import useStore from '../lib/store';
 
 const ModularPresentationParts = ({ variant }) => {
@@ -96,7 +96,7 @@ const ModularPresentationParts = ({ variant }) => {
           <div className="flex flex-col items-start gap-4">
             {variantData.features.map((feature, index) => (
               <span className="flex space-x-2" key={index}>
-                <ModularCheckSvg fill={feature.featureColor} width={26} height={26} />
+                <CheckSvg fill={feature.featureColor} className="w-[26px] h-[26px]" />
                 <span className="text-[17px] font-normal leading-[26px]" style={{ color: feature.featureColor }}>{feature.text}</span>
               </span>
             ))}

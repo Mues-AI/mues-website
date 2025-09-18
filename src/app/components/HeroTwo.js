@@ -23,8 +23,7 @@ export default function HeroTwo() {
                 <div className='flex flex-col gap-4 lg:gap-6 w-full lg:w-[322px]'>
                     {/* İçerik 1 - SECURITY BADGE */}
                     <BorderBadge 
-                    className="border-[rgba(255,255,255,0.25)]" 
-                    textClassName="text-[rgba(255,255,255,0.75)]"
+                    variant="dark"
                     >
                     SECURITY
                     </BorderBadge>

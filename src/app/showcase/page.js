@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
-import { CursorSvg } from '../utils/showcase/svgShowcase';
+import { CursorSvg } from '../utils/svgOurBrand';
 import { ArrowLeft2,ArrowRight2,Play } from 'iconsax-react';
 import {DropboxCard, HubSpotCard, MixpanelCard, JiraCard, ProductboardCard, ClickUpCard, AWSCard } from './ShowcaseCards';
 import Benefits from '../components/Benefits';
@@ -114,7 +114,7 @@ const PlayButtons = ({ onNext, onPrevious, className = "mt-12" }) => (
 
     {/* Play Butonu - Inactive for now */}
     {/* TODO - YAP: Play butonunu aktif hale getir */}
-    <button 
+    {/* <button 
       className="inline-flex py-3 px-4 justify-center items-center gap-1.5 rounded-3xl border border-[#F4F4F4] bg-white cursor-pointer hover:bg-[#F4F4F4]" style={{ boxShadow: '0px 1px 4px 0px rgba(34, 34, 34, 0.05)' }}>
       
       <Play size="14" color="#17181A"/>
@@ -122,7 +122,17 @@ const PlayButtons = ({ onNext, onPrevious, className = "mt-12" }) => (
       <span className="text-[#17181A] text-center text-[14px] font-normal leading-4">
         Play
       </span>
-    </button>
+    </button> */}
+
+    <ButtonWhite
+      href="https://cal.com/mues-ai/demo"
+      target="_blank"
+      ariaLabel="Get started"
+      className="!rounded-full"
+      height="h-[30px]"
+    >
+      Get started
+    </ButtonWhite>
 
     {/* Sağ Ok Butonu */}
     <button onClick={onPrevious} className="w-[30px] h-[30px] rounded-3xl border border-[#F4F4F4] bg-white flex items-center justify-center cursor-pointer hover:bg-[#F4F4F4]" style={{ boxShadow: '0px 1px 4px 0px rgba(34, 34, 34, 0.05)' }} >

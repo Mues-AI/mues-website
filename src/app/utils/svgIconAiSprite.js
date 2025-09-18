@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SvgIconAi({
+export default function SvgIconAiSprite({
   name,
   width = 24,
   height = 24,

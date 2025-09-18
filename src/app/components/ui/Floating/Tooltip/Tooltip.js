@@ -3,7 +3,6 @@ import {
   autoUpdate,
   flip,
   offset,
-  Placement,
   shift,
   useDismiss,
   useFloating,

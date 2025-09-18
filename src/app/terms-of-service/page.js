@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar.js';
-import { ArrowRightIcon } from '../utils/svgIcons';
+import { ArrowRightIcon } from '../utils/svgGeneralUtils';
 import FAQ from '../components/FAQ.js';
 import Footer from '../components/Footer.js';
 import styles from './terms.module.css';

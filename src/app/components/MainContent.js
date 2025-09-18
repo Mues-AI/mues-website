@@ -2,12 +2,12 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
-import SvgIconAi from "../utils/svgIconAi";
+import SvgIconAiSprite from "../utils/svgIconAiSprite";
 import ButtonWhite from "./ui/ButtonWhite";
 import Overlay from "./Overlay";
 import ButtonBlack from "./ui/ButtonBlack";
 import Input from "./ui/Input";
-import { OnlyLogo } from "../utils/svgGeneralUtils";
+import { OnlyLogo } from "../utils/svgOurBrand";
 
 const logos = [
   { name: "openai", width: 107, height: 32, alt: "OpenAI" },
@@ -277,7 +277,7 @@ export default function MainContent() {
                   key={idx}
                   className="mx-4 flex items-center justify-center"
                 >
-                  <SvgIconAi
+                  <SvgIconAiSprite
                     name={logo.name}
                     width={logo.width}
                     height={logo.height}
@@ -292,7 +292,7 @@ export default function MainContent() {
           {/* Desktop: Statik logo listesi (lg breakpoint ve üstü) */}
           <div className="w-fit h-8 hidden lg:flex items-center space-x-6">
             {logos.map((logo, idx) => (
-              <SvgIconAi
+              <SvgIconAiSprite
                 key={idx}
                 name={logo.name}
                 width={logo.width}

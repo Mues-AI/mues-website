@@ -1,7 +1,7 @@
 "use client";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { ThickBgBlueSvg } from '../utils/svgGeneralUtils';
+import { ThickBgBlueSvg } from '../utils/animatedText/svgAnimatedText';
 
 
 const Character = ({ children, range, progress }) => {

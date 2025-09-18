@@ -3,11 +3,10 @@
 import Navbar from '../components/Navbar.js';
 import FAQ from '../components/FAQ.js';
 import Footer from '../components/Footer.js';
-import Image from 'next/image';
 import CorneredLine from '../components/CorneredLine.js';
-import { XIcon, DiscordIcon } from '../utils/svgIcons.js';
+import { XIcon, DiscordIcon } from '../utils/svgSocialMedia.js';
 import { Like, Building, DocumentText } from 'iconsax-react';
-import { ArrowRightIcon } from '../utils/svgIcons.js';
+import { ArrowRightIcon } from '../utils/svgGeneralUtils.js';
 import ButtonBlack from '@/app/components/ui/ButtonBlack';
 import ButtonWhite from '@/app/components/ui/ButtonWhite';
 import CallToAction from '@/app/components/ui/CallToAction';

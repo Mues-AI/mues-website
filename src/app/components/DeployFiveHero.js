@@ -21,8 +21,8 @@ export default function DeployFiveHero() {
         
         {/* DEPLOY IN 5 MINS BADGE */}
         <BorderBadge 
-        className="bg-transparent border-[rgba(255,255,255,0.25)] xl:mt-6 lg:ml-12 xl:ml-[124px]"
-        textClassName="text-[rgba(255,255,255,0.75)]"
+        variant="dark"
+        className="xl:mt-6 lg:ml-12 xl:ml-[124px]"
         padding="px-[12px] py-[8px]"
         >
         DEPLOY IN 5 MINS

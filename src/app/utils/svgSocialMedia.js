@@ -1,12 +1,3 @@
-export const ArrowRightIcon = ({ width = 16, height = 16, className = "", color = "#0089FF" }) => (
-    <svg width={width} height={height} className={className} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465" stroke={color} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M2.33325 8H13.5533" stroke={color} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-);
-
-
-
 export const XIcon = ({ width = 24, height = 24, className = "" }) => (
     <svg width={width} height={height} className={className} viewBox="0 0 24 24" fill="none">
         <path d="M16.8531 4.23828H19.5504L13.6577 10.8141L20.59 19.7623H15.1621L10.9107 14.3352L6.04623 19.7623H3.34735L9.65016 12.7287L3 4.23828H8.56572L12.4086 9.19878L16.8531 4.23828ZM15.9066 18.186H17.401L7.75361 5.73176H6.14978L15.9066 18.186Z" fill="currentColor" />

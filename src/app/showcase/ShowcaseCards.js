@@ -1,4 +1,5 @@
-import { CursorSvg, MiniEnterButton, MiniLike, MiniDislike, MiniEnterButtonMobile, MiniLikeMobile, MiniDislikeMobile } from '../utils/showcase/svgShowcase';
+import { MiniEnterButton, MiniLike, MiniDislike, MiniEnterButtonMobile, MiniLikeMobile, MiniDislikeMobile } from '../utils/showcase/svgShowcase';
+import { CursorSvg } from '../utils/svgOurBrand';
 import Image from 'next/image';
 import styles from './ShowcaseCards.module.css';
 import useStore from '../lib/store';

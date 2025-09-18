@@ -4,10 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import { LogoSvg, HamburgerSvg } from '../utils/svgGeneralUtils';
+import { HamburgerSvg } from '../utils/navbar/svgNavbar';
 import useStore from '../lib/store';
 import { navItemsData } from '../data/NavbarDataItems';
-import { OnlyLogo } from '../utils/svgGeneralUtils';
+import { OnlyLogo } from '../utils/svgOurBrand';
+import LogoName from './ui/LogoName';
 
 
 // NavLink bileşeni - aktif durumu daha verimli kontrol eder - 4 buton için kullanılıyor
@@ -284,10 +285,9 @@ export default function Navbar({ variant = 'dark', className = '', ...rest }) {
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/" aria-label="Go to Home Page">
-            <LogoSvg 
-              width={isMobile ? 82 : 101} 
-              height={isMobile ? 16 : 20} 
-              fill={theme.logoFill} 
+            <LogoName 
+              fontSize={isMobile ? 24 : 30}
+              variant={variant}
             />
           </Link>
         </div>

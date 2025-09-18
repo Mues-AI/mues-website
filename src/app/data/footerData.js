@@ -4,13 +4,6 @@ export const footerData = {
     links: [
       // Active links
       {
-        href: "https://cal.com/mues-ai/demo",
-        label: "Demo",
-        ariaLabel: "Go to Demo",
-        target: "_blank",
-        active: true
-      },
-      {
         href: "/pricing",
         label: "Pricing", 
         ariaLabel: "Go to Pricing",
@@ -44,6 +37,13 @@ export const footerData = {
         ariaLabel: "Go to Features",
         target: "_blank",
         active: false
+      },
+      {
+        href: "https://cal.com/mues-ai/demo",
+        label: "Demo w/ founder",
+        ariaLabel: "Go to Demo",
+        target: "_blank",
+        active: true
       },
       {
         href: "https://www.mues.ai/",
@@ -105,6 +105,13 @@ export const footerData = {
     title: "Company",
     links: [
       // Active links
+      {
+        href: "https://mues.ai/blog/",
+        label: "Blog",
+        ariaLabel: "Explore our insights",
+        target: "_blank",
+        active: true
+      },
       {
         href: "https://mues-ai.notion.site/?pvs=4",
         label: "Careers",
