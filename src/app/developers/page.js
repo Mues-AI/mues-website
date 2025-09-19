@@ -22,7 +22,15 @@ import ButtonGray from "../components/ui/ButtonGray";
 export default function Developers() {
   return (
     <div className="min-h-screen flex flex-col dark">
-      <Navbar className="bg-transparent"/>
+      <Navbar 
+        className="bg-transparent"
+        logoNameAnimationProps={{
+          flipOnHover: true,
+          primaryText: 'Developers',
+          secondaryText: 'mues',
+          fontSize: 22,
+        }}
+      />
 
 
       <div className='w-full px-6 sm:px-9 md:px-12 lg:px-18 '>

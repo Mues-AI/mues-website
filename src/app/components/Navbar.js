@@ -11,7 +11,7 @@ import { OnlyLogo } from '../utils/svgOurBrand';
 import LogoName from './ui/LogoName';
 
 
-// NavLink bileşeni - aktif durumu daha verimli kontrol eder - 4 buton için kullanılıyor
+// NavLink 4 Button
 function NavLink({ href, children, onClick, className = '', theme }) {
   const pathname = usePathname();
   const isActive = pathname === href;
@@ -147,19 +147,7 @@ function MobileMenu({ navItemsData, isOpen, setIsOpen, theme }) {
         
         {/* Mobile Login / Book Demo */}
         <div className="mt-6 flex flex-col space-y-4">
-          {/* Login butonu */}
-          {/* Login butonu ŞİMDİLİK HİDDEN-gizli sonra gösterilecek*/}
-          {/* <Link 
-            href="/login" 
-            className={`w-full py-3 px-4 flex justify-center items-center rounded-xl text-package-sm ${
-              variant === 'dark' 
-                ? 'bg-[rgba(255,255,255,0.12)] text-white' 
-                : 'border border-[#F4F4F4] bg-white text-primary-black shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]'
-            }`}
-            onClick={() => setIsOpen(false)}
-          >
-            Login
-          </Link> */}
+          {/* Login butonu gelecek buraya daha sonra */}
           <a 
             href="https://cal.com/mues-ai/demo" 
             target="_blank" 
@@ -177,13 +165,12 @@ function MobileMenu({ navItemsData, isOpen, setIsOpen, theme }) {
 }
 
 // Navbar (Main)
-export default function Navbar({ variant = 'dark', className = '', ...rest }) {
+export default function Navbar({ variant = 'dark', className = '', logoNameAnimationProps, ...rest }) {
   const [hoveredNavIndex, setHoveredNavIndex] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const isMobile = useStore((state) => state.isMobile);
   
-  // Theme colors based on variant
   const themeColors = {
     dark: {
       bg: 'bg-[#010101]',
@@ -221,12 +208,11 @@ export default function Navbar({ variant = 'dark', className = '', ...rest }) {
     }
   };
   
-  // Variant'a göre tema renklerini aldık
   const theme = themeColors[variant];
   
   // Otomatik mobil menü kapatma kontrolü
   useEffect(() => {
-    // Mobil değilse ve menü açıksa kapat
+
     if (!isMobile && isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
@@ -234,7 +220,6 @@ export default function Navbar({ variant = 'dark', className = '', ...rest }) {
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    // Cache the current scroll position
     const scrollY = window.scrollY;
     
     if (isMobileMenuOpen) {
@@ -288,6 +273,7 @@ export default function Navbar({ variant = 'dark', className = '', ...rest }) {
             <LogoName 
               fontSize={isMobile ? 24 : 30}
               variant={variant}
+              {...logoNameAnimationProps}
             />
           </Link>
         </div>
@@ -334,18 +320,7 @@ export default function Navbar({ variant = 'dark', className = '', ...rest }) {
 
         {/* Login / Book Demo (Desktop) */}
         <div className="hidden md:flex items-center space-x-2">
-          {/* Login butonu */}
-          {/* Login butonu ŞİMDİLİK HİDDEN-gizli sonra gösterilecek*/}
-          {/* <Link 
-            href="/login" 
-            className={`flex items-center justify-center rounded-xl text-package-sm ${
-              variant === 'dark' 
-                ? 'px-4 py-2 bg-[rgba(255,255,255,0.12)] text-white' 
-                : 'px-4 py-2.5 border border-[#F4F4F4] bg-white text-primary-black shadow-[0px_1px_4px_0px_rgba(34,34,34,0.05)]'
-            }`}
-          >
-            Login
-          </Link> */}
+          {/* Login butonu gelecek buraya daha sonra */}
           <a href="https://cal.com/mues-ai/demo" target="_blank" rel="noopener noreferrer" aria-label="Book a demo" className={`h-9 px-4 py-2.5 flex items-center justify-center rounded-xl text-package-sm ${theme.demoBg} ${theme.demoText}`}>
             Book a demo
           </a>

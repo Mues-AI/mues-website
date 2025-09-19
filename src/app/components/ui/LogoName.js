@@ -1,4 +1,5 @@
 import { OnlyLogo } from '../../utils/svgOurBrand';
+import styles from './LogoName.module.scss';
 
 const LOGO_VARIANTS = {
   24: { symbolSize: 16, gap: "gap-1.5" },
@@ -21,6 +22,10 @@ export default function LogoName({
   fontSize = 30,
   symbolSize: customSymbolSize,
   gap: customGap,
+  flipOnHover = false,
+  primaryText,
+  secondaryText,
+  secondaryTranslateY = `${fontSize/2}px`,
 }) {
   const themeColor = color ?? (variant === 'light' ? '#17181A' : '#FFF');
   const defaultValues = getDefaultValues(fontSize);
@@ -33,18 +38,35 @@ export default function LogoName({
         height={symbolSize} 
         fill={themeColor}
       />
-      <div 
-        className="font-urbanist font-bold"
-        style={{
-          color: themeColor,
-          fontSize: `${fontSize}px`,
-          lineHeight: "1",
-          textBoxTrim: "trim-both",
-          textBoxEdge: text.charAt(0) === text.charAt(0).toUpperCase() ? "cap alphabetic" : "ex alphabetic",
-        }}
-      >
-        {text}
-      </div>
+      {flipOnHover ? (
+        <div 
+          className={`font-urbanist font-bold ${styles.textContainer}`}
+          style={{
+            color: themeColor,
+            fontSize: `${fontSize}px`,
+            lineHeight: "1",
+            textBoxTrim: "trim-both",
+            textBoxEdge: (primaryText ?? text).charAt(0) === (primaryText ?? text).charAt(0).toUpperCase() ? "cap alphabetic" : "ex alphabetic",
+            '--secondary-translate-y': secondaryTranslateY,
+          }}
+        >
+          <span className={styles.primary}>{primaryText ?? text}</span>
+          <span className={styles.secondary}>{secondaryText ?? 'mues'}</span>
+        </div>
+      ) : (
+        <div 
+          className="font-urbanist font-bold"
+          style={{
+            color: themeColor,
+            fontSize: `${fontSize}px`,
+            lineHeight: "1",
+            textBoxTrim: "trim-both",
+            textBoxEdge: text.charAt(0) === text.charAt(0).toUpperCase() ? "cap alphabetic" : "ex alphabetic",
+          }}
+        >
+          {text}
+        </div>
+      )}
     </div>
   );
 }

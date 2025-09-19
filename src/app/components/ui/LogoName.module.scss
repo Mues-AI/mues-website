@@ -1,0 +1,38 @@
+
+// Animation styles
+.textContainer{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.4s;
+}
+
+.primary, .secondary{
+  display: inline-block;
+  transition: all 0.4s;
+}
+
+.secondary{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: rotateX(-90deg) translateY(var(--secondary-translate-y, 0.75rem));
+  transform-origin: bottom center;
+}
+
+.textContainer:hover{ 
+  transform: rotateX(90deg);
+}
+
+.textContainer:hover .primary{
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.textContainer:hover .secondary{
+  opacity: 1;
+}
+
+

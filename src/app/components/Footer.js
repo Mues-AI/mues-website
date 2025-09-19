@@ -72,7 +72,7 @@ export default function Footer({ variant = 'light' }) {
                 <div className="w-fit h-fit flex flex-col gap-y-8 justify-between items-start">
 
                     <LogoName
-                      height={24}
+                      fontSize={24}
                       color={variant === 'light' ? '#8E8E8E' : '#FFF'} 
                     />
 
