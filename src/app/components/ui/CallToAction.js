@@ -1,29 +1,21 @@
 import React from 'react';
 
 const CallToAction = ({
-  // Container styling
   containerClassName = "my-[176px]",
-  
-  // Text content (can include <br/> tags)
+  // Text content can include <br/> tags
   text = "Drive more adoption<br/>for your product.",
-  
-  // Words to highlight with gradient
   highlightWords = ["adoption"],
-  
-  // Buttons array - pass any buttons you want
   buttons = [],
   
   ...props
 }) => {
 
   const renderText = () => {
-    // Replace <br/> tags with actual line breaks
     const parts = text.split('<br/>');
     
     return parts.map((part, partIndex) => (
       <React.Fragment key={partIndex}>
         {highlightWords.length > 0 ? (
-          // Create regex for all highlight words
           (() => {
             const regex = new RegExp(`(${highlightWords.join('|')})`, 'gi');
             return part.split(regex).map((chunk, chunkIndex) => {

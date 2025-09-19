@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar';
 import Image from 'next/image';
 import { CursorSvg } from '../../utils/svgOurBrand';
 import SvgIconAiSprite from '../../utils/svgIconAiSprite';
-import { productAdoptionData } from '../../data/usecase-prodocutAdoptionData';
+import { agenticAiData } from '../../data/usecase-agenticAi';
 import { toast } from 'sonner';
 import UserCursor from '../../components/UserCursor';
 import HowItWorks from '../../components/HowItWorks';
@@ -23,8 +23,7 @@ import { ProfileCircle,Danger,DocumentText,MessageQuestion } from 'iconsax-react
 import HeadingBadge from '@/app/components/ui/HeadingBadge';
 import H1 from '@/app/components/ui/H1';
 import SubHeadings from '@/app/components/ui/SubHeadings';
-import CursorPrompt from '@/app/components/ui/cursorPrompt/cursorPrompt';
-
+import CursorActionState from '@/app/components/ui/cursorActionState/cursorActionState';
 
 function FeatureContainer({
   svgSrc,
@@ -68,7 +67,7 @@ function FeatureContainer({
   );
 }
 
-export default function ProductAdoption() {
+export default function AgenticAi() {
   
   const logos = [
     { name: "openai", width: 107, height: 32, alt: "OpenAI" },
@@ -100,7 +99,7 @@ export default function ProductAdoption() {
         />
 
         {/* Badget - Heading */}
-        <div className="w-[330px] sm:w-full max-w-[640px] flex flex-col items-center gap-4 mx-auto z-10
+        <div className="w-[330px] sm:w-full max-w-[710px] flex flex-col items-center gap-4 mx-auto z-10
         mt-[104px] mb-[128px] 
         md:mt-[128px] md:mb-[138px] 
         lg:mt-[148px] lg:mb-[148px]  ">
@@ -112,17 +111,18 @@ export default function ProductAdoption() {
               <CursorSvg width={12} height={12} fill="#979797" />
             }
             >
-            PRODUCT ADOPTION
+            AGENTIC AI
             </HeadingBadge >
 
             {/* Main Heading */}
             <H1 variant="white" className="mt-2 md:mb-2">
-            Maximize product adoption with agentic AI
+            Agentic AI that knows every detail of your product
             </H1>
 
             {/* Subheading */}
             <p className="w-full text-center text-[#CCC] text-[20px] font-normal leading-[36px] tracking-[0.2px] not-italic">
-            Mues is an agentic AI that lets your users delegate any task <br /> to an AI agent using human language in your product.
+            The fastest way to integrate an agentic AI into your product.  <br />
+            Adding agentic AI cursor to your product takes just 5 mins.
             </p>
 
             {/* Get started button */}
@@ -205,12 +205,12 @@ export default function ProductAdoption() {
 
           <BorderBadge>PROBLEM</BorderBadge>
 
-          <SubHeadings type="h2" className="max-w-xl text-center">
-          Eliminate frictions highlight value
+          <SubHeadings type="h2" className="max-w-2xl text-center">
+          Only 15% of AI projects reach production stage
           </SubHeadings>
 
-          <p className="subHeadingsDescription w-full text-center">
-            User frustration with your product doesn&apos;t just ruin the moment. <br className='hidden sm:block'/> It permanently changes how your users view its worth and usability.
+          <p className="subHeadingsDescription text-center max-w-2xl">
+            Executives have mandates to implement AI but they have legacy codebases, long development cycles and ever-increasing costs.
           </p>
 
         </div>
@@ -228,7 +228,7 @@ export default function ProductAdoption() {
               <h3 className="text-[#121212] font-sfPro font-normal leading-normal 
               text-[24px] tracking-[0.24px]
               md:text-[32px] md:tracking-[0.32px]">
-                Users hitting a wall in your product
+                No learning from your users
               </h3>
             </div>
 
@@ -251,8 +251,8 @@ export default function ProductAdoption() {
               {/* Problem Description */}
               <div className='h-auto w-fit rounded-2xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(23,24,26,0.05)] py-[17px] px-6 flex justify-center items-center gap-3'>
                 <Danger size="24" color="#ff3200"/>
-                <span className="text-[#474645] text-lg font-normal leading-[30px]">
-                  I was unable to create a Slack integration.
+                <span className="text-[#474645] text-sm font-normal leading-[30px] ">
+                I didn&apos;t understand the chart&apos;s conversion calculation.
                 </span>
               </div>
 
@@ -312,8 +312,8 @@ export default function ProductAdoption() {
             {/* Footer */}
             <div className="mb-1" style={{ width: 'calc(100% + 56px)', marginLeft: '-28px' }}>
               <div className="h-[52px] rounded-[4px_4px_20px_20px] bg-[#FBFBFB] flex items-center justify-center px-4">
-                <p className="text-[#777] text-center text-[13px] font-normal leading-5 tracking-[0.13px]">
-                  The user spent time to resolve the issue · Product adoption has decreased
+                <p className="text-[#777] text-start text-[13px] font-normal leading-5 tracking-[-0.01px]">
+                Users get stuck, confused, and lost. Product leaders cannot discover these moments.
                 </p>
               </div>
             </div>
@@ -329,7 +329,7 @@ export default function ProductAdoption() {
               <h3 className="text-[#121212] font-sfPro font-normal leading-normal 
               text-[24px] tracking-[0.24px]
               md:text-[32px] md:tracking-[0.32px]">
-                7x increase in product adoption
+                Learn from user interactions with AI
               </h3>
             </div>
 
@@ -352,8 +352,8 @@ export default function ProductAdoption() {
               {/* Problem Description */}
               <div className='h-auto w-fit rounded-2xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(23,24,26,0.05)] py-[17px] px-6 flex justify-center items-center gap-3'>
                 <Danger size="24" color="#ff3200"/>
-                <span className="text-[#474645] text-lg font-normal leading-[30px]">
-                  I was unable to create a Slack integration.
+                <span className="text-[#474645] text-sm font-normal leading-[30px]">
+                I didn&apos;t understand the chart&apos;s conversion calculation.
                 </span>
               </div>
 
@@ -364,9 +364,9 @@ export default function ProductAdoption() {
                 width={12}
                 height={66}
               />
-
+              
               <div className='flex items-center justify-center min-h-22'>
-              <CursorPrompt prompt="Integrate Slack with my workspace"/>
+               <CursorActionState className='scale-150' />
               </div>
 
             </div>
@@ -375,7 +375,7 @@ export default function ProductAdoption() {
             <div className="mb-1" style={{ width: 'calc(100% + 56px)', marginLeft: '-28px' }}>
               <div className="h-[52px] rounded-[4px_4px_20px_20px] bg-[#FBFBFB] flex items-center justify-center px-4">
                 <p className="text-[#777] text-center text-[13px] font-normal leading-5 tracking-[0.13px]">
-                User watched Mues&apos; actions · Learn from Mues · Product adoption has increased
+                Mues AI Cursor analyzes frustrated moments of users, and helps them instantly.
                 </p>
               </div>
             </div>
@@ -387,16 +387,16 @@ export default function ProductAdoption() {
         {/* A new kind of software interaction */}
         {/* INFO : componentleştirirken her şey aynı diğerleriyle -- desciription paragrafı yok -- saadece mb-12 md:mb-15 lg:mb-18 değerleri farklı */}
         <div className="flex flex-col items-start gap-4 md:gap-6 max-w-[1168px] mt-24 md:mt-32 lg:mt-[200px] mb-12 md:mb-15 lg:mb-18 mx-auto">
-          <BorderBadge>INCREASE ADOPTION</BorderBadge>
+          <BorderBadge>EASY TO IMPLEMENT</BorderBadge>
 
-          <SubHeadings type="h2" className="max-w-xl">
-          A new kind of <br /> software interaction.
+          <SubHeadings type="h2" className="max-w-3xl">
+          The first agentic AI cursor designed to help your users
           </SubHeadings>
         </div>
 
         {/* Feature Containers */}
         <div className="w-full h-auto max-w-[1168px] mx-auto flex flex-col gap-12">
-          {productAdoptionData.map((feature) => (
+          {agenticAiData.map((feature) => (
             <FeatureContainer
               key={feature.id}
               svgSrc={feature.svgSrc}
@@ -415,7 +415,7 @@ export default function ProductAdoption() {
         my-[200px]">
           {/* Text Content */}
           <p className="text-[#211D1D] text-[20px] font-medium leading-[26px] tracking-[-0.33px] text-center md:text-start">
-            Boost product adoption <br  /> and reduce churn
+          An AI agent that knows  <br  /> every detail of your product
           </p>
 
           {/* Divider Line */}
@@ -432,7 +432,7 @@ export default function ProductAdoption() {
                 quality={100}
                 loading="lazy"
                 unoptimized
-                src="/ModularParts/images/modularPartsVideo2.webp"
+                src="/ModularParts/images/modularPartsVideo1.webp"
                 alt="Product adoption video preview"
                 width={85}
                 height={48}
@@ -444,7 +444,7 @@ export default function ProductAdoption() {
 
             <div className="flex flex-col gap-1 rounded items-start">
               <span className="text-black-121212 text-[15px] font-normal leading-[22px]">
-                Churn Prevention with Mues
+              AI Cursor in Action
               </span>
               <span className="text-[#4A443F]/50 text-[13px] font-normal leading-[18px] tracking-[-0.13px]">
                 Watch the video
@@ -475,8 +475,8 @@ export default function ProductAdoption() {
         <ImpactCircle />
 
         <CallToAction 
-        text="Drive more adoption<br/>for your product."
-        highlightWords={["adoption"]}
+        text="Add an AI assistant <br/> to your product."
+        highlightWords={[" AI assistant"]}
         buttons={[
           <ButtonBlack
             key="get-started"

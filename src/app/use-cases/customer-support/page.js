@@ -69,7 +69,7 @@ function FeatureContainer({
 }
 
 export default function CustomerSupport() {
-  // LLM logos configuration
+  
   const logos = [
     { name: "openai", width: 107, height: 32, alt: "OpenAI" },
     { name: "claude", width: 100, height: 22, alt: "Claude" },
@@ -216,14 +216,14 @@ export default function CustomerSupport() {
         </div>
 
         {/* BEFORE AND AFTER CARDS */}
-        <div className="max-w-[1168px] mx-auto flex flex-col lg:flex-row gap-6">
+        <div className="max-w-[1172px] mx-auto flex flex-col lg:flex-row gap-6">
           
           {/* BEFORE MUES CARD */}
           <div className="relative flex-1 h-auto lg:min-h-[652px] rounded-[24px] border border-[#EEE] bg-white p-8 pb-0 flex flex-col">
             {/* Header */}
             <div className="w-full flex flex-col gap-3">
               <span className="text-[#777] text-[13px] md:text-[14px] font-medium leading-5 tracking-[-0.09px]">
-                Before Mues
+                Before Mues AI
               </span>
               <h3 className="text-[#121212] font-sfPro font-normal leading-normal 
               text-[24px] tracking-[0.24px]
@@ -265,7 +265,7 @@ export default function CustomerSupport() {
               />
 
               {/* Big Brand Logos */}
-              <div className='flex flex-row flex-wrap justify-center gap-4 w-fit'>
+              <div className='flex flex-row flex-wrap justify-center items-center gap-4 w-fit min-h-22'>
                 {/* Document Text */}
                 <div className="w-16 h-16 rounded-2xl border border-[#F4F4F4] bg-white shadow-[0px_1px_4px_0px_rgba(23,24,26,0.05)] p-4 flex items-center justify-center"> 
                   <DocumentText size="32" color="#17181a"/>
@@ -324,11 +324,11 @@ export default function CustomerSupport() {
             {/* Header */}
             <div className="w-full flex flex-col gap-3">
               <span className="text-[#777] text-[13px] md:text-[14px] font-medium leading-5 tracking-[-0.09px]">
-                After Mues
+                After Mues AI
               </span>
               <h3 className="text-[#121212] font-sfPro font-normal leading-normal 
               text-[24px] tracking-[0.24px]
-              md:text-[32px] md:tracking-[0.32px]">
+              md:text-[32px] md:tracking-[0.24px]">
                 Reduce support costs by 40%
               </h3>
             </div>
@@ -364,9 +364,10 @@ export default function CustomerSupport() {
                 width={12}
                 height={66}
               />
-
+              
+              <div className='flex items-center justify-center min-h-22'>
               <CursorPrompt prompt="Change my billing information to XYZ inc."/>
-
+              </div>
             </div>
 
             {/* Footer */}

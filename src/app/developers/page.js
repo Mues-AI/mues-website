@@ -74,7 +74,6 @@ export default function Developers() {
               Get started - free
             </ButtonWhite>
 
-            {/* TODO : HOVER ACTİVE stillerini al LİNK AL */}
             <ButtonGray>
               Talk to a human
             </ButtonGray>
@@ -299,7 +298,6 @@ export default function Developers() {
         <div className="relative w-full max-w-[1512px] mx-auto">
           <CorneredLine variant="dark"/>
 
-          {/* TODO : buradaki Customize ve shape için fotoyu değiştiricem - webp çevir */}
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full">
           
             {/* Installation */}
@@ -612,7 +610,6 @@ export default function Developers() {
 
       </div>
 
-      {/* TODO : ASK : buradaki fotonun ekranı tam kaplayacak şekilde -13inç ve diğerlerinde de olacak şekidle ayarlayayım mı? şu an da scroll atmak gerekiyor */}
       {/* Mouse Big Image */}
       <Image src="/developers/images/bigMouse1x.webp" alt="mouse" width={1512} height={982} loading="lazy" className="w-full h-full object-cover aspect-[1512/982]" />
 
