@@ -83,6 +83,12 @@ export const footerData = {
         ariaLabel: "Go to Onboarding",
         active: true
       },
+      {
+        href: "/use-cases/agentic-ai",
+        label: "Agentic AI",
+        ariaLabel: "Go to Agentic AI",
+        active: true
+      },
       // Inactive/commented links
       {
         href: "https://www.mues.ai/",
@@ -91,13 +97,6 @@ export const footerData = {
         target: "_blank",
         active: false
       },
-      {
-        href: "https://www.mues.ai/",
-        label: "Agentic AI",
-        ariaLabel: "Go to Agentic AI",
-        target: "_blank", 
-        active: false
-      }
     ]
   },
 

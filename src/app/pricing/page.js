@@ -79,7 +79,7 @@ export default function Pricing() {
         return `$${price}`;
     };
 
-    // LLM logos configuration
+    
     const logos = [
         { name: "openai", width: 107, height: 32, alt: "OpenAI" },
         { name: "claude", width: 100, height: 22, alt: "Claude" },
