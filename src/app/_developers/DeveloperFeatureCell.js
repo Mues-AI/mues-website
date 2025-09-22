@@ -1,10 +1,11 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './DeveloperFeatureCell.module.scss';
 
 const DeveloperFeatureCell = ({ title, iconPath }) => {
   return (
     <div className={`flex flex-col gap-4 p-6 ${styles.cell}`}>
-      <img 
+      <Image 
         src={iconPath}
         alt={title}
         width={16}

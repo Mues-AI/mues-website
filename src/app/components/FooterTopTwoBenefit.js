@@ -47,7 +47,6 @@ function BenefitCard({ variant = 'light', isFirstCard, title, description, image
 
       <div className='flex justify-center items-center lg:h-full lg:w-auto'>
         <Image 
-          quality={100} 
           loading='lazy' 
           unoptimized 
           src={imageSrc} 

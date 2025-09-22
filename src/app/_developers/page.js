@@ -46,6 +46,7 @@ export default function Developers() {
             width={500}
             height={246}
             className="aspect-[500/246]"
+            fetchPriority="high"
           />
 
           {/* Main Heading */}
