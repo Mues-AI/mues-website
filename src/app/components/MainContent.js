@@ -147,9 +147,9 @@ export default function MainContent() {
           <div className="w-fit flex-1 ">
             <div className="mb-6 max-w-fit">
               <h1 className="text-white font-rethinkSans font-bold leading-12 md:leading-16 lg:leading-[72px] tracking-[0.36px] md:tracking-[0.48px] lg:tracking-[0.56px] text-3xl xs:text-4xl sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] lg:whitespace-nowrap">
-                Your users get stuck,
+              Domain-specific
                 <span className="block text-white font-instrumentSerif italic font-normal leading-12 lg:leading-[72px] tracking-[0.36px] lg:tracking-[0.56px] text-3xl xs:text-4xl sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] ">
-                  AI Cursor solves instantly
+                Product Use Agent
                 </span>
               </h1>
             </div>
@@ -160,8 +160,7 @@ export default function MainContent() {
             md:text-lg md:leading-8 md:tracking-[0.2px]
             lg:text-[20px] lg:leading-9 lg:tracking-[0.2px]"
             >
-              Users just ask, and AI Cursor handles the rest right away.
-              Instantly, personalized, and 24/7.
+              Users write a prompt, your AI agent performs actions (clicks, types, navigates, answers...) in your product.
             </p>
 
             <form
