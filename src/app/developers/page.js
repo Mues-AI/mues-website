@@ -205,7 +205,7 @@ export default function Developers() {
           </SubHeadings>
 
           <p className="max-w-xl subHeadingsDescription text-[#DDD]">
-          Mues introduces the first agentic AI cursor for your product, letting users complete tasks with natural language. It's intuitive interaction, redefined.
+          Mues introduces the first agentic AI cursor for your product, letting users complete tasks with natural language. It&apos;s intuitive interaction, redefined.
           </p>
         </div>
 
@@ -365,7 +365,7 @@ export default function Developers() {
             </SubHeadings>
 
             <p className="subHeadingsDescription text-[#DDD]">
-            Shape the AI's behavior with our powerful APIs for a truly tailored user experience.
+            Shape the AI&apos;s behavior with our powerful APIs for a truly tailored user experience.
             </p>
           </div>
         </div>
@@ -384,7 +384,7 @@ export default function Developers() {
             <div className={styles.contentContainer}>
               <h3 className={styles.featureTitle}>Signals API</h3>
               <p className={styles.featureDescription}>
-              Guide the AI's actions with real-time application signals.
+              Guide the AI&apos;s actions with real-time application signals.
               </p>
             </div>
             <ButtonGray
@@ -407,7 +407,7 @@ export default function Developers() {
             <div className={styles.contentContainer}>
               <h3 className={styles.featureTitle}>Customization API</h3>
               <p className={styles.featureDescription}>
-              Define the AI's capabilities and rules for your product.
+              Define the AI&apos;s capabilities and rules for your product.
               </p>
             </div>
             {/* TODO : link gelecek*/}
@@ -537,7 +537,7 @@ export default function Developers() {
               </SubHeadings>
 
               <p className="max-w-xl subHeadingsDescription text-[#DDD]">
-              Join our developer community to collaborate, get early access, and help shape agentic AI's future.
+              Join our developer community to collaborate, get early access, and help shape agentic AI&apos;s future.
               </p>
 
               {/* Join our devs club button */}
