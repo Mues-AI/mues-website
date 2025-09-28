@@ -29,7 +29,7 @@ const InstallationShape = () => {
   };
 
   return (
-    <div className="w-full h-auto aspect-[360/142] grid grid-cols-2 gap-2">
+    <div className="w-full h-auto aspect-[360/142] xl:max-h-[142px] grid grid-cols-2 gap-2">
       {items.map((item, index) => (
         <div
           key={item.label}

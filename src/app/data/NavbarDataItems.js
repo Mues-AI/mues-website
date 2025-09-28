@@ -83,6 +83,13 @@ export const navItemsData = [
         hoverIcon: hoverIcon,
         href: "/use-cases/agentic-ai",
       },
+      {
+        title: "Developers",
+        desc: "Build with Mues AI",
+        icon: "/NavbarMenu/svg/angular6.svg",
+        hoverIcon: hoverIcon,
+        href: "/use-cases/developers",
+      },
       // { title: "Churn prevention", desc: "Retain your customers", icon: "/NavbarMenu/svg/angular2.svg", hoverIcon: hoverIcon, href: "https://www.mues.ai/" },
       // { title: "User experience", desc: "Enhance usability fast", icon: "/NavbarMenu/svg/angular4.svg", hoverIcon: hoverIcon, href: "https://www.mues.ai/" },
     ],

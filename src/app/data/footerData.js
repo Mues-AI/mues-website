@@ -89,6 +89,12 @@ export const footerData = {
         ariaLabel: "Go to Agentic AI",
         active: true
       },
+      {
+        href: "/use-cases/developers",
+        label: "Developers",
+        ariaLabel: "Go to Developers",
+        active: true
+      },
       // Inactive/commented links
       {
         href: "https://www.mues.ai/",
