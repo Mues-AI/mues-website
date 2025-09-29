@@ -90,7 +90,7 @@ export const footerData = {
         active: true
       },
       {
-        href: "/use-cases/developers",
+        href: "/developers",
         label: "Developers",
         ariaLabel: "Go to Developers",
         active: true

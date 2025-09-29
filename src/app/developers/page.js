@@ -542,7 +542,7 @@ export default function Developers() {
 
               {/* Join our devs club button */}
               <ButtonWhite
-              href="https://cal.com/mues-ai/demo"
+              href="https://discord.gg/GZGjemzU2H"
               target="_blank"
               rel="noopener noreferrer"
               ariaLabel="Join our devs club"
