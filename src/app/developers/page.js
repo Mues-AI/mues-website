@@ -62,8 +62,8 @@ export default function Developers() {
             <br className="hidden sm:block"/> Users just ask, and it handles the rest right away.
           </p>
 
-          <div className="flex flex-row items-center gap-4 mt-2 lg:mt-4">
-            {/* Get started button */}
+          <div className="flex flex-row items-center gap-2 mt-2 lg:mt-4">
+            {/* Get started free */}
             <ButtonWhite
               href="https://cal.com/mues-ai/demo"
               target="_blank"
@@ -75,7 +75,10 @@ export default function Developers() {
               Get started - free
             </ButtonWhite>
 
-            <ButtonGray>
+            <ButtonGray
+            href="https://cal.com/mues-ai/talk-with-sales"
+            ariaLabel="Talk to a human"
+            >
               Talk to a human
             </ButtonGray>
           </div>
@@ -202,7 +205,7 @@ export default function Developers() {
           </SubHeadings>
 
           <p className="max-w-xl subHeadingsDescription text-[#DDD]">
-          Software interaction has changed. Users no longer have to learn the interfaces, features and workings of software.
+          Mues introduces the first agentic AI cursor for your product, letting users complete tasks with natural language. It&apos;s intuitive interaction, redefined.
           </p>
         </div>
 
@@ -289,8 +292,7 @@ export default function Developers() {
             </SubHeadings>
 
             <p className="max-w-xl subHeadingsDescription text-[#DDD]">
-            Software interaction has changed. Users no longer have to
-            learn the interfaces, features and workings of software.
+            Integrate our AI cursor agent with a simple script. Go from setup to live in minutes, with no engineering overhead.
             </p>
           </div>
         </div>
@@ -302,7 +304,7 @@ export default function Developers() {
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full">
           
             {/* Installation */}
-            <div className="p-6 sm:p-12 lg:p-8 xl:p-12 flex flex-col justify-between gap-6 md:gap-8 lg:gap-12 xl:h-[392px]">
+            <div className="p-6 sm:p-12 lg:p-8 xl:p-12 flex flex-col justify-between gap-6 md:gap-8 xl:h-[392px]">
               
               {/* 
               <pre className="w-full whitespace-pre-wrap text-[12px] font-normal leading-[18px] not-italic text-transparent bg-clip-text bg-gradient-to-b from-[#979797] to-[#979797]/20 aspect-[342/141]">
@@ -315,7 +317,7 @@ export default function Developers() {
               </pre>
               */}
 
-              <Image src="/developers/images/installImage.webp" alt="Install Image" width={360} height={160} className="w-full"/> 
+              <Image src="/developers/images/installImage.webp" alt="Install Image" width={360} height={160} className="object-contain "/> 
               
               <div className="flex flex-col gap-3"> 
                 <p className={styles.corneredTitle}>Install</p>
@@ -328,7 +330,7 @@ export default function Developers() {
             {/* Customization */}
             <div className="p-6 sm:p-12 lg:p-8 xl:p-12 flex flex-col justify-between gap-6 md:gap-8 lg:gap-12 xl:h-[392px] border-l border-[#222222] border-t lg:border-t-none">
             
-              <Image src="/developers/images/customizeImage.webp" unoptimized alt="Customization" width={342} height={142} className="w-full"/>
+              <Image src="/developers/images/customizeImage.webp" unoptimized alt="Customization" width={342} height={142} className="object-contain "/>
 
               <div className="flex flex-col gap-3"> 
                 <p className={styles.corneredTitle}>Customize</p>
@@ -343,7 +345,7 @@ export default function Developers() {
 
               <InstallationShape />
 
-              <div className="flex flex-col gap-3"> 
+              <div className="flex flex-col gap-3 "> 
                 <p className={styles.corneredTitle}>Shape</p>
                 <p className={styles.corneredDesc}> 
                 Establish rulesets that foster behaviors aligned with the company&apos;s objectives.
@@ -363,14 +365,12 @@ export default function Developers() {
             </SubHeadings>
 
             <p className="subHeadingsDescription text-[#DDD]">
-            Software interaction has changed. Users no longer have to
-            learn the interfaces, features and workings of software.
+            Shape the AI&apos;s behavior with our powerful APIs for a truly tailored user experience.
             </p>
           </div>
         </div>
 
 
-        {/* TODO : BURADAKİ BUTONLARA link */}
         <div className={`${styles.featuresGrid}`}>
           <div className={styles.featureColumn}>
             <div className={styles.imageContainer}>
@@ -384,11 +384,13 @@ export default function Developers() {
             <div className={styles.contentContainer}>
               <h3 className={styles.featureTitle}>Signals API</h3>
               <p className={styles.featureDescription}>
-                Align your AI Cursor with the branding and UI of your company & products.
+              Guide the AI&apos;s actions with real-time application signals.
               </p>
             </div>
-            {/* TODO : */}
-            <ButtonGray>
+            <ButtonGray
+            href="https://muesai.featurebase.app/en/help/articles/8844736-signals-api"
+            ariaLabel="Signals API"
+            >
               Read document
             </ButtonGray>
           </div>
@@ -405,11 +407,14 @@ export default function Developers() {
             <div className={styles.contentContainer}>
               <h3 className={styles.featureTitle}>Customization API</h3>
               <p className={styles.featureDescription}>
-                Align your AI Cursor with the branding and UI of your company & products.
+              Define the AI&apos;s capabilities and rules for your product.
               </p>
             </div>
-            {/* TODO : */}
-            <ButtonGray>
+            {/* TODO : link gelecek*/}
+            <ButtonGray
+            href=""
+            ariaLabel="Customization API"
+            >
               Read document
             </ButtonGray>
           </div>
@@ -426,11 +431,13 @@ export default function Developers() {
             <div className={styles.contentContainer}>
               <h3 className={styles.featureTitle}>CSP Permission</h3>
               <p className={styles.featureDescription}>
-                Align your AI Cursor with the branding and UI of your company & products.
+              Configure your CSP for a secure and seamless AI integration.
               </p>
             </div>
-            {/* TODO : */}
-            <ButtonGray>
+            <ButtonGray
+            href="https://muesai.featurebase.app/en/help/articles/8122278-using-mues-ai-with-content-security-policy-csp"
+            ariaLabel="CSP Permission"
+            >
               Read document
             </ButtonGray>
           </div>
@@ -451,7 +458,7 @@ export default function Developers() {
               </SubHeadings>
 
               <p className="max-w-xl subHeadingsDescription text-[#DDD] sm:!text-center lg:!text-left ">
-              Software interaction has changed. Users no longer have to learn the interfaces, features and workings of software.
+              Mues AI is designed for universal compatibility. It works seamlessly across any OS, browser, or modern web framework.
               </p>
             </div>
 
@@ -530,12 +537,12 @@ export default function Developers() {
               </SubHeadings>
 
               <p className="max-w-xl subHeadingsDescription text-[#DDD]">
-              Software interaction has changed. Users no longer have to learn the interfaces, features and workings of software.
+              Join our developer community to collaborate, get early access, and help shape agentic AI&apos;s future.
               </p>
 
               {/* Join our devs club button */}
               <ButtonWhite
-              href="https://cal.com/mues-ai/demo"
+              href="https://discord.gg/GZGjemzU2H"
               target="_blank"
               rel="noopener noreferrer"
               ariaLabel="Join our devs club"
@@ -595,10 +602,13 @@ export default function Developers() {
 
             <p className="text-[#DDD] text-center font-inter font-normal tracking-[-0.3px]
             text-[15px] leading-[24px] lg:text-[18px] lg:leading-[32px] indent-[8px]">
-            Software interaction has changed. Users no longer have to learn the interfaces, features and workings of software.
+            Follow our progress on GitHub and <br/> help us build the future of user interaction.
             </p>
 
             <ButtonWhite
+              href="https://github.com/Mues-AI"
+              target="_blank"
+              rel="noopener noreferrer"
               ariaLabel="Follow Mues AI"
               className="mt-2 gap-2"
               icon={<GitHubIcon width={16} height={16} className="text-[#000]" />}

@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { ModulerPresentationVariants } from './ModulerPresentationVariants';
 import CheckSvg from '../utils/svgGeneralUtils.js';
@@ -14,6 +15,7 @@ const ModularPresentationParts = ({ variant }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const router = useRouter();
   
   // Zustand store'dan isMobile değerini al
   const isMobile = useStore((state) => state.isMobile);
@@ -71,6 +73,16 @@ const ModularPresentationParts = ({ variant }) => {
       closeModal();
     }
   };
+
+  const handleButtonClick = () => {
+    if (variantData.link) {
+      router.push(variantData.link);
+    } else {
+      setShowVideoModal(false); // BURASI true OLACAK - Gerçek video gelince
+      toast("Coming soon!");
+    }
+  };
+
   return (
     <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-18 xl:gap-[120px] items-center justify-between w-full h-auto xl:h-[500px]">
       {/* Left Section */}
@@ -104,11 +116,17 @@ const ModularPresentationParts = ({ variant }) => {
         </div>
         {/* BURADA şimdilik setShowVideoModal(false) yapıyoruz - gerçek video gelince true yap */}
         <button 
-          className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer hover:ring-1 hover:ring-offset hover:ring-[#f2f0ed] hover:ring-offset-12 hover:ring-offset-white" onClick={() => { setShowVideoModal(false); toast("Coming soon!"); }}>
+          className="inline-flex flex-row gap-3 items-center w-fit rounded-[4px] cursor-pointer hover:ring-1 hover:ring-offset hover:ring-[#f2f0ed] hover:ring-offset-12 hover:ring-offset-white" onClick={handleButtonClick}>
             <div className="flex w-[85px] h-12 justify-center items-center rounded relative">
               <Image quality={100} priority={false} src={variantData.videoImage} alt={variantData.imageAlt} sizes="100%" width={340} height={192} className="object-cover rounded cursor-pointer"/>
-              <Image src="/svg/play.svg" alt="play button svg" sizes="15px" width={15} height={16}
-              className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10'/>
+              <Image 
+                src={variantData.videoSvg} 
+                alt="video svg" 
+                sizes={`${variantData.videoSvgWidth}px`} 
+                width={variantData.videoSvgWidth} 
+                height={variantData.videoSvgHeight}
+                className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10'
+              />
             </div>
 
           <div className="flex flex-col items-start gap-1 rounded">

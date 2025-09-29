@@ -77,7 +77,7 @@ const Evolution = () => {
       <div className="w-full h-[188px] relative">
 
         {/* MASAÜSTÜ GÖRÜNÜMÜ  */}
-        <div className="hidden lg:grid grid-cols-[1fr_1fr_1fr_1.6fr_1fr] items-center h-full w-full px-8">
+        <div className="hidden lg:grid grid-cols-[0.8fr_0.8fr_1fr_1.6fr_1.2fr] items-center h-full w-full max-w-7xl mx-auto">
           <div className={`${styles.linearLine} transform -translate-y-1/2`}></div>
           {steps.map((step, index) => (
             <div key={index} className="relative flex flex-col items-center justify-center h-full">

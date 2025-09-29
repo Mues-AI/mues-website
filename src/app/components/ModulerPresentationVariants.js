@@ -27,6 +27,9 @@ export const ModulerPresentationVariants = {
     imageAlt: 'Modular Part 1',
     videoSrc: '/ModularParts/video/ModularPartVideo1.mp4',
     videoImage: '/ModularParts/images/modularPartsVideo1.webp',
+    videoSvg: '/svg/play.svg',
+    videoSvgWidth: 15,
+    videoSvgHeight: 16,
   },
 
   // 2. Product Adoption
@@ -57,6 +60,9 @@ export const ModulerPresentationVariants = {
     imageAlt: 'Modular Part 2',
     videoSrc: '/ModularParts/video/ModularPartVideo1.mp4',
     videoImage: '/ModularParts/images/modularPartsVideo2.webp',
+    videoSvg: '/svg/play.svg',
+    videoSvgWidth: 15,
+    videoSvgHeight: 16,
   },
   
   // 3. Insights
@@ -87,6 +93,9 @@ export const ModulerPresentationVariants = {
   imageAlt: 'Modular Part 3',
   videoSrc: '/ModularParts/video/ModularPartVideo1.mp4',
   videoImage: '/ModularParts/images/modularPartsVideo3.webp',
+  videoSvg: '/svg/play.svg',
+  videoSvgWidth: 15,
+  videoSvgHeight: 16,
 },
 
   // 4. Easy to integrate
@@ -111,14 +120,18 @@ export const ModulerPresentationVariants = {
         featureColor: '#7D52F4'
       }
     ],
-    videoTitle: 'Implementation Made Simple',
-    videoSubtitle: 'Watch the video',
+    videoTitle: 'See our Developers page',
+    videoSubtitle: 'Go to the page',
     imageSrc: '/ModularParts/images/ModularPart4.webp',
     imageAlt: 'Modular Part 4',
     videoSrc: '/ModularParts/video/ModularPartVideo1.mp4',
     videoImage: '/ModularParts/images/modularPartsVideo4.webp',
+    videoSvg: '/ModularParts/svg/modularVideoArrowRight.svg',
+    link: '/developers',
+    videoSvgWidth: 26,
+    videoSvgHeight: 26,
   },
-    
+
 };
 
 
