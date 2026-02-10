@@ -156,7 +156,7 @@ export default function Footer({ variant = "light" }) {
               </div>
 
               <p className="text-[#b6b6b6] text-right text-xs leading-4 tracking-[0.12px]">
-                Mues AI © 2025
+                Mues AI © {new Date().getFullYear()}
               </p>
             </div>
           </div>
